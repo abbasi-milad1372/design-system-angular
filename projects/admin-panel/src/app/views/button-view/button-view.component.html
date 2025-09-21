@@ -1,0 +1,53 @@
+<div class="p-4">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6 items-center">
+        <label class="flex flex-col gap-1">
+            Color:
+            <select [(ngModel)]="selectedVariant" class="border p-2 rounded">
+                <option value="primary">Primary</option>
+                <option value="secondary">Secondary</option>
+                <option value="error">Error</option>
+                <option value="ghost-primary">ghost-primary</option>
+            </select>
+        </label>
+
+        <label class="flex flex-col gap-1">
+            Size:
+            <select [(ngModel)]="selectedSize" class="border p-2 rounded">
+                <option value="sm">Small</option>
+                <option value="md">Medium</option>
+                <option value="lg">Large</option>
+                <option value="xl">XL</option>
+            </select>
+        </label>
+
+        <label class="flex items-center gap-2">
+            <input type="checkbox" [(ngModel)]="showLeftIcon" />
+            نمایش آیکن چپ
+        </label>
+
+        <label class="flex items-center gap-2">
+            <input type="checkbox" [(ngModel)]="showRightIcon" />
+            نمایش آیکن راست
+        </label>
+        <label class="flex items-center gap-2">
+            <input type="checkbox" [(ngModel)]="showloading" />
+         loading
+        </label>
+    </div>
+<div class="w-[150px]">
+<iho-button  [variant]="selectedVariant" [size]="selectedSize" [showLoading]="showloading"   [type]="'link'">
+    <span label>ساخت حساب</span>
+    <span icon-left *ngIf="showLeftIcon">👈</span>
+    <span icon-right *ngIf="showRightIcon">👉</span>
+</iho-button>
+</div>
+    
+</div>
+
+
+<div class="grid grid-cols-1 my-5">
+    code:
+    <pre class="bg-gray-950 text-white-100 p-4 rounded text-sm">
+  <code>{{ code }}</code>
+</pre>
+</div>

@@ -1,0 +1,24 @@
+    <div *ngFor="let notification of notifications()" class="tadkar-notify" [ngClass]="containerClass()">
+        <ng-container *ngTemplateOutlet="notifyTemp; context:{notification: notification}"></ng-container>
+    </div>
+
+<ng-template #notifyTemp let-notification="notification">
+    <div id="content" class="content" [ngClass]="notification.type | lowercase">
+        <div class="row">
+            <div class="icon-wrapper" [ngSwitch]="notification.type">
+                <i *ngSwitchCase="'Information'" class="iho-icon-information-circle"></i>
+                <i *ngSwitchCase="'Warning'" class="iho-icon-alert-02"></i>
+                <i *ngSwitchCase="'Error'" class="iho-icon-alert-circle"></i>
+                <i *ngSwitchCase="'Success'" class="iho-icon-checkmark-circle-02"></i>
+            </div>
+
+            <h5 class="title" *ngIf="notification.title">{{ notification.title }}</h5>
+
+       
+        </div>
+
+        <div *ngIf="notification.message" id="message" class="message">
+            <div class="message-text" [innerHtml]="notification.message"></div>
+        </div>
+    </div>
+</ng-template>

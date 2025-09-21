@@ -1,0 +1,18 @@
+<div class="flex h-screen overflow-hidden">
+    <!-- Sidebar -->
+    <aside class="w-64 bg-gray-800 text-gray-100 p-4 space-y-4  hidden lg:block">
+        <h2 class="text-lg font-bold mb-4">Components</h2>
+        <nav class="flex flex-col space-y-2">
+            <a *ngFor="let item of componentsDesignSys"  [routerLink]="item.path" routerLinkActive="bg-gray-700"
+                class="p-2 rounded hover:bg-gray-700 transition text-white-0">
+                {{ item.name }}
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Main view -->
+    <main class="flex-1 bg-gray-50 p-4 overflow-auto">
+        <iho-notifications />
+        <router-outlet></router-outlet>
+    </main>
+</div>

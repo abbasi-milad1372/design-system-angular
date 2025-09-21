@@ -1,0 +1,47 @@
+<!-- قالب floating -->
+<div class="input floating-input" [class.is-required]="required" [ngClass]="[roundedClass]"
+    *ngIf="template === 'floating'" [class.input--disabled]="disabled" [class.input--error]="error">
+
+    <label class="input__label" [attr.for]="inputId" [class.input__label--focused]="isFocused"
+        [class.input__label--active]="value && !isFocused" [class.input__label--error]="error"
+        [class.input__label--disabled]="disabled" [class.input__label--has-icon]="icon">
+        {{ label }}
+        <span class="input__ph" aria-hidden="true">
+            <span class="ast" *ngIf="required"> *</span>
+        </span>
+    </label>
+
+    <input class="input__field" [attr.id]="inputId" [attr.placeholder]="placeholder" [attr.aria-required]="required"
+        [attr.aria-invalid]="!!error" [attr.aria-describedby]="error ? (inputId + '-err') : null" [attr.type]="type"
+        [attr.autocomplete]="autocomplete" [attr.name]="name" [disabled]="disabled" [value]="value"
+        (input)="handleInput($event)" (focus)="handleFocus()" (blur)="handleBlur()" (compositionstart)="composing=true"
+        (compositionend)="composing=false; handleInput($event)" [class.input__field--has-icon]="icon" />
+
+    <ng-container *ngIf="icon">
+        <i [class]="icon + ' input-icon'"></i>
+    </ng-container>
+
+    <div class="input__error" *ngIf="error" [attr.id]="inputId + '-err'">{{ error }}</div>
+</div>
+
+<!-- قالب inline -->
+<div class="input inline-input" [class.is-required]="required" [ngClass]="[roundedClass]" *ngIf="template === 'inline'"
+    [class.input--disabled]="disabled" [class.input--error]="error">
+
+    <input class="input__field" [ngClass]="dirClass" [attr.id]="inputId" [attr.required]="required" [attr.aria-required]="required"
+        [attr.aria-invalid]="!!error" [attr.aria-describedby]="error ? (inputId + '-err') : null"
+        [attr.placeholder]="placeholder" [attr.type]="type" [attr.autocomplete]="autocomplete" [attr.name]="name"
+        [disabled]="disabled" [value]="value" (input)="handleInput($event)" (focus)="handleFocus()"
+        (blur)="handleBlur()" (compositionstart)="composing=true"
+        (compositionend)="composing=false; handleInput($event)" [class.input__field--has-icon]="icon" />
+
+    <span class="input__ph" aria-hidden="true">
+        {{ placeholder }}<span class="ast" *ngIf="required"> *</span>
+    </span>
+
+    <ng-container *ngIf="icon">
+        <i [class]="icon + ' input-icon'"></i>
+    </ng-container>
+
+    <div class="input__error" *ngIf="error" [attr.id]="inputId + '-err'">{{ error }}</div>
+</div>

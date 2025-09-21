@@ -1,0 +1,136 @@
+<section class="footer__features">
+    <ul class="footer__feature-list">
+        <li class="footer__feature-item">
+            <img src="/assets/design-system/img/pic-footer-1.png" width="96" height="96" alt="رزرو 100 درصد آنلاین">
+            <div class="footer__feature-content">
+                <p class="footer__feature-title">رزرو 100 درصد آنلاین</p>
+                <span class="footer__feature-subtitle">رزرو 100 درصد آنلاین بیش از 1900 هتل</span>
+            </div>
+        </li>
+        <li class="footer__feature-item">
+            <img src="/assets/design-system/img/pic-footer-2.png" width="96" height="96" alt="مشاوره نیم میلیونی">
+            <div class="footer__feature-content">
+                <p class="footer__feature-title">مشاوره نیم میلیونی</p>
+                <span class="footer__feature-subtitle">بزرگترین مرجع نظرات هتل ها</span>
+            </div>
+        </li>
+        <li class="footer__feature-item">
+            <img src="/assets/design-system/img/pic-footer-3.png" width="96" height="96" alt="گارانتی کمترین قیمت">
+            <div class="footer__feature-content">
+                <p class="footer__feature-title">گارانتی کمترین قیمت</p>
+                <span class="footer__feature-subtitle">رزرو هتل با بیشترین تخفیف</span>
+            </div>
+        </li>
+        <li class="footer__feature-item">
+            <img src="/assets/design-system/img/pic-footer-4.png" width="96" height="96" alt="کارمزد کنسلی رایگان">
+            <div class="footer__feature-content footer__feature-content--right">
+                <p class="footer__feature-title">کارمزد کنسلی رایگان</p>
+                <span class="footer__feature-subtitle">کارمزد کنسلی صفر درصد</span>
+            </div>
+        </li>
+    </ul>
+</section>
+
+
+<nav class="footer__nav" [class.footer__nav--margin-top]="showLinks">
+
+    <div class="footer__details">
+        <nav class="footer__nav-sections">
+            <ul class="footer__nav-list">
+                <li class="footer__nav-item" (click)="toggleSection('section1')">
+                    <h6>ایران هتل آنلاین</h6>
+                    <i class="iho-icon-arrow-down-01-sharp"></i>
+                </li>
+                <ng-container *ngIf="expandedSections['section1']">
+                    <li><a href="#">درباره ما</a></li>
+                    <li><a href="#">تماس با ما</a></li>
+                    <li><a href="#">بلاگ</a></li>
+                    <li><a href="#">فرصت‌ شغلی</a></li>
+                </ng-container>
+            </ul>
+
+        </nav>
+        <nav class="footer__nav-sections">
+            <ul class="footer__nav-list">
+                <li class="footer__nav-item" (click)="toggleSection('section2')">
+                    <h6>خدمات مشتریان</h6>
+                    <i class="iho-icon-arrow-down-01-sharp"></i>
+                </li>
+                <ng-container *ngIf="expandedSections['section2']">
+                    <li><a href="https://www.iranhotelonline.com/persian/best-price-guarantee/" target="_blank">گارانتی
+                            بهترین نرخ</a></li>
+                    <li><a href="https://www.iranhotelonline.com/reviews/" target="_blank">نظرات
+                            هتل ها</a></li>
+                    <li><a href="/">راهنمای
+                            رزرو</a></li>
+                    <li><a href="https://www.iranhotelonline.com/persian/policy/" target="_blank">قوانین
+                            رزرو</a></li>
+                </ng-container>
+            </ul>
+            <!-- Repeat similar structure for other sections -->
+        </nav>
+        <nav class="footer__nav-sections">
+            <ul class="footer__nav-list">
+                <li class="footer__nav-item" (click)="toggleSection('section3')">
+                    <h6>اطلاعات تکمیلی</h6>
+                    <i class="iho-icon-arrow-down-01-sharp"></i>
+                </li>
+                <ng-container *ngIf="expandedSections['section3']">
+                    <li><a href="https://www.iranhotelonline.com/province/" target="_blank">استان‌های
+                            ایران</a></li>
+                    <li><a href="https://www.iranhotelonline.com/persian/privacypolicy/" target="_blank">حریم
+                            شخصی</a></li>
+                    <li><a href="https://b2b.iranhotelonline.com/" target="_blank">
+                            راهکارهای سازمانی</a></li>
+                </ng-container>
+            </ul>
+            <!-- Repeat similar structure for other sections -->
+        </nav>
+    </div>
+
+    <nav class="footer__contact">
+        <div class="footer__logo-container">
+            <a routerLink="/">
+                <img src="/assets/design-system/img/logo-footer.png"
+                    alt="ایران هتل آنلاین | رزرو هتل، هتل آپارتمان، اقامتگاه‌های بوم گردی، اقامت بلند مدت" height="40"
+                    width="40">
+            </a>
+        </div>
+        <ul class="footer__contact-info">
+            <li>
+                <p>تلفن پشتیبانی:</p><a href="tel:051-91005105">015-91005105</a>
+            </li>
+            <li>
+                <p>کدپستی:</p><a href="mailto:supply@iranhotelonline.com">1917754328</a>
+            </li>
+            <li>
+                <p>دفتر پشتیبانی:</p><span>بلوار جانباز، جانباز5، یاس 2، ساختمان ست سنتر</span>
+            </li>
+        </ul>
+        <div class="footer__certificates">
+            <a href="https://trustseal.enamad.ir/?id=47690&Code=F63V0nMgktoFSmfXgHV5"><img
+                    src="/assets/design-system/img/enamad.png"></a>
+            <a href="#"><img src="/assets/design-system/img/passengar.png"></a>
+            <a href="#"><img src="/assets/design-system/img/samandehi.png"></a>
+            <a href="#"><img src="/assets/design-system/img/ecunion.png"></a>
+        </div>
+    </nav>
+</nav>
+
+<div class="footer__bottom">
+    <div class="footer__bottom-container">
+        <p class="footer__bottom-text">کلیه حقوق وبسایت و اپلیکیشن موبایل محفوظ و متعلق به شرکت ایران هتل آنلاین
+            می‌باشد.</p>
+        <section class="footer__social-links">
+            <a href="https://t.me/Iranhotelonline" class="footer__social-link">
+                <i class="iho-icon-TypeGray-circle13 footer__social-icon"></i>
+            </a>
+            <a href="https://www.instagram.com/iranhotelonline_iho/" class="footer__social-link">
+                <i class="iho-icon-Social-icons footer__social-icon"></i>
+            </a>
+            <a href="https://www.linkedin.com/company/iranhotelonline-com/" class="footer__social-link">
+                <i class="iho-icon-Social-icons-2 footer__social-icon"></i>
+            </a>
+        </section>
+    </div>
+</div>

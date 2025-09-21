@@ -1,0 +1,85 @@
+
+
+.iho-radio {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    user-select: none;
+    color: var(--color-gray-400);
+}
+
+:host(.is-disabled) .iho-radio {
+cursor: not-allowed;
+    color: var(--color-gray-200);
+}
+
+/* دایره بیرونی */
+.iho-radio__box {
+    position: relative;
+    width: 16px;
+    height: 16px;
+    border: 1px solid var(--color-gray-100);
+    border-radius: 999px;
+    background: #fff;
+    place-items: center;
+    transition: border-color .15s ease, box-shadow .15s ease, background-color .15s ease;
+}
+
+/* نقطه داخلی */
+.iho-radio__dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 999px;
+    background: var(--color-primary-500);
+    transform: scale(0);
+    transition: transform .12s ease;
+}
+
+/* checked */
+.iho-radio__box.is-checked {
+    border-color: var(--color-primary-500);
+    border-width: 5px;
+}
+
+.iho-radio__box.is-checked .iho-radio__dot {
+    transform: scale(1);
+}
+
+/* disabled */
+.iho-radio__box.is-disabled {
+border-color: var(--color-gray-100);
+    color: var(--color-gray-200);
+    background-color: var(--color-gray-DEFAULT);
+}
+
+.iho-radio__box.is-disabled .iho-radio__dot {
+    background: #cfe0ff;
+}
+
+/* متن */
+.iho-radio__label {
+    font-size: var(--font-small);
+    line-height: 1.5;
+    color: inherit;
+}
+
+/* ورودی native را بصری پنهان می‌کنیم ولی قابل فوکوس می‌ماند */
+.iho-radio__native {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    width: 0;
+    height: 0;
+}
+
+/* فوکوس رینگ از input به باکس */
+.iho-radio__native:focus-visible+.iho-radio__box {
+    box-shadow: 0 0 0 3px var(--color-focus);
+    border-color: var(--color-primary-500);
+}
+
+/* Hover */
+.iho-radio:not(.is-disabled) .iho-radio__box:hover {
+    border-color: var(--color-primary-500);
+}

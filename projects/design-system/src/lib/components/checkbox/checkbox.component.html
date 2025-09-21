@@ -1,0 +1,14 @@
+<label class="iho-checkbox" [dir]="dir" [attr.for]="id">
+<span class="iho-checkbox__box" [class.is-checked]="value" [class.is-indeterminate]="indeterminate"
+    [class.is-disabled]="disabled">
+    <svg class="iho-checkbox__check" viewBox="0 0 16 16" aria-hidden="true">
+        <path d="M12.5 4.5L6.8 11 3.5 7.7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" />
+    </svg>
+    <span class="iho-checkbox__dash" aria-hidden="true"></span>
+</span>
+    <input class="iho-checkbox__native" type="checkbox" [id]="id" [name]="name || id" [required]="required"
+        [disabled]="disabled" [checked]="value" (change)="onInputChange($any($event.target).checked)"
+        (blur)="onTouched()" />
+    <span class="iho-checkbox__label">{{ label }}</span>
+</label>

@@ -1,0 +1,83 @@
+
+.iho-switch {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    /* فاصله متن از سوئیچ */
+    cursor: pointer;
+    user-select: none;
+    color: var(--color-gray-200);
+}
+
+:host(.is-disabled) .iho-switch {
+    cursor: not-allowed;
+    opacity: .75;
+}
+
+/* متن */
+.iho-switch__label {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* ترک (خود سوئیچ) */
+.iho-switch__track {
+    position: relative;
+    width: 32px;
+    /* عرض نزدیک به تصویر */
+    height: 16px;
+    /* ارتفاع نزدیک به تصویر */
+    background: var(--color-gray-100);
+    border-radius: 999px;
+    flex: 0 0 32px;
+    transition: background-color .15s ease, box-shadow .15s ease;
+    display: inline-block;
+}
+
+/* نُب */
+.iho-switch__thumb {
+    position: absolute;
+    inset-block-start: 2px;
+    /* 2px فاصله از بالا/پایین */
+    inset-inline-start: 2px;
+    /* شروع (در RTL = راست) */
+    width: 12px;
+    height: 12px;
+    border-radius: 999px;
+    background: var(--color-white-DEFAULT);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .16);
+    transition: transform .15s ease;
+    /* در حالت خاموش در سمت شروع است؛ در حالت روشن جابه‌جا می‌شود */
+}
+
+/* روشن */
+.iho-switch__track.is-on {
+    background: var(--color-primary-500);
+}
+
+.iho-switch__track.is-on .iho-switch__thumb {
+    transform: translateX(-16px);
+    /* چون RTL است: از راست به چپ می‌رود */
+}
+
+/* اگر LTR بودی، جهت جابه‌جایی را برعکس کن: translateX(22px) */
+
+/* غیرفعال */
+.iho-switch__track.is-disabled {
+    opacity: .6;
+}
+
+/* ورودی native را بصری پنهان می‌کنیم اما قابل فوکوس می‌ماند */
+.iho-switch__native {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    width: 0;
+    height: 0;
+}
+
+/* فوکوس از input روی ترک */
+.iho-switch__native:focus-visible+.iho-switch__track {
+    box-shadow: 0 0 0 3px var(--iho-focus);
+    outline: none;
+}

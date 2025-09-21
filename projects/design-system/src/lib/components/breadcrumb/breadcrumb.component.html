@@ -1,0 +1,22 @@
+<nav class="breadcrumb" aria-label="breadcrumb">
+        <ng-container *ngFor="let item of items; let last = last;let first = first">
+                <div class="breadcrumb__item">
+                        <ng-container *ngIf="item.url && !last">
+                                <a [href]="item.url" class="breadcrumb__link">
+                                        <i class="iho-icon-arrow-left-01-sharp text-lg font-bold" *ngIf="item.url && !last && !first"></i>
+                                        {{ item.name }}
+                                </a>
+                        </ng-container>
+
+                        <ng-container *ngIf="!item.url || last">
+                                <span class="breadcrumb__current">
+                                        <i class="iho-icon-arrow-left-01-sharp text-lg font-bold"></i>
+                                        {{ item.name }}
+                                </span>
+                        </ng-container>
+
+                        <span *ngIf="!last" class="breadcrumb__separator"></span>
+                </div>
+        </ng-container>
+</nav>
+      
