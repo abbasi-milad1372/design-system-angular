@@ -1,0 +1,33 @@
+<div class="iho-select" [class.is-open]="open" 
+ [class.iho-select-borderless]="borderless"
+[class.is-required]="required" 
+[class.iho-select-md]="size==='md'" 
+[class.iho-select-lg]="size==='lg'">
+    <button #trigger type="button" class="iho-select__trigger"
+    [class.opacity-50]="disabled"
+    [disabled]="disabled"
+    [class.iho-select-error]="error"
+    aria-haspopup="listbox" [attr.aria-expanded]="open"
+        (click)="onTriggerClick($event)" (keydown)="onTriggerKeydown($event)">
+        <span class="iho-select__value">{{ selectedLabel || placeholder }}
+            <span class="ast" *ngIf="required && !selectedLabel"> *</span>
+        </span>
+       
+        <i class="iho-select__caret"
+            [ngClass]="{'iho-icon-arrow-down-01-sharp': !open, 'iho-icon-arrow-up-01-sharp': open}"></i>
+    </button>
+
+    <div *ngIf="open" class="iho-select__panel"  role="listbox"
+    [class.p-custom-0]="!searchable"
+        [attr.aria-activedescendant]="activeId">
+        <div *ngIf="searchable" class="iho-select__search-wrapper">
+            <input #searchInput type="search" class="iho-select__search" placeholder="جستجو"
+                aria-label="Search options" (input)="onSearch(searchInput.value)"
+                (keydown)="$event.stopPropagation()" />
+            
+        </div>
+        <ng-content></ng-content>
+    </div>
+
+</div>
+<div class="dropdown__error" *ngIf="error" >* {{ error }}</div>

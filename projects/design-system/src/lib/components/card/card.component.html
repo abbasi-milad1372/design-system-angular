@@ -1,0 +1,160 @@
+<article class="card" *ngIf="!isAddvertisement">
+    <ng-container *ngIf="type === 'distance'">
+        <div class="card_distance">
+            <img [src]="image" 
+           (click)="navigateTo(linkReserve)"
+            class="distance__image poiner" [alt]="title" height="185" width="185"
+                (error)="onImageError($event)" />
+
+            <div class="offerSpecial" *ngIf="offerSpecial">
+                <p>پیشنهاد ویژه</p>
+            </div>
+            <div class="card__body">
+                <a [href]="linkReserve">
+                    <h2 class="card__title line-clamp-2 w-full">{{ title }}</h2>
+                </a>
+
+
+                <div class="card__meta w-full truncate">
+                    <div class="flex justify-center items-center gap-2">
+                        <ng-container *ngIf="star != '0'">
+                            <i class="iho-icon-star1"></i>
+                            <span>
+                                {{ star }} ستاره
+                            </span>
+                        </ng-container>
+                        <div class="card__review" *ngIf="reviewCount != '0'">
+                            <span class="card__rating">{{rating}}</span>
+                            <span>( {{ reviewCount }} نظر )</span>
+                        </div>
+                    </div>
+
+                    <p class="flex gap-2 text-small distance-content items-center">
+                        <i class="iho-icon-route-03"></i>
+                        <span>فاصله</span>
+                        <iho-badge [border]="true" [radius]="true" [label]="labelBadge" [size]="'sm'"
+                            [variant]="'default'">
+
+                        </iho-badge>
+                    </p>
+                </div>
+                <ng-content select="[distance-badges]"></ng-content>
+                <ng-content select="[distance-badges-mobile]"></ng-content>
+            </div>
+            <div class="left_body">
+                <div class="left_body__badges">
+                    <span class="title_badge">{{titleLeftBody }}</span>
+                    <span *ngIf="isIhoPluse">
+                        <img src="/assets/img/iho-pluse.svg" [attr.alt]="title" />
+                    </span>
+                </div>
+
+
+                <div class="card__discount_price" *ngIf="BoardPrice != 0">
+                    <span class="dis-price">{{ BoardPrice | number:'1.0-0' }}</span>
+                    <iho-badge [label]="discount" [size]="'sm'" [variant]="'error'">
+                        <span icon-right class="text-sm">%</span>
+                    </iho-badge>
+                </div>
+                <div class="flex flex-wrap w-full gap-1 justify-between">
+                    <p class="left_body__prices">
+                        <span> از </span>
+                        <span class="price">{{ price | number:'1.0-0' }} تومان</span>
+                        <span> / </span>
+                        <span> شب</span>
+                    </p>
+                    <iho-button class="hidden lg:block" *ngIf="!capacityCompletion" [variant]="'primary'" [size]="'lg'"
+                        [type]="'button'" [href]="linkReserve"   (clickBtn)="handleBtn($event)">
+                        <span label>انتخاب اتاق و رزرو</span>
+                    </iho-button>
+                    <iho-button class="block lg:hidden" *ngIf="!capacityCompletion" [variant]="'primary'" [size]="'lg'"
+                        [type]="'button'" [href]="linkReserve" (clickBtn)="handleBtn($event)">
+                        <span label>رزرو کنید</span>
+                    </iho-button>
+                    <iho-button *ngIf="capacityCompletion" [variant]="'primary-inside'" [size]="'lg'"
+                     [type]="'button'"
+                        [href]="linkReserve" (clickBtn)="handleBtn($event)">
+                        <span label> تکمیل ظرفیت </span>
+                    </iho-button>
+                </div>
+
+
+
+
+            </div>
+        </div>
+
+    </ng-container>
+    <ng-container *ngIf="type != 'distance'">
+        <img [src]="image" class="card__image" [attr.alt]="title" />
+
+        <div class="card__body">
+            <div class="card__title line-clamp-2">{{ title }}</div>
+
+            <div *ngIf="isHotel" class="flex justify-between items-center">
+                <div class="card__meta w-full truncate">
+                    <i class="iho-icon-star1"></i>
+                    <span>
+                        {{ star }} ستاره
+                    </span>
+                </div>
+                <div *ngIf="!withPrice" class="flex items-center gap-1">
+                    <span class="card__rating">{{rating}}</span>
+                    <span class="card__meta">نظر {{ reviewCount }} کاربر</span>
+                </div>
+            </div>
+
+            <div class="card__location w-full truncate" *ngIf="location">
+                <span class="iho-icon-location-06 text-sm"></span>
+                {{ location }}
+            </div>
+
+            <div *ngIf="isCity" class="card__meta">
+                <i class="iho-icon-city-01 text-sm"></i>
+                <ng-content select="[resident]"></ng-content>
+            </div>
+
+            <div class="card__tags">
+                <ng-content select="[tags]"></ng-content>
+            </div>
+        </div>
+
+        <div *ngIf="withPrice" class="card__footer">
+            <div class="card__footer-row">
+                <div class="card__meta">
+                    <span class="card__rating">{{rating}}</span>
+                    <span>{{ reviewCount }} نظر</span>
+                </div>
+                <iho-badge [label]="discount" [size]="'sm'" [variant]="'error'" [radius]="true">
+                    <span icon-right class="iho-icon-percent-circle-11 text-sm"></span>
+                </iho-badge>
+            </div>
+
+            <div class="card__price-row">
+                <ng-content select="[count-person]"></ng-content>
+                <ng-content select="[count-shab]"></ng-content>
+                <span class="card__price">{{ price }}</span>
+                <p class="card__currency">تومان</p>
+            </div>
+        </div>
+    </ng-container>
+</article>
+
+<article class="card" *ngIf="isAddvertisement">
+    <img [src]="image" class="card__image" [attr.alt]="title" />
+
+    <div class="card__body">
+        <div class="card__title">{{ title }}</div>
+        <ng-content select="[contentAdd]"></ng-content>
+    </div>
+
+    <div class="flex flex-wrap p-3 space-y-2">
+        <ng-content select="[tagsAdd]"></ng-content>
+    </div>
+
+    <div class="card__advertisement-footer">
+        <iho-button [variant]="'ghost-primary'" [size]="'lg'" [type]="'link'" [href]="'#'">
+            <span label>ساخت حساب</span>
+        </iho-button>
+    </div>
+</article>

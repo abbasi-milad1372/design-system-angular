@@ -1,0 +1,101 @@
+<div class="grid grid-cols-1 md:grid-cols-5 gap-2 mb-6 items-center">
+<iho-card 
+[title]="'هتل داریوش'" 
+[location]="'کیش، هرمزگان'" 
+[rating]="'4.4'" [reviewCount]="'288'"
+[price]="11360000"
+[type]="'hotel'"
+[withPrice]="true"
+[discount]="'100'"
+[image]="'https://picsum.photos/300/196'">
+    <ng-container tags class="flex gap-2">
+        <iho-badge [label]="'از 2 میلیون تومان'" [size]="'sm'" [variant]="'primary'" [radius]="true">
+            <span icon-right class="iho-icon-sale-tag-011 text-sm"></span>
+        </iho-badge>
+        <iho-badge [border]="false" [radius]="true" [label]="'2.3 کیلومتر (18 دقیقه)'" [size]="'sm'"
+            [variant]="'primary'">
+            <span icon-right class="iho-icon-sale-tag-011 text-sm"></span>
+        </iho-badge>
+    </ng-container>
+    <span count-shab class="text-small font-medium text-gray-300 ml-1">1 شب</span>
+    <span count-person class="text-small font-medium text-gray-300 mx-1">1 بزرگسال</span>
+</iho-card>
+
+
+
+
+
+<iho-card 
+[title]="'هتل داریوش'" 
+[location]="'کیش، هرمزگان'" 
+[type]="'city'"
+[image]="'https://picsum.photos/300/196'">
+    <span tags class="flex gap-2">
+        <iho-badge [border]="false" [radius]="true" [label]="'نزدیک مترو'" [size]="'sm'"
+            [variant]="'primary'">
+       
+        </iho-badge>
+    </span>
+    <ng-container resident>
+        <span class="mx-1">26</span>
+        <span>واحد اقامتی اطراف این مکان</span>
+    </ng-container> 
+        
+</iho-card>
+
+<iho-card [title]="'هتل داریوش'" [isAddvertisement]="true" [image]="'https://picsum.photos/300/196'">
+   
+    <p class="text-small text-gray-400 font-medium" contentAdd>
+بهشت پنهان ایران
+    </p>
+    <span tagsAdd class="flex gap-2">
+        <iho-badge [border]="false" [radius]="true" [label]="'بنر تبلیغاتی'" [size]="'sm'" [variant]="'primary'">
+    <span icon-right class="iho-icon-insert-top-image1 text-sm"></span>
+        </iho-badge>
+    </span>
+
+</iho-card>
+</div>
+<div class="grid grid-cols-1 my-5 lg:w-[70%] w-full">
+    <iho-card [title]="'هتل هتل هتل داریوش'"
+    [isAddvertisement]="false"
+    [isIhoPluse]="true"
+    [titleLeftBody]="'آخرین اتاق باقی مانده'"
+    [star]="'4'"
+    [offerSpecial]="true"
+    [capacityCompletion]="false"
+    (clickBtnCard)="handleUrl($event)"
+    [labelBadge]="'18 کیلومتر (36 دقیقه)'"
+    [location]="'کیش، هرمزگان'" 
+    [rating]="'4.4'"
+     [reviewCount]="'288'" [price]="11360000"
+     [BoardPrice]="140000"
+    
+    [type]="'distance'" [discount]="'100'" [image]="'https://picsum.photos/300/196'">
+
+        <span distance-badges class="lg:flex gap-2 items-end hidden">
+            <iho-badge *ngFor="let item of [1,2,3,4,5,6,7]" [border]="false" [radius]="true" [label]="' نوساز'" [size]="'sm'" [variant]="'ghost-gray'">
+        
+            </iho-badge>
+            </span>
+            <span distance-badges-mobile class="lg:hidden gap-1 items-end flex">
+                <iho-badge  [border]="false" [radius]="true" [label]="' اتاق ساعتی'" [size]="'sm'"
+                
+                    [variant]="'text-warning'">
+            <span icon-right  class="iho-icon-hut text-lg"></span>
+                </iho-badge>
+                <iho-badge [border]="false" [radius]="true" [label]="' نوساز'" [size]="'sm'" [variant]="'text-success'">
+                <span icon-right  class="iho-icon-hut text-lg"></span>
+                </iho-badge>
+            </span>
+
+    </iho-card>
+
+    </div>
+
+<div class="grid grid-cols-1 my-5">
+    code:
+    <pre class="bg-gray-950 text-white-100 p-4 rounded text-sm">
+  <code>{{ code }}</code>
+</pre>
+</div>

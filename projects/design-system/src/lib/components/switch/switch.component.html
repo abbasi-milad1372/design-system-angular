@@ -1,0 +1,12 @@
+<label class="iho-switch" dir="rtl" [attr.for]="id">
+
+    <span class="iho-switch__track" [class.is-on]="value" [class.is-disabled]="disabled">
+        <span class="iho-switch__thumb"></span>
+    </span>
+
+    <input class="iho-switch__native" type="checkbox" [id]="id" [name]="name || id" [required]="required"
+        [disabled]="disabled" [checked]="value" (change)="onNativeChange($any($event.target).checked)"
+        (blur)="onTouched()" />
+    <span class="iho-switch__label" *ngIf="label">{{ label }}</span>
+
+</label>

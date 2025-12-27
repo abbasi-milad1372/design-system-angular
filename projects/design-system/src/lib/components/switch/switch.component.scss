@@ -1,0 +1,69 @@
+
+.iho-switch {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    user-select: none;
+}
+
+:host(.is-disabled) .iho-switch {
+    cursor: not-allowed;
+    opacity: .75;
+}
+
+.iho-switch__label {
+    font-size: var(--font-small);
+    line-height: 28px;
+    color: var(--color-gray-400);
+    font-weight: 500;
+}
+
+.iho-switch__track {
+    position: relative;
+    width: 32px;
+    height: 16px;
+    background: var(--color-gray-100);
+    border-radius: 999px;
+    flex: 0 0 32px;
+    transition: background-color .15s ease, box-shadow .15s ease;
+    display: inline-block;
+}
+
+.iho-switch__thumb {
+    position: absolute;
+    inset-block-end: 2px;
+    inset-inline-end: 2px;
+    width: 12px;
+    height: 12px;
+    border-radius: 999px;
+    background: var(--color-white-DEFAULT);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .16);
+    transition: transform .15s ease;
+}
+
+.iho-switch__track.is-on {
+    background: var(--color-primary-500);
+}
+
+.iho-switch__track.is-on .iho-switch__thumb {
+    transform: translateX(16px);
+}
+
+
+.iho-switch__track.is-disabled {
+    opacity: .6;
+}
+
+.iho-switch__native {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    width: 0;
+    height: 0;
+}
+
+.iho-switch__native:focus-visible+.iho-switch__track {
+    box-shadow: 0 0 0 3px var(--iho-focus);
+    outline: none;
+}

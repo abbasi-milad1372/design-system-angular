@@ -1,0 +1,63 @@
+<nav class="flex justify-between items-center p-4 border-b border-gray bg-primary-500 lg:bg-white" aria-label="Main Navigation">
+    <div class="items-center lg:hidden flex justify-between w-full">
+        <button matRipple color="primary" (click)="onToggleSideNav.emit()" aria-label="Drawer Toggle Button"
+            class="flex items-center justify-center rounded-full h-9 w-9 lg:hidden">
+            <i class="iho-icon-insert-top-image1 text-white text-xl"></i>
+        </button>
+            <a href="https://www.iranhotelonline.com/" routerLink="/" aria-label="" class="lg:hidden">
+                <img [src]="'/assets/img/icon-white.svg'" priority role="logo"
+                    alt="ایران هتل آنلاین | رزرو هتل، هتل آپارتمان، اقامتگاه‌های بوم گردی، اقامت بلند مدت" height="42" width="42"
+                    class="ml-4" />
+            </a>
+    </div>
+    <div class=" items-center gap-4 lg:flex hidden">
+      
+        <a href="https://www.iranhotelonline.com/" routerLink="/" aria-label="">
+            <img [src]="logoUrl" priority role="logo"
+                alt="ایران هتل آنلاین | رزرو هتل، هتل آپارتمان، اقامتگاه‌های بوم گردی، اقامت بلند مدت" height="48" width="48"
+                class="ml-4" />
+        </a>
+        <div class="relative group">
+            <button (click)="toggleServices($event)" class="text-gray-400 hover:text-gray-500 font-medium flex items-center">
+                لیست خدمات
+                <i class="ml-1 iho-icon-arrow-down-01-sharp text-gray-900 text-xl"></i>
+            </button>
+         <div *ngIf="showServices"
+         class="absolute left-0 mt-2 p-2 w-40 bg-white shadow-lg rounded-md transition-all duration-300 ease-in-out"
+         (mouseenter)="cancelClose()" (mouseleave)="delayedCloseServices()">
+                <a mat-menu-item href="/mashhad-hotels/" class="block text-gray-400 hover:text-gray-500 py-lg text-sm">هتل های
+                    مشهد</a>
+                <a mat-menu-item href="/tehran-hotels/" class="block text-gray-400 hover:text-gray-500 py-lg text-sm">هتل های
+                    تهران</a>
+                <a mat-menu-item href="/shiraz-hotels/" class="block text-gray-400 hover:text-gray-500 py-lg text-sm">هتل های
+                    شیراز</a>
+                <a mat-menu-item href="/isfahan-hotels/" class="block text-gray-400 hover:text-gray-500 py-lg text-sm">هتل های
+                    اصفهان</a>
+                <a mat-menu-item href="/kish-hotels/" class="block text-gray-400 hover:text-gray-500 py-lg text-sm">هتل های
+                    کیش</a>
+                <a mat-menu-item href="/iran-hotels/" target="_blank" class="block text-gray-400 hover:text-gray-500 py-lg">
+                    هتل های ایران
+                </a>
+            </div>
+        </div>
+        <a href="#" class="text-gray-400 hover:text-gray-500 border-l border-gray px-lg">همکاری با آژانس‌ها</a>
+        <a href="#" class="text-gray-400 hover:text-gray-500 border-l border-gray px-lg">سفر اقساطی</a>
+        <a href="#" class="text-gray-400 hover:text-gray-500 px-lg">فروش سازمانی</a>
+    </div>
+
+    <div class="lg:flex hidden items-center gap-4">
+       
+        <a href="#" class="text-gray-400 hover:text-gray-500 flex items-center pl-3xl">
+            <i class="iho-icon-message-multiple-02 text-gray-900 text-xl px-lg"></i>
+            <span>پشتیبانی آنلاین</span>
+        </a>
+        <a href="#" class="text-gray-400 hover:text-gray-500 flex items-center pl-3xl">
+            <i class="iho-icon-briefcase-09 text-gray-900 text-xl px-lg"></i>
+            <span>رزرو های من</span>
+        </a>
+        <a href="#" class="text-gray-400 hover:text-gray-500 flex items-center" (click)="openDialogModal.emit()">
+            <i class="iho-icon-user-11 text-gray-900 text-xl px-lg"></i>
+            <span>ورود یا ثبت نام</span>
+        </a>
+    </div>
+</nav>

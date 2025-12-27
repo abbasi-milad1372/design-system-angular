@@ -1,0 +1,131 @@
+
+.iho-checkbox {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    /* فاصله‌ی بین جعبه و متن */
+    cursor: pointer;
+    user-select: none;
+    color: var(--iho-text);
+}
+
+:host(.is-disabled) .iho-checkbox {
+    cursor: not-allowed;
+    color: var(--color-gray-200);
+}
+
+.iho-checkbox__label {
+    font-size: 13px;
+    line-height: 28px;
+    font-weight: 500;
+   
+    &.gray-color{
+        color: var(--color-gray-400);
+    }
+    &.black-color{
+    color: var(--color-gray-900);
+    }
+}
+
+/* باکس سفارشی */
+.iho-checkbox__box {
+    position: relative;
+    border: 1.5px solid var(--color-gray-100);
+    border-radius: 2px;
+    background: #fff;
+    flex: 0 0 16px;
+    display: grid;
+    place-items: center;
+    transition: background-color .15s ease, border-color .15s ease, box-shadow .15s ease;
+    &.xs{
+        width: 16px;
+        height: 16px;
+    }
+    &.sm{
+        width: 20px;
+        height: 20px;
+    }
+    &.md{
+        width: 24px;
+        height: 24px;
+    }
+}
+
+/* focus-visible از input واقعی خواهد آمد (پایین) */
+
+.iho-checkbox__box.is-checked {
+    background: var(--color-primary-500);
+    border-color: var(--color-primary-500);
+    color: var(--color-white-DEFAULT);
+}
+
+.iho-checkbox__box.is-indeterminate {
+    background: var(--color-primary-500);
+    border-color: var(--color-primary-500);
+}
+.iho-checkbox__box:focus{
+    outline: none;
+    box-shadow: 0 0 0 3px var(--color-gray-100);
+}
+
+/* تیک */
+.iho-checkbox__check {
+    width: 12px;
+    height: 12px;
+    opacity: 0;
+    transition: opacity .12s ease;
+}
+
+.iho-checkbox__box.is-checked .iho-checkbox__check {
+    opacity: 1;
+}
+
+/* خط indeterminate */
+.iho-checkbox__dash {
+    position: absolute;
+    width: 10px;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--color-white-DEFAULT);
+    opacity: 0;
+    transition: opacity .12s ease;
+}
+
+.iho-checkbox__box.is-indeterminate .iho-checkbox__dash {
+    opacity: 1;
+}
+
+/* حالت غیرفعال */
+.iho-checkbox__box.is-disabled {
+    border-color: var(--color-gray-100);
+    color: var(--color-gray-200);
+    background-color: var(--color-gray-DEFAULT);
+}
+
+/* ورودی اصلی را visually-hidden می‌کنیم ولی قابل فوکوس می‌ماند */
+.iho-checkbox__native {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    width: 0;
+    height: 0;
+}
+
+/* فوکوس رینگ از input واقعی روی باکس اعمال شود */
+.iho-checkbox__native:focus-visible+*
+
+/* span.box */
+    {
+    box-shadow: 0 0 0 3px var(--color-gray-100);
+    border-color: var(--color-primary-500);
+}
+
+/* Hover (وقتی غیرفعال نیست) */
+.iho-checkbox:not(.is-disabled) .iho-checkbox__box:hover {
+    border-color: var(--color-primary-500);
+}
+
+/* Active کوچک */
+.iho-checkbox:not(.is-disabled) .iho-checkbox__box:active {
+    transform: translateY(0.2px);
+}

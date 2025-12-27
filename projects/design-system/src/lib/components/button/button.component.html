@@ -1,0 +1,35 @@
+<!-- button.component.html -->
+<ng-container *ngIf="type === 'link'; else showButton">
+    <a [ngClass]="classes" [style.width]="widthCss"  [href]="href || '#'" [attr.aria-disabled]="disabled" [class.pointer-events-none]="disabled">
+        <!-- loader -->
+        <div class="loader" *ngIf="showLoading"></div>
+
+        <!-- اگر لودینگ خاموش است، محتوای پروجکت‌شده را اینجا بنشان -->
+        <ng-container *ngIf="!showLoading">
+            <ng-container *ngTemplateOutlet="content"></ng-container>
+        </ng-container>
+    </a>
+</ng-container>
+
+<!-- وقتی type === 'button' شود، این بلاک اجرا می‌شود -->
+<ng-template #showButton>
+    <button [ngClass]="classes" [style.width]="widthCss" [disabled]="disabled"
+    (click)="openLink($event)"
+    type="button">
+        <!-- loader -->
+        <div class="loader" *ngIf="showLoading"></div>
+
+        <!-- محتوای پروجکت‌شده -->
+        <ng-container *ngIf="!showLoading">
+            <ng-container *ngTemplateOutlet="content"></ng-container>
+        </ng-container>
+    </button>
+</ng-template>
+
+<!-- اینجا فقط یک‌بار ng-content را می‌نویسیم -->
+<ng-template #content>
+    <ng-content select="[icon-left]"></ng-content>
+    <ng-content class="iho-button__label" select="[label]"></ng-content>
+    <ng-content select="[icon-right]"></ng-content>
+</ng-template>
+  

@@ -1,0 +1,15 @@
+<!-- trigger container: همیشه پروجکت می‌شود -->
+<div class="iho-tooltip-trigger" (pointerenter)="onHostPointerEnter()" (pointerleave)="onHostPointerLeave()">
+  <ng-content></ng-content>
+</div>
+
+<!-- popup -->
+<div class="iho-tooltip-wrapper" #popup (pointerenter)="onPopupPointerEnter()" (pointerleave)="onPopupPointerLeave()"
+  [class.show]="isVisible" [class.has-arrow]="showArrow" [attr.aria-hidden]="ariaHidden" role="tooltip"
+  [ngStyle]="{ top: top + 'px', left: left + 'px', 'transform-origin': transformOrigin }">
+  <div class="iho-tooltip__content" [ngClass]="classList">
+    <ng-container *ngIf="popUpTemplate">
+      <ng-container *ngTemplateOutlet="popUpTemplate"></ng-container>
+    </ng-container>
+  </div>
+</div>

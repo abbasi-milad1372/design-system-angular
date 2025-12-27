@@ -1,0 +1,36 @@
+<!-- <div class="iho-bottomsheet" [class.is-open]="isOpen" [class.is-disabled]="disabled" [attr.dir]="dir"
+  [ngClass]="positionClass">
+  <div class="iho-bottomsheet__overlay" (click)="close()"></div>
+  <div class="iho-bottomsheet__content"
+  [class.full-height]="fullHeight">
+    <div class="iho-bottomsheet__title">
+      <div class="flex gap-2 items-center">
+        <i *ngIf="iconClass" [class]="iconClass"></i>
+        <h2>{{ title }}</h2>
+      </div>
+      <button class="iho-bottomsheet__close-btn" (click)="close()" aria-label="بستن Bottomsheet">
+        <i class="iho-icon-multiplication-sign text-xl"></i>
+      </button>
+    </div>
+    <ng-container #contentContainer></ng-container>
+  </div>
+</div> -->
+
+<div class="iho-bottomsheet" [class.is-open]="isOpen" [class.is-disabled]="disabled" [class.full-height]="fullHeight"
+  [attr.dir]="dir" [ngClass]="positionClass">
+
+  <div class="iho-bottomsheet__overlay" (click)="close()"></div>
+
+  <div class="iho-bottomsheet__content">
+    <div class="iho-bottomsheet__title">
+      <div class="flex gap-2 items-center">
+        <i *ngIf="iconClass" [class]="iconClass"></i>
+        <h2>{{ title }}</h2>
+      </div>
+      <button class="iho-bottomsheet__close-btn" (click)="close()" aria-label="بستن">
+        <i class="iho-icon-multiplication-sign text-xl"></i>
+      </button>
+    </div>
+    <ng-container #contentContainer></ng-container>
+  </div>
+</div>

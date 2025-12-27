@@ -1,0 +1,16 @@
+<button [ngClass]="classes" [disabled]="disabled">
+
+    <ng-content select="[icon-top]"></ng-content>
+
+    <div class="tab__content" *ngIf="layout !== 'icon-top'">
+        <ng-content select="[icon-right]"></ng-content>
+        <span class="tab__label">{{ label }}</span>
+        <ng-content select="[icon-left]"></ng-content>
+    </div>
+
+    <ng-content select="[badge]"></ng-content>
+
+    <span class="tab__label" *ngIf="layout === 'icon-top'">
+        {{ label }}
+    </span>
+</button>

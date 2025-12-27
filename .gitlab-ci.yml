@@ -1,0 +1,88 @@
+default:
+  image: registry.iho.co/devops/repository/gitlab/gitlab-runner-helper:worker-v1
+
+stages:
+  - build
+  - deploy
+
+variables:
+    PRODUCT_NAME: "design-system"
+    SERVICE_NAME: "front"
+    IMAGE: ""
+    TARGET_TAG: "latest"
+    DEVELOPMENT_DOMAIN: "ihodev.ir"
+    STAGING_DOMAIN: "ihogroup.ir"
+    PRODUCTION_DOMAIN: "iranhotelonline.com"
+    DEVELOPMENT_IP: "192.168.10.103"
+    APP_PORT: 80
+    ENV_PATH: "./devops/cd/.env"
+
+# =====================================================================================================================
+#                                                  PRODUCTION
+# ---------------------------------------------------------------------------------------------------------------------
+
+# build-prod:
+#   stage: build
+#   variables:
+#     ENVIROMENT: "production"
+#   tags:
+#     - host=devops
+#   rules:
+#     - if: '$CI_COMMIT_BRANCH =~ "main"'
+#       when: on_success
+#   script:
+#     - docker build -t "${CI_REGISTRY}/${CI_PROJECT_PATH}:latest" -f ./devops/ci/Dockerfile --build-arg NPM_TOKEN=$NPM_TOKEN --build-arg CI_PROJECT_ID=$CI_PROJECT_ID --build-arg CI_COMMIT_TAG=$CI_COMMIT_TAG .
+#     - docker login $CI_REGISTRY -u bot -p $CI_JOB_TOKEN
+#     - docker push "${CI_REGISTRY}/${CI_PROJECT_PATH}:latest"
+#   after_script:
+#     - docker tag "${CI_REGISTRY}/${CI_PROJECT_PATH}:latest" $PRO_CI_REGISTRY/${CI_PROJECT_PATH}:latest
+#     - docker login $PRO_CI_REGISTRY -u $PRO_CI_REGISTRY_USER -p $PRO_CI_REGISTRY_PASS
+#     - docker push $PRO_CI_REGISTRY/$CI_PROJECT_PATH:latest
+
+# for branch
+# release-build:
+#   stage: build
+#   variables:
+#     ENVIROMENT: "production"
+#   tags:
+#     - host=devops
+#   script:
+#     - |
+#       #!/bin/bash
+#       TARGET_TAG="${TARGET_TAG}-${CI_COMMIT_BRANCH}"
+#       export TARGET_TAG=$(echo $TARGET_TAG | sed 's/\//_/')
+#       docker build -t "${CI_REGISTRY}/${CI_PROJECT_PATH}:${TARGET_TAG}" -f ./devops/ci/Dockerfile --build-arg NPM_TOKEN=$NPM_TOKEN --build-arg CI_PROJECT_ID=$CI_PROJECT_ID --build-arg CI_COMMIT_TAG=$CI_COMMIT_TAG .
+#     - docker login $CI_REGISTRY -u bot -p $CI_JOB_TOKEN
+#     - docker push "${CI_REGISTRY}/${CI_PROJECT_PATH}:${TARGET_TAG}"
+#   after_script:
+#     - |
+#       #!/bin/bash
+#       TARGET_TAG="${TARGET_TAG}-${CI_COMMIT_BRANCH}"
+#       export TARGET_TAG=$(echo $TARGET_TAG | sed 's/\//_/')
+#       docker tag "${CI_REGISTRY}/${CI_PROJECT_PATH}:${TARGET_TAG}" $PRO_CI_REGISTRY/${CI_PROJECT_PATH}:${TARGET_TAG}"
+#       docker login $PRO_CI_REGISTRY -u $PRO_CI_REGISTRY_USER -p $PRO_CI_REGISTRY_PASS
+#       docker push $PRO_CI_REGISTRY/$CI_PROJECT_PATH:${TARGET_TAG}"
+
+
+# release-build => در واقع دیپلی دیزاین سیستم در اینجا انجام می شود
+release-build:
+  stage: build
+  variables:
+    ENVIROMENT: "production"
+  tags:
+    - host=devops
+  only:
+    variables:
+      - $CI_COMMIT_TAG =~ /^v\d+.\d+.\d+-?.*$/
+  script:
+    - |
+      #!/bin/bash
+      docker build -t "${CI_REGISTRY}/${CI_PROJECT_PATH}:${CI_COMMIT_TAG}" -f ./devops/ci/Dockerfile --build-arg NPM_TOKEN=$NPM_TOKEN --build-arg CI_PROJECT_ID=$CI_PROJECT_ID --build-arg CI_COMMIT_TAG=$CI_COMMIT_TAG .
+    - docker login $CI_REGISTRY -u bot -p $CI_JOB_TOKEN
+    - docker push "${CI_REGISTRY}/${CI_PROJECT_PATH}:${CI_COMMIT_TAG}"
+  after_script:
+    - |
+      #!/bin/bash
+      docker tag "${CI_REGISTRY}/${CI_PROJECT_PATH}:${CI_COMMIT_TAG}" $PRO_CI_REGISTRY/${CI_PROJECT_PATH}:${CI_COMMIT_TAG}"
+      docker login $PRO_CI_REGISTRY -u $PRO_CI_REGISTRY_USER -p $PRO_CI_REGISTRY_PASS
+      docker push $PRO_CI_REGISTRY/$CI_PROJECT_PATH:${CI_COMMIT_TAG}"

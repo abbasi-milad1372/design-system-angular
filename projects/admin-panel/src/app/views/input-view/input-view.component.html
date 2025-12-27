@@ -1,0 +1,45 @@
+<div class="grid grid-cols-1 my-5 w-1/2">
+    <iho-input [label]="'مقصد یا هتل'" [template]="'floating'" [required]="true" [type]="'text'"></iho-input>
+
+</div>
+<div class="grid grid-cols-1 my-5 w-1/2">
+    <form [formGroup]="form">
+
+        <iho-input [label]="'مقصد یا هتل'" [type]="'text'" formControlName="usernamenew" [dirClass]="'right'"
+        
+            [template]="'inline'"  [placeholder]="'مقصد یا هتل را وارد کنید'"></iho-input>
+        <iho-input [label]="'مقصد یا هتل'" [type]="'text'" formControlName="username" [template]="'inline'"
+        [errorInline]="'مقصد یا هتل را وارد کنید'"
+            [required]="false" [placeholder]="'مقصد یا هتل را وارد کنید'"></iho-input>
+
+    </form>
+
+</div>
+<div class="grid grid-cols-1 my-5 w-1/2">
+    <iho-input [label]="'مقصد یا هتل'" [icon]="'iho-icon-city-03'" [template]="'floating'"></iho-input>
+
+</div>
+<div class="grid grid-cols-1 my-5 w-1/2">
+
+    <iho-input [label]="'مقصد یا هتل'" [icon]="'iho-icon-city-03'" [template]="'floating'"
+        [disabled]="true"></iho-input>
+</div>
+
+<div class="grid grid-cols-1 my-5 w-1/2">
+
+    <iho-input error="خطای ورودی اشتباه است" [label]="'مقصد یا هتل'" [icon]="'iho-icon-city-03'"></iho-input>
+</div>
+
+
+
+
+<div class="flex w-full my-4">
+    <iho-input label="از" [rounded]="'right'"></iho-input>
+    <iho-input label="به" [rounded]="'left'"></iho-input>
+</div>
+<div class="grid grid-cols-1 my-5">
+    code:
+    <pre class="bg-gray-950 text-white-100 p-4 rounded text-sm">
+  <code>{{ code }}</code>
+</pre>
+</div>
