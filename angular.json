@@ -59,23 +59,22 @@
             "tsConfig": "projects/admin-panel/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-          {
-            "glob": "**/*",
-            "input": "node_modules/design-system/assets/fonts",
-            "output": "assets/fonts"
-          },
-          {
-            "glob": "**/*",
-            "input": "node_modules/design-system/assets/styles",
-            "output": "assets/design-system"
-          },
+            {
+              "glob": "**/*",
+              "input": "node_modules/design-system/assets/fonts",
+              "output": "assets/fonts"
+            },
+            {
+              "glob": "**/*",
+              "input": "node_modules/design-system/assets/styles",
+              "output": "assets/design-system"
+            },
               "projects/admin-panel/src/favicon.ico",
               "projects/admin-panel/src/assets"
             ],
             "styles": [
               "projects/admin-panel/src/styles.scss",
-              "node_modules/design-system/src/lib/assets/styles/styles.scss",
-              "node_modules/design-system/src/lib/assets/styles/icons.scss"
+              "node_modules/design-system/src/lib/assets/styles/styles.scss"
             ],
             "scripts": []
             

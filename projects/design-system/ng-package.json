@@ -9,7 +9,6 @@
   },
   "assets": [
   "src/lib/assets/styles",
-  "src/lib/assets/fonts",
-  "src/lib/assets/img"
+  "src/lib/assets/fonts"
   ]
 } 

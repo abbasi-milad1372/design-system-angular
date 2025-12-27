@@ -1,80 +1,6 @@
 const colors = {
-  transparency: {
-    primary: {
-      DEFAULT: '#2463EB00',
-      10: '#2463EB19',
-      20: '#2463EB33',
-      30: '#2463EB4C',
-      40: '#2463EB66',
-      50: '#2463EB7F',
-      60: '#2463EB99',
-      70: '#2463EBB2',
-      80: '#2463EBCC',
-      90: '#2463EBE5',
-    },
-    secondary: {
-      DEFAULT: '#FFC31200',
-      10: '#FFC31219',
-      20: '#FFC31233',
-      30: '#FFC3124C',
-      40: '#FFC31266',
-      50: '#FFC3127F',
-      60: '#FFC31299',
-      70: '#FFC312B2',
-      80: '#FFC312CC',
-      90: '#FFC312E5',
-    },
-    success: {
-      DEFAULT: '#44C17300',
-      10: '#44C17319',
-      20: '#44C17333',
-      30: '#44C1734C',
-      40: '#44C17366',
-      50: '#44C1737F',
-      60: '#44C17399',
-      70: '#44C173B2',
-      80: '#44C173CC',
-      90: '#44C173E5',
-    },
-    warning: {
-      DEFAULT: '#FF990A00',
-      10: '#FF990A19',
-      20: '#FF990A33',
-      30: '#FF990A4C',
-      40: '#FF990A66',
-      50: '#FF990A7F',
-      60: '#FF990A99',
-      70: '#FF990AB2',
-      80: '#FF990ACC',
-      90: '#FF990AE5',
-    },
-    error: {
-      DEFAULT: '#FF424200',
-      10: '#FF424219',
-      20: '#FF424233',
-      30: '#FF42424C',
-      40: '#FF424266',
-      50: '#FF42427F',
-      60: '#FF424299',
-      70: '#FF4242B2',
-      80: '#FF4242CC',
-      90: '#FF4242E5',
-    },
-    white: {
-      DEFAULT: '#FCFCFC00',
-      10: '#FCFCFC19',
-      20: '#FCFCFC33',
-      30: '#FCFCFC4C',
-      40: '#FCFCFC66',
-      50: '#FCFCFC7F',
-      60: '#FCFCFC99',
-      70: '#FCFCFCB2',
-      80: '#FCFCFCCC',
-      90: '#FCFCFCE5',
-    },
-  },
   primary: {
-    DEFAULT: '#E9EFFD',
+    0: '#E9EFFD',
     100: '#BBCFF9',
     200: '#9AB7F6',
     300: '#6C96F2',
@@ -86,7 +12,7 @@ const colors = {
     900: '#0F2A63',
   },
   secondary: {
-    DEFAULT: '#FFF9E7',
+    0: '#FFF9E7',
     100: '#FFECB6',
     200: '#FFE392',
     300: '#FFD760',
@@ -98,7 +24,7 @@ const colors = {
     900: '#6B5208',
   },
   success: {
-    DEFAULT: '#ECF9F1',
+    0: '#ECF9F1',
     100: '#C5ECD4',
     200: '#A9E2BF',
     300: '#82D5A1',
@@ -110,7 +36,7 @@ const colors = {
     900: '#1D5130',
   },
   warning: {
-    DEFAULT: '#FFF5E7',
+    0: '#FFF5E7',
     100: '#FFDFB3',
     200: '#FFD08E',
     300: '#FFBB5B',
@@ -122,7 +48,7 @@ const colors = {
     900: '#6B4004',
   },
   error: {
-    DEFAULT: '#FFECEC',
+    0: '#FFECEC',
     100: '#FFC4C4',
     200: '#FFA8A8',
     300: '#FF8080',
@@ -134,7 +60,7 @@ const colors = {
     900: '#6B1C1C',
   },
   gray: {
-    DEFAULT: '#EBEBEC',
+    0: '#EBEBEC',
     100: '#C0C1C4',
     200: '#A2A3A8',
     300: '#777A80',
@@ -146,7 +72,7 @@ const colors = {
     900: '#16181B',
   },
   white: {
-    DEFAULT: '#FFFFFF',
+    0: '#FFFFFF',
     100: '#FEFEFE',
     200: '#FDFDFD',
     300: '#FCFCFC',
@@ -199,7 +125,7 @@ const spacing = {
   '32xl': '1600px',
   '33xl': '1728px',
   '34xl': '1920px',
-  'full': '100%',
+  'full': '9999px',
 };
 module.exports = {
   content: [
@@ -254,40 +180,13 @@ module.exports = {
         '2xl': '20px',
         '3xl': '24px',
         '4xl': '32px',
-        full: '80px',
-      },
-      boxShadow: {
-        // === Tiny shadows
-        '2xs': '0px 1px 2px 0px rgba(38, 38, 38, 0.05)', 
-        // === Effect 1 & 2 group 1
-        'xs-a': '0px 1px 3px 0px rgba(38, 38, 38, 0.10)',
-        'xs-b': '0px 1px 2px 0px rgba(38, 38, 38, 0.06)',
-
-        // === Effect 1 & 2 group 2
-        'sm-a': '0px 4px 8px -2px rgba(38, 38, 38, 0.10)',
-        'sm-b': '0px 2px 4px -2px rgba(38, 38, 38, 0.06)',
-
-        // === Effect 1 & 2 group 3
-        'md-a': '0px 12px 16px -4px rgba(38, 38, 38, 0.08)',
-        'md-b': '0px 4px 6px -2px rgba(38, 38, 38, 0.03)',
-
-        // === Effect 1 & 2 group 4
-        'lg-a': '0px 20px 24px -4px rgba(38, 38, 38, 0.08)',
-        'lg-b': '0px 8px 8px -4px rgba(38, 38, 38, 0.03)',
-
-        // === Effect 5
-        'xl': '0px 24px 48px -12px rgba(38, 38, 38, 0.18)',
-
-        // === Effect 6
-        '2xl': '0px 32px 64px -12px rgba(38, 38, 38, 0.14)',
+        full: '9999px',
       },
       borderWidth: {
         none: '0px',
         inside: '1px',  // stroke-inside (real-2xs)
         sm: '2px',      // stroke-sm (real-xs)
         md: '4px',      // stroke-md (real-sm)
-        'decial-xs': '1.2px',
-        'decial-sm': '1.5px',
       },
       container: {
         center: true,
