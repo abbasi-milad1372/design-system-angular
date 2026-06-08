@@ -4,7 +4,12 @@
     <span class="badge__label" #labelWrapper [class.badge__label--scroll]="animatedLabel && labelText.offsetWidth > labelWrapper.offsetWidth">
         <span #labelText>{{ label }}</span>
     </span>
+    <ng-container *ngIf="mainContent">
+        <ng-content select="[label]"></ng-content>
+    </ng-container>
     <ng-content select="[dot]"></ng-content>
     <ng-content select="[img]"></ng-content>
     <ng-content select="[icon-left]"></ng-content>
+
+    
 </span>

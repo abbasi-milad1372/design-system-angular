@@ -9,7 +9,7 @@
     [class.iho-select-error]="error"
     aria-haspopup="listbox" [attr.aria-expanded]="open"
         (click)="onTriggerClick($event)" (keydown)="onTriggerKeydown($event)">
-        <span class="iho-select__value">{{ selectedLabel || placeholder }}
+        <span class="iho-select__value" [class.!text-gray-200]="placeholder && !selectedLabel">{{ selectedLabel || placeholder }}
             <span class="ast" *ngIf="required && !selectedLabel"> *</span>
         </span>
        

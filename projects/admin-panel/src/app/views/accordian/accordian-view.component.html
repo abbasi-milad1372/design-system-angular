@@ -1,0 +1,18 @@
+
+<hr class="my-5">
+
+<div class="faq-container">
+  <iho-accordion *ngFor="let faq of faqs" [title]="faq.question"   size="sm"
+        variant="filled" [expanded]="false" [disabled]="false" [border]="false" [rounded]="true">
+    <p>{{ faq.answer }}</p>
+
+    
+  </iho-accordion>
+</div>
+
+<div class="grid grid-cols-1 my-5">
+    code:
+<pre class="bg-gray-950 text-white-100 p-4 rounded text-sm">
+  <code>{{ code }}</code>
+</pre>
+</div>

@@ -1,97 +1,124 @@
 <div class="grid grid-cols-1 md:grid-cols-5 gap-2 mb-6 items-center">
-<iho-card 
-[title]="'هتل داریوش'" 
-[location]="'کیش، هرمزگان'" 
-[rating]="'4.4'" [reviewCount]="'288'"
-[price]="11360000"
-[type]="'hotel'"
-[withPrice]="true"
-[discount]="'100'"
-[image]="'https://picsum.photos/300/196'">
-    <ng-container tags class="flex gap-2">
-        <iho-badge [label]="'از 2 میلیون تومان'" [size]="'sm'" [variant]="'primary'" [radius]="true">
-            <span icon-right class="iho-icon-sale-tag-011 text-sm"></span>
-        </iho-badge>
-        <iho-badge [border]="false" [radius]="true" [label]="'2.3 کیلومتر (18 دقیقه)'" [size]="'sm'"
-            [variant]="'primary'">
-            <span icon-right class="iho-icon-sale-tag-011 text-sm"></span>
-        </iho-badge>
-    </ng-container>
-    <span count-shab class="text-small font-medium text-gray-300 ml-1">1 شب</span>
-    <span count-person class="text-small font-medium text-gray-300 mx-1">1 بزرگسال</span>
-</iho-card>
+    <iho-card [title]="'هتل داریوش'" [location]="'کیش، هرمزگان'" [rating]="'4.4'" [star]="'4'" [reviewCount]="'288'"
+        [BoardPrice]="11360000" [price]="11360000" [tags]="'xasxsaxs'" [type]="'hotel'" [withPrice]="true"
+        [currency]="true"
+        [isIhoPluse]="false" [discount]="'0'" [image]="'assets/img/IHO_Design_System_With_Angular.webp'"
+        [promotions]="true">
 
+        <ng-template #promotions>
+            <div class="flex items-center justify-center gap-2">
+                <span class="iho-icon-hot-price text-xl text-error-500"></span>
+                <span class="text-error-500 text-sm leading-7">
+                    <b>100 هزار تومان تخفیف</b>
+                    برای شما
+                </span>
+            </div>
+        </ng-template>
+        <ng-template #currency>
+        <svg width="24" height="24" viewBox="0 0 19 18" fill="currentColor" class="inline-block"  style="color:#C0C1C4">
+            <path
+                d="M12.267 15.793c0.5133 0 0.9093-0.0623 1.188-0.187 0.286-0.1173 0.484-0.3007 0.594-0.55s0.165-0.5793 0.165-0.99V14h-1.21c-0.616 0-1.1147-0.1833-1.496-0.55-0.374-0.3667-0.561-0.88-0.561-1.54 0-0.4473 0.0843-0.8543 0.253-1.221 0.176-0.3667 0.418-0.6563 0.726-0.869 0.3153-0.2127 0.671-0.319 1.067-0.319 0.418 0 0.7846 0.1027 1.1 0.308 0.3153 0.2053 0.5573 0.4913 0.726 0.858 0.1686 0.3593 0.253 0.7737 0.253 1.243v1.1h0.616l0.066 0.506L15.688 14h-0.616v0.066c0 0.836-0.2237 1.496-0.671 1.98-0.44 0.4913-1.1514 0.737-2.134 0.737H11.09v-0.99zM11.805 11.91c0 0.4033 0.0953 0.6893 0.286 0.858 0.1906 0.1613 0.495 0.242 0.913 0.242h1.21v-1.1c0-0.4473-0.1027-0.7957-0.308-1.045-0.2054-0.2567-0.5097-0.385-0.913-0.385-0.374 0-0.6674 0.132-0.88 0.396-0.2054 0.2567-0.308 0.6013-0.308 1.034zM13.5734 13.01h1.485c0.7554 0 1.133-0.253 1.133-0.759 0-0.198-0.0366-0.495-0.11-0.891-0.066-0.4033-0.143-0.7957-0.231-1.177l0.836-0.22c0.088 0.374 0.1687 0.7847 0.242 1.232 0.0807 0.4473 0.121 0.7957 0.121 1.045 0 0.308-0.0733 0.5977-0.22 0.869-0.1466 0.264-0.3703 0.4803-0.671 0.649-0.3006 0.1613-0.6673 0.242-1.1 0.242h-1.485zM14.0684 7.565h1.1v1.1h-1.1zM16.0374 7.565h1.1v1.1h-1.1z">
+            </path>
+            <path
+                d="M6.0593 14c-0.726 0-1.2283-0.1943-1.507-0.583-0.2787-0.396-0.418-0.9753-0.418-1.738l-0.011-4.818h0.858l0.011 4.818c0 0.396 0.022 0.682 0.066 0.858 0.0513 0.176 0.1467 0.3007 0.286 0.374 0.1467 0.066 0.385 0.099 0.715 0.099h0.165l0.055 0.506L6.2243 14zM5.1183 13.01h0.308c0.3447 0 0.5574-0.154 0.638-0.462l0.352-1.265c0.1614-0.572 0.4107-1.0193 0.748-1.342 0.3374-0.33 0.7444-0.495 1.221-0.495 0.3814 0 0.7187 0.1137 1.012 0.341 0.2934 0.22 0.5207 0.5207 0.682 0.902 0.1614 0.374 0.242 0.781 0.242 1.221 0 0.5427-0.077 0.99-0.231 1.342-0.154 0.3447-0.3556 0.594-0.605 0.748-0.242 0.1613-0.4986 0.242-0.77 0.242-0.2786 0-0.5573-0.055-0.836-0.165-0.2786-0.1027-0.7186-0.308-1.32-0.616-0.1466 0.1687-0.319 0.3007-0.517 0.396C5.8443 13.9523 5.639 14 5.4263 14h-0.308zM6.9663 12.581c0.528 0.2713 0.902 0.451 1.122 0.539 0.22 0.088 0.429 0.132 0.627 0.132 0.2494 0 0.4364-0.0917 0.561-0.275 0.1247-0.1907 0.187-0.5463 0.187-1.067 0-0.462-0.0916-0.8213-0.275-1.078-0.1833-0.264-0.451-0.396-0.803-0.396-0.264 0-0.495 0.0917-0.693 0.275-0.1906 0.1833-0.3373 0.462-0.44 0.836z">
+            </path>
+            <path
+                d="M2.0709 2.228c-0.4107 0.836-0.616 1.6133-0.616 2.332 0 0.6673 0.1613 1.2027 0.484 1.606 0.33 0.4107 0.8286 0.616 1.496 0.616h1.177c0.4986 0 0.8873-0.0587 1.166-0.176 0.2786-0.11 0.4766-0.2897 0.594-0.539 0.1173-0.242 0.176-0.5757 0.176-1.001l0-3.454h0.858l0 3.454c0 0.8507-0.2237 1.5143-0.671 1.991-0.4474 0.4767-1.155 0.715-2.123 0.715h-1.177c-0.6087 0-1.1257-0.1503-1.551-0.451-0.4254-0.3007-0.748-0.6967-0.968-1.188-0.2127-0.4913-0.319-1.0157-0.319-1.573 0-0.8947 0.2493-1.804 0.748-2.728zM3.7209 1.579h1.1l0 1.1h-1.1z">
+            </path>
+        </svg>
+        </ng-template>
 
+        <span count-shab class="text-small font-medium text-gray-300"> / شب</span>
+ 
+    </iho-card>
+    <iho-card [title]="'هتل داریوش'" [location]="'کیش، هرمزگان'" [rating]="'4.4'" [reviewCount]="'288'"
+        [BoardPrice]="100" [price]="11360000" [type]="'hotel'" [withPrice]="true" [discount]="'5'"
+        [image]="'assets/img/IHO_Design_System_With_Angular.webp'">
 
+        <span count-shab class="text-small font-medium text-gray-300"> / شب</span>
+        <span tags class="flex gap-2">
+            <iho-badge [border]="false" [radius]="true" [label]="'نزدیک مترو'" [size]="'sm'" [variant]="'primary'">
 
-
-<iho-card 
-[title]="'هتل داریوش'" 
-[location]="'کیش، هرمزگان'" 
-[type]="'city'"
-[image]="'https://picsum.photos/300/196'">
-    <span tags class="flex gap-2">
-        <iho-badge [border]="false" [radius]="true" [label]="'نزدیک مترو'" [size]="'sm'"
-            [variant]="'primary'">
-       
-        </iho-badge>
-    </span>
-    <ng-container resident>
-        <span class="mx-1">26</span>
-        <span>واحد اقامتی اطراف این مکان</span>
-    </ng-container> 
-        
-</iho-card>
-
-<iho-card [title]="'هتل داریوش'" [isAddvertisement]="true" [image]="'https://picsum.photos/300/196'">
-   
-    <p class="text-small text-gray-400 font-medium" contentAdd>
-بهشت پنهان ایران
-    </p>
-    <span tagsAdd class="flex gap-2">
-        <iho-badge [border]="false" [radius]="true" [label]="'بنر تبلیغاتی'" [size]="'sm'" [variant]="'primary'">
-    <span icon-right class="iho-icon-insert-top-image1 text-sm"></span>
-        </iho-badge>
-    </span>
-
-</iho-card>
-</div>
-<div class="grid grid-cols-1 my-5 lg:w-[70%] w-full">
-    <iho-card [title]="'هتل هتل هتل داریوش'"
-    [isAddvertisement]="false"
-    [isIhoPluse]="true"
-    [titleLeftBody]="'آخرین اتاق باقی مانده'"
-    [star]="'4'"
-    [offerSpecial]="true"
-    [capacityCompletion]="false"
-    (clickBtnCard)="handleUrl($event)"
-    [labelBadge]="'18 کیلومتر (36 دقیقه)'"
-    [location]="'کیش، هرمزگان'" 
-    [rating]="'4.4'"
-     [reviewCount]="'288'" [price]="11360000"
-     [BoardPrice]="140000"
-    
-    [type]="'distance'" [discount]="'100'" [image]="'https://picsum.photos/300/196'">
-
-        <span distance-badges class="lg:flex gap-2 items-end hidden">
-            <iho-badge *ngFor="let item of [1,2,3,4,5,6,7]" [border]="false" [radius]="true" [label]="' نوساز'" [size]="'sm'" [variant]="'ghost-gray'">
-        
             </iho-badge>
-            </span>
-            <span distance-badges-mobile class="lg:hidden gap-1 items-end flex">
-                <iho-badge  [border]="false" [radius]="true" [label]="' اتاق ساعتی'" [size]="'sm'"
-                
-                    [variant]="'text-warning'">
-            <span icon-right  class="iho-icon-hut text-lg"></span>
-                </iho-badge>
-                <iho-badge [border]="false" [radius]="true" [label]="' نوساز'" [size]="'sm'" [variant]="'text-success'">
-                <span icon-right  class="iho-icon-hut text-lg"></span>
-                </iho-badge>
-            </span>
+        </span>
+    </iho-card>
+    <iho-card [title]="'هتل داریوش'" [location]="'کیش، هرمزگان'" [type]="'city'"
+        [image]="'assets/img/IHO_Design_System_With_Angular.webp'">
+        <span tags class="flex gap-2">
+            <iho-badge [border]="false" [radius]="true" [label]="'نزدیک مترو'" [size]="'sm'" [variant]="'primary'">
+
+            </iho-badge>
+        </span>
+        <ng-container resident>
+            <span class="mx-1">26</span>
+            <span>واحد اقامتی اطراف این مکان</span>
+        </ng-container>
 
     </iho-card>
 
-    </div>
+    <iho-card [title]="'هتل داریوش'" [isAddvertisement]="true"
+        [image]="'assets/img/IHO_Design_System_With_Angular.webp'">
+
+        <p class="text-small text-gray-400 font-medium" contentAdd>
+            بهشت پنهان ایران
+        </p>
+        <span tagsAdd class="flex gap-2">
+            <iho-badge [border]="false" [radius]="true" [label]="'بنر تبلیغاتی'" [size]="'sm'" [variant]="'primary'">
+                <span icon-right class="iho-icon-insert-top-image1 text-sm"></span>
+            </iho-badge>
+        </span>
+
+    </iho-card>
+</div>
+<div class="grid  grid-cols-1 my-5 lg:w-[65%] w-full gap-2">
+    <iho-card [title]="'هتل هتل داریوش هتل ه تل هتل داریوش هتل ه تل هتل داریوش هتل ه تل هتل داریوش هتل ه  تل هتل داریوش هتل هتل هتل  ل هتل داریوش هتل ه  تل هتل داریوش هتل هتداریوش'" [isAddvertisement]="false" [isIhoPluse]="true" [BoardPrice]="11360000"
+        [price]="11360000" [star]="'4'" [offerSpecial]="false" [capacityCompletion]="false"
+        (clickBtnCard)="handleUrl($event)" [location]="'کیش، هرمزگان کیش، هرمزگان کیش، هرمزگان کیش،  کیش، هرمزگان  کیش، هرمزگانهرمزگان کیش، هرمزگان کیش، هرمزگان'" [rating]="'4.4'" [promotions]="true"
+        [reviewCount]="'288'" [withPrice]="true" [type]="'distance'" [discount]="'0'"
+         [currency]="true"
+        [image]="'assets/img/IHO_Design_System_ٌWith_Angular.webp'">
+
+        <ng-template #promotions>
+            <div class="flex items-center gap-2">
+                <span class="iho-icon-hot-price text-xl text-error-500"></span>
+                <span class="text-error-500 text-sm leading-7">
+                    <b>100 هزار تومان تخفیف</b>
+                    برای شما
+                </span>
+            </div>
+        </ng-template>
+
+        <span distance-badges class="lg:flex gap-[6px] items-end hidden">
+            <iho-badge *ngFor="let item of [1,2,3,4,5,6,7]" [border]="true" [radius]="true" [label]="' نوساز'"
+                [size]="'sm'">
+            </iho-badge>
+        </span>
+        <span distance-badges-mobile class="lg:hidden gap-1 items-end flex my-1">
+            <iho-badge [border]="true" [radius]="true" [label]="' اتاق ساعتی'" [size]="'sm'"
+                [variant]="'default'"></iho-badge>
+            <iho-badge [border]="true" [radius]="true" [label]="' نوساز'" [size]="'sm'"
+                [variant]="'default'"></iho-badge>
+        </span>
+
+        <ng-template #currency>
+            <svg width="24" height="24" viewBox="0 0 19 18" fill="currentColor" class="inline-block" style="color:#C0C1C4">
+                <path
+                    d="M12.267 15.793c0.5133 0 0.9093-0.0623 1.188-0.187 0.286-0.1173 0.484-0.3007 0.594-0.55s0.165-0.5793 0.165-0.99V14h-1.21c-0.616 0-1.1147-0.1833-1.496-0.55-0.374-0.3667-0.561-0.88-0.561-1.54 0-0.4473 0.0843-0.8543 0.253-1.221 0.176-0.3667 0.418-0.6563 0.726-0.869 0.3153-0.2127 0.671-0.319 1.067-0.319 0.418 0 0.7846 0.1027 1.1 0.308 0.3153 0.2053 0.5573 0.4913 0.726 0.858 0.1686 0.3593 0.253 0.7737 0.253 1.243v1.1h0.616l0.066 0.506L15.688 14h-0.616v0.066c0 0.836-0.2237 1.496-0.671 1.98-0.44 0.4913-1.1514 0.737-2.134 0.737H11.09v-0.99zM11.805 11.91c0 0.4033 0.0953 0.6893 0.286 0.858 0.1906 0.1613 0.495 0.242 0.913 0.242h1.21v-1.1c0-0.4473-0.1027-0.7957-0.308-1.045-0.2054-0.2567-0.5097-0.385-0.913-0.385-0.374 0-0.6674 0.132-0.88 0.396-0.2054 0.2567-0.308 0.6013-0.308 1.034zM13.5734 13.01h1.485c0.7554 0 1.133-0.253 1.133-0.759 0-0.198-0.0366-0.495-0.11-0.891-0.066-0.4033-0.143-0.7957-0.231-1.177l0.836-0.22c0.088 0.374 0.1687 0.7847 0.242 1.232 0.0807 0.4473 0.121 0.7957 0.121 1.045 0 0.308-0.0733 0.5977-0.22 0.869-0.1466 0.264-0.3703 0.4803-0.671 0.649-0.3006 0.1613-0.6673 0.242-1.1 0.242h-1.485zM14.0684 7.565h1.1v1.1h-1.1zM16.0374 7.565h1.1v1.1h-1.1z">
+                </path>
+                <path
+                    d="M6.0593 14c-0.726 0-1.2283-0.1943-1.507-0.583-0.2787-0.396-0.418-0.9753-0.418-1.738l-0.011-4.818h0.858l0.011 4.818c0 0.396 0.022 0.682 0.066 0.858 0.0513 0.176 0.1467 0.3007 0.286 0.374 0.1467 0.066 0.385 0.099 0.715 0.099h0.165l0.055 0.506L6.2243 14zM5.1183 13.01h0.308c0.3447 0 0.5574-0.154 0.638-0.462l0.352-1.265c0.1614-0.572 0.4107-1.0193 0.748-1.342 0.3374-0.33 0.7444-0.495 1.221-0.495 0.3814 0 0.7187 0.1137 1.012 0.341 0.2934 0.22 0.5207 0.5207 0.682 0.902 0.1614 0.374 0.242 0.781 0.242 1.221 0 0.5427-0.077 0.99-0.231 1.342-0.154 0.3447-0.3556 0.594-0.605 0.748-0.242 0.1613-0.4986 0.242-0.77 0.242-0.2786 0-0.5573-0.055-0.836-0.165-0.2786-0.1027-0.7186-0.308-1.32-0.616-0.1466 0.1687-0.319 0.3007-0.517 0.396C5.8443 13.9523 5.639 14 5.4263 14h-0.308zM6.9663 12.581c0.528 0.2713 0.902 0.451 1.122 0.539 0.22 0.088 0.429 0.132 0.627 0.132 0.2494 0 0.4364-0.0917 0.561-0.275 0.1247-0.1907 0.187-0.5463 0.187-1.067 0-0.462-0.0916-0.8213-0.275-1.078-0.1833-0.264-0.451-0.396-0.803-0.396-0.264 0-0.495 0.0917-0.693 0.275-0.1906 0.1833-0.3373 0.462-0.44 0.836z">
+                </path>
+                <path
+                    d="M2.0709 2.228c-0.4107 0.836-0.616 1.6133-0.616 2.332 0 0.6673 0.1613 1.2027 0.484 1.606 0.33 0.4107 0.8286 0.616 1.496 0.616h1.177c0.4986 0 0.8873-0.0587 1.166-0.176 0.2786-0.11 0.4766-0.2897 0.594-0.539 0.1173-0.242 0.176-0.5757 0.176-1.001l0-3.454h0.858l0 3.454c0 0.8507-0.2237 1.5143-0.671 1.991-0.4474 0.4767-1.155 0.715-2.123 0.715h-1.177c-0.6087 0-1.1257-0.1503-1.551-0.451-0.4254-0.3007-0.748-0.6967-0.968-1.188-0.2127-0.4913-0.319-1.0157-0.319-1.573 0-0.8947 0.2493-1.804 0.748-2.728zM3.7209 1.579h1.1l0 1.1h-1.1z">
+                </path>
+            </svg>
+        </ng-template>
+
+
+    </iho-card>
+  
+
+</div>
 
 <div class="grid grid-cols-1 my-5">
     code:

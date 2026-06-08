@@ -57,3 +57,6 @@ export * from './lib/components/tooltip/tooltip.module';
 export * from './lib/components/bottomsheet/bottomsheet.component';
 export * from './lib/components/bottomsheet/bottomsheet.module';
 export * from './lib/components/bottomsheet/bottom-sheet.service';
+
+export * from './lib/components/accordion/accordion.component';
+export * from './lib/components/accordion/accordion.module';

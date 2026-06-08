@@ -51,6 +51,7 @@
  }
 .iho-select-lg .iho-select__value {
     color: var(--color-gray-900);
+    font-weight: var(--font-weight-medium);
     font-size: var(--font-p);
 }
  .iho-select__caret {
@@ -70,7 +71,7 @@
  }
 
  .iho-select-lg .iho-select__panel {
-     padding: 8px 12px;
+     padding: 8px 16px;
  }
   .iho-select-md .iho-select__panel {
     padding: 4px 8px;
@@ -89,7 +90,7 @@
      color: var(--color-gray-400);
      background-color: var(--color-white-600);
      margin-bottom: 8px;
-     height: 48px;
+     height: auto;
  }
 
  .iho-select__search:focus {

@@ -7,12 +7,13 @@ import { Component } from '@angular/core';
 export class CheckBoxComponent { 
     similarToBooker = false;
  code = `
-    <iho-checkbox
-  [(ngModel)]="similarToBooker"
-  [label]="'مشابه رزرو کننده'"></iho-checkbox>
-color="black | gray"
+   <div class="grid grid-cols-1 my-5 w-1/2">
+<iho-checkbox [(ngModel)]="similarToBooker" color="black" [label]="'مشابه رزرو کننده'"></iho-checkbox>
+
+</div>
+<div class="grid grid-cols-1 my-5 w-1/2">
     <iho-checkbox  [(ngModel)]="similarToBooker" [disabled]="true" [label]="'مشابه رزرو کننده'"></iho-checkbox>
 
-
+</div>
  `;
 }

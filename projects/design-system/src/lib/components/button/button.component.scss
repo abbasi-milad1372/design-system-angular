@@ -3,10 +3,10 @@
     align-items: center;
     justify-content: center;
     gap: 12px;
-    padding: var(--space-xs) var(--space-lg);
+    padding-top: var(--space-xs);
+    padding-bottom: var(--space-xs);
     font-family: var(--font-family);
     font-weight: var(--font-weight-medium);
-    line-height: 1.5;
     white-space: nowrap;
     border-radius: var(--border-radius-sm);
     border: 1px solid transparent;
@@ -166,25 +166,31 @@
 
     // === Sizes
     &--sm {
-        height: 32px;
+        height: 30px;
         font-size: var(--font-text);
+        padding-right: var(--space-xl);
+        padding-left: var(--space-xl);
     }
 
     &--md {
-        height: 40px;
+        height: 44px;
         font-size: var(--font-small);
+        padding-right: var(--space-xl);
+        padding-left: var(--space-xl);
     }
 
     &--lg {
-        height: 48px;
+        height: 56px;
         font-size: var(--font-p);
-        padding: var(--space-md);
-        line-height: 32px;
+        padding-right: var(--space-3xl);
+        padding-left: var(--space-3xl);
     }
 
     &--xl {
-        height: 54px;
-        font-size: var(--font-p);
+        height: 70px;
+        font-size: var(--font-size-h6);
+        padding-right: var(--space-3xl);
+        padding-left: var(--space-3xl);
     }
 
     // === States

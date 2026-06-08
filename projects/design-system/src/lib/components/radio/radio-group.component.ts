@@ -24,6 +24,14 @@ export class IhoRadioGroupComponent implements ControlValueAccessor, AfterConten
     ngAfterContentInit(): void {
         // هر option را به گروه وصل کن
         this.options.forEach(opt => opt.registerHost(this));
+        if (this.value == null) {
+            const prechecked = this.options.find(o => o.checked);
+            if (prechecked) {
+                this.value = prechecked.radioValue;
+                this.onChange(this.value);   // تا فرم هم مقدار بگیره
+                // اگر نمی‌خوای touched بشه، onTouched رو صدا نزن
+            }
+        }
         this.syncOptions();
         // اگر گزینه‌ها دینامیکاً تغییر کردند
         this.options.changes.subscribe(() => {

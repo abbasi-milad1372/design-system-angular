@@ -11,7 +11,8 @@ export class ButtonViewComponent {
     showRightIcon = false;
     showloading = false;
     code = `
-  <iho-button [label]="'ساخت حساب'" [variant]="selectedVariant" [size]="selectedSize" [showLoading]="showloading">
+ <iho-button  [variant]="selectedVariant" [size]="selectedSize" [showLoading]="showloading"   [type]="'link'">
+    <span label>ساخت حساب</span>
     <span icon-left *ngIf="showLeftIcon">👈</span>
     <span icon-right *ngIf="showRightIcon">👉</span>
 </iho-button>

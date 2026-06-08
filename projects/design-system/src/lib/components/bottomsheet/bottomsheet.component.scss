@@ -34,7 +34,6 @@
 .iho-bottomsheet__content {
     position: relative;
     background: var(--color-white-500);
-    padding: 24px;
     overflow: auto;
     transition: transform 0.3s ease-out, opacity 0.3s ease-out;
     opacity: 0;
@@ -119,16 +118,31 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 12px;
+    padding: var(--space-xs) var(--space-lg);
+    border-bottom: 1px solid var(--color-gray-DEFAULT);
+
 
     h2 {
-        color: var(--color-gray-900);
-        font-size: var(--font-small);
-        font-weight: 600;
+        color: var(--color-gray-400);
+        font-size: var(--font-p);
+        line-height: var(--line-height-p);;
+        font-weight: 400;
+        padding: var(--space-md) 0;
     }
 }
 
-.iho-bottomsheet__close-btn i {
-    color: var(--color-gray-900);
+.iho-bottomsheet__close-btn {
+    display: flex;
+
+    i {
+        color: var(--color-gray-400);
+    }
+}
+
+.iho-bottomsheet__content-container {
+    &.include-gap {
+        padding: 0 var(--space-3xl);
+    }
 }
 
 

@@ -14,11 +14,14 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 })
 export class InputComponent implements ControlValueAccessor {
     @Input() type: 'text' | 'password' | 'email' | 'number' | 'tel' | 'url' = 'text';
+    @Input() size: 'md' | 'lg' = 'md';
     @Input() template: 'floating' | 'inline' = 'floating';
     @Input() label = '';
     @Input() placeholder = '';
     @Input() errorFloating: string | null = null;
     @Input() errorInline: string | null = null;
+    @Input() successInline: string | null = null;
+    @Input() hint: string | null = null;
     private _disabled = false;
 
     @HostBinding('class.input--disabled') hostDisabled = false;
@@ -32,10 +35,12 @@ export class InputComponent implements ControlValueAccessor {
     get disabled(): boolean {
         return this._disabled;
     }
-
+    @Input() readonly = false;
     @Input() rounded: 'left' | 'right' | 'none' = 'none';
     @Input() icon = '';
+    @Input() iconClass = '';
     @Input() required = false;
+    @Input() border = true;
     @Input() autocomplete: string | null = null;
     @Input() name: string | null = null;
     @Input() dirClass: 'left' | 'right' = 'right';

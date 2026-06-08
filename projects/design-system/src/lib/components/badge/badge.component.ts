@@ -11,7 +11,8 @@ export class badgeComponent {
     @Input() radius = false;
     @Input() border = false;
     @Input() animatedLabel = false;
-    @Input() variant: 'default' | 'primary' | 'warning' | 'error' | 'success' | 'ghost-primary' | 'ghost-gray' | 'text-success' | 'text-warning' | 'text-error' | 'text-primary' = 'default';
+    @Input() variant: 'default' | 'lite' | 'primary' | 'warning' | 'error' | 'success' | 'text-success' | 'text-warning' | 'text-error' | 'text-primary' = 'default';
+    @Input() mainContent = false
 
     get badgeClasses(): any {
         return {

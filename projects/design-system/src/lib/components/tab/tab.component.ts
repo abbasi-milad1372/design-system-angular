@@ -13,6 +13,8 @@ export class TabComponent {
     @Input() active = false;
     @Input() layout: 'default' | 'icon-top' = 'default';
     @Input() border: true | false = false;
+    @Input() roundedFull: true | false = false;
+
     // get classes(): string {
     //     const base = `flex items-center gap-md px-lg py-xs font-medium transition whitespace-nowrap`;
     //     const sizeMap = {
@@ -36,6 +38,7 @@ export class TabComponent {
         const borderClass = this.border ? 'tab__border' : '';
         const sizeClass = this.size === 'sm' ? 'tab__label--sm' : 'tab__label--md';
         const layoutClass = this.layout === 'icon-top' ? 'tab__label--icon-top' : '';
+        const roundedClass = !this.border ? '' : this.roundedFull ? 'tab__full-rounded' : 'tab__rounded'
         const activeClass = this.active && this.layout === 'icon-top' ? 'tab__border-bottom' : '';
 
         return [
@@ -44,6 +47,7 @@ export class TabComponent {
             layoutClass,
             activeClass,
             borderClass,
+            roundedClass,
             this.active ? 'tab--active' : '',
             this.disabled ? 'tab--disabled' : '',
         ].filter(Boolean); // حذف رشته‌های خالی

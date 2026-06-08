@@ -2,12 +2,13 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 
-import { IHOBadgeModule, IHOBreadcrumbModule, IHOBottomsheetModule,IHOButtonModule, IHOCardModule, IHOFooterModule, IHOInputModule, IHONavbarModule, IHOTabModule, IhoCheckboxModule, IHORadioModule, IhoSwitchModule, IhoSelectModule, IHOTooltipModule } from 'design-system';
+import { IHOBadgeModule, IHOBreadcrumbModule, IHOBottomsheetModule,IHOButtonModule, IHOCardModule, IHOFooterModule, IHOInputModule, IHONavbarModule, IHOTabModule, IhoCheckboxModule, IHORadioModule, IhoSwitchModule, IhoSelectModule, IHOTooltipModule, IHOAccordionModule } 
+from 'design-system';
 import { AdminLayoutComponent } from './admin-layout.component';
 import { ButtonViewComponent } from './views/button-view/button-view.component';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule, NgControl, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BadgeViewComponent } from './views/badge-view/badge-view.component';
 import { TabsViewComponent } from './views/tabs-view/tabs-view.component';
 import { cardViewComponent } from './views/cards-view/cards-view.component';
@@ -26,7 +27,8 @@ import { dropdownViewComponent } from './views/dropdown-view/dropdown-view.compo
 import { tooltipsViewComponent } from './views/tooltips/tooltips-view.component';
 import { bottomheetViewComponent } from './views/bottomsheet/bottomsheet-view.component';
 import { CustomContentComponent } from './views/bottomsheet/custom-content.component';
-
+import { accordianViewComponent } from './views/accordian/accordian-view.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 const routes: Routes = [
   {
     path: '',
@@ -47,7 +49,7 @@ const routes: Routes = [
       { path: 'dropdown', component: dropdownViewComponent },
       { path: 'tooltips', component: tooltipsViewComponent },
       { path: 'bottomsheet', component: bottomheetViewComponent }, 
-
+      { path: 'accordian', component: accordianViewComponent }, 
     ]
   }
 ];
@@ -69,13 +71,14 @@ const routes: Routes = [
     dropdownViewComponent,
     tooltipsViewComponent,
     bottomheetViewComponent,
-    CustomContentComponent
-    
+    CustomContentComponent,
+    accordianViewComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+    BrowserAnimationsModule,
     CommonModule,
     IHOButtonModule,
     IHOBadgeModule,
@@ -94,6 +97,8 @@ const routes: Routes = [
     IHOBottomsheetModule,
     RouterModule.forRoot(routes),
     HttpClientModule,
+    IHOAccordionModule
+
     
   ],
   bootstrap: [AppComponent],

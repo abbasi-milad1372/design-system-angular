@@ -14,6 +14,7 @@ import { IhoSwitchModule } from './components/switch/switch.module';
 import { IhoSelectModule } from './components/dropdown/select.module';
 import { IHOTooltipModule } from './components/tooltip/tooltip.module';
 import { IHOBottomsheetModule } from './components/bottomsheet/bottomsheet.module';
+import { IHOAccordionModule } from './components/accordion/accordion.module';
 
 
 
@@ -36,8 +37,8 @@ import { IHOBottomsheetModule } from './components/bottomsheet/bottomsheet.modul
     IhoSwitchModule,
     IhoSelectModule,
     IHOTooltipModule,
-    IHOBottomsheetModule
-
+    IHOBottomsheetModule,
+    IHOAccordionModule
   ],
   exports: [
     DesignSystemComponent,

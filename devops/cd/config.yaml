@@ -1,0 +1,29 @@
+version: '3.9'
+
+services:
+
+ admin-panel:
+  image: $IMAGE
+  hostname: $APP_ROUTE
+  environment:
+   TZ: $TZ
+  extra_hosts:
+   - 'grpc.iranhotelonline.com:172.16.23.148'
+   - 'sentry.iho.co:81.12.40.131'
+  deploy:
+   mode: replicated
+   replicas: 1
+   update_config:
+    delay: 10s
+   placement:
+    constraints:
+     - node.role==manager
+   restart_policy:
+    condition: on-failure
+  networks:
+      - public_network
+
+networks:
+  public_network:
+    driver: overlay
+    external: true

@@ -2,10 +2,17 @@
     <label class="flex flex-col gap-1">
         Color:
         <select [(ngModel)]="selectedVariant" class="border p-2 rounded">
+            <option value="default">default</option>
+            <option value="lite">lite</option>
             <option value="primary">Primary</option>
-            <option value="defulat">defulat</option>
+            <option value="warning">warning</option>
             <option value="error">Error</option>
             <option value="success">success</option>
+            <option value="text-success">text-success</option>
+            <option value="text-warning">text-warning</option>
+            <option value="text-error">text-error</option>
+            <option value="text-primary">text-primary</option>
+            <option value="text-lite">text-lite</option>
         </select>
     </label>
 
@@ -45,18 +52,18 @@
     </label>
 </div>
 
+    <div class="w-[450px]">
+        <iho-badge [border]="border" [radius]="radius"  [size]="selectedSize" label="تست"
+            [variant]="selectedVariant">
+            <span dot *ngIf="withDot">.</span>
+            <span icon-left *ngIf="showLeftIcon" class="iho-icon-hut text-lg"></span>
+            <span icon-right *ngIf="showRightIcon" class="iho-icon-hut text-lg"></span>
+            <img *ngIf="withImg" img src="https://picsum.photos/16/16" alt="avatar" />
+    
+        </iho-badge>
 
-<div class="w-[200px]">
-    <iho-badge [border]="border" [radius]="radius" [label]="' از 700 هزار تومان از 700 هزار تومان از 700 هزار تومان از 700 هزار تومان'" [size]="selectedSize"
-        [variant]="selectedVariant">
-        <span dot *ngIf="withDot">.</span>
-        <span icon-left *ngIf="showLeftIcon" class="iho-icon-hut text-lg"></span>
-        <span icon-right *ngIf="showRightIcon" class="iho-icon-hut text-lg"></span>
-        <img *ngIf="withImg" img src="https://picsum.photos/16/16" alt="avatar" />
+    </div>
 
-    </iho-badge>
-
-</div>
 
 <hr class="my-5">
 <div class="grid grid-cols-1 my-5">

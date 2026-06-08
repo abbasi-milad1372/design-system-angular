@@ -20,15 +20,31 @@ export class tooltipsViewComponent {
     }
     
     code = `
-<iho-tooltip [isVisible]="showTooltip" [popUpTemplate]="tooltipTpl" position="top">
-    <i class="iho-icon-arrow-down-01-sharp mt-6" style="font-size:32px;" (mouseenter)="onMouseEnter(true)"
-        (mouseleave)="onMouseLeave(false)">
-    </i>
-</iho-tooltip>
+<div class="text-center w-full my-10">
+    <iho-tooltip [isVisible]="showTooltip" [popUpTemplate]="tooltipTpl" position="right">
+        <i class="iho-icon-arrow-right-01-sharp mt-6" style="font-size:32px;" (mouseenter)="onMouseEnter(true)"
+            (mouseleave)="onMouseLeave(false)">
+        </i>
+    </iho-tooltip>
 
-<ng-template #tooltipTpl>
-    <div class="text-sm">این متن داخل تولتیپ نشان داده می‌شود</div>
-</ng-template>
+    <ng-template #tooltipTpl>
+        <div class="text-text">این متن داخل تولتیپ نشان داده می‌شود</div>
+    </ng-template>
+
+</div>
+<div class="text-center w-full my-10">
+    <iho-tooltip [isVisible]="showTooltipNew" [popUpTemplate]="tooltipTplbottom" position="bottom">
+        <i class="iho-icon-arrow-down-01-sharp mt-6" style="font-size:32px;" (mouseenter)="onMouseEnterNew(true)"
+            (mouseleave)="onMouseLeaveNew(false)">
+        </i>
+    </iho-tooltip>
+
+    <ng-template #tooltipTplbottom>
+        <div class="text-text">این متن داخل تولتیپ نشان داده می‌شود</div>
+    </ng-template>
+
+</div>
+
 
     `
 }

@@ -27,6 +27,6 @@ export class AdminLayoutComponent {
         { name: 'dropdown', path: 'dropdown' },
         { name: 'tooltips', path: 'tooltips' },
         { name: 'bottomSheet', path: 'bottomsheet' },
-
+        { name: 'accordian', path: 'accordian' },
     ];
 }

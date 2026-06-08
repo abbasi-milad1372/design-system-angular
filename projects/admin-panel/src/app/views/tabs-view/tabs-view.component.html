@@ -1,6 +1,4 @@
 <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6 items-center">
-
-
     <label class="flex flex-col gap-1">
         Size:
         <select [(ngModel)]="selectedSize" class="border p-2 rounded">
@@ -40,7 +38,7 @@
         </iho-tab>
     </div>
     <div class="mx-2">
-        <iho-tab label="ارزان‌ترین"  variant="outline" [size]="selectedSize" [active]="activeTab" [border]="true">
+        <iho-tab label="ارزان‌ترین" variant="outline" [size]="selectedSize" [active]="activeTab">
             <span icon-left *ngIf="showLeftIcon">👈</span>
             <span icon-right *ngIf="showRightIcon">👉</span>
             <span *ngIf="withBadge" badge
@@ -48,7 +46,29 @@
         </iho-tab>
     </div>
 
-   
+
+
+</div>
+<div class="flex my-5">
+    <div class="mx-2">
+        <iho-tab label="محبوب‌ترین" variant="outline" [size]="selectedSize" [active]="activeTab" [border]="true">
+            <span icon-left *ngIf="showLeftIcon">👈</span>
+            <span icon-right *ngIf="showRightIcon">👉</span>
+            <span *ngIf="withBadge" badge
+                class="ml-2 bg-green-500 text-black px-2 py-0.5 rounded-4xl left-[-20px] top-[-15px] text-xs absolute">جدید</span>
+        </iho-tab>
+    </div>
+    <div class="mx-2">
+        <iho-tab label="ارزان‌ترین" variant="outline" [size]="selectedSize" [active]="activeTab" [border]="true"
+            [roundedFull]="true">
+            <span icon-left *ngIf="showLeftIcon">👈</span>
+            <span icon-right *ngIf="showRightIcon">👉</span>
+            <span *ngIf="withBadge" badge
+                class="ml-2 bg-green-500 text-black px-2 py-0.5 rounded-4xl left-[-20px] top-[-15px] text-xs absolute">جدید</span>
+        </iho-tab>
+    </div>
+
+
 
 </div>
 <div class="mx-2 w-full border-t pt-2">

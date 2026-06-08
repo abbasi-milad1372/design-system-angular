@@ -13,16 +13,13 @@ export class BadgeViewComponent {
     withImg = false;
     border = false;
     radius = false;
-    code =  ` <iho-badge 
-        [border]="border" 
-        [radius]="radius" 
-        [label]="' از 700 هزار تومان'" 
-        [size]="selectedSize"
-        [variant]="selectedVariant">
-        <span dot *ngIf="withDot">.</span>
-        <span icon-left *ngIf="showLeftIcon">👈</span>
-        <span icon-right *ngIf="showRightIcon">👉</span>
-        <img *ngIf="withImg" img src="https://picsum.photos/16/16" alt="avatar" />
-    </iho-badge> 
+    code =  `   <iho-badge [border]="border" [radius]="radius"  [size]="selectedSize" label="تست"
+            [variant]="selectedVariant">
+            <span dot *ngIf="withDot">.</span>
+            <span icon-left *ngIf="showLeftIcon" class="iho-icon-hut text-lg"></span>
+            <span icon-right *ngIf="showRightIcon" class="iho-icon-hut text-lg"></span>
+            <img *ngIf="withImg" img src="https://picsum.photos/16/16" alt="avatar" />
+    
+        </iho-badge>
     `;    
 }

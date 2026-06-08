@@ -14,7 +14,7 @@ export class RadioComponent {
     // توسط گروه ست می‌شوند:
     groupName!: string;
     groupDisabled = false;
-    checked = false;
+    @Input()  checked = false;
     @Input() dir?: string = 'rtl';
     id = 'iho-radio-' + Math.random().toString(36).slice(2);
 

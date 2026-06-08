@@ -1,0 +1,35 @@
+FROM registry.iho.co/devops/templates/node/node:18.15.0-bullseye-slim AS build
+
+USER root
+RUN rm -rf /var/lib/apt/lists/* && sed -i 's|deb.debian.org|mirror.arvancloud.ir|g' /etc/apt/sources.list; \
+    apt-get update -y && \
+    apt-get install -y --no-install-recommends \
+    ca-certificates \
+    curl \
+    iputils-ping \
+    libc6-dev \
+    libgdiplus && \
+    rm -rf /var/lib/apt/lists/*
+
+COPY ./devops/IHO-RootCA.crt /usr/local/share/ca-certificates
+RUN update-ca-certificates
+
+WORKDIR /usr/src/root
+
+COPY package.json ./
+
+ENV NODE_ENV=development
+# RUN yarn install
+ENV HTTP_PROXY=http://192.168.6.28:2080/ 
+ENV HTTPS_PROXY=http://192.168.6.28:2080/
+# ENV NPM_CONFIG_REGISTRY=https://repository.iho.co/repository/npm/ 
+# ENV NPM_CONFIG_REGISTRY=https://mirror.chabokan.net/repository/npm-proxy/
+# ENV NPM_CONFIG_REGISTRY=https://mirror-npn.runflare.com/
+
+RUN npm install --legacy-peer-deps --include=dev
+
+ENV NODE_ENV=production \
+    NX_DAEMON=false \ 
+    HTTP_PROXY="" \
+    HTTPS_PROXY=""
+RUN rm -rf ./package-lock.json ./package.json

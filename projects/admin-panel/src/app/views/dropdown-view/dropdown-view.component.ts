@@ -4,15 +4,39 @@ import { Component, TemplateRef, ViewChild } from '@angular/core';
     templateUrl: './dropdown-view.component.html',
 })
 export class dropdownViewComponent { 
-    city: any;
+    citymd: any;
+    citylg: any;
     
     code = `
- <iho-select [(ngModel)]="city" placeholder="شهر را انتخاب کنید"
-  [searchable]="true"
-    [error]="' تایپ خطایی است.'"
-    [required]="true">
+<div class="w-1/2 mt-10  text-center">
+    <iho-select [(ngModel)]="city" placeholder="شهر را انتخاب کنید" [searchable]="false" [size]="'md'"
+        [borderless]="false" [disabled]="false" [required]="true">
         <iho-option [value]="'mashhad'" [label]="'مشهد'">مشهد</iho-option>
         <iho-option [value]="'tehran'" [label]="'تهران'">تهران</iho-option>
+        <iho-option [value]="'tabriz'" [label]="'تبریز'">تبریز</iho-option>
+        <iho-option [value]="'tabriz-1'" [label]="'تبریز'">تبریز</iho-option>
+        <iho-option [value]="'tabriz-2'" [label]="'تبریز'">تبریز</iho-option>
+        <iho-option [value]="'tabriz-3'" [label]="'تبریز'">تبریز</iho-option>
+        <iho-option [value]="'tabriz-4'" [label]="'تبریز'">تبریز</iho-option>
+        <iho-option [value]="'tabriz-5'" [label]="'تبریز'">تبریز</iho-option>
+        <iho-option [value]="'tabriz-6'" [label]="'تبریز'">تبریز</iho-option>
+        <iho-option [value]="'tabriz-7'" [label]="'تبریز'">تبریز</iho-option>
     </iho-select>
+</div>
+<div class="w-1/2 mt-10  text-center">
+    <iho-select [(ngModel)]="city" placeholder="شهر را انتخاب کنید" [searchable]="true" [size]="'lg'"
+        [borderless]="true" [disabled]="false" [required]="false">
+        <iho-option [value]="'mashhad'" [label]="'مشهد'">مشهد</iho-option>
+        <iho-option [value]="'tehran'" [label]="'تهران'">تهران</iho-option>
+        <iho-option [value]="'tabriz'" [label]="'تبریز'">تبریز</iho-option>
+        <iho-option [value]="'tabriz-1'" [label]="'تبریز'">تبریز</iho-option>
+        <iho-option [value]="'tabriz-2'" [label]="'تبریز'">تبریز</iho-option>
+        <iho-option [value]="'tabriz-3'" [label]="'تبریز'">تبریز</iho-option>
+        <iho-option [value]="'tabriz-4'" [label]="'تبریز'">تبریز</iho-option>
+        <iho-option [value]="'tabriz-5'" [label]="'تبریز'">تبریز</iho-option>
+        <iho-option [value]="'tabriz-6'" [label]="'تبریز'">تبریز</iho-option>
+        <iho-option [value]="'tabriz-7'" [label]="'تبریز'">تبریز</iho-option>
+    </iho-select>
+</div>
     `
 }

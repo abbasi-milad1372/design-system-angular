@@ -21,6 +21,7 @@ export class IhoBottomsheetComponent  {
     @Input() title: string = '';
     @Input() data: any;
     @Input() iconClass: string = '';
+    @Input() contentContainerPadding: boolean = true;
 
     @Output() closed = new EventEmitter<void>();
 
@@ -30,21 +31,6 @@ export class IhoBottomsheetComponent  {
     private customData?: any;
 
     constructor(private cdr: ChangeDetectorRef) { }
-
-    // ngAfterViewInit() {
-    //     if (this.customComponent && this.contentContainer) {
-    //         const contentRef = this.contentContainer.createComponent(this.customComponent);
-    //         contentRef.instance.data = this.customData;
-    //         this.cdr.detectChanges();
-    //         console.log('Custom component rendered with data:', this.customData);
-    //     }
-    // }
-
-    // setCustomContent(component: Type<any>, data: any) {
-    //     this.customComponent = component;
-    //     this.customData = data;
-    //     this.cdr.detectChanges();
-    // }
 
     get positionClass(): string {
         return `position-${this.position}`;
