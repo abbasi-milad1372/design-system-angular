@@ -1,6 +1,8 @@
 # Design System Angular
 
 A reusable Angular 16 Design System library for building consistent, scalable and maintainable UI components.
+![Design System Preview](./docs/preview.png)
+
 
 This package includes common UI components such as Button, Badge, Card, Input, Checkbox, Radio, Switch, Tabs, Navbar, Breadcrumb, Dropdown, Tooltip, Notification, BottomSheet and Accordion.
 
