@@ -1,51 +1,53 @@
 # Design System Angular
 
-A reusable Angular 16 Design System library for building consistent, scalable and maintainable UI components.
-![Design System Preview](./docs/preview.png)
+<p align="center">
+  <img src="./docs/preview.png" alt="Design System Angular Preview">
+</p>
 
+<p align="center">
 
-This package includes common UI components such as Button, Badge, Card, Input, Checkbox, Radio, Switch, Tabs, Navbar, Breadcrumb, Dropdown, Tooltip, Notification, BottomSheet and Accordion.
+A modern, reusable and scalable Angular Design System built with **Angular 16**, **TypeScript**, **SCSS** and **Angular Material**.
 
-## Features
+</p>
 
-* Angular 16 compatible
-* Modular component architecture
-* Reusable UI components
-* SCSS-based styling
-* Custom fonts and assets support
-* Ready for internal design system usage
-* Built with `ng-packagr`
-* Suitable for enterprise Angular applications
+<p align="center">
 
-## Tech Stack
+Reusable UI Components • Enterprise Ready • Design Tokens • Responsive • RTL Support
 
-* Angular `16.2.x`
-* Angular Material `16.2.x`
-* Angular CDK
-* RxJS `7.8.x`
-* TypeScript `5.1.x`
-* SCSS
-* ng-packagr
+</p>
 
-## Installation
+---
+
+## ✨ Features
+
+- 🎨 Modern UI Components
+- 📦 Modular Architecture
+- ⚡ Angular 16 Compatible
+- 🧩 Enterprise Ready
+- 🎯 Design Token Based
+- 🎭 SCSS Theming
+- 🌙 Easy Customization
+- 📱 Responsive Components
+- ♿ Accessibility Friendly
+- 🌍 RTL Support
+- 🚀 High Performance
+- 🔥 Production Ready
+
+---
+
+# 🚀 Installation
 
 ```bash
 npm install @iho/front
 ```
 
-If you are using a private registry, make sure your `.npmrc` is configured correctly.
+---
 
-Example:
+# 📦 Usage
 
-```bash
-@iho:registry=http://gitlab.iho.co/api/v4/projects/1/packages/npm/
-```
+Import only the modules you need.
 
-## Usage
-
-Import the required module in your Angular module:
-
-```ts
+```typescript
 import { ButtonModule } from '@iho/front';
 
 @NgModule({
@@ -56,314 +58,271 @@ import { ButtonModule } from '@iho/front';
 export class AppModule {}
 ```
 
-Then use the component in your template:
+Example
 
 ```html
 <iho-button>
-  Submit
+    Submit
 </iho-button>
 ```
 
-## Available Components
+---
 
-### Button
+# 🧩 Available Components
 
-Reusable button component.
+| Component | Status |
+|-----------|--------|
+| Button | ✅ |
+| Input | ✅ |
+| Badge | ✅ |
+| Card | ✅ |
+| Checkbox | ✅ |
+| Radio | ✅ |
+| Switch | ✅ |
+| Chips | ✅ |
+| Tabs | ✅ |
+| Dropdown | ✅ |
+| Tooltip | ✅ |
+| Notification | ✅ |
+| Accordion | ✅ |
+| BottomSheet | ✅ |
+| Breadcrumb | ✅ |
+| Navbar | ✅ |
+| Footer | ✅ |
 
-```ts
-import { ButtonModule } from '@iho/front';
+---
+
+# 📂 Project Structure
+
+```text
+projects
+└── design-system
+    └── src
+        ├── assets
+        │
+        ├── components
+        │   ├── accordion
+        │   ├── badge
+        │   ├── bottomsheet
+        │   ├── breadcrumb
+        │   ├── button
+        │   ├── card
+        │   ├── checkbox
+        │   ├── chips
+        │   ├── dropdown
+        │   ├── footer
+        │   ├── input
+        │   ├── navbar
+        │   ├── notification
+        │   ├── radio
+        │   ├── switch
+        │   ├── tab
+        │   └── tooltip
+        │
+        ├── public-api.ts
+        ├── design-system.module.ts
+        └── design-system.components.ts
 ```
 
-### Badge
+---
 
-Used for status labels, counters and small indicators.
+# 🎯 Included Components
 
-```ts
-import { BadgeModule } from '@iho/front';
-```
+### Buttons
 
-### Card
+- Primary
+- Secondary
+- Success
+- Warning
+- Error
+- Loading
+- Icon Left
+- Icon Right
 
-Reusable card layout component.
+---
 
-```ts
-import { CardModule } from '@iho/front';
-```
+### Forms
 
-### Input
+- Input
+- Checkbox
+- Radio
+- Switch
+- Dropdown
+- Chips
 
-Custom input component for forms.
+---
 
-```ts
-import { InputModule } from '@iho/front';
-```
+### Navigation
 
-### Checkbox
+- Navbar
+- Breadcrumb
+- Tabs
 
-Reusable checkbox component.
+---
 
-```ts
-import { CheckboxModule } from '@iho/front';
-```
+### Feedback
 
-### Radio
+- Notification
+- Tooltip
+- BottomSheet
 
-Radio button and radio group components.
+---
 
-```ts
-import { RadioModule } from '@iho/front';
-```
+### Layout
 
-### Switch
+- Card
+- Accordion
+- Footer
 
-Toggle switch component.
+---
 
-```ts
-import { SwitchModule } from '@iho/front';
-```
+# 🎨 Design System
 
-### Tab
+The library is built around reusable Design Tokens including:
 
-Tab component for switching between content sections.
+- Colors
+- Typography
+- Border Radius
+- Shadows
+- Spacing
+- Icons
+- Responsive Sizes
 
-```ts
-import { TabModule } from '@iho/front';
-```
+making it easy to maintain a consistent UI across large Angular applications.
 
-### Navbar
+---
 
-Navigation bar component.
+# 🖥 Preview
 
-```ts
-import { NavbarModule } from '@iho/front';
-```
+The project includes a live showcase application demonstrating every component with configurable examples.
 
-### Breadcrumb
+Examples include:
 
-Breadcrumb navigation component.
+- Component Playground
+- Code Preview
+- Interactive Controls
+- RTL Examples
+- Responsive Layouts
 
-```ts
-import { BreadcrumbModule } from '@iho/front';
-```
+---
 
-### Dropdown / Select
+# 🛠 Tech Stack
 
-Custom select and option components.
+- Angular 16
+- Angular Material
+- Angular CDK
+- TypeScript
+- RxJS
+- SCSS
+- ng-packagr
 
-```ts
-import { SelectModule } from '@iho/front';
-```
+---
 
-### Tooltip
-
-Tooltip component for additional helper text.
-
-```ts
-import { TooltipModule } from '@iho/front';
-```
-
-### BottomSheet
-
-Bottom sheet component and service.
-
-```ts
-import { BottomsheetModule, BottomSheetService } from '@iho/front';
-```
-
-### Accordion
-
-Expandable accordion component.
-
-```ts
-import { AccordionModule } from '@iho/front';
-```
-
-### Notification
-
-Notification component, model and service.
-
-```ts
-import { NotificationService } from '@iho/front';
-```
-
-## Styles and Assets
-
-This library includes shared styles, fonts and image assets.
-
-Assets are packaged from:
-
-```txt
-src/lib/assets/styles
-src/lib/assets/fonts
-src/lib/assets/img
-```
-
-To use global styles, add them to your Angular project styles configuration if needed:
-
-```json
-"styles": [
-  "src/styles.scss",
-  "node_modules/@iho/front/assets/styles/styles.scss",
-  "node_modules/@iho/front/assets/styles/icons.scss"
-]
-```
-
-If your build output differs, check the final package structure inside `node_modules/@iho/front`.
-
-## Development
-
-Clone the repository:
-
-```bash
-git clone https://github.com/abbasi-milad1372/design-system-angular.git
-cd design-system-angular
-```
-
-Install dependencies:
+# 📦 Build
 
 ```bash
 npm install
 ```
 
-Run the demo/admin project:
-
-```bash
-npm start
-```
-
-Build the library:
+Build the library
 
 ```bash
 npm run build
 ```
 
-The build output will be generated inside:
-
-```txt
-dist/design-system
-```
-
-## Project Structure
-
-```txt
-projects/
-  design-system/
-    src/
-      lib/
-        components/
-          accordion/
-          badge/
-          bottomsheet/
-          breadcrumb/
-          button/
-          card/
-          checkbox/
-          dropdown/
-          footer/
-          input/
-          navbar/
-          notification/
-          radio/
-          switch/
-          tab/
-          tooltip/
-        assets/
-          styles/
-          fonts/
-          img/
-      public-api.ts
-
-  admin-panel/
-    src/
-```
-
-## Public API
-
-All public components and modules are exported from:
-
-```txt
-projects/design-system/src/public-api.ts
-```
-
-Example exports:
-
-```ts
-export * from './lib/components/button/button.component';
-export * from './lib/components/button/button.module';
-
-export * from './lib/components/accordion/accordion.component';
-export * from './lib/components/accordion/accordion.module';
-```
-
-## Build
+or
 
 ```bash
 ng build design-system
 ```
 
-or:
+---
+
+# 🧪 Development
+
+Run the showcase application
 
 ```bash
-npm run build
+npm start
 ```
 
-## Testing
+---
 
-```bash
-npm test
+# 📁 Build Output
+
+```
+dist/design-system
 ```
 
-## Publishing
+---
 
-Build the library first:
+# 📚 Public API
 
-```bash
-npm run build
+All public components are exported from
+
+```text
+projects/design-system/src/public-api.ts
 ```
 
-Then go to the build output folder:
+Example
 
-```bash
-cd dist/design-system
+```typescript
+export * from './lib/components/button/button.component';
+export * from './lib/components/button/button.module';
+
+export * from './lib/components/card/card.component';
+export * from './lib/components/card/card.module';
+
+export * from './lib/components/chips/chips.component';
+export * from './lib/components/chips/chips.module';
 ```
 
-Publish package:
+---
 
-```bash
-npm publish
-```
+# 🎯 Why This Library?
 
-For private registry publishing, make sure the registry and authentication token are configured in `.npmrc`.
+This Design System was created to provide a scalable UI foundation for enterprise Angular applications.
 
-## Recommended Usage Pattern
+It helps developers:
 
-Import only the modules you need:
+- Reduce duplicated code
+- Build consistent interfaces
+- Increase development speed
+- Improve maintainability
+- Standardize UI across projects
 
-```ts
-import { ButtonModule, InputModule, CardModule } from '@iho/front';
+---
 
-@NgModule({
-  imports: [
-    ButtonModule,
-    InputModule,
-    CardModule
-  ]
-})
-export class SharedModule {}
-```
+# 🤝 Contributing
 
-Then import your `SharedModule` inside feature modules.
+Contributions are welcome.
 
-## Browser Support
+Feel free to open an Issue or submit a Pull Request.
 
-This library supports modern browsers compatible with Angular 16.
+---
 
-## License
+# ⭐ Support
 
-MIT
+If you like this project, consider giving it a **Star** ⭐ on GitHub.
 
-## Author
+It helps the project grow and motivates future improvements.
 
-Developed by Milad Abbasi.
+---
 
-GitHub: [abbasi-milad1372](https://github.com/abbasi-milad1372)
+# 👨‍💻 Author
+
+**Milad Abbasi**
+
+Frontend Engineer
+
+Angular Developer
+
+GitHub
+
+https://github.com/abbasi-milad1372
+
+---
+
+# 📄 License
+
+MIT License
