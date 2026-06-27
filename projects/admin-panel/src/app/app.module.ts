@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 
-import { IHOBadgeModule, IHOBreadcrumbModule, IHOBottomsheetModule,IHOButtonModule, IHOCardModule, IHOFooterModule, IHOInputModule, IHONavbarModule, IHOTabModule, IhoCheckboxModule, IHORadioModule, IhoSwitchModule, IhoSelectModule, IHOTooltipModule, IHOAccordionModule } 
+import { IHOBadgeModule, IHOBreadcrumbModule, IHOBottomsheetModule,IHOButtonModule, IHOCardModule, IHOFooterModule, IHOInputModule, IHONavbarModule, IHOTabModule, IhoCheckboxModule, IHORadioModule, IhoSwitchModule, IhoSelectModule, IHOTooltipModule, IHOAccordionModule, IHOChipModule } 
 from 'design-system';
 import { AdminLayoutComponent } from './admin-layout.component';
 import { ButtonViewComponent } from './views/button-view/button-view.component';
@@ -29,6 +29,7 @@ import { bottomheetViewComponent } from './views/bottomsheet/bottomsheet-view.co
 import { CustomContentComponent } from './views/bottomsheet/custom-content.component';
 import { accordianViewComponent } from './views/accordian/accordian-view.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { chipsViewComponent } from './views/chips/chips-view.component';
 const routes: Routes = [
   {
     path: '',
@@ -49,7 +50,8 @@ const routes: Routes = [
       { path: 'dropdown', component: dropdownViewComponent },
       { path: 'tooltips', component: tooltipsViewComponent },
       { path: 'bottomsheet', component: bottomheetViewComponent }, 
-      { path: 'accordian', component: accordianViewComponent }, 
+      { path: 'accordian', component: accordianViewComponent },
+      { path: 'chips', component: chipsViewComponent }, 
     ]
   }
 ];
@@ -72,7 +74,8 @@ const routes: Routes = [
     tooltipsViewComponent,
     bottomheetViewComponent,
     CustomContentComponent,
-    accordianViewComponent
+    accordianViewComponent,
+    chipsViewComponent
   ],
   imports: [
     BrowserModule,
@@ -97,9 +100,8 @@ const routes: Routes = [
     IHOBottomsheetModule,
     RouterModule.forRoot(routes),
     HttpClientModule,
-    IHOAccordionModule
-
-    
+    IHOAccordionModule,
+    IHOChipModule
   ],
   bootstrap: [AppComponent],
   providers:[

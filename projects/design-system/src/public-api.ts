@@ -60,3 +60,6 @@ export * from './lib/components/bottomsheet/bottom-sheet.service';
 
 export * from './lib/components/accordion/accordion.component';
 export * from './lib/components/accordion/accordion.module';
+
+export * from './lib/components/chips/chip.component';
+export * from './lib/components/chips/chip.module';

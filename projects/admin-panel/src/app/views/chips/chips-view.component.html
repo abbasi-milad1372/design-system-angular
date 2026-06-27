@@ -1,0 +1,24 @@
+<div class="w-1/4 my-3">
+  <!-- Action Chip -->
+  <iho-chip label="برچسب" size="md" [rounded]="true" variant="neutral" type="action" (removed)="onRemove()" (added)="onAdd()">
+  </iho-chip>
+
+</div>
+<div class="w-full my-3">
+
+<!-- Filter Chip -->
+<iho-chip label="برچسب" variant="primary" type="filter" [(selected)]="isSelected">
+</iho-chip>
+</div>
+<div class="w-full my-3">
+
+<!-- Disabled -->
+<iho-chip label="برچسب" [disabled]="true"></iho-chip>
+</div>
+
+<div class="grid grid-cols-1 my-5">
+    code:
+<pre class="bg-gray-950 text-white-100 p-4 rounded text-sm">
+  <code>{{ code }}</code>
+</pre>
+</div>

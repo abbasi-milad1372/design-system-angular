@@ -1,0 +1,32 @@
+<div [ngClass]="classes" (click)="onChipClick()">
+
+    <!-- Remove icon (×) -->
+    <button
+        *ngIf="showRemove"
+        class="chip__btn chip__btn--remove"
+        [disabled]="disabled"
+        (click)="onRemove($event)"
+        type="button"
+        aria-label="Remove">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+            <path d="M9 3L3 9M3 3L9 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </button>
+
+    <!-- Label -->
+    <span class="chip__label">{{ label }}</span>
+
+    <!-- Add icon (+) -->
+    <button
+        *ngIf="showAdd"
+        class="chip__btn chip__btn--add"
+        [disabled]="disabled"
+        (click)="onAdd($event)"
+        type="button"
+        aria-label="Add">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+            <path d="M6 2.5V9.5M2.5 6H9.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </button>
+
+</div>
