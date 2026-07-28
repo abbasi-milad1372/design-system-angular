@@ -1,27 +1,219 @@
-# DesignSystem
+# Design System Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.0.
+<p align="center">
+  <img src="./docs/preview.png" alt="Design System Angular showcase preview">
+</p>
 
-## Development server
+<p align="center">
+  A reusable, token-based Angular design system built for enterprise applications.
+</p>
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+<p align="center">
+  Angular 16 · TypeScript · SCSS · Angular Material · Responsive · RTL-first
+</p>
 
-## Code scaffolding
+## Overview
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+This workspace contains:
 
-## Build
+- `design-system`: the publishable component library.
+- `admin-panel`: an RTL showcase and integration application for the library.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+The latest component styles use shared design tokens for color, typography,
+spacing, border radius, border width, and elevation. The showcase includes
+updated examples for the supported component states and variants.
 
-## Running unit tests
+## Features
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- Modular Angular components and per-component NgModules
+- Shared CSS custom-property design tokens
+- SCSS styling and packaged Ravi FaNum typography
+- RTL-first layouts
+- Responsive component behavior
+- Form controls with Angular Forms integration
+- Packaged icons, fonts, images, and Sass assets
+- Interactive showcase with usage examples
+- Strict TypeScript and Angular template checking
 
-## Running end-to-end tests
+## Requirements
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- Node.js and npm
+- Angular 16.2-compatible application
 
-## Further help
+## Installation
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+```bash
+npm install @iho/front
+```
+
+## Usage
+
+Import only the modules required by your application:
+
+```typescript
+import { NgModule } from '@angular/core';
+import { IHOButtonModule } from '@iho/front';
+
+@NgModule({
+  imports: [IHOButtonModule],
+})
+export class AppModule {}
+```
+
+Then use the component in a template:
+
+```html
+<iho-button>Submit</iho-button>
+```
+
+All supported consumer APIs are exported from
+`projects/design-system/src/public-api.ts`.
+
+## Available components
+
+| Category | Components |
+| --- | --- |
+| Actions | Button |
+| Forms | Input, Checkbox, Radio and Radio Group, Switch, Select, Chips |
+| Data display | Badge, Card, Tooltip |
+| Navigation | Navbar, Breadcrumb, Tabs |
+| Feedback | Notification, Bottom Sheet |
+| Layout | Accordion, Footer |
+
+The showcase also includes an icon catalogue.
+
+## Design tokens and assets
+
+The library ships reusable assets from
+`projects/design-system/src/lib/assets`:
+
+- color palettes and transparency scales
+- spacing and responsive size scales
+- Ravi FaNum typography tokens and font files
+- border radius and border width tokens
+- shadow tokens
+- icon styles and image assets
+
+The main Sass entry point is:
+
+```text
+projects/design-system/src/lib/assets/styles/styles.scss
+```
+
+Packaged applications can consume the stylesheet through the library's
+`./styles` Sass export.
+
+## Workspace structure
+
+```text
+projects/
+├── design-system/
+│   ├── ng-package.json
+│   └── src/
+│       ├── lib/
+│       │   ├── assets/
+│       │   │   ├── fonts/
+│       │   │   ├── img/
+│       │   │   └── styles/
+│       │   └── components/
+│       │       ├── accordion/
+│       │       ├── badge/
+│       │       ├── bottomsheet/
+│       │       ├── breadcrumb/
+│       │       ├── button/
+│       │       ├── card/
+│       │       ├── checkbox/
+│       │       ├── chips/
+│       │       ├── dropdown/
+│       │       ├── footer/
+│       │       ├── input/
+│       │       ├── navbar/
+│       │       ├── notification/
+│       │       ├── radio/
+│       │       ├── switch/
+│       │       ├── tab/
+│       │       └── tooltip/
+│       └── public-api.ts
+└── admin-panel/
+    └── src/app/views/
+```
+
+The library is built with `ng-packagr` into `dist/design-system`. The admin
+panel consumes that built package boundary, so the library must be built first.
+
+## Local development
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Build the component library:
+
+```bash
+npx ng build design-system
+```
+
+Run the showcase application:
+
+```bash
+npx ng serve admin-panel
+```
+
+Then open `http://localhost:4200/`.
+
+> The root `npm start` command currently references the absent
+> `tools/generate-env.ts`; use the explicit Angular CLI commands above.
+
+## Validation
+
+Build the library:
+
+```bash
+npx ng build design-system
+```
+
+Build the showcase after the library:
+
+```bash
+npx ng build admin-panel --configuration development
+```
+
+Run the library tests:
+
+```bash
+npx ng test design-system --watch=false --browsers=ChromeHeadless
+```
+
+## Tech stack
+
+- Angular 16.2
+- Angular Material and Angular CDK
+- TypeScript 5.1
+- RxJS 7.8
+- SCSS
+- Tailwind CSS 3
+- ng-packagr
+
+## Contributing
+
+Keep reusable behavior in `projects/design-system` and use `admin-panel` for
+consumer-facing examples. New public components must be exported from
+`projects/design-system/src/public-api.ts` and demonstrated in the showcase.
+
+Before submitting a change, build the directly affected project and preserve
+RTL behavior, keyboard interaction, accessibility states, and strict-mode
+compatibility.
+
+## Author
+
+**Milad Abbasi**
+
+Frontend Engineer and Angular Developer
+
+[GitHub](https://github.com/abbasi-milad1372)
+
+## License
+
+MIT
