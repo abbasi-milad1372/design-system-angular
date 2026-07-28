@@ -3,36 +3,36 @@
 .tadkar-notify {
     position: fixed;
     z-index: 50;
-    width: 320px;
-    background-color: #FFF;
+    width: var(--space-18xl);
+    background-color: var(--color-white-DEFAULT);
     border-radius: 10px;
 animation: notify-in .25s ease-out;
 }
 
 .tadkar-notify.top-right {
-    top: 20px;
-    right: 20px
+    top: var(--space-2xl);
+    right: var(--space-2xl)
 }
 
 .tadkar-notify.top-left {
-    top: 20px;
-    left: 20px
+    top: var(--space-2xl);
+    left: var(--space-2xl)
 }
 
 .tadkar-notify.bottom-right {
-    bottom: 20px;
-    right: 20px
+    bottom: var(--space-2xl);
+    right: var(--space-2xl)
 }
 
 .tadkar-notify.bottom-left {
-    bottom: 20px;
-    left: 20px
+    bottom: var(--space-2xl);
+    left: var(--space-2xl)
 }
 
 @keyframes notify-in {
     from {
         opacity: 0;
-        transform: translateY(-12px);
+        transform: translateY(calc(var(--space-none) - var(--space-lg)));
         /* شروع کمی بالاتر */
     }
 
@@ -46,7 +46,7 @@ animation: notify-in .25s ease-out;
 /* ===== Layout inside card ===== */
 .content {
     display: flex;
-    padding: 12px;
+    padding: var(--space-lg);
     align-items: center;
 }
 
@@ -56,16 +56,16 @@ animation: notify-in .25s ease-out;
     display: flex;
     align-items: center;
 i {
-        font-size: 16px;
+        font-size: var(--font-size-p);
     }
 }
 
 
 
 .title {
-    font-weight: 600;
-    font-size: 16px;
-    color: var(--text-strong);
+    font-weight: var(--font-weight-semibold);
+    font-size: var(--font-size-p);
+    color: var(--color-gray-900);
     flex: 1
 }
 
@@ -73,10 +73,10 @@ i {
 
 .message-text {
     color: var(--color-gray-900);
-    font-size: 11px;
-    line-height: 22px;
+    font-size: var(--font-size-text);
+    line-height: var(--line-height-text);
     padding-right: var(--space-lg);
-    font-weight: 500;
+    font-weight: var(--font-weight-medium);
 }
 
 .closeButton {
@@ -86,7 +86,7 @@ i {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    border-radius: 999px;
+    border-radius: var(--border-radius-full);
     width: 28px;
     height: 28px;
     cursor: pointer;
@@ -100,10 +100,10 @@ i {
 /* ===== Variant generator ===== */
 @mixin variant($name, $color) {
     .content.#{$name} {
-        border: 1px solid $color;
+        border: var(--border-width-inside) solid $color;
         border-radius:10px;
     box-shadow: 0 4px 8px -2px rgba(41, 45, 53, 0.10),
-            0 2px 4px -2px rgba(41, 45, 53, 0.06);
+            0 var(--space-2xs) var(--space-xs) -2px rgba(41, 45, 53, 0.06);
     }
 
     .content.#{$name} .icon-wrapper i {
@@ -119,10 +119,10 @@ i {
 
 /* حالت خنثی (خاکستری با آیکن زنگ) */
 .content.neutral {
-    border: 1px solid var(--gray);
+    border: var(--border-width-inside) solid var(--color-gray-DEFAULT);
     border-radius:10px;
 box-shadow: 0 4px 8px -2px rgba(41, 45, 53, 0.10),
-        0 2px 4px -2px rgba(41, 45, 53, 0.06);
+        0 var(--space-2xs) var(--space-xs) -2px rgba(41, 45, 53, 0.06);
 }
 
 .content.neutral .icon-wrapper i {

@@ -1,131 +1,160 @@
+:host {
+    display: inline-block;
+}
 
 .iho-checkbox {
+    --checkbox-control-size: var(--space-xl);
+    --checkbox-icon-size: var(--space-lg);
+    --checkbox-dash-width: var(--space-md);
+
     display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    /* فاصله‌ی بین جعبه و متن */
+    align-items: flex-start;
+    gap: var(--space-md);
     cursor: pointer;
     user-select: none;
-    color: var(--iho-text);
 }
 
-:host(.is-disabled) .iho-checkbox {
-    cursor: not-allowed;
-    color: var(--color-gray-200);
+.iho-checkbox--xs {
+    --checkbox-control-size: var(--space-xl); /* 16px */
+    --checkbox-icon-size: var(--space-lg);
+    --checkbox-dash-width: var(--space-md);
 }
 
-.iho-checkbox__label {
-    font-size: 13px;
-    line-height: 28px;
-    font-weight: 500;
-   
-    &.gray-color{
-        color: var(--color-gray-400);
-    }
-    &.black-color{
-    color: var(--color-gray-900);
-    }
+.iho-checkbox--sm {
+    --checkbox-control-size: var(--space-2xl); /* 20px */
+    --checkbox-icon-size: var(--space-xl);
+    --checkbox-dash-width: 10px;
 }
 
-/* باکس سفارشی */
+.iho-checkbox--md {
+    --checkbox-control-size: var(--space-3xl); /* 24px */
+    --checkbox-icon-size: var(--space-2xl);
+    --checkbox-dash-width: var(--space-lg);
+}
+
 .iho-checkbox__box {
     position: relative;
-    border: 1px solid var(--color-gray-100);
-    border-radius: 4px;
-    background: #fff;
-    flex: 0 0 16px;
     display: grid;
+    flex: 0 0 var(--checkbox-control-size);
+    width: var(--checkbox-control-size);
+    height: var(--checkbox-control-size);
+    box-sizing: border-box;
     place-items: center;
-    transition: background-color .15s ease, border-color .15s ease, box-shadow .15s ease;
-    &.xs{
-        width: 16px;
-        height: 16px;
-    }
-    &.sm{
-        width: 20px;
-        height: 20px;
-    }
-    &.md{
-        width: 24px;
-        height: 24px;
-    }
-}
-
-/* focus-visible از input واقعی خواهد آمد (پایین) */
-
-.iho-checkbox__box.is-checked {
-    background: var(--color-primary-500);
-    border-color: var(--color-primary-500);
+    border: var(--border-width-inside) solid var(--color-gray-100);
+    border-radius: var(--border-radius-xs);
+    background: var(--color-white-DEFAULT);
     color: var(--color-white-DEFAULT);
+    transition: background-color .15s ease, border-color .15s ease, box-shadow .15s ease;
 }
 
-.iho-checkbox__box.is-indeterminate {
-    background: var(--color-primary-500);
-    border-color: var(--color-primary-500);
-}
-.iho-checkbox__box:focus{
-    outline: none;
-    box-shadow: 0 0 0 3px var(--color-gray-100);
-}
-
-/* تیک */
 .iho-checkbox__check {
-    width: 12px;
-    height: 12px;
+    width: var(--checkbox-icon-size);
+    height: var(--checkbox-icon-size);
     opacity: 0;
     transition: opacity .12s ease;
+}
+
+.iho-checkbox__dash {
+    position: absolute;
+    width: var(--checkbox-dash-width);
+    height: var(--space-2xs);
+    border-radius: var(--border-radius-2xs);
+    background: currentColor;
+    opacity: 0;
+    transition: opacity .12s ease;
+}
+
+.iho-checkbox__box.is-checked,
+.iho-checkbox__box.is-indeterminate {
+    border-color: var(--color-primary-500);
+    background: var(--color-primary-500);
 }
 
 .iho-checkbox__box.is-checked .iho-checkbox__check {
     opacity: 1;
 }
 
-/* خط indeterminate */
-.iho-checkbox__dash {
-    position: absolute;
-    width: 10px;
-    height: 2px;
-    border-radius: 2px;
-    background: var(--color-white-DEFAULT);
+.iho-checkbox__box.is-indeterminate .iho-checkbox__check {
     opacity: 0;
-    transition: opacity .12s ease;
 }
 
 .iho-checkbox__box.is-indeterminate .iho-checkbox__dash {
     opacity: 1;
 }
 
-/* حالت غیرفعال */
-.iho-checkbox__box.is-disabled {
-    border-color: var(--color-gray-100);
-    color: var(--color-gray-200);
-    background-color: var(--color-gray-DEFAULT);
+.iho-checkbox__content {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    gap: var(--space-2xs);
 }
 
-/* ورودی اصلی را visually-hidden می‌کنیم ولی قابل فوکوس می‌ماند */
+.iho-checkbox__label {
+    color: var(--color-gray-400);
+    font-size: var(--font-size-small);
+    font-weight: var(--font-weight-medium);
+    line-height: var(--line-height-small);
+}
+
+.iho-checkbox--md .iho-checkbox__label {
+    font-size: var(--font-size-p);
+    line-height: var(--line-height-p);
+}
+
+.iho-checkbox__label--black {
+    color: var(--color-gray-900);
+}
+
+.iho-checkbox__label--gray {
+    color: var(--color-gray-400);
+}
+
+.iho-checkbox__supporting {
+    color: var(--color-gray-200);
+    font-size: var(--font-size-text);
+    font-weight: var(--font-weight-regular);
+    line-height: var(--line-height-text);
+}
+
 .iho-checkbox__native {
     position: absolute;
+    width: var(--space-none);
+    height: var(--space-none);
     opacity: 0;
     pointer-events: none;
-    width: 0;
-    height: 0;
 }
 
-/* فوکوس رینگ از input واقعی روی باکس اعمال شود */
-.iho-checkbox__native:focus-visible+*
+.iho-checkbox__native:focus-visible + .iho-checkbox__box {
+    border-color: var(--color-primary-500);
+    box-shadow: 0 0 0 3px var(--color-transparency-primary-30);
+    outline: none;
+}
 
-/* span.box */
-    {
-    box-shadow: 0 0 0 3px var(--color-gray-100);
+.iho-checkbox:not(.iho-checkbox--disabled):hover .iho-checkbox__box {
     border-color: var(--color-primary-500);
 }
 
-/* Hover (وقتی غیرفعال نیست) */
-.iho-checkbox:not(.is-disabled) .iho-checkbox__box:hover {
-    border-color: var(--color-primary-500);
+.iho-checkbox:not(.iho-checkbox--disabled):active .iho-checkbox__box {
+    border-color: var(--color-primary-600);
 }
 
-/* Active کوچک */
-.iho-checkbox:not(.is-disabled) .iho-checkbox__box:active {
-    transform: translateY(0.2px);
+.iho-checkbox__box.is-disabled {
+    border-color: var(--color-gray-100);
+    background: var(--color-white-600);
+    color: var(--color-white-DEFAULT);
+}
+
+.iho-checkbox__box.is-disabled.is-checked,
+.iho-checkbox__box.is-disabled.is-indeterminate {
+    border-color: var(--color-gray-100);
+    background: var(--color-gray-100);
+}
+
+.iho-checkbox--disabled {
+    cursor: not-allowed;
+}
+
+.iho-checkbox--disabled .iho-checkbox__label,
+.iho-checkbox--disabled .iho-checkbox__supporting {
+    color: var(--color-gray-200);
 }

@@ -1,25 +1,30 @@
 import { Component } from '@angular/core';
 
+type BadgeVariant = 'default' | 'lite' | 'primary' | 'warning' | 'error' | 'success' |
+    'text-success' | 'text-warning' | 'text-error' | 'text-primary';
+type BadgeSize = 'sm' | 'md' | 'lg';
+
 @Component({
     selector: 'app-badge-view',
     templateUrl: './badge-view.component.html',
 })
-export class BadgeViewComponent { 
-    selectedVariant: 'default' | 'primary' | 'warning' | 'error' | 'success' = 'primary';
-    selectedSize: 'sm' | 'md' | 'lg' = 'md';
-    showLeftIcon = false;
-    showRightIcon = false;
-    withDot = false;
-    withImg = false;
-    border = false;
-    radius = false;
-    code =  `   <iho-badge [border]="border" [radius]="radius"  [size]="selectedSize" label="تست"
-            [variant]="selectedVariant">
-            <span dot *ngIf="withDot">.</span>
-            <span icon-left *ngIf="showLeftIcon" class="iho-icon-hut text-lg"></span>
-            <span icon-right *ngIf="showRightIcon" class="iho-icon-hut text-lg"></span>
-            <img *ngIf="withImg" img src="https://picsum.photos/16/16" alt="avatar" />
-    
-        </iho-badge>
-    `;    
+export class BadgeViewComponent {
+    variants: BadgeVariant[] = [
+        'default', 'lite', 'primary', 'warning', 'error', 'success',
+        'text-success', 'text-warning', 'text-error', 'text-primary'
+    ];
+    sizes: BadgeSize[] = ['sm', 'md', 'lg'];
+
+    code = `<iho-badge label="جدید" variant="primary" size="md"></iho-badge>
+<iho-badge label="تخفیف" variant="error" [border]="true"></iho-badge>
+<iho-badge label="قابل استرداد" variant="success" [radius]="true"></iho-badge>
+
+<iho-badge label="هتل منتخب" variant="primary" [radius]="true">
+  <span icon-right class="iho-icon-hotel"></span>
+  <span dot>•</span>
+</iho-badge>
+
+<iho-badge variant="default" [mainContent]="true">
+  <span label>محتوای سفارشی</span>
+</iho-badge>`;
 }

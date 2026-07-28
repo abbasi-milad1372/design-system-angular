@@ -1,59 +1,29 @@
-<div class="grid grid-cols-1 my-5 w-1/2">
-    <iho-input [label]="'مقصد یا هتل'" [size]="'md'" [template]="'floating'" [type]="'text'"></iho-input>
-</div>
-
-<div class="grid grid-cols-1 my-5 w-1/2">
-    <iho-input [label]="'مقصد یا هتل'" [size]="'lg'" [template]="'floating'" [type]="'text'"></iho-input>
-
-</div>
-<div class="grid grid-cols-1 my-5 w-1/2">
-    <form [formGroup]="form">
-
-        <iho-input [label]="'مقصد یا هتل'" [type]="'text'" formControlName="usernamenew" [dirClass]="'right'"
-            [template]="'inline'" [placeholder]="'مقصد یا هتل را وارد کنید'"></iho-input>
-    </form>
-</div>
-<div class="grid grid-cols-1 my-5 w-1/2">
-    <form [formGroup]="form">
-        <iho-input [label]="'مقصد یا هتل'" [type]="'text'" formControlName="username" [template]="'inline'"
-            [errorInline]="'مقصد یا هتل را وارد کنید'" [required]="false"
-            [placeholder]="'مقصد یا هتل را وارد کنید'"></iho-input>
-
-    </form>
-
-</div>
-<div class="grid grid-cols-1 my-5 w-1/2">
-
-    <iho-input [label]="'مقصد یا هتل'" [type]="'text'" formControlName="username" [template]="'inline'"
-       
-        [placeholder]="'مقصد یا هتل را وارد کنید'"></iho-input>
-</div>
-<div class="grid grid-cols-1 my-5 w-1/2">
-    <iho-input [label]="'مقصد یا هتل'" [icon]="'iho-icon-city-03'" [template]="'floating'"></iho-input>
-
-</div>
-<div class="grid grid-cols-1 my-5 w-1/2">
-
-    <iho-input [label]="'مقصد یا هتل'" [icon]="'iho-icon-city-03'" [template]="'floating'"
-        [disabled]="true"></iho-input>
-</div>
-
-<div class="grid grid-cols-1 my-5 w-1/2">
-
-    <iho-input [errorFloating]="' لطفا مقصد خود را انتخاب نمایید'" [label]="'مقصد یا هتل'"
-        [icon]="'iho-icon-city-03'"></iho-input>
-</div>
-
-
-
-
-<div class="flex w-full my-5">
-    <iho-input label="از"  [rounded]="'right'" template="inline"></iho-input>
-    <iho-input label="به" [rounded]="'left'" template="inline"></iho-input>
-</div>
-<div class="grid grid-cols-1 my-5">
-    code:
-    <pre class="bg-gray-950 text-white-100 p-4 rounded text-sm">
-  <code>{{ code }}</code>
-</pre>
+<div class="showcase-page">
+  <header class="showcase-header"><h1>Input</h1><p>اندازه، template، type، icon، پیام‌ها، form، disabled، readonly و اتصال دو ورودی.</p></header>
+  <section class="showcase-section"><h2>اندازه و template</h2><div class="showcase-grid">
+    <div class="showcase-example"><h3>md / floating</h3><iho-input label="مقصد" size="md" template="floating" placeholder="نام شهر یا هتل"></iho-input></div>
+    <div class="showcase-example"><h3>lg / floating</h3><iho-input label="مقصد" size="lg" template="floating" placeholder="نام شهر یا هتل"></iho-input></div>
+    <div class="showcase-example"><h3>md / inline</h3><iho-input label="نام مسافر" size="md" template="inline" placeholder="نام و نام خانوادگی"></iho-input></div>
+  </div></section>
+  <section class="showcase-section"><h2>Type و محتوا</h2><div class="showcase-grid">
+    <div class="showcase-example"><h3>Email</h3><iho-input label="ایمیل" type="email" autocomplete="email"></iho-input></div>
+    <div class="showcase-example"><h3>Password</h3><iho-input label="رمز عبور" type="password" autocomplete="current-password"></iho-input></div>
+    <div class="showcase-example"><h3>Number</h3><iho-input label="تعداد مسافر" type="number"></iho-input></div>
+    <div class="showcase-example"><h3>Icon</h3><iho-input label="جستجو" icon="iho-icon-search" iconClass="text-primary-500"></iho-input></div>
+  </div></section>
+  <section class="showcase-section"><h2>پیام‌ها و state</h2><div class="showcase-grid">
+    <div class="showcase-example"><h3>Hint</h3><iho-input label="کد ملی" hint="ده رقم بدون خط تیره"></iho-input></div>
+    <div class="showcase-example"><h3>Error inline</h3><iho-input label="نام کاربری" errorInline="این فیلد الزامی است"></iho-input></div>
+    <div class="showcase-example"><h3>Error floating</h3><iho-input label="مقصد" errorFloating="مقصد را انتخاب کنید"></iho-input></div>
+    <div class="showcase-example"><h3>Success</h3><iho-input label="کد تخفیف" successInline="کد معتبر است"></iho-input></div>
+    <div class="showcase-example"><h3>Readonly</h3><iho-input label="شهر" value="تهران" [readonly]="true"></iho-input></div>
+    <div class="showcase-example"><h3>Disabled</h3><iho-input label="غیرفعال" [disabled]="true"></iho-input></div>
+    <div class="showcase-example"><h3>Borderless</h3><iho-input label="بدون حاشیه" [border]="false"></iho-input></div>
+  </div></section>
+  <section class="showcase-section"><h2>Reactive form و ورودی متصل</h2><form [formGroup]="form" class="showcase-grid">
+    <div class="showcase-example"><h3>Required control</h3><iho-input formControlName="destination" label="مقصد" [required]="true"></iho-input></div>
+    <div class="showcase-example"><h3>Disabled control</h3><iho-input formControlName="disabledValue" label="مقدار"></iho-input></div>
+    <div class="showcase-example"><h3>Rounded pair</h3><div class="flex w-full"><iho-input label="از" rounded="right" template="inline"></iho-input><iho-input label="تا" rounded="left" template="inline"></iho-input></div></div>
+  </form></section>
+  <section class="showcase-section"><h2>کد نمونه</h2><pre class="showcase-code"><code>{{ code }}</code></pre></section>
 </div>

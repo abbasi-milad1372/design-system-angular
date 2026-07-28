@@ -1,5 +1,5 @@
 .accordion {
-    border-radius: 12px;
+    border-radius: var(--border-radius-lg);
     overflow: hidden;
     transition: all 0.2s ease;
 
@@ -17,7 +17,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding: 16px 20px;
+        padding: var(--space-xl) var(--space-2xl);
         background: transparent;
         border: none;
         cursor: pointer;
@@ -35,7 +35,7 @@
 
 
     &__title {
-        font-weight: 700;
+        font-weight: var(--font-weight-bold);
         color: var(--color-gray-900);
         flex: 1;
     }
@@ -54,7 +54,7 @@
 
     &__icon {
         flex-shrink: 0;
-        margin-left: 12px;
+        margin-left: var(--space-lg);
         color: #6b7280;
         transition: transform 0.3s ease;
 
@@ -68,8 +68,8 @@
     }
 
     &__content {
-        padding: 0 20px 20px 20px;
-        color: var(--text-gray-400);
+        padding: 0 var(--space-2xl) var(--space-2xl) var(--space-2xl);
+        color: var(--color-gray-400);
         font-size: 14px;
         line-height: 1.8;
         direction: rtl;
@@ -81,8 +81,8 @@
 
             li {
                 position: relative;
-                padding-right: 20px;
-                margin-bottom: 12px;
+                padding-right: var(--space-2xl);
+                margin-bottom: var(--space-lg);
 
                 &:before {
                     content: "•";

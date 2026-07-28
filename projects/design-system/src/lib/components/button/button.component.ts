@@ -10,10 +10,11 @@ import { Router } from '@angular/router';
 
 export class ButtonComponent {
   //  @Input() label = 'Button';
-  @Input() variant: 'primary' | 'secondary' | 'error' | 'default' |
-   'ghost-primary' |
+  @Input() variant: 'primary' | 'secondary' | 'error' | 'default' | 'error-inside' |
+    'ghost-primary' |
     'ghost-error' |
-   'gray-inside' | 'primary-inside' | 'secondary-inside' = 'primary';
+    'ghost-secondary' |
+    'gray-inside' | 'primary-inside' | 'secondary-inside' = 'primary';
   @Input() size: 'sm' | 'md' | 'lg' | 'xl' = 'md';
   @Input() disabled = false;
   @Input() type: 'button' | 'link' = 'button';
@@ -29,14 +30,14 @@ export class ButtonComponent {
   @Input() showLoading = false;
   router = inject(Router);
   constructor(@Inject(PLATFORM_ID) private platformId: Object,
-   @Inject(WINDOW) private windowRef: Window,route:Router) {
- 
+    @Inject(WINDOW) private windowRef: Window, route: Router) {
+
   }
 
   ngOnInit() {
 
   }
-  openLink(ev:Event) {
+  openLink(ev: Event) {
     if (this.disabled || this.showLoading) {
       ev.preventDefault();
       ev.stopPropagation();
@@ -50,11 +51,11 @@ export class ButtonComponent {
 
   get classes(): any {
     return {
-      'button':true,
-      [`button--${this.variant}`]:true,
-      [`button--${this.size}`]:true,
-      'button--disabled' : this.disabled,
+      'button': true,
+      [`button--${this.variant}`]: true,
+      [`button--${this.size}`]: true,
+      'button--disabled': this.disabled,
     };
   }
- 
+
 }

@@ -1,74 +1,31 @@
-<div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6 items-center">
-    <label class="flex flex-col gap-1">
-        Color:
-        <select [(ngModel)]="selectedVariant" class="border p-2 rounded">
-            <option value="default">default</option>
-            <option value="lite">lite</option>
-            <option value="primary">Primary</option>
-            <option value="warning">warning</option>
-            <option value="error">Error</option>
-            <option value="success">success</option>
-            <option value="text-success">text-success</option>
-            <option value="text-warning">text-warning</option>
-            <option value="text-error">text-error</option>
-            <option value="text-primary">text-primary</option>
-            <option value="text-lite">text-lite</option>
-        </select>
-    </label>
+<div class="showcase-page">
+  <header class="showcase-header"><h1>Badge</h1><p>رنگ‌ها، اندازه‌ها، border، radius و slotهای محتوایی.</p></header>
 
-    <label class="flex flex-col gap-1">
-        Size:
-        <select [(ngModel)]="selectedSize" class="border p-2 rounded">
-            <option value="sm">Small</option>
-            <option value="md">Medium</option>
-            <option value="lg">Large</option>
-        </select>
-    </label>
-
-    <label class="flex items-center gap-2">
-        <input type="checkbox" [(ngModel)]="showLeftIcon" />
-        نمایش آیکن چپ
-    </label>
-
-    <label class="flex items-center gap-2">
-        <input type="checkbox" [(ngModel)]="showRightIcon" />
-        نمایش آیکن راست
-    </label>
-    <label class="flex items-center gap-2">
-        <input type="checkbox" [(ngModel)]="withDot" />
-        with dots
-    </label>
-    <label class="flex items-center gap-2">
-        <input type="checkbox" [(ngModel)]="withImg" />
-        with image
-    </label>
-    <label class="flex items-center gap-2">
-        <input type="checkbox" [(ngModel)]="border" />
-        with border
-    </label>
-    <label class="flex items-center gap-2">
-        <input type="checkbox" [(ngModel)]="radius" />
-        with radius
-    </label>
-</div>
-
-    <div class="w-[450px]">
-        <iho-badge [border]="border" [radius]="radius"  [size]="selectedSize" label="تست"
-            [variant]="selectedVariant">
-            <span dot *ngIf="withDot">.</span>
-            <span icon-left *ngIf="showLeftIcon" class="iho-icon-hut text-lg"></span>
-            <span icon-right *ngIf="showRightIcon" class="iho-icon-hut text-lg"></span>
-            <img *ngIf="withImg" img src="https://picsum.photos/16/16" alt="avatar" />
-    
-        </iho-badge>
-
+  <section class="showcase-section">
+    <h2>Variantها</h2>
+    <div class="showcase-grid">
+      <div class="showcase-example" *ngFor="let variant of variants"><h3>{{ variant }}</h3><iho-badge label="برچسب نمونه" [variant]="variant"></iho-badge></div>
     </div>
+  </section>
 
+  <section class="showcase-section">
+    <h2>اندازه‌ها</h2>
+    <div class="showcase-grid">
+      <div class="showcase-example" *ngFor="let size of sizes"><h3>{{ size }}</h3><iho-badge label="اندازه {{ size }}" variant="primary" [size]="size"></iho-badge></div>
+    </div>
+  </section>
 
-<hr class="my-5">
-<div class="grid grid-cols-1 my-5">
-    code:
-<pre class="bg-gray-950 text-white-100 p-4 rounded text-sm">
-  <code>{{ code }}</code>
-</pre>
+  <section class="showcase-section">
+    <h2>شکل و محتوا</h2>
+    <div class="showcase-grid">
+      <div class="showcase-example"><h3>Border</h3><iho-badge label="لبه‌دار" [border]="true"></iho-badge></div>
+      <div class="showcase-example"><h3>Rounded</h3><iho-badge label="گرد" variant="success" [radius]="true"></iho-badge></div>
+      <div class="showcase-example"><h3>Icon + dot</h3><iho-badge label="هتل منتخب" variant="primary" [radius]="true"><span icon-right class="iho-icon-hotel"></span><span dot>•</span></iho-badge></div>
+      <div class="showcase-example"><h3>Image</h3><iho-badge label="پروفایل" variant="lite"><img img src="assets/img/logo-footer.png" width="16" height="16" alt="لوگو"></iho-badge></div>
+      <div class="showcase-example"><h3>Animated label</h3><iho-badge label="متن طولانی برای نمایش حرکت برچسب" [animatedLabel]="true"></iho-badge></div>
+      <div class="showcase-example"><h3>Custom content</h3><iho-badge [mainContent]="true"><span label>محتوای سفارشی</span></iho-badge></div>
+    </div>
+  </section>
+
+  <section class="showcase-section"><h2>کد نمونه</h2><pre class="showcase-code"><code>{{ code }}</code></pre></section>
 </div>

@@ -1,24 +1,14 @@
-<div class="w-1/4 my-3">
-  <!-- Action Chip -->
-  <iho-chip label="برچسب" size="md" [rounded]="true" variant="neutral" type="action" (removed)="onRemove()" (added)="onAdd()">
-  </iho-chip>
-
-</div>
-<div class="w-full my-3">
-
-<!-- Filter Chip -->
-<iho-chip label="برچسب" variant="primary" type="filter" [(selected)]="isSelected">
-</iho-chip>
-</div>
-<div class="w-full my-3">
-
-<!-- Disabled -->
-<iho-chip label="برچسب" [disabled]="true"></iho-chip>
-</div>
-
-<div class="grid grid-cols-1 my-5">
-    code:
-<pre class="bg-gray-950 text-white-100 p-4 rounded text-sm">
-  <code>{{ code }}</code>
-</pre>
+<div class="showcase-page">
+  <header class="showcase-header"><h1>Chip</h1><p>Action و Filter در variantها، اندازه‌ها و stateهای مختلف.</p></header>
+  <section class="showcase-section"><h2>Action</h2><div class="showcase-grid">
+    <div class="showcase-example"><h3>Neutral / md</h3><iho-chip label="برچسب" size="md" variant="neutral" type="action"></iho-chip></div>
+    <div class="showcase-example"><h3>Primary / sm / rounded</h3><iho-chip label="پیشنهاد ویژه" size="sm" variant="primary" type="action" [rounded]="true"></iho-chip></div>
+    <div class="showcase-example"><h3>Add + remove</h3><iho-chip label="قابل ویرایش" [showAdd]="true" [showRemove]="true" (added)="onAdd()" (removed)="onRemove()"></iho-chip><small>آخرین رویداد: {{ lastAction }}</small></div>
+  </div></section>
+  <section class="showcase-section"><h2>Filter و state</h2><div class="showcase-grid">
+    <div class="showcase-example"><h3>Neutral filter</h3><iho-chip label="صبحانه" type="filter" [(selected)]="neutralSelected"></iho-chip></div>
+    <div class="showcase-example"><h3>Primary selected</h3><iho-chip label="قابل استرداد" variant="primary" type="filter" [(selected)]="primarySelected" [rounded]="true"></iho-chip></div>
+    <div class="showcase-example"><h3>Disabled</h3><iho-chip label="غیرفعال" [disabled]="true"></iho-chip></div>
+  </div></section>
+  <section class="showcase-section"><h2>کد نمونه</h2><pre class="showcase-code"><code>{{ code }}</code></pre></section>
 </div>

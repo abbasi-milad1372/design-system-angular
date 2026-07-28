@@ -1,88 +1,16 @@
-<div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6 items-center">
-    <label class="flex flex-col gap-1">
-        Size:
-        <select [(ngModel)]="selectedSize" class="border p-2 rounded">
-            <option value="sm">Small</option>
-            <option value="md">Medium</option>
-        </select>
-    </label>
-
-    <label class="flex items-center gap-2">
-        <input type="checkbox" [(ngModel)]="showLeftIcon" />
-        نمایش آیکن چپ
-    </label>
-
-    <label class="flex items-center gap-2">
-        <input type="checkbox" [(ngModel)]="showRightIcon" />
-        نمایش آیکن راست
-    </label>
-
-
-    <label class="flex items-center gap-2">
-        <input type="checkbox" [(ngModel)]="withBadge" />
-        with Badge
-    </label>
-    <label class="flex items-center gap-2">
-        <input type="checkbox" [(ngModel)]="activeTab" />
-        active
-    </label>
-</div>
-
-<div class="flex my-5">
-    <div class="mx-2">
-        <iho-tab label="محبوب‌ترین" variant="outline" [size]="selectedSize" [active]="activeTab">
-            <span icon-left *ngIf="showLeftIcon">👈</span>
-            <span icon-right *ngIf="showRightIcon">👉</span>
-            <span *ngIf="withBadge" badge
-                class="ml-2 bg-green-500 text-black px-2 py-0.5 rounded-4xl left-[-20px] top-[-15px] text-xs absolute">جدید</span>
-        </iho-tab>
-    </div>
-    <div class="mx-2">
-        <iho-tab label="ارزان‌ترین" variant="outline" [size]="selectedSize" [active]="activeTab">
-            <span icon-left *ngIf="showLeftIcon">👈</span>
-            <span icon-right *ngIf="showRightIcon">👉</span>
-            <span *ngIf="withBadge" badge
-                class="ml-2 bg-green-500 text-black px-2 py-0.5 rounded-4xl left-[-20px] top-[-15px] text-xs absolute">جدید</span>
-        </iho-tab>
-    </div>
-
-
-
-</div>
-<div class="flex my-5">
-    <div class="mx-2">
-        <iho-tab label="محبوب‌ترین" variant="outline" [size]="selectedSize" [active]="activeTab" [border]="true">
-            <span icon-left *ngIf="showLeftIcon">👈</span>
-            <span icon-right *ngIf="showRightIcon">👉</span>
-            <span *ngIf="withBadge" badge
-                class="ml-2 bg-green-500 text-black px-2 py-0.5 rounded-4xl left-[-20px] top-[-15px] text-xs absolute">جدید</span>
-        </iho-tab>
-    </div>
-    <div class="mx-2">
-        <iho-tab label="ارزان‌ترین" variant="outline" [size]="selectedSize" [active]="activeTab" [border]="true"
-            [roundedFull]="true">
-            <span icon-left *ngIf="showLeftIcon">👈</span>
-            <span icon-right *ngIf="showRightIcon">👉</span>
-            <span *ngIf="withBadge" badge
-                class="ml-2 bg-green-500 text-black px-2 py-0.5 rounded-4xl left-[-20px] top-[-15px] text-xs absolute">جدید</span>
-        </iho-tab>
-    </div>
-
-
-
-</div>
-<div class="mx-2 w-full border-t pt-2">
-    <iho-tab label="گشت و گذار" variant="outline" [size]="selectedSize" [active]="activeTab" layout="icon-top"
-        [border]="false">
-        <span icon-top class="iho-icon-hut text-xl"></span>
-        <span *ngIf="withBadge" badge
-            class="ml-2 bg-green-500 text-black px-2 py-0.5 rounded-4xl left-[-20px] top-[-15px] text-xs absolute">جدید</span>
-    </iho-tab>
-</div>
-
-<div class="grid grid-cols-1 my-5">
-    code:
-    <pre class="bg-gray-950 text-white-100 p-4 rounded text-sm">
-  <code>{{ code }}</code>
-</pre>
+<div class="showcase-page">
+  <header class="showcase-header"><h1>Tab</h1><p>اندازه، active، disabled، border، rounded، icon و layout عمودی.</p></header>
+  <section class="showcase-section"><h2>اندازه و state</h2><div class="showcase-grid">
+    <div class="showcase-example"><h3>md / active</h3><iho-tab label="محبوب‌ترین" size="md" [active]="true"></iho-tab></div>
+    <div class="showcase-example"><h3>sm</h3><iho-tab label="ارزان‌ترین" size="sm"></iho-tab></div>
+    <div class="showcase-example"><h3>Disabled</h3><iho-tab label="غیرفعال" [disabled]="true"></iho-tab></div>
+  </div></section>
+  <section class="showcase-section"><h2>قاب و محتوا</h2><div class="showcase-grid">
+    <div class="showcase-example"><h3>Border</h3><iho-tab label="لبه‌دار" [border]="true"></iho-tab></div>
+    <div class="showcase-example"><h3>Rounded full</h3><iho-tab label="کاملاً گرد" [border]="true" [roundedFull]="true"></iho-tab></div>
+    <div class="showcase-example"><h3>Left + right icon</h3><iho-tab label="هتل‌ها"><span icon-right class="iho-icon-hut"></span><span icon-left class="iho-icon-arrow-left-01-sharp"></span></iho-tab></div>
+    <div class="showcase-example"><h3>Icon top</h3><iho-tab label="تفریحات" layout="icon-top" [active]="true"><span icon-top class="iho-icon-hut text-xl"></span></iho-tab></div>
+    <div class="showcase-example"><h3>Badge slot</h3><iho-tab label="پیام‌ها"><iho-badge badge label="۳" size="sm" variant="error" [radius]="true"></iho-badge></iho-tab></div>
+  </div></section>
+  <section class="showcase-section"><h2>کد نمونه</h2><pre class="showcase-code"><code>{{ code }}</code></pre></section>
 </div>

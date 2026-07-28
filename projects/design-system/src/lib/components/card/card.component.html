@@ -1,21 +1,18 @@
 <article class="card" *ngIf="!isAddvertisement">
     <ng-container *ngIf="type === 'distance'">
         <div class="card_distance">
-            <div class="flex">
+        <div class="flex distance-card-row">
                 <div class="distance__image_wrapper">
-                    <img [src]="image" (click)="navigateTo(linkReserve)" class="distance__image poiner" [alt]="title"
+                    <img [src]="image"  class="distance__image poiner" [alt]="title"
                         (error)="onImageError($event)" />
                     <div *ngIf="isIhoPluse" class="card_iho_plus">
                         <img src="/assets/img/iho-pluse.svg" [attr.alt]="title" />
                     </div>
                 </div>
 
-                <div class="offerSpecial" *ngIf="offerSpecial">
-                    <p>پیشنهاد ویژه</p>
-                </div>
+            
 
-
-                <div class="flex items-center flex-col flex-grow lg:flex-row">
+            <div class="flex items-start flex-col flex-grow lg:items-center lg:flex-row">
                     <div class="card__body">
                         <a [href]="linkReserve" class="w-full lg:truncate">
                             <h2 class="card__title w-full lg:truncate">{{ title }}</h2>
@@ -24,20 +21,20 @@
 
                         <div class="card__meta w-full ">
                             <div class="flex justify-center items-center gap-3 lg:gap-2">
-                                <div class="card__star" *ngIf="star != '0'">
+                                <div class="card__star" *ngIf="star">
                                     <i class="iho-icon-star1"></i>
                                     <span>
                                         {{ star }} ستاره
                                     </span>
                                 </div>
-                                <div class="card__review" *ngIf="reviewCount != '0'">
+                                <div class="card__review">
                                     <span class="card__rating">{{rating}}</span>
                                     <span>( {{ reviewCount }} نظر )</span>
                                 </div>
                             </div>
 
                             <div *ngIf="location" class="card__location">
-                                <svg id="LocationIcon" width="24" height="24" viewBox="3 1 18 22"
+                                <svg id="LocationIcon" class="distance-location__icon" viewBox="3 1 18 22"
                                     stroke="var(--color5, #777a80)" fill="none">
                                     <path
                                         d="M14.5 9c0 1.3807-1.1193 2.5-2.5 2.5S9.5 10.3807 9.5 9c0-1.3807 1.1193-2.5 2.5-2.5s2.5 1.1193 2.5 2.5z">
@@ -125,10 +122,11 @@
                                 [size]="'md'" [type]="'button'" [href]="linkReserve" (clickBtn)="handleBtn($event)">
                                 <span label>انتخاب اتاق و رزرو</span>
                             </iho-button>
-                            <iho-button *ngIf="capacityCompletion" [variant]="'primary-inside'" [size]="'lg'"
+                            <iho-button *ngIf="capacityCompletion" class="w-full mt-2" [variant]="'error-inside'" [size]="'lg'"
                                 [type]="'button'" [href]="linkReserve" (clickBtn)="handleBtn($event)">
                                 <span label> تکمیل ظرفیت </span>
                             </iho-button>
+                           
                         </div>
 
 
@@ -158,19 +156,19 @@
 
                 <div class="flex gap-3 items-center stars__container">
                     <div class="card__meta truncate" *ngIf="star">
-                        <i class="iho-icon-star1 text-sm"></i>
+                        <i class="iho-icon-star1 text-base"></i>
                         <span>
                             {{ star }} ستاره
                         </span>
                     </div>
                     <div *ngIf="!withPriceDevider" class="flex items-center gap-1 rating_review">
                         <span class="card__rating" *ngIf="rating">{{rating}}</span>
-                        <span class="card__meta" *ngIf="reviewCount"> ({{ reviewCount }} نظر ) </span>
+                        <span class="card__meta"> ({{ reviewCount }} نظر ) </span>
                     </div>
                 </div>
 
                 <div class="card__location w-full ">
-                    <svg id="LocationIcon" width="14" *ngIf="location" height="18" viewBox="3 1 18 22"
+                    <svg id="LocationIcon" class="hotel-location__icon" *ngIf="location" viewBox="3 1 18 22"
                         stroke="var(--color5, #777a80)" fill="none">
                         <path
                             d="M14.5 9c0 1.3807-1.1193 2.5-2.5 2.5S9.5 10.3807 9.5 9c0-1.3807 1.1193-2.5 2.5-2.5s2.5 1.1193 2.5 2.5z">

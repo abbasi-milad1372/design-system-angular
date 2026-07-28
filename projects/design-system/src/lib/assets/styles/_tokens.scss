@@ -1,19 +1,19 @@
 :root {
     --color-transparency-primary-DEFAULT: #2463EB00;
     --color-transparency-primary-10: #2463EB19;
-    --color-transparency-primary-20: #2463EB33;
-    --color-transparency-primary-30: #2463EB4C;
-    --color-transparency-primary-40: #2463EB66;
+    --color-transparency-primary-20: #EBF0FA; 
+    --color-transparency-primary-30: rgba(0, 85, 255, 0.20);
+    --color-transparency-primary-40: rgba(0, 85, 255, 0.40);
     --color-transparency-primary-50: #2463EB7F;
     --color-transparency-primary-60: #2463EB99;
     --color-transparency-primary-70: #2463EBB2;
     --color-transparency-primary-80: #2463EBCC;
     --color-transparency-primary-90: #2463EBE5;
     --color-transparency-secondary-DEFAULT: #FFC31200;
-    --color-transparency-secondary-10: #FFC31219;
-    --color-transparency-secondary-20: #FFC31233;
-    --color-transparency-secondary-30: #FFC3124C;
-    --color-transparency-secondary-40: #FFC31266;
+    --color-transparency-secondary-10: rgba(255, 160, 0, 0.10);
+    --color-transparency-secondary-20: rgba(255, 160, 0, 0.20);
+    --color-transparency-secondary-30: rgba(255, 160, 0, 0.30);
+    --color-transparency-secondary-40: rgba(255, 160, 0, 0.40);
     --color-transparency-secondary-50: #FFC3127F;
     --color-transparency-secondary-60: #FFC31299;
     --color-transparency-secondary-70: #FFC312B2;

@@ -1,23 +1,17 @@
-<div class="grid grid-cols-1 my-5 w-1/2">
-  <iho-radio [radioValue]="'booker'" [label]="'مشابه رزرو کننده'">
-  </iho-radio>
-
-
-
-</div>
-<div class="grid grid-cols-1 my-5 w-1/2">
-  <iho-radio [radioValue]="'guest'" [label]="'مهمان'" [disabled]="true">
-  </iho-radio>
-  <iho-radio-group formControlName="travelType" name="travelType">
-    <iho-radio [radioValue]="'WORK'" label="بله" [checked]="true"></iho-radio>
-    <iho-radio [radioValue]="'PLEASURE'" label="خیر"></iho-radio>
-  </iho-radio-group>
-
-
-</div>
-<div class="grid grid-cols-1 my-5">
-  code:
-  <pre class="bg-gray-950 text-white-100 p-4 rounded text-sm">
-  <code>{{ code }}</code>
-</pre>
+<div class="showcase-page">
+  <header class="showcase-header"><h1>Radio</h1><p>گزینه تکی، گروه CVA، checked، disabled و جهت.</p></header>
+  <section class="showcase-section"><h2>Radio group</h2><div class="showcase-example">
+    <iho-radio-group [(ngModel)]="travelType" name="travelType">
+      <iho-radio radioValue="work" label="سفر کاری"></iho-radio>
+      <iho-radio radioValue="leisure" label="سفر تفریحی"></iho-radio>
+      <iho-radio radioValue="family" label="سفر خانوادگی"></iho-radio>
+    </iho-radio-group>
+    <small>مقدار انتخاب‌شده: {{ travelType }}</small>
+  </div></section>
+  <section class="showcase-section"><h2>حالت‌ها</h2><div class="showcase-grid">
+    <div class="showcase-example"><h3>Checked</h3><iho-radio radioValue="yes" label="انتخاب‌شده" [checked]="true"></iho-radio></div>
+    <div class="showcase-example"><h3>Disabled</h3><iho-radio radioValue="no" label="غیرفعال" [disabled]="true"></iho-radio></div>
+    <div class="showcase-example"><h3>LTR</h3><iho-radio radioValue="ltr" label="Left to right" dir="ltr"></iho-radio></div>
+  </div></section>
+  <section class="showcase-section"><h2>کد نمونه</h2><pre class="showcase-code"><code>{{ code }}</code></pre></section>
 </div>

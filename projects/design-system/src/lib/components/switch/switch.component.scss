@@ -2,7 +2,7 @@
 .iho-switch {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: var(--space-md);
     cursor: pointer;
     user-select: none;
 }
@@ -16,27 +16,27 @@
     font-size: var(--font-small);
     line-height: 28px;
     color: var(--color-gray-400);
-    font-weight: 500;
+    font-weight: var(--font-weight-medium);
 }
 
 .iho-switch__track {
     position: relative;
-    width: 32px;
-    height: 16px;
+    width: var(--space-4xl);
+    height: var(--space-xl);
     background: var(--color-gray-100);
-    border-radius: 999px;
-    flex: 0 0 32px;
+    border-radius: var(--border-radius-full);
+    flex: 0 0 var(--space-4xl);
     transition: background-color .15s ease, box-shadow .15s ease;
     display: inline-block;
 }
 
 .iho-switch__thumb {
     position: absolute;
-    inset-block-end: 2px;
-    inset-inline-end: 2px;
-    width: 12px;
-    height: 12px;
-    border-radius: 999px;
+    inset-block-end: var(--space-2xs);
+    inset-inline-end: var(--space-2xs);
+    width: var(--space-lg);
+    height: var(--space-lg);
+    border-radius: var(--border-radius-full);
     background: var(--color-white-DEFAULT);
     box-shadow: 0 1px 2px rgba(0, 0, 0, .16);
     transition: transform .15s ease;
@@ -47,7 +47,7 @@
 }
 
 .iho-switch__track.is-on .iho-switch__thumb {
-    transform: translateX(16px);
+    transform: translateX(var(--space-xl));
 }
 
 
@@ -64,6 +64,6 @@
 }
 
 .iho-switch__native:focus-visible+.iho-switch__track {
-    box-shadow: 0 0 0 3px var(--iho-focus);
+    box-shadow: 0 0 0 3px var(--color-transparency-primary-30);
     outline: none;
 }

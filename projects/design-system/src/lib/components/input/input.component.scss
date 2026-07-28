@@ -3,7 +3,7 @@
     display: flex;
     align-items: center;
     padding: var(--space-lg) var(--space-xl);
-    border: 1px solid var(--color-gray-DEFAULT);
+    border: var(--border-width-inside) solid var(--color-gray-DEFAULT);
     border-radius: var(--border-radius-xs);
     background-color: var(--color-white-500);
     transition: border-color 0.2s ease, background-color 0.2s ease;
@@ -13,7 +13,7 @@
     }
 
     &.input-lg {
-        height: 56px;
+        height: var(--space-7xl);
     }
 
     @media (max-width: 1024px) {
@@ -79,8 +79,8 @@
     }
 
     .input__ph .ast {
-        color: var(--danger-500, #ef4444);
-        font-weight: 600;
+        color: var(--color-error-500);
+        font-weight: var(--font-weight-semibold);
         padding-right: 5px;
     }
 
@@ -163,7 +163,7 @@
         transform: translateY(-50%);
         font-size: var(--font-p);
         color: var(--color-gray-400);
-        background-color: var(--color-white);
+        background-color: var(--color-white-DEFAULT);
         padding: 0 var(--space-2xs);
         pointer-events: none;
         transition: 0.2s ease all;
@@ -265,10 +265,10 @@
 .input__error_inline,
 .input__success_inline,
 .input__hint_inline {
-    margin-top: 4px;
+    margin-top: var(--space-xs);
     font-size: var(--font-text);
     font-weight: var(--font-weight-regular);
-    line-height: 22px;
+    line-height: var(--line-height-text);
 }
 
 .input__error_inline {

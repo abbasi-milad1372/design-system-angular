@@ -1,19 +1,26 @@
 import { Component } from '@angular/core';
 
-@Component({
-    selector: 'app-checkbox-view',
-    templateUrl: './checkbox-view.component.html',
-})
-export class CheckBoxComponent { 
-    similarToBooker = false;
- code = `
-   <div class="grid grid-cols-1 my-5 w-1/2">
-<iho-checkbox [(ngModel)]="similarToBooker" color="black" [label]="'مشابه رزرو کننده'"></iho-checkbox>
+@Component({ selector: 'app-checkbox-view', templateUrl: './checkbox-view.component.html' })
+export class CheckBoxComponent {
+    xsChecked = true;
+    smChecked = true;
+    mdChecked = true;
+    unchecked = false;
+    withSupporting = true;
+    requiredValue = false;
 
-</div>
-<div class="grid grid-cols-1 my-5 w-1/2">
-    <iho-checkbox  [(ngModel)]="similarToBooker" [disabled]="true" [label]="'مشابه رزرو کننده'"></iho-checkbox>
+    code = `<iho-checkbox size="xs" label="Checkbox 16px"></iho-checkbox>
+<iho-checkbox size="sm" label="Checkbox 20px"></iho-checkbox>
+<iho-checkbox size="md" label="Checkbox 24px"></iho-checkbox>
 
-</div>
- `;
+<iho-checkbox
+  [(ngModel)]="selected"
+  size="md"
+  color="black"
+  label="منو انتخاب کن"
+  supportingText="من بهترین انتخاب برای شما هستم در این بخش">
+</iho-checkbox>
+
+<iho-checkbox label="انتخاب ناقص" [indeterminate]="true"></iho-checkbox>
+<iho-checkbox label="غیرفعال" [disabled]="true"></iho-checkbox>`;
 }

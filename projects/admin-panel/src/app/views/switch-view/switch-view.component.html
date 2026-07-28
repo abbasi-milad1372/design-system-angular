@@ -1,23 +1,10 @@
-
-
-<div class="grid grid-cols-1 my-5 w-1/2"> 
-<iho-switch [(ngModel)]="useWallet" [label]="'استفاده از کیف پول ایران هتل'">
-</iho-switch>
-
-</div>
-<div class="grid grid-cols-1 my-5 w-1/2">
-<iho-switch [(ngModel)]="useWallets" [label]="'استفاده از کیف پول ایران هتل'">
-</iho-switch>
-
-</div>
-<div class="grid grid-cols-1 my-5 w-1/2">
-  <iho-switch [(ngModel)]="useWallet" [disabled]="true" [label]="'استفاده از کیف پول ایران هتل'">
-  </iho-switch>
-
-</div>
-<div class="grid grid-cols-1 my-5">
-    code:
-    <pre class="bg-gray-950 text-white-100 p-4 rounded text-sm">
-  <code>{{ code }}</code>
-</pre>
+<div class="showcase-page">
+  <header class="showcase-header"><h1>Switch</h1><p>حالت روشن و خاموش، required، disabled و رویداد changed.</p></header>
+  <section class="showcase-section"><h2>حالت‌ها</h2><div class="showcase-grid">
+    <div class="showcase-example"><h3>Off</h3><iho-switch [(ngModel)]="off" label="دریافت اعلان‌ها"></iho-switch><small>{{ off }}</small></div>
+    <div class="showcase-example"><h3>On</h3><iho-switch [(ngModel)]="on" label="استفاده از کیف پول"></iho-switch><small>{{ on }}</small></div>
+    <div class="showcase-example"><h3>Required</h3><iho-switch [(ngModel)]="off" label="تایید شرایط" [required]="true"></iho-switch></div>
+    <div class="showcase-example"><h3>Disabled</h3><iho-switch [disabled]="true" label="غیرفعال"></iho-switch></div>
+  </div></section>
+  <section class="showcase-section"><h2>کد نمونه</h2><pre class="showcase-code"><code>{{ code }}</code></pre></section>
 </div>

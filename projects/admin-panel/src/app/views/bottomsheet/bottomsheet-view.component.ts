@@ -1,57 +1,42 @@
-import { Component, inject, ViewChild, ViewContainerRef } from '@angular/core';
+import { Component, ViewChild, ViewContainerRef } from '@angular/core';
 import { BottomsheetService } from 'design-system';
 import { CustomContentComponent } from './custom-content.component';
 
-@Component({
-    selector: 'app-bottomsheet',
-    templateUrl: './bottomsheet-view.component.html',
-})
-export class bottomheetViewComponent { 
-    isBottomsheetOpen = false;
-    isDisabled = false;
+type BottomsheetPosition = 'bottom' | 'top' | 'left' | 'right';
+
+@Component({ selector: 'app-bottomsheet', templateUrl: './bottomsheet-view.component.html' })
+export class bottomheetViewComponent {
     @ViewChild('bottomsheetContainer', { read: ViewContainerRef }) bottomsheetContainer!: ViewContainerRef;
-    constructor(private bottomsheetService: BottomsheetService) { }
-openBottomsheet() {
-    const payload = {
-        id: 123,
-        name: 'کاربر نمونه',
-        details: 'این یک داده نمونه است',
-    };
+    positions: BottomsheetPosition[] = ['bottom', 'top', 'left', 'right'];
 
-    this.bottomsheetService.open(this.bottomsheetContainer, {
-        component: CustomContentComponent,
-        data: payload,
-        fullHeight: false,
-        title: 'اطلاعات کاربر',
-        position: 'bottom',
-        dir: 'rtl',
-        disabled: false,
-        iconClass: 'iho-icon-info text-xl', 
-    });
-    }
-   
-   
-    position: 'bottom' | 'top' | 'left' | 'right' = 'bottom';
- code = `
-<iho-bottomsheet [position]="position" [title]="'عنوان Bottomsheet'" [isOpen]="isBottomsheetOpen" [disabled]="isDisabled" [dir]="'rtl'"
-  (closed)="onBottomsheetClosed()">
-<i class="iho-icon-information-circle  text-xl" icon-title></i>
-  <p>این یک نمونه محتوای داخل Bottomsheet است.</p>
-</iho-bottomsheet>
-======================================
-ts file:
-    openBottomsheet() {
-        this.isBottomsheetOpen = true;
-    }
-    closeBottomsheet() {
-        this.isBottomsheetOpen = false;
-    }
-    onBottomsheetClosed() {
-        this.isBottomsheetOpen = false;
-    }
-    isBottomsheetOpen = false;
-    isDisabled = false;
-    position: 'bottom' | 'top' | 'left' | 'right' = 'bottom';
+    constructor(private bottomsheetService: BottomsheetService) {}
 
- `;
+    openBottomsheet(position: BottomsheetPosition, fullHeight = false): void {
+        this.bottomsheetService.open(this.bottomsheetContainer, {
+            component: CustomContentComponent,
+            data: { id: 123, name: 'کاربر نمونه', details: 'داده ارسال‌شده به محتوای سفارشی' },
+            title: fullHeight ? 'Bottomsheet تمام‌قد' : `موقعیت ${position}`,
+            position,
+            dir: 'rtl',
+            disabled: false,
+            fullHeight,
+            iconClass: 'iho-icon-info text-xl',
+        });
+    }
+
+    code = `@ViewChild('bottomsheetContainer', { read: ViewContainerRef })
+bottomsheetContainer!: ViewContainerRef;
+
+openBottomsheet(): void {
+  this.bottomsheetService.open(this.bottomsheetContainer, {
+    component: CustomContentComponent,
+    data: { id: 123 },
+    title: 'اطلاعات کاربر',
+    position: 'bottom',
+    dir: 'rtl',
+    fullHeight: false,
+    disabled: false,
+    iconClass: 'iho-icon-info'
+  });
+}`;
 }

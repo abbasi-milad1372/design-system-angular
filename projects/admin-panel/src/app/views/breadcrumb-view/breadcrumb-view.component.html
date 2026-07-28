@@ -1,13 +1,9 @@
-<iho-breadcrumb [items]="[
-  { name: 'خانه', url: '/' },
-  { name: 'پنل  کاربر  کاربر کاربر کاربر کاربر  کاربر کاربر کاربر کاربر', url: '/dashboard' },
-  { name: 'تنظیمات کاربر کاربر کاربر کاربر کاربر ' }
-]"></iho-breadcrumb>
-
-
-<div class="grid grid-cols-1 my-5">
-    code:
-<pre class="bg-gray-950 text-white-100 p-4 rounded text-sm">
-  <code>{{ code }}</code>
-</pre>
+<div class="showcase-page">
+  <header class="showcase-header"><h1>Breadcrumb</h1><p>مسیر کوتاه، مسیر چندمرحله‌ای و separator سفارشی.</p></header>
+  <section class="showcase-section"><h2>نمونه‌ها</h2><div class="showcase-grid">
+    <div class="showcase-example"><h3>Default</h3><iho-breadcrumb [items]="basicItems"></iho-breadcrumb></div>
+    <div class="showcase-example"><h3>Short</h3><iho-breadcrumb [items]="shortItems"></iho-breadcrumb></div>
+    <div class="showcase-example"><h3>Custom separator</h3><iho-breadcrumb [items]="basicItems" separator="iho-icon-arrow-right-01-sharp"></iho-breadcrumb></div>
+  </div></section>
+  <section class="showcase-section"><h2>کد نمونه</h2><pre class="showcase-code"><code>{{ code }}</code></pre></section>
 </div>

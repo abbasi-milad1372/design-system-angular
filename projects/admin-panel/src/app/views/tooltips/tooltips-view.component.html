@@ -1,34 +1,17 @@
-<div class="text-center w-full my-10">
-    <iho-tooltip [isVisible]="showTooltip" [popUpTemplate]="tooltipTpl" position="right">
-        <i class="iho-icon-arrow-right-01-sharp mt-6" style="font-size:32px;" (mouseenter)="onMouseEnter(true)"
-            (mouseleave)="onMouseLeave(false)">
-        </i>
-    </iho-tooltip>
-
-    <ng-template #tooltipTpl>
-        <div class="text-text">این متن داخل تولتیپ نشان داده می‌شود</div>
-    </ng-template>
-
-</div>
-<div class="text-center w-full my-10">
-    <iho-tooltip [isVisible]="showTooltipNew" [popUpTemplate]="tooltipTplbottom" position="bottom">
-        <i class="iho-icon-arrow-down-01-sharp mt-6" style="font-size:32px;" (mouseenter)="onMouseEnterNew(true)"
-            (mouseleave)="onMouseLeaveNew(false)">
-        </i>
-    </iho-tooltip>
-
-    <ng-template #tooltipTplbottom>
-        <div class="text-text">این متن داخل تولتیپ نشان داده می‌شود</div>
-    </ng-template>
-
-</div>
-
-
-
-
-<div class="grid grid-cols-1 my-5">
-    code:
-    <pre class="bg-gray-950 text-white-100 p-4 rounded text-sm">
-  <code>{{ code }}</code>
-</pre>
+<div class="showcase-page">
+  <header class="showcase-header"><h1>Tooltip</h1><p>چهار موقعیت، arrow، offset، forcePosition، delay و outputها؛ برای نمایش روی trigger مکث کنید.</p></header>
+  <ng-template #tooltipContent><span class="text-text">اطلاعات تکمیلی این بخش</span></ng-template>
+  <section class="showcase-section"><h2>موقعیت‌ها</h2><div class="showcase-grid">
+    <div class="showcase-example"><h3>Top</h3><iho-tooltip [popUpTemplate]="tooltipContent" position="top"><button type="button" class="border p-2 rounded">بالا</button></iho-tooltip></div>
+    <div class="showcase-example"><h3>Bottom</h3><iho-tooltip [popUpTemplate]="tooltipContent" position="bottom"><button type="button" class="border p-2 rounded">پایین</button></iho-tooltip></div>
+    <div class="showcase-example"><h3>Left</h3><iho-tooltip [popUpTemplate]="tooltipContent" position="left"><button type="button" class="border p-2 rounded">چپ</button></iho-tooltip></div>
+    <div class="showcase-example"><h3>Right</h3><iho-tooltip [popUpTemplate]="tooltipContent" position="right"><button type="button" class="border p-2 rounded">راست</button></iho-tooltip></div>
+  </div></section>
+  <section class="showcase-section"><h2>تنظیمات</h2><div class="showcase-grid">
+    <div class="showcase-example"><h3>No arrow</h3><iho-tooltip [popUpTemplate]="tooltipContent" [showArrow]="false"><button type="button" class="border p-2 rounded">بدون فلش</button></iho-tooltip></div>
+    <div class="showcase-example"><h3>Custom offset</h3><iho-tooltip [popUpTemplate]="tooltipContent" [offset]="20"><button type="button" class="border p-2 rounded">فاصله ۲۰</button></iho-tooltip></div>
+    <div class="showcase-example"><h3>Force position</h3><iho-tooltip [popUpTemplate]="tooltipContent" position="right" [forcePosition]="true"><button type="button" class="border p-2 rounded">موقعیت ثابت</button></iho-tooltip></div>
+    <div class="showcase-example"><h3>Delay + outputs</h3><iho-tooltip [popUpTemplate]="tooltipContent" [delayEnter]="0" [delayLeave]="300" (closed)="onClosed()" (visibleChange)="onVisibleChange($event)"><button type="button" class="border p-2 rounded">رویدادها</button></iho-tooltip><small>{{ lastEvent }}</small></div>
+  </div></section>
+  <section class="showcase-section"><h2>کد نمونه</h2><pre class="showcase-code"><code>{{ code }}</code></pre></section>
 </div>

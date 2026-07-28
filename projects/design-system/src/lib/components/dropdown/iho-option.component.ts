@@ -12,7 +12,7 @@ import { Component, ElementRef, EventEmitter, HostBinding, HostListener, Input, 
   styles: [`
     :host {
       display: block;
-        padding: 4px 8px;
+        padding: var(--space-xs) var(--space-md);
       cursor: pointer;
       user-select: none;
       height:36px;
@@ -20,7 +20,7 @@ import { Component, ElementRef, EventEmitter, HostBinding, HostListener, Input, 
         background: var(--color-gray-DEFAULT);
       }
     }
-    :host(.is-highlight) { background: var(--color-gray-DEFAULT); border-radius: 4px; }
+    :host(.is-highlight) { background: var(--color-gray-DEFAULT); border-radius: var(--border-radius-xs); }
     :host(.is-disabled) { color: var(--color-gray-200); cursor: not-allowed; }
     .iho-option__inner { 
         line-height: 28px;
@@ -28,15 +28,15 @@ import { Component, ElementRef, EventEmitter, HostBinding, HostListener, Input, 
       font-weight: var(--font-weight-medium);
       color: var(--color-gray-400);
       text-align: right;
-       border-bottom: 1px solid var(--color-gray-DEFAULT);
+       border-bottom: var(--border-width-inside) solid var(--color-gray-DEFAULT);
     }
    
     :host(.searchable-mode){
- padding: 12px 16px; 
+ padding: var(--space-lg) var(--space-xl);
       color: var(--color-gray-400);
-      border-bottom: 1px solid var(--color-gray-DEFAULT);
-         height:48px;
-         border-radius: 4px;
+      border-bottom: var(--border-width-inside) solid var(--color-gray-DEFAULT);
+         height:var(--space-6xl);
+         border-radius: var(--border-radius-xs);
     }
     /* استایل‌های خاص برای حالت searchable */
     :host(.searchable-mode) .iho-option__inner {

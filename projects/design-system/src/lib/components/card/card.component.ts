@@ -41,7 +41,7 @@ export class CardComponent {
     @Input() isIhoPluse = false;
     @Input() labelBadge = '';
     @Input() capacityCompletion = false;
-    @Input()  offerSpecial = false; 
+    @Input() letMeKnow = false;
     @Input() linkReserve = '';
     @Input() promotions = false;
     @Input() currency = false;

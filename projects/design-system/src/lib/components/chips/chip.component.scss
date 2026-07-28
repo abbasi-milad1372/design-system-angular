@@ -2,11 +2,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 8px;
-    padding: var(--IHO-Number-Padding-sm, 6px) var(--IHO-Number-Padding-lg, 12px);
-    background: var(--IHO-Background-Frame-Main, #FAFAFA);
+    gap: var(--space-md);
+    padding: var(--space-sm) var(--space-lg);
+    background: var(--color-white-500);
     border: none;
-    border-radius: 12px;
+    border-radius: var(--border-radius-lg);
     cursor: pointer;
     transition: box-shadow 0.2s ease, background 0.2s ease, opacity 0.2s ease;
     direction: rtl;
@@ -15,31 +15,31 @@
     // ─── Rounded (pill) ───────────────────────────────────────────────────────
 
     &--rounded {
-        border-radius: var(--IHO-Number-Radius-full, 9999px);
+        border-radius: var(--border-radius-full);
     }
 
     // ─── Sizes ────────────────────────────────────────────────────────────────
 
     &--md {
-        height: 48px;
+        height: var(--space-6xl);
 
         .chip__label {
-            font-size: var(--font-size-small, 16px);
+            font-size: var(--font-size-small);
             line-height: 1.4;
         }
 
         .chip__btn svg {
-            width: 12px;
-            height: 12px;
+            width: var(--space-lg);
+            height: var(--space-lg);
         }
     }
 
     &--sm {
-        padding: var(--IHO-Number-Padding-xs, 4px) var(--IHO-Number-Padding-md, 8px);
-        height: 40px;
+        padding: var(--space-xs) var(--space-md);
+        height: var(--space-5xl);
 
         .chip__label {
-            font-size: var(--font-size-xs, 12px);
+            font-size: var(--font-size-text);
             line-height: 1.4;
         }
 
@@ -59,82 +59,81 @@
         }
 
         .chip__btn {
-            color: #5D6067;
+            color: var(--color-gray-400);
         }
 
         &:hover:not(.chip--disabled) {
-            box-shadow: 0 1px 6px 0 var(--IHO-Ring-Default-Gray, rgba(52, 56, 65, 0.20));
-            background: var(--IHO-Background-Frame-Main, #FAFAFA);
+        box-shadow: 0 4px 8px 0 var(--IHO-Ring-Default-Gray, rgba(52, 56, 65, 0.20));
+            background: var(--color-white-500);
 
             .chip__label {
-                color: #777A80;
+                color: var(--color-gray-300);
             }
 
             .chip__btn {
-                color: #777A80;
+                color: var(--color-gray-300);
             }
         }
 
         // Selected state — neutral
         &.chip--selected {
-            outline: 1.5px solid #16181B;
-            outline-offset: -1.5px;
+            outline: var(--border-width-decial-sm) solid var(--color-gray-900);
+            outline-offset: calc(var(--border-width-none) - var(--border-width-decial-sm));
 
             .chip__label {
                 color: #111827;
-                font-weight: 500;
+                font-weight: var(--font-weight-medium);
             }
         }
 
         // Filter selected — neutral
         &.chip--filter.chip--selected {
             background: #f3f4f6;
-            outline: 1.5px solid #16181B;
-            outline-offset: -1.5px;
+            outline: var(--border-width-decial-sm) solid var(--color-gray-900);
+            outline-offset: calc(var(--border-width-none) - var(--border-width-decial-sm));
         }
     }
 
     // ─── Primary ──────────────────────────────────────────────────────────────
 
     &--primary {
-        box-shadow: 0 1px 4px 0 var(--IHO-Ring-Default-Primary, rgba(0, 85, 255, 0.20));
+        box-shadow: 0 1px 4px 0 var(--color-transparency-primary-30);
 
         .chip__label {
-            color: #2563eb;
+            color: var(--color-gray-400);
         }
 
         .chip__btn {
-            color: #2563eb;
+            color: var(--color-gray-400);
         }
 
         &:hover:not(.chip--disabled) {
-            box-shadow: 0 1px 6px 0 var(--IHO-Ring-Default-Primary, rgba(0, 85, 255, 0.20));
-
+        box-shadow: 0 4px 8px 0 var(--color-transparency-primary-30);
             .chip__label {
-                color: #1d4ed8;
+                color: var(--color-primary-500);
             }
 
             .chip__btn {
-                color: #1d4ed8;
+                color: var(--color-primary-500);
             }
         }
 
         // Selected state — primary
         &.chip--selected {
-            outline: 1.5px solid #2563eb;
-            outline-offset: -1.5px;
+            outline: var(--border-width-decial-sm) solid #2563eb;
+            outline-offset: calc(var(--border-width-none) - var(--border-width-decial-sm));
 
             .chip__label {
                 color: #1d4ed8;
-                font-weight: 500;
+                font-weight: var(--font-weight-medium);
             }
         }
 
         // Filter selected — primary
         &.chip--filter.chip--selected {
             background: #dbeafe;
-            outline: 1.5px solid #2563eb;
-            outline-offset: -1.5px;
+            outline: var(--border-width-decial-sm) solid #2563eb;
+            outline-offset: calc(var(--border-width-none) - var(--border-width-decial-sm));
 
             .chip__label {
                 color: #1e40af;
@@ -157,7 +156,7 @@
     // ─── Elements ─────────────────────────────────────────────────────────────
 
     &__label {
-        font-weight: 500;
+        font-weight: var(--font-weight-medium);
         white-space: nowrap;
     }
 

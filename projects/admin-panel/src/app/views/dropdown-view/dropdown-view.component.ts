@@ -1,42 +1,20 @@
-import { Component, TemplateRef, ViewChild } from '@angular/core';
-@Component({
-    selector: 'app-dropdown-view',
-    templateUrl: './dropdown-view.component.html',
-})
-export class dropdownViewComponent { 
-    citymd: any;
-    citylg: any;
-    
-    code = `
-<div class="w-1/2 mt-10  text-center">
-    <iho-select [(ngModel)]="city" placeholder="شهر را انتخاب کنید" [searchable]="false" [size]="'md'"
-        [borderless]="false" [disabled]="false" [required]="true">
-        <iho-option [value]="'mashhad'" [label]="'مشهد'">مشهد</iho-option>
-        <iho-option [value]="'tehran'" [label]="'تهران'">تهران</iho-option>
-        <iho-option [value]="'tabriz'" [label]="'تبریز'">تبریز</iho-option>
-        <iho-option [value]="'tabriz-1'" [label]="'تبریز'">تبریز</iho-option>
-        <iho-option [value]="'tabriz-2'" [label]="'تبریز'">تبریز</iho-option>
-        <iho-option [value]="'tabriz-3'" [label]="'تبریز'">تبریز</iho-option>
-        <iho-option [value]="'tabriz-4'" [label]="'تبریز'">تبریز</iho-option>
-        <iho-option [value]="'tabriz-5'" [label]="'تبریز'">تبریز</iho-option>
-        <iho-option [value]="'tabriz-6'" [label]="'تبریز'">تبریز</iho-option>
-        <iho-option [value]="'tabriz-7'" [label]="'تبریز'">تبریز</iho-option>
-    </iho-select>
-</div>
-<div class="w-1/2 mt-10  text-center">
-    <iho-select [(ngModel)]="city" placeholder="شهر را انتخاب کنید" [searchable]="true" [size]="'lg'"
-        [borderless]="true" [disabled]="false" [required]="false">
-        <iho-option [value]="'mashhad'" [label]="'مشهد'">مشهد</iho-option>
-        <iho-option [value]="'tehran'" [label]="'تهران'">تهران</iho-option>
-        <iho-option [value]="'tabriz'" [label]="'تبریز'">تبریز</iho-option>
-        <iho-option [value]="'tabriz-1'" [label]="'تبریز'">تبریز</iho-option>
-        <iho-option [value]="'tabriz-2'" [label]="'تبریز'">تبریز</iho-option>
-        <iho-option [value]="'tabriz-3'" [label]="'تبریز'">تبریز</iho-option>
-        <iho-option [value]="'tabriz-4'" [label]="'تبریز'">تبریز</iho-option>
-        <iho-option [value]="'tabriz-5'" [label]="'تبریز'">تبریز</iho-option>
-        <iho-option [value]="'tabriz-6'" [label]="'تبریز'">تبریز</iho-option>
-        <iho-option [value]="'tabriz-7'" [label]="'تبریز'">تبریز</iho-option>
-    </iho-select>
-</div>
-    `
+import { Component } from '@angular/core';
+
+@Component({ selector: 'app-dropdown-view', templateUrl: './dropdown-view.component.html' })
+export class dropdownViewComponent {
+    cities = [{ value: 'mashhad', label: 'مشهد' }, { value: 'tehran', label: 'تهران' }, { value: 'tabriz', label: 'تبریز' }, { value: 'shiraz', label: 'شیراز' }];
+    cityMd: string | null = null;
+    cityLg: string | null = 'tehran';
+    cityBorderless: string | null = null;
+    code = `<iho-select [(ngModel)]="city" placeholder="شهر را انتخاب کنید" size="md" [required]="true">
+  <iho-option value="mashhad" label="مشهد">مشهد</iho-option>
+  <iho-option value="tehran" label="تهران">تهران</iho-option>
+</iho-select>
+
+<iho-select [(ngModel)]="city" size="lg" [searchable]="true" [borderless]="true">
+  <iho-option *ngFor="let city of cities" [value]="city.value" [label]="city.label">{{ city.label }}</iho-option>
+</iho-select>
+
+<iho-select placeholder="انتخاب نامعتبر" error="انتخاب شهر الزامی است"></iho-select>
+<iho-select placeholder="غیرفعال" [disabled]="true"></iho-select>`;
 }

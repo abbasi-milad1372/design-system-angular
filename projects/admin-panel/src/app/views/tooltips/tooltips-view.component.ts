@@ -1,50 +1,20 @@
-import { Component, TemplateRef, ViewChild } from '@angular/core';
-@Component({
-    selector: 'app-tooltips-view',
-    templateUrl: './tooltips-view.component.html',
-})
-export class tooltipsViewComponent { 
-    showTooltip = false;
-    showTooltipNew = false;
-    onMouseEnter(value: boolean) {
-        this.showTooltip = value;
-    }
-    onMouseLeave(value: boolean) {
-        this.showTooltip = value;
-    }
-    onMouseEnterNew(value: boolean) {
-        this.showTooltipNew = value;
-    }
-    onMouseLeaveNew(value: boolean) {
-        this.showTooltipNew = value;
-    }
-    
-    code = `
-<div class="text-center w-full my-10">
-    <iho-tooltip [isVisible]="showTooltip" [popUpTemplate]="tooltipTpl" position="right">
-        <i class="iho-icon-arrow-right-01-sharp mt-6" style="font-size:32px;" (mouseenter)="onMouseEnter(true)"
-            (mouseleave)="onMouseLeave(false)">
-        </i>
-    </iho-tooltip>
+import { Component } from '@angular/core';
 
-    <ng-template #tooltipTpl>
-        <div class="text-text">این متن داخل تولتیپ نشان داده می‌شود</div>
-    </ng-template>
+@Component({ selector: 'app-tooltips-view', templateUrl: './tooltips-view.component.html' })
+export class tooltipsViewComponent {
+    lastEvent = '—';
+    onClosed(): void { this.lastEvent = 'closed'; }
+    onVisibleChange(value: boolean): void { this.lastEvent = value ? 'visible' : 'hidden'; }
 
-</div>
-<div class="text-center w-full my-10">
-    <iho-tooltip [isVisible]="showTooltipNew" [popUpTemplate]="tooltipTplbottom" position="bottom">
-        <i class="iho-icon-arrow-down-01-sharp mt-6" style="font-size:32px;" (mouseenter)="onMouseEnterNew(true)"
-            (mouseleave)="onMouseLeaveNew(false)">
-        </i>
-    </iho-tooltip>
+    code = `<ng-template #tooltipContent>
+  <span>اطلاعات تکمیلی</span>
+</ng-template>
 
-    <ng-template #tooltipTplbottom>
-        <div class="text-text">این متن داخل تولتیپ نشان داده می‌شود</div>
-    </ng-template>
+<iho-tooltip [popUpTemplate]="tooltipContent" position="top" [offset]="12" [showArrow]="true">
+  <button type="button">نمایش Tooltip</button>
+</iho-tooltip>
 
-</div>
-
-
-    `
+<iho-tooltip [popUpTemplate]="tooltipContent" position="right" [forcePosition]="true" [delayEnter]="0" [delayLeave]="300" (closed)="onClosed()" (visibleChange)="onVisibleChange($event)">
+  <button type="button">بدون تغییر موقعیت</button>
+</iho-tooltip>`;
 }

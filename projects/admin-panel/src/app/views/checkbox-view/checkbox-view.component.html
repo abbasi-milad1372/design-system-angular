@@ -1,16 +1,66 @@
+<div class="showcase-page">
+  <header class="showcase-header">
+    <h1>Checkbox</h1>
+    <p>اندازه دقیق کنترل: xs برابر ۱۶×۱۶، sm برابر ۲۰×۲۰ و md برابر ۲۴×۲۴ پیکسل.</p>
+  </header>
 
+  <section class="showcase-section">
+    <h2>اندازه‌ها</h2>
+    <div class="showcase-grid">
+      <div class="showcase-example">
+        <h3>xs — 16×16px</h3>
+        <iho-checkbox [(ngModel)]="xsChecked" size="xs" color="black" label="منو انتخاب کن"></iho-checkbox>
+        <iho-checkbox [ngModel]="false" size="xs" color="gray" label="حالت انتخاب‌نشده"></iho-checkbox>
+      </div>
+      <div class="showcase-example">
+        <h3>sm — 20×20px</h3>
+        <iho-checkbox [(ngModel)]="smChecked" size="sm" color="black" label="منو انتخاب کن"></iho-checkbox>
+        <iho-checkbox [ngModel]="false" size="sm" color="gray" label="حالت انتخاب‌نشده"></iho-checkbox>
+      </div>
+      <div class="showcase-example">
+        <h3>md — 24×24px</h3>
+        <iho-checkbox [(ngModel)]="mdChecked" size="md" color="black" label="منو انتخاب کن"></iho-checkbox>
+        <iho-checkbox [ngModel]="false" size="md" color="gray" label="حالت انتخاب‌نشده"></iho-checkbox>
+      </div>
+    </div>
+  </section>
 
-<div class="grid grid-cols-1 my-5 w-1/2"> 
-<iho-checkbox [(ngModel)]="similarToBooker" color="black" [label]="'مشابه رزرو کننده'"></iho-checkbox>
+  <section class="showcase-section">
+    <h2>Checked و Indeterminate</h2>
+    <div class="showcase-grid">
+      <div class="showcase-example"><h3>Checked</h3><iho-checkbox [(ngModel)]="mdChecked" size="md" color="black" label="انتخاب‌شده"></iho-checkbox></div>
+      <div class="showcase-example"><h3>Unchecked</h3><iho-checkbox [(ngModel)]="unchecked" size="md" color="black" label="انتخاب‌نشده"></iho-checkbox></div>
+      <div class="showcase-example"><h3>Indeterminate</h3><iho-checkbox size="md" color="black" label="انتخاب ناقص" [indeterminate]="true"></iho-checkbox></div>
+    </div>
+  </section>
 
-</div>
-<div class="grid grid-cols-1 my-5 w-1/2">
-    <iho-checkbox  [(ngModel)]="similarToBooker" [disabled]="true" [label]="'مشابه رزرو کننده'"></iho-checkbox>
+  <section class="showcase-section">
+    <h2>Supporting text</h2>
+    <div class="showcase-grid">
+      <div class="showcase-example">
+        <h3>Default</h3>
+        <iho-checkbox [(ngModel)]="withSupporting" size="md" color="black" label="منو انتخاب کن" supportingText="من بهترین انتخاب برای شما هستم در این بخش"></iho-checkbox>
+      </div>
+      <div class="showcase-example">
+        <h3>Unchecked</h3>
+        <iho-checkbox [ngModel]="false" size="md" color="black" label="منو انتخاب کن" supportingText="من بهترین انتخاب برای شما هستم در این بخش"></iho-checkbox>
+      </div>
+      <div class="showcase-example">
+        <h3>Disabled</h3>
+        <iho-checkbox [ngModel]="true" size="md" color="black" label="منو انتخاب کن" supportingText="من بهترین انتخاب برای شما هستم در این بخش" [disabled]="true"></iho-checkbox>
+      </div>
+    </div>
+  </section>
 
-</div>
-<div class="grid grid-cols-1 my-5">
-    code:
-    <pre class="bg-gray-950 text-white-100 p-4 rounded text-sm">
-  <code>{{ code }}</code>
-</pre>
+  <section class="showcase-section">
+    <h2>حالت‌های فرم</h2>
+    <div class="showcase-grid">
+      <div class="showcase-example"><h3>Required</h3><iho-checkbox [(ngModel)]="requiredValue" size="sm" label="پذیرش قوانین" [required]="true"></iho-checkbox></div>
+      <div class="showcase-example"><h3>Disabled unchecked</h3><iho-checkbox size="sm" label="غیرفعال" [disabled]="true"></iho-checkbox></div>
+      <div class="showcase-example"><h3>Disabled checked</h3><iho-checkbox [ngModel]="true" size="sm" label="غیرفعال انتخاب‌شده" [disabled]="true"></iho-checkbox></div>
+      <div class="showcase-example"><h3>LTR</h3><iho-checkbox [ngModel]="true" size="sm" label="Left to right" dir="ltr"></iho-checkbox></div>
+    </div>
+  </section>
+
+  <section class="showcase-section"><h2>کد نمونه</h2><pre class="showcase-code"><code>{{ code }}</code></pre></section>
 </div>

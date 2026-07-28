@@ -17,7 +17,7 @@
   transition: opacity .18s ease, transform .18s ease;
   opacity: 0;
   pointer-events: none;
-  transform: translateY(4px);
+  transform: translateY(var(--space-xs));
   will-change: transform, opacity;
 }
 
@@ -32,64 +32,64 @@
 .iho-tooltip__content {
   background: var(--color-white-500);
   color: var(--tooltip-color, #111827);
-  border-radius: 6px;
+  border-radius: var(--border-radius-sm);
   box-shadow: 0 10px 30px rgba(12, 20, 40, 0.08);
-  padding: 8px;
-  border: 1px solid rgba(15, 23, 42, 0.06);
-  min-width: 160px;
-  max-width: 160px;
+  padding: var(--space-md);
+  border: var(--border-width-inside) solid rgba(15, 23, 42, 0.06);
+  min-width: var(--space-13xl);
+  max-width: var(--space-13xl);
 }
 
 /* arrow using pseudo-element on wrapper */
 .iho-tooltip-wrapper.has-arrow::after {
   content: '';
   position: absolute;
-  width: var(--arrow-size, 8px);
-  height: var(--arrow-size, 8px);
+  width: var(--arrow-size, var(--space-md));
+  height: var(--arrow-size, var(--space-md));
   background: var(--color-white-500);
   transform: rotate(45deg);
   box-shadow: 0 2px 6px rgba(12, 20, 40, 0.04);
-  border-left: 1px solid rgba(15, 23, 42, 0.03);
-  border-top: 1px solid rgba(15, 23, 42, 0.03);
+  border-left: var(--border-width-inside) solid rgba(15, 23, 42, 0.03);
+  border-top: var(--border-width-inside) solid rgba(15, 23, 42, 0.03);
 }
 
 /* arrow positions (centered) */
 .iho-tooltip-wrapper.has-arrow[style*="transform-origin: center top"]::after {
-  top: -4px;
+  top: calc(var(--space-none) - var(--space-xs));
   left: 50%;
   transform: translateX(-50%) rotate(45deg);
 }
 
 .iho-tooltip-wrapper.has-arrow[style*="transform-origin: center bottom"]::after {
-  bottom: -4px;
+  bottom: calc(var(--space-none) - var(--space-xs));
   left: 50%;
   transform: translateX(-50%) rotate(45deg);
 }
 
 .iho-tooltip-wrapper.has-arrow[style*="transform-origin: left center"]::after {
-  left: -4px;
+  left: calc(var(--space-none) - var(--space-xs));
   top: 50%;
   transform: translateY(-50%) rotate(45deg);
 }
 
 .iho-tooltip-wrapper.has-arrow[style*="transform-origin: right center"]::after {
-  right: -4px;
+  right: calc(var(--space-none) - var(--space-xs));
   top: 50%;
   transform: translateY(-50%) rotate(45deg);
 }
 
 /* small variants */
 .iho-tooltip-wrapper.tooltip .iho-tooltip__content {
-  border-radius: 8px;
-  padding: 8px 10px;
+  border-radius: var(--border-radius-md);
+  padding: var(--space-md) 10px;
 }
 
 /* popup variant */
 .iho-tooltip-wrapper.popup .iho-tooltip__content {
-  padding: 12px;
+  padding: var(--space-lg);
 }
 
 /* expose arrow size var */
 :host {
-  --arrow-size: 8px;
+  --arrow-size: var(--space-md);
 }

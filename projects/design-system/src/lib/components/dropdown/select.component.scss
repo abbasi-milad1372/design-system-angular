@@ -6,8 +6,8 @@
  }
 
 .ast {
-    color: var(--danger-500, #ef4444);
-    font-weight: 600;
+    color: var(--color-error-500);
+    font-weight: var(--font-weight-semibold);
     padding-right: 5px;
 }
 .dropdown__error {
@@ -23,22 +23,22 @@
      display: flex;
      align-items: center;
      justify-content: space-between;
-     gap: 8px;
-     padding: 4px 8px;
-     border: 1px solid var(--color-gray-DEFAULT);
-     background: rgb(250,250,250);
-     border-radius: 4px;
+     gap: var(--space-md);
+     padding: var(--space-xs) var(--space-md);
+     border: var(--border-width-inside) solid var(--color-gray-DEFAULT);
+     background: var(--color-white-500);
+     border-radius: var(--border-radius-xs);
      width: 100%;
      height: 36px;
      cursor: pointer;
  }
 
 .iho-select-lg .iho-select__trigger{
-    padding: 8px 12px;
-    height: 48px;
+    padding: var(--space-md) var(--space-lg);
+    height: var(--space-6xl);
 }
 .iho-select-md .iho-select__trigger {
-    padding: 4px 8px;
+    padding: var(--space-xs) var(--space-md);
     height:36px;
 }
 .p-custom-0{
@@ -62,34 +62,34 @@
      position: absolute;
      z-index: 40;
      margin-top: 0px;
-     border-radius: 4px;
-     border: 1px solid var(--color-gray-DEFAULT);
+     border-radius: var(--border-radius-xs);
+     border: var(--border-width-inside) solid var(--color-gray-DEFAULT);
      overflow: auto;
-     background: rgb(250,250,250);
+     background: var(--color-white-500);
      width: 100%;
     max-height: 300px;
  }
 
  .iho-select-lg .iho-select__panel {
-     padding: 8px 16px;
+     padding: var(--space-md) var(--space-xl);
  }
   .iho-select-md .iho-select__panel {
-    padding: 4px 8px;
+    padding: var(--space-xs) var(--space-md);
   }
 
  .iho-select__search-wrapper {
-    margin-top: 8px;
+    margin-top: var(--space-md);
  }
 
  .iho-select__search {
      width: 100%;
-     padding: 8px 12px;
-     border: 1px solid var(--color-gray-DEFAULT);
-     border-radius: 4px;
+     padding: var(--space-md) var(--space-lg);
+     border: var(--border-width-inside) solid var(--color-gray-DEFAULT);
+     border-radius: var(--border-radius-xs);
      font-size: var(--font-small);
      color: var(--color-gray-400);
      background-color: var(--color-white-600);
-     margin-bottom: 8px;
+     margin-bottom: var(--space-md);
      height: auto;
  }
 

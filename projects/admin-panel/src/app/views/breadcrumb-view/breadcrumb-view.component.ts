@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
 
-@Component({
-    selector: 'app-breadcrumb-view',
-    templateUrl: './breadcrumb-view.component.html',
-})
-export class BreadcrumbViewComponent { 
+@Component({ selector: 'app-breadcrumb-view', templateUrl: './breadcrumb-view.component.html' })
+export class BreadcrumbViewComponent {
+    basicItems = [{ name: 'خانه', url: '/' }, { name: 'هتل‌ها', url: '/hotels' }, { name: 'جزئیات هتل' }];
+    shortItems = [{ name: 'خانه', url: '/' }, { name: 'رزرو' }];
+    code = `<iho-breadcrumb [items]="[
+  { name: 'خانه', url: '/' },
+  { name: 'هتل‌ها', url: '/hotels' },
+  { name: 'جزئیات هتل' }
+]"></iho-breadcrumb>
 
-    code =  `<iho-breadcrumb [items]="[
-  { label: 'خانه', url: '/' },
-  { label: 'پنل کاربر', url: '/dashboard' ,icon: 'iho-icon-arrow-left-01-sharp text-lg font-semi-bold'},
-  { label: 'تنظیمات',icon: 'iho-icon-arrow-left-01-sharp text-lg font-semi-bold' }]"></iho-breadcrumb>
-    `;    
+<iho-breadcrumb [items]="items" separator="iho-icon-chevron-left"></iho-breadcrumb>`;
 }

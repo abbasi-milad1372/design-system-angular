@@ -1,21 +1,9 @@
-
-
-<div class="grid grid-cols-1 my-5 w-1/2"> 
-
-
-<ng-container #bottomsheetContainer></ng-container>
-
-<button (click)="openBottomsheet()" class="bg-primary-500 text-white-100 p-4 rounded text-sm">باز کردن Bottomsheet</button>
-
-
-</div>
-<div class="grid grid-cols-1 my-5 w-1/2">
-
-
-</div>
-<div class="grid grid-cols-1 my-5">
-    code:
-    <pre class="bg-gray-950 text-white-100 p-4 rounded text-sm">
-  <code>{{ code }}</code>
-</pre>
+<div class="showcase-page">
+  <header class="showcase-header"><h1>Bottomsheet</h1><p>چهار موقعیت، حالت تمام‌قد، عنوان، آیکن، جهت و محتوای داینامیک.</p></header>
+  <ng-container #bottomsheetContainer></ng-container>
+  <section class="showcase-section"><h2>موقعیت‌ها</h2><div class="showcase-grid">
+    <div class="showcase-example" *ngFor="let position of positions"><h3>{{ position }}</h3><iho-button (clickBtn)="openBottomsheet(position)"><span label>باز کردن از {{ position }}</span></iho-button></div>
+  </div></section>
+  <section class="showcase-section"><h2>حالت تمام‌قد</h2><div class="showcase-example"><h3>Full height / bottom</h3><iho-button variant="secondary" (clickBtn)="openBottomsheet('bottom', true)"><span label>باز کردن تمام‌قد</span></iho-button></div></section>
+  <section class="showcase-section"><h2>کد نمونه</h2><pre class="showcase-code"><code>{{ code }}</code></pre></section>
 </div>

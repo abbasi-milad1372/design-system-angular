@@ -21,7 +21,7 @@
                     display: inline-block;
                     white-space: nowrap;
                     animation: scroll-text 7s linear infinite;
-                    padding-right: 16px;
+                    padding-right: var(--space-xl);
                 }
 
                 &:hover span {
@@ -55,7 +55,7 @@
     }
 
     &--lg {
-        height: 40px;
+        height: var(--space-5xl);
         font-size: var(--font-p);
         padding: var(--space-xs) var(--space-lg);
 
@@ -67,7 +67,7 @@
     }
 
     &--border {
-        border: 1px solid;
+        border: var(--border-width-inside) solid;
     }
 
     &--primary {
@@ -127,8 +127,8 @@
     
 
     img {
-        width: 16px;
-        height: 16px;
+        width: var(--space-xl);
+        height: var(--space-xl);
         border-radius: var(--border-radius-full);
         object-fit: cover;
         margin-inline-start: var(--space-xs);
@@ -137,10 +137,10 @@
 
 @keyframes scroll-text {
     0% {
-        transform: translateX(calc(16px));
+        transform: translateX(var(--space-xl));
     }
     10% {
-        transform: translateX(calc(16px));
+        transform: translateX(var(--space-xl));
     }
     70% {
         transform: translateX(calc(100% - 120px));
@@ -149,6 +149,6 @@
         transform: translateX(calc(100% - 120px));
     }
     100% {
-        transform: translateX(calc(16px));
+        transform: translateX(var(--space-xl));
     }
 }
