@@ -9,7 +9,9 @@
     <div class="showcase-example"><h3>Email</h3><mytag-input label="ایمیل" type="email" autocomplete="email"></mytag-input></div>
     <div class="showcase-example"><h3>Password</h3><mytag-input label="رمز عبور" type="password" autocomplete="current-password"></mytag-input></div>
     <div class="showcase-example"><h3>Number</h3><mytag-input label="تعداد کاربران" type="number"></mytag-input></div>
-    <div class="showcase-example"><h3>Icon</h3><mytag-input label="جستجو" icon="iho-icon-search" iconClass="text-primary-500"></mytag-input></div>
+    <div class="showcase-example"><h3>Icon</h3><mytag-input label="نام کاربری" icon="iho-icon-user-11" iconClass="text-primary-500"></mytag-input></div>
+    <div class="showcase-example"><h3>Telephone</h3><mytag-input label="تلفن" type="tel" autocomplete="tel"></mytag-input></div>
+    <div class="showcase-example"><h3>URL</h3><mytag-input label="نشانی وب" type="url" autocomplete="url"></mytag-input></div>
   </div></section>
   <section class="showcase-section"><h2>پیام‌ها و state</h2><div class="showcase-grid">
     <div class="showcase-example"><h3>Hint</h3><mytag-input label="کد ملی" hint="ده رقم بدون خط تیره"></mytag-input></div>
@@ -18,12 +20,12 @@
     <div class="showcase-example"><h3>Success</h3><mytag-input label="کد تخفیف" successInline="کد معتبر است"></mytag-input></div>
     <div class="showcase-example"><h3>Readonly</h3><mytag-input label="شهر" value="تهران" [readonly]="true"></mytag-input></div>
     <div class="showcase-example"><h3>Disabled</h3><mytag-input label="غیرفعال" [disabled]="true"></mytag-input></div>
-    <div class="showcase-example"><h3>Borderless</h3><mytag-input label="بدون حاشیه" [border]="false"></mytag-input></div>
+    <div class="showcase-example"><h3>ورودی border در API</h3><mytag-input label="محتوای نمونه" [border]="false"></mytag-input><small>این ورودی در قالب فعلی اثر ندارد.</small></div>
   </div></section>
   <section class="showcase-section"><h2>Reactive form و ورودی متصل</h2><form [formGroup]="form" class="showcase-grid">
     <div class="showcase-example"><h3>Required control</h3><mytag-input formControlName="itemName" label="عنوان" [required]="true"></mytag-input></div>
     <div class="showcase-example"><h3>Disabled control</h3><mytag-input formControlName="disabledValue" label="مقدار"></mytag-input></div>
     <div class="showcase-example"><h3>Rounded pair</h3><div class="flex w-full"><mytag-input label="از" rounded="right" template="inline"></mytag-input><mytag-input label="تا" rounded="left" template="inline"></mytag-input></div></div>
   </form></section>
-  <section class="showcase-section"><h2>کد نمونه</h2><pre class="showcase-code"><code>{{ code }}</code></pre></section>
+  <app-component-documentation component="input"></app-component-documentation>
 </div>

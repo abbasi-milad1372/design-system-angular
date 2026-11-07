@@ -1,0 +1,144 @@
+<section
+  *ngIf="documentation as docs"
+  class="component-docs grid min-w-0 gap-3xl"
+  aria-label="راهنمای کامل نمونه کدها"
+>
+  <header class="flex flex-wrap items-end justify-between gap-lg">
+    <div>
+      <span class="text-text font-semibold text-primary-600"
+        >از پیش‌نمایش تا پروژهٔ شما</span
+      >
+      <h2 class="mt-md text-h6 font-bold">نمونه کدهای {{ docs.title }}</h2>
+    </div>
+    <span class="text-text text-gray-400"
+      >{{ docs.examples.length }} نمونه با کپی مستقل</span
+    >
+  </header>
+  <p class="text-small text-gray-400">
+    هر نمونه را با فایل HTML و TypeScript مربوط به خودش استفاده کنید. مقادیر
+    ورودی‌ها و وابستگی‌های نمونه در همین بخش آمده‌اند.
+  </p>
+  <details class="rounded-lg border border-gray bg-white p-xl">
+    <summary class="cursor-pointer text-small font-semibold">
+      ماژول و importهای مورد نیاز
+    </summary>
+    <div class="mt-xl">
+      <app-code-block
+        [code]="docs.module"
+        language="TypeScript"
+        label="example.module.ts"
+      ></app-code-block>
+    </div>
+  </details>
+  <div
+    *ngIf="docs.notes?.length"
+    class="grid gap-md rounded-lg border border-primary-200 bg-primary-100 p-xl"
+  >
+    <p *ngFor="let note of docs.notes" class="text-small text-primary-800">
+      {{ note }}
+    </p>
+  </div>
+
+  <details
+    *ngFor="let example of docs.examples; let index = index"
+    class="code-example min-w-0 rounded-xl border border-gray bg-white p-xl sm:p-2xl"
+    [open]="index === 0"
+  >
+    <summary class="cursor-pointer text-small font-semibold">
+      <span class="text-primary-600">{{ index + 1 }}.</span> {{ example.title }}
+    </summary>
+    <div class="mt-xl grid min-w-0 gap-xl">
+      <p *ngIf="example.description" class="text-small text-gray-400">
+        {{ example.description }}
+      </p>
+      <app-code-block
+        [code]="example.template"
+        language="HTML"
+        label="example.component.html"
+      ></app-code-block>
+      <app-code-block
+        [code]="example.typescript"
+        language="TypeScript"
+        label="example.component.ts"
+      ></app-code-block>
+      <app-code-block
+        *ngIf="example.module"
+        [code]="example.module"
+        language="TypeScript"
+        label="example.module.ts، ویژهٔ این نمونه"
+      ></app-code-block>
+    </div>
+  </details>
+
+  <details
+    class="api-reference min-w-0 rounded-xl border border-gray bg-white p-xl sm:p-2xl"
+  >
+    <summary class="cursor-pointer text-small font-semibold">
+      مرجع همهٔ ورودی‌ها و خروجی‌ها
+    </summary>
+    <div *ngFor="let api of apis" class="mt-3xl grid min-w-0 gap-lg">
+      <h3 class="font-mono text-small text-primary-600" dir="ltr">
+        {{ api.selector }}
+      </h3>
+      <div *ngIf="api.inputs.length" class="overflow-x-auto">
+        <table class="w-full text-right text-text">
+          <caption class="pb-lg text-right text-small font-semibold">
+            ورودی‌ها
+          </caption>
+          <thead>
+            <tr>
+              <th>نام</th>
+              <th>نوع و مقادیر مجاز</th>
+              <th>پیش‌فرض</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let input of api.inputs">
+              <td>
+                <code dir="ltr">{{ input.name }}</code>
+                <p *ngIf="input.note" class="mt-xs text-gray-400">
+                  {{ input.note }}
+                </p>
+              </td>
+              <td>
+                <code dir="ltr">{{ input.type }}</code>
+              </td>
+              <td>
+                <code dir="ltr">{{ input.defaultValue }}</code>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div *ngIf="api.outputs.length" class="overflow-x-auto">
+        <table class="w-full text-right text-text">
+          <caption class="pb-lg text-right text-small font-semibold">
+            خروجی‌ها
+          </caption>
+          <thead>
+            <tr>
+              <th>رویداد</th>
+              <th>نوع داده</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let output of api.outputs">
+              <td>
+                <code dir="ltr">{{ output.name }}</code>
+              </td>
+              <td>
+                <code dir="ltr">{{ output.type }}</code>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p
+        *ngIf="!api.inputs.length && !api.outputs.length"
+        class="text-small text-gray-400"
+      >
+        این کامپوننت ورودی یا خروجی مستقیم ندارد.
+      </p>
+    </div>
+  </details>
+</section>

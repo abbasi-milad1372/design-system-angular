@@ -21,10 +21,15 @@
         outline: none;
     }
 
+    &:focus-visible {
+        outline: 2px solid var(--color-primary-500);
+        outline-offset: 3px;
+    }
+
     // === Ghost Primary
     &--ghost-primary {
         background-color: var(--color-transparency-primary-20);
-        color: var(--color-primary-500);
+        color: var(--color-primary-600);
 
         &:hover {
             background-color: var(--color-transparency-primary-30);
@@ -50,7 +55,7 @@
 
     &--ghost-secondary {
         background-color: var(--color-transparency-secondary-20);
-        color: var(--color-secondary-500);
+        color: var(--color-secondary-600);
 
         &:hover {
             background-color: var(--color-transparency-secondary-30);
@@ -145,7 +150,7 @@
 
         &:hover {
             border: var(--border-width-inside) solid var(--color-primary-600);
-            background: var(--IHO-Background-Ghost-Disable-Primary, rgba(0, 85, 255, 0.10));
+            background: var(--IHO-Background-Ghost-Disable-Primary, var(--color-transparency-primary-10));
             color: var(--color-primary-600);
         }
 

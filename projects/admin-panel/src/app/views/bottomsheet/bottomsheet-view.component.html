@@ -5,5 +5,5 @@
     <div class="showcase-example" *ngFor="let position of positions"><h3>{{ position }}</h3><mytag-button (clickBtn)="openBottomsheet(position)"><span label>باز کردن از {{ position }}</span></mytag-button></div>
   </div></section>
   <section class="showcase-section"><h2>حالت تمام‌قد</h2><div class="showcase-example"><h3>Full height / bottom</h3><mytag-button variant="secondary" (clickBtn)="openBottomsheet('bottom', true)"><span label>باز کردن تمام‌قد</span></mytag-button></div></section>
-  <section class="showcase-section"><h2>کد نمونه</h2><pre class="showcase-code"><code>{{ code }}</code></pre></section>
+  <app-component-documentation component="bottomsheet"></app-component-documentation>
 </div>

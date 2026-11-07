@@ -39,5 +39,6 @@ export class AdminLayoutComponent {
         { name: 'bottomSheet', path: 'bottomsheet' },
         { name: 'accordian', path: 'accordian' },
         { name: 'chips', path: 'chips' },
+        { name: 'اعلان‌ها', path: 'notifications' },
     ];
 }

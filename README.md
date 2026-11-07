@@ -27,6 +27,7 @@ updated examples for the supported component states and variants.
 
 - Modular Angular components and per-component NgModules
 - Shared CSS custom-property design tokens
+- Angular-inspired red and violet theme with gradient showcase branding
 - SCSS styling and packaged Ravi FaNum typography
 - RTL-first layouts
 - Responsive component behavior
@@ -120,7 +121,9 @@ TypeScript export names retain their existing spelling and capitalization.
 
 `DesignSystemModule` exports the library root component; import individual
 component modules for their respective tags. The showcase also includes an icon
-catalogue.
+catalogue. The `/icons` page lists all 188 shipped glyphs with Persian/English
+search, category filters, adjustable preview sizes, and click-to-copy HTML.
+Multi-part glyphs include their nested path elements in the copied code.
 
 ## General-purpose cards
 
@@ -305,6 +308,17 @@ Then open `http://localhost:4200/`.
 The home page introduces MyTag with an interactive component preview, catalogue
 links, and a three-step installation guide with copyable code examples. The
 catalogue navigation is available on desktop and mobile.
+
+Each component page includes copyable HTML and TypeScript examples covering its
+public inputs, supported variants, and outputs, plus a complete API reference.
+The `/notifications` page demonstrates the notification service options.
+
+Validate sample coverage and compile all 58 examples with Angular's strict
+template/type checker after building the library:
+
+```bash
+node tools/check-showcase-examples.cjs
+```
 
 Generate new library components with the configured `mytag-` selector prefix:
 

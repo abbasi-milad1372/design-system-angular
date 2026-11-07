@@ -13,5 +13,5 @@
     <div class="showcase-example"><h3>Force position</h3><mytag-tooltip [popUpTemplate]="tooltipContent" position="right" [forcePosition]="true"><button type="button" class="border p-2 rounded">موقعیت ثابت</button></mytag-tooltip></div>
     <div class="showcase-example"><h3>Delay + outputs</h3><mytag-tooltip [popUpTemplate]="tooltipContent" [delayEnter]="0" [delayLeave]="300" (closed)="onClosed()" (visibleChange)="onVisibleChange($event)"><button type="button" class="border p-2 rounded">رویدادها</button></mytag-tooltip><small>{{ lastEvent }}</small></div>
   </div></section>
-  <section class="showcase-section"><h2>کد نمونه</h2><pre class="showcase-code"><code>{{ code }}</code></pre></section>
+  <app-component-documentation component="tooltips"></app-component-documentation>
 </div>

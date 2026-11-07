@@ -1,0 +1,37 @@
+:host {
+  display: block;
+  min-width: 0;
+}
+summary {
+  line-height: var(--line-height-small);
+}
+summary:focus-visible {
+  outline: 2px solid var(--color-primary-500);
+  outline-offset: 4px;
+}
+table {
+  min-width: 440px;
+  border-collapse: collapse;
+}
+th,
+td {
+  padding: var(--space-lg);
+  border-bottom: 1px solid var(--color-gray-DEFAULT);
+  vertical-align: top;
+}
+th {
+  color: var(--color-gray-400);
+  background: var(--color-white-500);
+}
+td code {
+  white-space: normal;
+  overflow-wrap: anywhere;
+  display: inline-block;
+  text-align: left;
+}
+td p {
+  max-width: 280px;
+}
+td:first-child code {
+  white-space: nowrap;
+}

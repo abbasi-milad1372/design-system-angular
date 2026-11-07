@@ -114,7 +114,7 @@ i {
 /* ===== Variants (match your image) ===== */
 @include variant(information, var(--color-primary-500)); // آبی
 @include variant(success, var(--color-success-500)); // سبز
-@include variant(warning, var(--color-secondary-500)); // نارنجی
+@include variant(warning, var(--color-warning-500)); // نارنجی
 @include variant(error, var(--color-error-500)); // قرمز
 
 /* حالت خنثی (خاکستری با آیکن زنگ) */

@@ -1,0 +1,70 @@
+<div class="showcase-page">
+  <header class="showcase-header">
+    <h1>اعلان‌ها</h1>
+    <p>چهار نوع اعلان، چهار موقعیت، مدت نمایش، بستن و اکشن اختیاری.</p>
+  </header>
+  <section class="showcase-section">
+    <h2>تنظیمات پیش‌نمایش</h2>
+    <div class="showcase-grid">
+      <label class="grid gap-md text-small"
+        >موقعیت<select
+          class="rounded-md border border-gray p-lg"
+          [(ngModel)]="position"
+        >
+          <option *ngFor="let item of positions" [ngValue]="item">
+            {{ item }}
+          </option>
+        </select></label
+      >
+      <label class="grid gap-md text-small"
+        >مدت نمایش، میلی‌ثانیه<input
+          class="rounded-md border border-gray p-lg"
+          type="number"
+          min="0"
+          [(ngModel)]="duration"
+        /><span class="text-text text-gray-400"
+          >صفر یعنی تا زمان بسته‌شدن دستی.</span
+        ></label
+      >
+      <mytag-checkbox
+        [(ngModel)]="dismissible"
+        label="ارسال گزینهٔ dismissible به سرویس"
+      ></mytag-checkbox>
+      <mytag-checkbox
+        [(ngModel)]="withAction"
+        label="ارسال اکشن به سرویس"
+      ></mytag-checkbox>
+    </div>
+    <p class="text-small text-gray-400">
+      در قالب فعلی اعلان، action و dismissible دکمه‌ای نمایش نمی‌دهند و فقط به
+      سرویس ارسال می‌شوند. برای بستن، از دکمه‌های این صفحه استفاده کنید.
+    </p>
+    <div class="flex flex-wrap gap-xl">
+      <mytag-button (clickBtn)="show('success')"
+        ><span label>موفقیت</span></mytag-button
+      >
+      <mytag-button variant="secondary" (clickBtn)="show('info')"
+        ><span label>اطلاعات</span></mytag-button
+      >
+      <mytag-button variant="default" (clickBtn)="show('warning')"
+        ><span label>هشدار</span></mytag-button
+      >
+      <mytag-button variant="error" (clickBtn)="show('error')"
+        ><span label>خطا</span></mytag-button
+      >
+      <mytag-button
+        variant="ghost-primary"
+        [disabled]="!lastId"
+        (clickBtn)="notify.close(lastId)"
+        ><span label>بستن آخرین اعلان</span></mytag-button
+      >
+      <mytag-button variant="ghost-error" (clickBtn)="notify.clearAll()"
+        ><span label>بستن همه</span></mytag-button
+      >
+    </div>
+    <p aria-live="polite">{{ lastAction }}</p>
+  </section>
+  <app-component-documentation
+    component="notifications"
+  ></app-component-documentation>
+</div>

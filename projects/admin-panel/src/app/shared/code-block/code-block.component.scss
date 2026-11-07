@@ -1,0 +1,16 @@
+:host {
+  display: grid;
+  min-width: 0;
+  gap: var(--space-xs);
+}
+.copy-code:hover {
+  background: var(--color-primary-800);
+}
+.copy-error {
+  color: var(--color-error-800);
+}
+button:focus-visible,
+pre:focus-visible {
+  outline: 2px solid var(--color-primary-400);
+  outline-offset: 3px;
+}

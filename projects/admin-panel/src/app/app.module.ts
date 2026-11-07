@@ -31,6 +31,9 @@ import { accordianViewComponent } from './views/accordian/accordian-view.compone
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { chipsViewComponent } from './views/chips/chips-view.component';
 import { HomeViewComponent } from './views/home-view/home-view.component';
+import { CodeBlockComponent } from './shared/code-block/code-block.component';
+import { ComponentDocumentationComponent } from './shared/component-documentation/component-documentation.component';
+import { NotificationsViewComponent } from './views/notifications-view/notifications-view.component';
 const routes: Routes = [
   {
     path: '',
@@ -54,6 +57,7 @@ const routes: Routes = [
       { path: 'bottomsheet', component: bottomheetViewComponent }, 
       { path: 'accordian', component: accordianViewComponent },
       { path: 'chips', component: chipsViewComponent }, 
+      { path: 'notifications', component: NotificationsViewComponent },
     ]
   }
 ];
@@ -61,6 +65,9 @@ const routes: Routes = [
   declarations: [AppComponent,
     AdminLayoutComponent,
     HomeViewComponent,
+    CodeBlockComponent,
+    ComponentDocumentationComponent,
+    NotificationsViewComponent,
     ButtonViewComponent,
     BadgeViewComponent,
     cardViewComponent,

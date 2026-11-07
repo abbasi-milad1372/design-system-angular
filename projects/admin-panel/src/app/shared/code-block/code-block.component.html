@@ -1,0 +1,44 @@
+<div class="overflow-hidden rounded-lg border border-gray bg-primary-900">
+  <div
+    class="flex flex-wrap items-center justify-between gap-lg border-b border-primary-800 px-xl py-lg"
+  >
+    <div class="flex items-center gap-lg text-text text-primary-200">
+      <span class="font-mono" dir="ltr">{{ language }}</span
+      ><span class="text-white">{{ label }}</span>
+    </div>
+    <button
+      type="button"
+      class="copy-code flex items-center gap-md rounded-md border border-primary-700 px-lg py-xs text-text text-white"
+      (click)="copy()"
+      [attr.aria-label]="'کپی ' + label + '، ' + language"
+    >
+      <span class="iho-icon-copy-01" aria-hidden="true"></span
+      >{{ copied ? "کپی شد ✓" : "کپی کد" }}
+    </button>
+  </div>
+  <pre
+    #codeElement
+    class="m-0 max-h-[560px] overflow-auto whitespace-pre p-xl text-left font-mono text-[12px] leading-[1.9] text-primary-100"
+    dir="ltr"
+    tabindex="0"
+    [attr.aria-label]="label + '، ' + language"
+  ><code>{{ code }}</code></pre>
+</div>
+<div
+  class="flex flex-wrap items-center justify-between gap-md text-text"
+  [class.copy-error]="failed"
+  role="status"
+  aria-live="polite"
+>
+  <span>{{ feedback }}</span>
+  <button
+    *ngIf="failed"
+    class="manual-copy rounded-sm px-md py-xs font-semibold text-primary-600"
+    type="button"
+    (click)="
+      codeElement.focus(); codeElement.scrollIntoView({ block: 'nearest' })
+    "
+  >
+    رفتن به کد برای انتخاب دستی
+  </button>
+</div>

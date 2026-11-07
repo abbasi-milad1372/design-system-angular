@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import './theme/angular-theme';
 body{
     font-family: "Ravi FaNum";
     direction: rtl;

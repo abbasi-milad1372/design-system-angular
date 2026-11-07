@@ -5,8 +5,9 @@
     <div class="showcase-example"><h3>Filled / sm</h3><mytag-accordion title="سوال متداول" size="sm" variant="filled"><p>پاسخ سوال متداول.</p></mytag-accordion></div>
   </div></section>
   <section class="showcase-section"><h2>حالت‌ها</h2><div class="showcase-grid">
-    <div class="showcase-example"><h3>Borderless + rounded</h3><mytag-accordion title="بدون حاشیه" variant="filled" [border]="false" [rounded]="true"><p>محتوای نمونه</p></mytag-accordion></div>
+    <div class="showcase-example"><h3>Borderless</h3><mytag-accordion title="بدون حاشیه" variant="filled" [border]="false" [rounded]="false"><p>محتوای نمونه</p></mytag-accordion></div>
+    <div class="showcase-example"><h3>Rounded</h3><mytag-accordion title="حاشیه گرد" [border]="true" [rounded]="true"><p>محتوای نمونه</p></mytag-accordion></div>
     <div class="showcase-example"><h3>Disabled</h3><mytag-accordion title="غیرفعال" [disabled]="true"></mytag-accordion></div>
   </div></section>
-  <section class="showcase-section"><h2>کد نمونه</h2><pre class="showcase-code"><code>{{ code }}</code></pre></section>
+  <app-component-documentation component="accordian"></app-component-documentation>
 </div>

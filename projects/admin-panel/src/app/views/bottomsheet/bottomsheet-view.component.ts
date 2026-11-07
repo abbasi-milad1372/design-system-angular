@@ -20,23 +20,7 @@ export class bottomheetViewComponent {
             dir: 'rtl',
             disabled: false,
             fullHeight,
-            iconClass: 'iho-icon-info text-xl',
+            iconClass: 'iho-icon-information-circle text-xl',
         });
     }
-
-    code = `@ViewChild('bottomsheetContainer', { read: ViewContainerRef })
-bottomsheetContainer!: ViewContainerRef;
-
-openBottomsheet(): void {
-  this.bottomsheetService.open(this.bottomsheetContainer, {
-    component: CustomContentComponent,
-    data: { id: 123 },
-    title: 'اطلاعات کاربر',
-    position: 'bottom',
-    dir: 'rtl',
-    fullHeight: false,
-    disabled: false,
-    iconClass: 'iho-icon-info'
-  });
-}`;
 }

@@ -19,11 +19,4 @@ export class FooterViewComponent {
     ];
     contacts: FooterContact[] = [{ label: 'ایمیل:', value: 'support@example.com', href: 'mailto:support@example.com' }];
     socialLinks: NavigationLink[] = [{ label: 'کد منبع', href: 'https://github.com/abbasi-milad1372/design-system-angular' }];
-
-    code = `<mytag-footer-ds brandName="پروژه نمونه"
-  [features]="features" [sections]="sections" [contacts]="contacts"
-  [socialLinks]="socialLinks" copyright="تمام حقوق پروژه نمونه محفوظ است."
-  [showLinks]="true">
-  <div links><a href="/cards">مشاهده کامپوننت‌ها</a></div>
-</mytag-footer-ds>`;
 }

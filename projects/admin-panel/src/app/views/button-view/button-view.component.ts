@@ -16,25 +16,4 @@ export class ButtonViewComponent {
         'primary-inside', 'secondary-inside'
     ];
     sizes: ButtonSize[] = ['sm', 'md', 'lg', 'xl'];
-
-    code = `<mytag-button variant="primary" size="md">
-  <span label>ساخت حساب</span>
-</mytag-button>
-
-<mytag-button variant="ghost-primary" size="lg">
-  <span icon-right class="iho-icon-user"></span>
-  <span label>ورود به حساب</span>
-</mytag-button>
-
-<mytag-button variant="error" [disabled]="true">
-  <span label>حذف</span>
-</mytag-button>
-
-<mytag-button variant="primary" [showLoading]="true">
-  <span label>در حال ثبت</span>
-</mytag-button>
-
-<mytag-button type="link" href="/cards" [widthPercent]="100">
-  <span label>مشاهده موارد</span>
-</mytag-button>`;
 }

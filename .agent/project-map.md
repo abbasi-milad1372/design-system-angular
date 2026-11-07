@@ -82,5 +82,9 @@ commands documented in the root `AGENTS.md`.
 - Focused specs cover card actions/image fallback, navbar disclosure, and footer
   responsive sections alongside the generated component. The test runner still
   requires missing Karma/Jasmine dependencies; do not claim broad coverage.
+- Showcase documentation lives in `admin-panel/src/app/shared/component-documentation`.
+  Keep its API reference and examples synchronized with library inputs/outputs.
+  After building the library, `node tools/check-showcase-examples.cjs` checks
+  coverage and compiles the copyable examples with Angular strict checking.
 - CI publishes only version-like Git tags. Registry and deployment settings are
   operationally sensitive.
