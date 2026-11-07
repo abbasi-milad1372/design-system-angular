@@ -15,16 +15,16 @@ export class BadgeViewComponent {
     ];
     sizes: BadgeSize[] = ['sm', 'md', 'lg'];
 
-    code = `<iho-badge label="جدید" variant="primary" size="md"></iho-badge>
-<iho-badge label="تخفیف" variant="error" [border]="true"></iho-badge>
-<iho-badge label="قابل استرداد" variant="success" [radius]="true"></iho-badge>
+    code = `<mytag-badge label="جدید" variant="primary" size="md"></mytag-badge>
+<mytag-badge label="تخفیف" variant="error" [border]="true"></mytag-badge>
+<mytag-badge label="قابل استرداد" variant="success" [radius]="true"></mytag-badge>
 
-<iho-badge label="هتل منتخب" variant="primary" [radius]="true">
-  <span icon-right class="iho-icon-hotel"></span>
+<mytag-badge label="مورد منتخب" variant="primary" [radius]="true">
+  <span icon-right class="iho-icon-building-landmark"></span>
   <span dot>•</span>
-</iho-badge>
+</mytag-badge>
 
-<iho-badge variant="default" [mainContent]="true">
+<mytag-badge variant="default" [mainContent]="true">
   <span label>محتوای سفارشی</span>
-</iho-badge>`;
+</mytag-badge>`;
 }

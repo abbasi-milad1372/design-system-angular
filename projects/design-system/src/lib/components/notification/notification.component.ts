@@ -4,7 +4,7 @@ import { NotificationService } from './notification.service';
 import { NOTIFY_DEFAULTS } from './notification.service';
 
 @Component({
-    selector: 'iho-notifications',
+    selector: 'mytag-notifications',
     standalone: true,
     imports: [CommonModule],
     templateUrl: './notification.component.html',

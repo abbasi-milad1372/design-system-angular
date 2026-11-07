@@ -18,7 +18,7 @@ type Pos = 'top' | 'bottom' | 'left' | 'right';
 type OffsetLike = number | { top?: number; bottom?: number; left?: number; right?: number };
 
 @Component({
-  selector: 'iho-tooltip',
+  selector: 'mytag-tooltip',
   templateUrl: './tooltip.component.html',
   styleUrls: ['./tooltip.component.scss'],
 })

@@ -8,7 +8,7 @@ import { NotificationService } from '@iho/design-system';
 export class AdminLayoutComponent {
     notify = inject(NotificationService);
     constructor() {
-        this.notify.success('', 'رزرو با موفقیت ثبت شد.', { duration: 50000,position:'bottom-right' });
+        this.notify.success('', 'درخواست با موفقیت ثبت شد.', { duration: 50000,position:'bottom-right' });
 
     }
     componentsDesignSys = [

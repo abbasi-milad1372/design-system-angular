@@ -4,7 +4,7 @@
 
 - Keep one component family per folder. Co-locate its component, template,
   stylesheet, module, related model, and narrowly coupled service.
-- Selectors use the `iho-` prefix. Do not introduce `lib-` or `app-` selectors
+- Selectors use the `mytag-` prefix. Do not introduce `lib-` or `app-` selectors
   for public components.
 - A normal component module imports only what its template needs, declares the
   component, and exports it. Consumers must not need undeclared transitive

@@ -1,11 +1,11 @@
-# Design System Angular
+# MyTag Design System Angular
 
 <p align="center">
-  <img src="./docs/preview.png" alt="Design System Angular showcase preview">
+  <img src="./docs/preview.png" alt="MyTag Design System Angular showcase preview">
 </p>
 
 <p align="center">
-  A reusable, token-based Angular design system built for enterprise applications.
+  MyTag: a reusable, token-based Angular design system built for enterprise applications.
 </p>
 
 <p align="center">
@@ -43,8 +43,12 @@ updated examples for the supported component states and variants.
 ## Installation
 
 ```bash
-npm install @iho/front
+npm install @iho/design-system
 ```
+
+The package name is `@iho/design-system`; `mytag-` is the component tag prefix.
+The examples below describe the current source, including breaking changes after
+v0.2.1. Use a library build from the same revision as this documentation.
 
 ## Usage
 
@@ -52,7 +56,7 @@ Import only the modules required by your application:
 
 ```typescript
 import { NgModule } from '@angular/core';
-import { IHOButtonModule } from '@iho/front';
+import { IHOButtonModule } from '@iho/design-system';
 
 @NgModule({
   imports: [IHOButtonModule],
@@ -63,24 +67,153 @@ export class AppModule {}
 Then use the component in a template:
 
 ```html
-<iho-button>Submit</iho-button>
+<mytag-button><span label>ثبت درخواست</span></mytag-button>
 ```
 
 All supported consumer APIs are exported from
 `projects/design-system/src/public-api.ts`.
 
+Component tags use the `mytag-` brand prefix, for example `<mytag-button>` and
+`<mytag-input>`. The library's Angular CLI prefix also generates new components
+with `mytag-`.
+
+Components use general-purpose names and Persian default labels. Card layouts are
+`standard`, `category`, and `horizontal`. Navigation and footer content, branding,
+links, and contact details are supplied by the consuming application.
+
+See [the migration guide](docs/generic-components-migration.md) when upgrading
+from v0.2.1: this update changes all component selectors, card variants, inputs,
+projection slots, card CSS selectors, and two icon names. Previous component
+selectors and domain-specific card names are not retained as aliases.
+
 ## Available components
 
-| Category | Components |
-| --- | --- |
-| Actions | Button |
-| Forms | Input, Checkbox, Radio and Radio Group, Switch, Select, Chips |
-| Data display | Badge, Card, Tooltip |
-| Navigation | Navbar, Breadcrumb, Tabs |
-| Feedback | Notification, Bottom Sheet |
-| Layout | Accordion, Footer |
+Import the matching module or standalone component from `@iho/design-system`.
+TypeScript export names retain their existing spelling and capitalization.
 
-The showcase also includes an icon catalogue.
+| Component | Current tag | Angular import |
+| --- | --- | --- |
+| Button | `mytag-button` | `IHOButtonModule` |
+| Input | `mytag-input` | `IHOInputModule` |
+| Checkbox | `mytag-checkbox` | `IhoCheckboxModule` |
+| Radio | `mytag-radio` | `IHORadioModule` |
+| Radio group | `mytag-radio-group` | `IHORadioModule` |
+| Switch | `mytag-switch` | `IhoSwitchModule` |
+| Select | `mytag-select` | `IhoSelectModule` |
+| Select option | `mytag-option` | `IhoSelectModule` |
+| Chip | `mytag-chip` | `IHOChipModule` |
+| Badge | `mytag-badge` | `IHOBadgeModule` |
+| Card | `mytag-card` | `IHOCardModule` |
+| Tooltip | `mytag-tooltip` | `IHOTooltipModule` |
+| Navbar | `mytag-navbar` | `IHONavbarModule` |
+| Breadcrumb | `mytag-breadcrumb` | `IHOBreadcrumbModule` |
+| Tab | `mytag-tab` | `IHOTabModule` |
+| Notifications | `mytag-notifications` | `NotificationComponent` (standalone) |
+| Bottom sheet | `mytag-bottomsheet` | `IHOBottomsheetModule` |
+| Accordion | `mytag-accordion` | `IHOAccordionModule` |
+| Footer | `mytag-footer-ds` | `IHOFooterModule` |
+| Library root | `mytag-design-system` | `DesignSystemModule` |
+
+`DesignSystemModule` exports the library root component; import individual
+component modules for their respective tags. The showcase also includes an icon
+catalogue.
+
+## General-purpose cards
+
+`CardType` is exported as `'standard' | 'category' | 'horizontal'`:
+
+| Name | Purpose / default |
+| --- | --- |
+| `standard` | Default vertical item layout |
+| `category` | Category summary with projected metadata |
+| `horizontal` | Horizontal item layout with an action |
+| `priceUnit` | Optional unit after the price, such as بسته |
+| `actionLink` | Optional action URL; renders the available action as a link |
+| `actionLabel` | مشاهده جزئیات |
+| `unavailable` | Disables the horizontal action; default `false` |
+| `unavailableLabel` | ناموجود |
+| `featured` / `featuredLabel` | Featured marker; default `false` / ویژه |
+| `badgeLabel` / `labelBadge` | Information caption (اطلاعات) and optional badge value |
+| `fallbackImage` | Inline SVG image fallback, configurable without a built-in CDN |
+| `isStandard` / `isCategory` | Getters for the selected layout |
+| `clickBtnCard` | `Event` emitted by an available action |
+
+```html
+<mytag-card type="horizontal" title="مجموعه ابزارهای طراحی"
+  [price]="5400000" priceUnit="بسته" [withPrice]="true"
+  actionLabel="مشاهده جزئیات" actionLink="/items/1"
+  badgeLabel="دسترسی" labelBadge="آنلاین" [featured]="true">
+  <span card-badges>جدید</span>
+</mytag-card>
+
+<mytag-card type="category" title="منابع آموزشی">
+  <span metadata>۲۶ مورد در این دسته</span>
+</mytag-card>
+```
+
+Projection slots use `[metadata]`, `[quantity]`, `[price-unit]`, `[card-badges]`,
+and `[card-badges-mobile]`. Advertisement slots `[contentAdd]` and `[tagsAdd]`,
+and custom `#currency` / `#promotions` templates retain their existing names.
+
+Custom card styles use `.card_standard`, `.card_horizontal`, `.card__featured`,
+`.card__promotions`, `.card__price-unit`, and `.card-location__icon`. Related
+horizontal selectors use `horizontal`, including `.horizontal-card-row`,
+`.horizontal__image_wrapper`, `.horizontal__image`, `.horizontal-location__icon`,
+and `.horizontal-content`.
+
+## Configurable navbar and footer
+
+Both components default to the Persian brand label «سامانه طراحی». Supply the
+application's content through inputs:
+
+| Component | Inputs |
+| --- | --- |
+| `mytag-navbar` | `brandName`, `logoUrl`, `homeUrl`, `menuLabel`, `menuItems`, `links`, `utilityLinks`, `accountLabel` |
+| `mytag-footer-ds` | `brandName`, `logoUrl`, `homeUrl`, `phoneNumber`, `features`, `sections`, `contacts`, `socialLinks`, `copyright`, `showLinks` |
+
+`NavigationLink` contains `label`, `href`, and optional `icon`. Footer content uses
+the exported `FooterFeature` (`title`, `description`, optional `imageUrl`),
+`FooterSection` (`title`, `links`), and `FooterContact` (`label`, `value`, optional
+`href`) types.
+
+```typescript
+import { FooterSection, NavigationLink } from '@iho/design-system';
+
+export class ExampleComponent {
+  menuItems: NavigationLink[] = [{ label: 'کامپوننت‌ها', href: '/cards' }];
+  sections: FooterSection[] = [{ title: 'راهنما', links: this.menuItems }];
+}
+```
+
+Bind those lists from the consuming component:
+
+```html
+<mytag-navbar brandName="پروژه من" [menuItems]="menuItems"
+  menuLabel="بخش‌ها" accountLabel="حساب کاربری"></mytag-navbar>
+
+<mytag-footer-ds brandName="پروژه من" [sections]="sections"
+  copyright="تمام حقوق پروژه من محفوظ است." [showLinks]="true">
+  <div links><a href="/cards">مشاهده کامپوننت‌ها</a></div>
+</mytag-footer-ds>
+```
+
+Navbar outputs remain `onToggleSideNav` and `openDialogModal`. Its disclosure
+supports keyboard activation, Tab navigation, Escape, and outside-click dismissal.
+Footer sections collapse on mobile and remain expanded on desktop. Use `[links]`
+with `showLinks` for extra links and `[certificates]` for consumer-owned artwork.
+Footer section expansion is indexed by the supplied section list; the old unused
+CDN getter has been removed.
+
+## Icon names
+
+The two renamed building icons are `iho-icon-building-landmark` and
+`iho-icon-building-front`. Their glyphs and Unicode mappings are preserved.
+Component tags use `mytag-`; icon CSS classes keep the `iho-icon-` prefix.
+
+```html
+<span class="iho-icon-building-landmark" aria-hidden="true"></span>
+<span class="iho-icon-building-front" aria-hidden="true"></span>
+```
 
 ## Design tokens and assets
 
@@ -115,6 +248,8 @@ projects/
 │       │   │   ├── fonts/
 │       │   │   ├── img/
 │       │   │   └── styles/
+│       │   ├── models/
+│       │   │   └── navigation-link.model.ts
 │       │   └── components/
 │       │       ├── accordion/
 │       │       ├── badge/
@@ -163,6 +298,12 @@ npx ng serve admin-panel
 
 Then open `http://localhost:4200/`.
 
+Generate new library components with the configured `mytag-` selector prefix:
+
+```bash
+npx ng generate component example --project design-system
+```
+
 > The root `npm start` command currently references the absent
 > `tools/generate-env.ts`; use the explicit Angular CLI commands above.
 
@@ -185,6 +326,10 @@ Run the library tests:
 ```bash
 npx ng test design-system --watch=false --browsers=ChromeHeadless
 ```
+
+The current workspace is missing Karma/Jasmine test dependencies, so this command
+currently stops before running unit tests. Library/showcase builds and browser
+checks are separate validation steps.
 
 ## Tech stack
 

@@ -2,22 +2,32 @@ import { Component } from '@angular/core';
 
 @Component({ selector: 'app-card-view', templateUrl: './cards-view.component.html' })
 export class cardViewComponent {
-    image = 'assets/img/IHO_Design_System_With_Angular.webp';
-    lastCardEvent = '—';
-    handleCard(event: unknown): void { this.lastCardEvent = event ? 'clicked' : 'clicked'; }
+    image = 'assets/img/demo-content.svg';
+    actionCount = 0;
+    handleCard(event: Event): void {
+        this.actionCount++;
+    }
 
-    code = `<iho-card type="hotel" title="هتل داریوش" location="کیش" star="۵" rating="۴.۸" reviewCount="۲۸۸" [price]="11360000" [BoardPrice]="12500000" discount="۱۰" [withPrice]="true" [image]="image">
-  <span count-shab>/ شب</span>
-</iho-card>
+    code = `<mytag-card type="standard" title="مجموعه طراحی رابط کاربری"
+  [price]="11360000" priceUnit="بسته" [withPrice]="true" [image]="image">
+</mytag-card>
 
-<iho-card type="city" title="اقامتگاه‌های شیراز" location="فارس" [image]="image">
-  <ng-container resident>۲۶ اقامتگاه</ng-container>
-</iho-card>
+<mytag-card type="standard" title="ابزارهای طراحی"
+  [price]="7800000" [withPriceDevider]="true" [image]="image">
+  <span price-unit>/ بسته</span>
+</mytag-card>
 
-<iho-card type="distance" title="هتل نزدیک حرم" location="مشهد" [price]="5400000" [withPrice]="true" labelBadge="۵ دقیقه" [capacityCompletion]="false" (clickBtnCard)="handleCard($event)" [image]="image"></iho-card>
+<mytag-card type="category" title="منابع آموزشی" [image]="image">
+  <ng-container metadata>۲۶ مورد در این دسته</ng-container>
+</mytag-card>
 
-<iho-card title="تبلیغ ویژه" [isAddvertisement]="true" [image]="image">
-  <p contentAdd>بهشت پنهان ایران</p>
-  <span tagsAdd><iho-badge label="تبلیغات"></iho-badge></span>
-</iho-card>`;
+<mytag-card type="horizontal" title="مجموعه ابزارها" [price]="5400000"
+  priceUnit="بسته" [withPrice]="true" badgeLabel="دسترسی" labelBadge="آنلاین"
+  actionLabel="مشاهده جزئیات" [featured]="true"
+  (clickBtnCard)="handleCard($event)" [image]="image">
+  <span card-badges><mytag-badge label="جدید"></mytag-badge></span>
+</mytag-card>
+
+<mytag-card type="horizontal" title="مجموعه آرشیوی" [unavailable]="true"
+  unavailableLabel="فعلاً در دسترس نیست" [image]="image"></mytag-card>`;
 }

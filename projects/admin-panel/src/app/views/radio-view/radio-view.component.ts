@@ -2,11 +2,11 @@ import { Component } from '@angular/core';
 
 @Component({ selector: 'app-radio-view', templateUrl: './radio-view.component.html' })
 export class RadioViewComponent {
-    travelType = 'work';
-    code = `<iho-radio-group [(ngModel)]="travelType" name="travelType">
-  <iho-radio radioValue="work" label="کاری"></iho-radio>
-  <iho-radio radioValue="leisure" label="تفریحی"></iho-radio>
-</iho-radio-group>
+    selection = 'first';
+    code = `<mytag-radio-group [(ngModel)]="selection" name="selection">
+  <mytag-radio radioValue="first" label="گزینه اول"></mytag-radio>
+  <mytag-radio radioValue="second" label="گزینه دوم"></mytag-radio>
+</mytag-radio-group>
 
-<iho-radio radioValue="disabled" label="غیرفعال" [disabled]="true"></iho-radio>`;
+<mytag-radio radioValue="disabled" label="غیرفعال" [disabled]="true"></mytag-radio>`;
 }

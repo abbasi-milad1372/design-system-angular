@@ -2,8 +2,10 @@ import { isPlatformBrowser } from '@angular/common';
 import { afterNextRender, Component, ContentChild, EventEmitter, inject, Inject, Input, Output, PLATFORM_ID, signal, TemplateRef } from '@angular/core';
 import { Router } from '@angular/router';
 
+export type CardType = 'standard' | 'category' | 'horizontal';
+
 @Component({
-    selector: 'iho-card',
+    selector: 'mytag-card',
     templateUrl: './card.component.html',
     styleUrls: ['./card.component.scss'],
 })
@@ -20,7 +22,7 @@ export class CardComponent {
     @ContentChild('currency') currencyTemplate!: TemplateRef<any>;
     
 
-    @Input() type: 'hotel' | 'city' | 'distance' = 'hotel';
+    @Input() type: CardType = 'standard';
     @Input() withPriceDevider = false;
     @Input() withPrice = false;
 
@@ -36,27 +38,32 @@ export class CardComponent {
     @Input() tagsAdd: string[] = [];
     @Input() image = '';
     @Input() discount = '0';
-    @Input() nights = '';
+    @Input() priceUnit = '';
     @Input() isAddvertisement = false;
-    @Input() isIhoPluse = false;
+    @Input() featured = false;
+    @Input() featuredLabel = 'ویژه';
     @Input() labelBadge = '';
-    @Input() capacityCompletion = false;
+    @Input() badgeLabel = 'اطلاعات';
+    @Input() unavailable = false;
+    @Input() actionLabel = 'مشاهده جزئیات';
+    @Input() unavailableLabel = 'ناموجود';
     @Input() letMeKnow = false;
-    @Input() linkReserve = '';
+    @Input() actionLink = '';
+    @Input() fallbackImage = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 200"%3E%3Crect width="320" height="200" fill="%23f3f4f6"/%3E%3Cpath d="m60 150 60-60 40 40 40-50 60 70Z" fill="%239ca3af"/%3E%3C/svg%3E';
     @Input() promotions = false;
     @Input() currency = false;
     @Input() showPromotions = false;
    
-    @Output() clickBtnCard = new EventEmitter<any>();
+    @Output() clickBtnCard = new EventEmitter<Event>();
     router = inject(Router);
     readonly isBrowser = isPlatformBrowser(this.pid);
     
-    get isHotel(): boolean {
-        return this.type === 'hotel';
+    get isStandard(): boolean {
+        return this.type === 'standard';
     }
 
-    get isCity(): boolean {
-        return this.type === 'city';
+    get isCategory(): boolean {
+        return this.type === 'category';
     }
 
 
@@ -64,12 +71,14 @@ export class CardComponent {
         if (!isPlatformBrowser(this.pid)) return;
 
         const img = event.target as HTMLImageElement;
-        if (img.src !== 'https://cdn.iranhotelonline.com/images/no-image.jpg') {
-            img.src = 'https://cdn.iranhotelonline.com/images/no-image.jpg';
+        if (this.fallbackImage && img.getAttribute('src') !== this.fallbackImage) {
+            img.src = this.fallbackImage;
         }
     }
     handleBtn(event: Event) {
-        this.clickBtnCard.emit(event);
+        if (!this.unavailable) {
+            this.clickBtnCard.emit(event);
+        }
     }
     navigateTo(link: string) {
         this.router.navigate([link])

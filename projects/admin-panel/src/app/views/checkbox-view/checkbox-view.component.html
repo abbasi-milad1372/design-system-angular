@@ -9,18 +9,18 @@
     <div class="showcase-grid">
       <div class="showcase-example">
         <h3>xs — 16×16px</h3>
-        <iho-checkbox [(ngModel)]="xsChecked" size="xs" color="black" label="منو انتخاب کن"></iho-checkbox>
-        <iho-checkbox [ngModel]="false" size="xs" color="gray" label="حالت انتخاب‌نشده"></iho-checkbox>
+        <mytag-checkbox [(ngModel)]="xsChecked" size="xs" color="black" label="منو انتخاب کن"></mytag-checkbox>
+        <mytag-checkbox [ngModel]="false" size="xs" color="gray" label="حالت انتخاب‌نشده"></mytag-checkbox>
       </div>
       <div class="showcase-example">
         <h3>sm — 20×20px</h3>
-        <iho-checkbox [(ngModel)]="smChecked" size="sm" color="black" label="منو انتخاب کن"></iho-checkbox>
-        <iho-checkbox [ngModel]="false" size="sm" color="gray" label="حالت انتخاب‌نشده"></iho-checkbox>
+        <mytag-checkbox [(ngModel)]="smChecked" size="sm" color="black" label="منو انتخاب کن"></mytag-checkbox>
+        <mytag-checkbox [ngModel]="false" size="sm" color="gray" label="حالت انتخاب‌نشده"></mytag-checkbox>
       </div>
       <div class="showcase-example">
         <h3>md — 24×24px</h3>
-        <iho-checkbox [(ngModel)]="mdChecked" size="md" color="black" label="منو انتخاب کن"></iho-checkbox>
-        <iho-checkbox [ngModel]="false" size="md" color="gray" label="حالت انتخاب‌نشده"></iho-checkbox>
+        <mytag-checkbox [(ngModel)]="mdChecked" size="md" color="black" label="منو انتخاب کن"></mytag-checkbox>
+        <mytag-checkbox [ngModel]="false" size="md" color="gray" label="حالت انتخاب‌نشده"></mytag-checkbox>
       </div>
     </div>
   </section>
@@ -28,9 +28,9 @@
   <section class="showcase-section">
     <h2>Checked و Indeterminate</h2>
     <div class="showcase-grid">
-      <div class="showcase-example"><h3>Checked</h3><iho-checkbox [(ngModel)]="mdChecked" size="md" color="black" label="انتخاب‌شده"></iho-checkbox></div>
-      <div class="showcase-example"><h3>Unchecked</h3><iho-checkbox [(ngModel)]="unchecked" size="md" color="black" label="انتخاب‌نشده"></iho-checkbox></div>
-      <div class="showcase-example"><h3>Indeterminate</h3><iho-checkbox size="md" color="black" label="انتخاب ناقص" [indeterminate]="true"></iho-checkbox></div>
+      <div class="showcase-example"><h3>Checked</h3><mytag-checkbox [(ngModel)]="mdChecked" size="md" color="black" label="انتخاب‌شده"></mytag-checkbox></div>
+      <div class="showcase-example"><h3>Unchecked</h3><mytag-checkbox [(ngModel)]="unchecked" size="md" color="black" label="انتخاب‌نشده"></mytag-checkbox></div>
+      <div class="showcase-example"><h3>Indeterminate</h3><mytag-checkbox size="md" color="black" label="انتخاب ناقص" [indeterminate]="true"></mytag-checkbox></div>
     </div>
   </section>
 
@@ -39,15 +39,15 @@
     <div class="showcase-grid">
       <div class="showcase-example">
         <h3>Default</h3>
-        <iho-checkbox [(ngModel)]="withSupporting" size="md" color="black" label="منو انتخاب کن" supportingText="من بهترین انتخاب برای شما هستم در این بخش"></iho-checkbox>
+        <mytag-checkbox [(ngModel)]="withSupporting" size="md" color="black" label="منو انتخاب کن" supportingText="من بهترین انتخاب برای شما هستم در این بخش"></mytag-checkbox>
       </div>
       <div class="showcase-example">
         <h3>Unchecked</h3>
-        <iho-checkbox [ngModel]="false" size="md" color="black" label="منو انتخاب کن" supportingText="من بهترین انتخاب برای شما هستم در این بخش"></iho-checkbox>
+        <mytag-checkbox [ngModel]="false" size="md" color="black" label="منو انتخاب کن" supportingText="من بهترین انتخاب برای شما هستم در این بخش"></mytag-checkbox>
       </div>
       <div class="showcase-example">
         <h3>Disabled</h3>
-        <iho-checkbox [ngModel]="true" size="md" color="black" label="منو انتخاب کن" supportingText="من بهترین انتخاب برای شما هستم در این بخش" [disabled]="true"></iho-checkbox>
+        <mytag-checkbox [ngModel]="true" size="md" color="black" label="منو انتخاب کن" supportingText="من بهترین انتخاب برای شما هستم در این بخش" [disabled]="true"></mytag-checkbox>
       </div>
     </div>
   </section>
@@ -55,10 +55,10 @@
   <section class="showcase-section">
     <h2>حالت‌های فرم</h2>
     <div class="showcase-grid">
-      <div class="showcase-example"><h3>Required</h3><iho-checkbox [(ngModel)]="requiredValue" size="sm" label="پذیرش قوانین" [required]="true"></iho-checkbox></div>
-      <div class="showcase-example"><h3>Disabled unchecked</h3><iho-checkbox size="sm" label="غیرفعال" [disabled]="true"></iho-checkbox></div>
-      <div class="showcase-example"><h3>Disabled checked</h3><iho-checkbox [ngModel]="true" size="sm" label="غیرفعال انتخاب‌شده" [disabled]="true"></iho-checkbox></div>
-      <div class="showcase-example"><h3>LTR</h3><iho-checkbox [ngModel]="true" size="sm" label="Left to right" dir="ltr"></iho-checkbox></div>
+      <div class="showcase-example"><h3>Required</h3><mytag-checkbox [(ngModel)]="requiredValue" size="sm" label="پذیرش قوانین" [required]="true"></mytag-checkbox></div>
+      <div class="showcase-example"><h3>Disabled unchecked</h3><mytag-checkbox size="sm" label="غیرفعال" [disabled]="true"></mytag-checkbox></div>
+      <div class="showcase-example"><h3>Disabled checked</h3><mytag-checkbox [ngModel]="true" size="sm" label="غیرفعال انتخاب‌شده" [disabled]="true"></mytag-checkbox></div>
+      <div class="showcase-example"><h3>LTR</h3><mytag-checkbox [ngModel]="true" size="sm" label="Left to right" dir="ltr"></mytag-checkbox></div>
     </div>
   </section>
 

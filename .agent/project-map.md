@@ -42,6 +42,9 @@ service, model, or type must be reachable from `src/public-api.ts`. The root
 `DesignSystemModule` is not currently an umbrella export for every component, so
 do not assume importing it makes all component modules available.
 
+Public component tags use the `mytag-` prefix. The library's Angular CLI prefix
+is `mytag`; keep templates, examples, and custom CSS type selectors synchronized.
+
 ## Styling and assets
 
 - Shared Sass entry points and design tokens live in
@@ -76,7 +79,8 @@ commands documented in the root `AGENTS.md`.
   change propagation behavior.
 - Public naming is historically inconsistent (`IHO`, `Iho`, and lower-case class
   names). Preserve compatibility unless a breaking migration is requested.
-- Only the generated library component currently has a unit test. New behavioral
-  work should add focused tests when practical; do not claim broad coverage.
+- Focused specs cover card actions/image fallback, navbar disclosure, and footer
+  responsive sections alongside the generated component. The test runner still
+  requires missing Karma/Jasmine dependencies; do not claim broad coverage.
 - CI publishes only version-like Git tags. Registry and deployment settings are
   operationally sensitive.

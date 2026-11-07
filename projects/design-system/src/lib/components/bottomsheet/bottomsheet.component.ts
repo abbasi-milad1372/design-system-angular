@@ -1,7 +1,7 @@
 import { Component, Input, Output, EventEmitter, ViewChild, ViewContainerRef, AfterViewInit, ChangeDetectorRef, Type } from '@angular/core';
 
 @Component({
-    selector: 'iho-bottomsheet',
+    selector: 'mytag-bottomsheet',
     templateUrl: './bottomsheet.component.html',
     styleUrls: ['./bottomsheet.component.scss'],
 })

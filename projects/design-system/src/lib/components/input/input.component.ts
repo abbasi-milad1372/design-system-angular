@@ -2,7 +2,7 @@ import { Component, forwardRef, Input, ChangeDetectionStrategy, ChangeDetectorRe
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
-    selector: 'iho-input',
+    selector: 'mytag-input',
     templateUrl: './input.component.html',
     styleUrls: ['./input.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,

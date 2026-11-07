@@ -1,23 +1,26 @@
 <div class="showcase-page">
-  <header class="showcase-header"><h1>Card</h1><p>انواع hotel، city، distance و advertisement همراه با قیمت، تخفیف و stateهای رزرو.</p></header>
-  <section class="showcase-section"><h2>Hotel و City</h2><div class="showcase-grid">
-    <div class="showcase-example"><h3>Hotel / price</h3><iho-card type="hotel" title="هتل داریوش" location="کیش، هرمزگان" star="۵" rating="۴.۸" reviewCount="۲۸۸" [price]="11360000" [BoardPrice]="12500000" discount="۱۰" nights="شب" [withPrice]="true" [image]="image"><span count-shab>/ شب</span></iho-card></div>
-    <div class="showcase-example"><h3>Hotel / price divider</h3><iho-card type="hotel" title="هتل پارسیان" location="تهران" rating="۴.۴" reviewCount="۱۲۰" [price]="7800000" [BoardPrice]="8500000" discount="۸" [withPriceDevider]="true" [image]="image"><span count-shab>/ شب</span></iho-card></div>
-    <div class="showcase-example"><h3>City</h3><iho-card type="city" title="اقامتگاه‌های شیراز" location="فارس" [image]="image"><ng-container resident>۲۶ اقامتگاه در این شهر</ng-container></iho-card></div>
+  <header class="showcase-header"><h1>کارت</h1><p>چیدمان‌های standard، category و horizontal برای نمایش محتوا، قیمت و وضعیت دسترسی.</p></header>
+  <section class="showcase-section"><h2>پایه و دسته‌بندی</h2><div class="showcase-grid">
+    <div class="showcase-example"><h3>کارت پایه / قیمت</h3><mytag-card type="standard" title="مجموعه طراحی رابط کاربری" location="کتابخانه دیجیتال" star="۵" rating="۴.۸" reviewCount="۲۸۸" [price]="11360000" [BoardPrice]="12500000" discount="۱۰" priceUnit="بسته" [withPrice]="true" [image]="image"></mytag-card></div>
+    <div class="showcase-example"><h3>کارت پایه / جداکننده قیمت</h3><mytag-card type="standard" title="ابزارهای طراحی" location="مجموعه حرفه‌ای" rating="۴.۴" reviewCount="۱۲۰" [price]="7800000" [BoardPrice]="8500000" discount="۸" [withPriceDevider]="true" [image]="image"><span price-unit>/ بسته</span></mytag-card></div>
+    <div class="showcase-example"><h3>دسته‌بندی</h3><mytag-card type="category" title="منابع آموزشی" location="دسته‌بندی محتوا" [image]="image"><ng-container metadata>۲۶ مورد در این دسته</ng-container></mytag-card></div>
   </div></section>
   <section class="showcase-section">
     <h2>قیمت در کارت باریک تبلت</h2>
-    <p>مبلغ، واحد پول و تعداد شب باید در یک ردیف و داخل کارت باقی بمانند.</p>
+    <p>مبلغ، واحد پول و واحد قیمت در یک ردیف و داخل کارت باقی می‌مانند.</p>
     <div class="w-full max-w-[216px]">
-      <iho-card type="hotel" title="هتل اسپیناس پالاس تهران" location="تهران، سعادت‌آباد" star="۵" rating="۴.۹" reviewCount="۴۲" [price]="17473000" nights="۱ شب" [withPrice]="true" [image]="image"></iho-card>
+      <mytag-card type="standard" title="بسته کامل منابع و ابزارهای طراحی" location="کتابخانه دیجیتال" star="۵" rating="۴.۹" reviewCount="۴۲" [price]="17473000" priceUnit="بسته" [withPrice]="true" [image]="image"></mytag-card>
     </div>
   </section>
-  <section class="showcase-section"><h2>Distance و state رزرو</h2><div class="flex flex-col gap-4">
-    <div><h3>Available</h3><iho-card type="distance"
-       title="هتل نزدیک حرم هتل نزدیک حرم هتل نزدیک حرم" location="مشهد هتل نزدیک حرم هتل نزدیک حرم هتل نزدیک حرم هتل نزدیک حرم" star="۴" rating="۴.۶" reviewCount="۳۲۰" [price]="5400000" [BoardPrice]="6000000" discount="۱۰" nights="شب" [withPrice]="true" labelBadge="۵ دقیقه" [isIhoPluse]="true" (clickBtnCard)="handleCard($event)" [image]="image"><span distance-badges><iho-badge label="نوساز" size="sm" [radius]="true"></iho-badge></span></iho-card></div>
-    <div><h3>Capacity completed</h3><iho-card type="distance" title="هتل تکمیل ظرفیت" location="کیش" star="۵" rating="۴.۹" reviewCount="۴۸۰" [capacityCompletion]="true" [image]="image"></iho-card></div>
-    <small>آخرین رویداد: {{ lastCardEvent }}</small>
+  <section class="showcase-section"><h2>افقی و وضعیت دسترسی</h2><div class="flex flex-col gap-4">
+    <div><h3>در دسترس / محتوای طولانی</h3><mytag-card type="horizontal"
+       title="مجموعه جامع ابزارهای طراحی و توسعه رابط کاربری برای تیم‌های محصول" location="کتابخانه منابع و محتوای آموزشی برای طراحان و توسعه‌دهندگان رابط کاربری" star="۴" rating="۴.۶" reviewCount="۳۲۰" [price]="5400000" [BoardPrice]="6000000" discount="۱۰" priceUnit="بسته" [withPrice]="true" badgeLabel="دسترسی" labelBadge="آنلاین" [featured]="true" actionLabel="مشاهده جزئیات" (clickBtnCard)="handleCard($event)" [image]="image"><span card-badges><mytag-badge label="جدید" size="sm" [radius]="true"></mytag-badge></span></mytag-card></div>
+    <div><h3>ناموجود / دکمه غیرفعال</h3><mytag-card type="horizontal" title="مجموعه آرشیوی" location="کتابخانه دیجیتال" star="۵" rating="۴.۹" reviewCount="۴۸۰" [unavailable]="true" unavailableLabel="فعلاً در دسترس نیست" (clickBtnCard)="handleCard($event)" [image]="image"></mytag-card></div>
+    <small aria-live="polite">تعداد رویدادهای انتخاب: {{ actionCount }}</small>
   </div></section>
-  <section class="showcase-section"><h2>Advertisement</h2><div class="showcase-grid"><div class="showcase-example"><iho-card title="تبلیغ ویژه" [isAddvertisement]="true" [image]="image"><p contentAdd>بهشت پنهان ایران</p><span tagsAdd><iho-badge label="تبلیغات" variant="primary" [radius]="true"></iho-badge></span></iho-card></div></div></section>
+  <section class="showcase-section"><h2>تصویر جایگزین</h2><div class="showcase-grid">
+    <div class="showcase-example"><h3>تصویر نامعتبر</h3><mytag-card title="محتوای بدون تصویر" image="assets/img/missing-demo-image.svg"></mytag-card></div>
+  </div></section>
+  <section class="showcase-section"><h2>تبلیغ</h2><div class="showcase-grid"><div class="showcase-example"><mytag-card title="محتوای ویژه" [isAddvertisement]="true" [image]="image"><p contentAdd>منابع تازه برای پروژه بعدی شما</p><span tagsAdd><mytag-badge label="تبلیغات" variant="primary" [radius]="true"></mytag-badge></span></mytag-card></div></div></section>
   <section class="showcase-section"><h2>کد نمونه</h2><pre class="showcase-code"><code>{{ code }}</code></pre></section>
 </div>

@@ -10,7 +10,7 @@ import {
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
 @Component({
-    selector: 'iho-switch',
+    selector: 'mytag-switch',
     templateUrl: './switch.component.html',
     styleUrls: ['./switch.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush,

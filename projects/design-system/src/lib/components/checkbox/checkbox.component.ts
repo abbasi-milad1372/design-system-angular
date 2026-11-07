@@ -12,7 +12,7 @@ export type IhoCheckboxSize = 'xs' | 'sm' | 'md';
 export type IhoCheckboxColor = 'gray' | 'black';
 
 @Component({
-    selector: 'iho-checkbox',
+    selector: 'mytag-checkbox',
     templateUrl: './checkbox.component.html',
     styleUrls: ['./checkbox.component.scss'],
     providers: [{

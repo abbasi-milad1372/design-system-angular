@@ -6,7 +6,7 @@
     position: relative;
     transition: all 0.2s ease-in-out;
 
-    .count-shab {
+    .price-unit {
         color: var(--color-gray-300);
     }
 
@@ -128,13 +128,13 @@
     }
 }
 
-.card:has(.card_hotel) {
+.card:has(.card_standard) {
     box-shadow: 0 1px 4px 0 #34384136;
     border: 0;
 }
 
-.card_hotel {
-    .card_iho_plus {
+.card_standard {
+    .card__featured {
         position: absolute;
         right: var(--space-sm);
         top: var(--space-sm);
@@ -156,7 +156,7 @@
         margin-top: -10px;
         height: 28px;
 
-        .nights {
+        .card__price-unit {
             font-size: var(--font-size-small);
             font-weight: var(--font-weight-medium) !important;
             color: var(--color-gray-300);
@@ -168,7 +168,7 @@
         font-size: var(--font-size-text);
         font-weight: var(--font-weight-regular);
 
-        .hotel-location__icon {
+        .card-location__icon {
             width: var(--space-xl);
             height: var(--space-xl);
             flex-shrink: 0;
@@ -241,7 +241,7 @@
     }
 }
 
-.hotel_card_promotions {
+.card__promotions {
     margin-top: var(--space-md);
     padding: var(--space-md) var(--space-md) var(--space-xs);
     min-height: var(--space-5xl);
@@ -249,8 +249,8 @@
 
 
 
-/* ========== distance card: mobile-first ========== */
-.card_distance {
+/* ========== horizontal card: mobile-first ========== */
+.card_horizontal {
     border-radius: var(--border-radius-md);
     background: var(--color-white-500);
     position: relative;
@@ -271,14 +271,14 @@
             gap: var(--space-xs);
         }
 
-        .distance-location__icon {
+        .horizontal-location__icon {
             width: var(--space-xl);
             height: var(--space-xl);
             flex-shrink: 0;
         }
 
         @media (min-width: 1024px) {
-            .distance-location__icon {
+            .horizontal-location__icon {
                 width: var(--space-2xl);
                 height: var(--space-2xl);
             }
@@ -367,7 +367,7 @@
         }
     }
 
-    iho-button {
+    mytag-button {
         a {
             height: 30px !important;
             width: auto !important;
@@ -415,7 +415,7 @@
         }
     }
 
-    .card_iho_plus {
+    .card__featured {
         position: absolute;
         right: var(--space-sm);
         top: var(--space-sm);
@@ -465,11 +465,11 @@
     /* دکمه فول‌ویدث در موبایل */
 }
 
-.distance-card-row {
+.horizontal-card-row {
     align-items: stretch;
 }
 
-.distance__image_wrapper {
+.horizontal__image_wrapper {
     position: relative;
     flex: 0 0 140px;
     width: 140px;
@@ -480,7 +480,7 @@
     border-radius: var(--border-radius-sm);
 }
 
-.distance__image {
+.horizontal__image {
     position: absolute;
     inset: 0;
     width: 100%;
@@ -612,7 +612,7 @@
     }
 }
 
-.distance-content {
+.horizontal-content {
     color: var(--color-gray-300);
 
     i {
@@ -624,7 +624,7 @@
 
 /* ========== Desktop: سه‌ستونه (تصویر همچنان راست) ========== */
 @media (min-width: 1024px) {
-    .card_distance {
+    .card_horizontal {
         grid-template-columns: 185px 1fr 240px;
         grid-template-rows: auto;
         grid-template-areas: "image body left ";
@@ -680,13 +680,13 @@
         }
     }
 
-    .distance__image_wrapper {
+    .horizontal__image_wrapper {
         min-width: 185px;
         max-width: 185px;
         height: 185px;
         border-radius: var(--border-radius-sm);
 
-        .distance__image {
+        .horizontal__image {
             border-radius: var(--border-radius-sm);
         }
     }
@@ -697,7 +697,7 @@
         height: 100%;
         border-inline-start: var(--border-width-inside) solid var(--color-gray-DEFAULT);
 
-        iho-button {
+        mytag-button {
             inline-size: 100%;
             position: relative;
             left: initial;

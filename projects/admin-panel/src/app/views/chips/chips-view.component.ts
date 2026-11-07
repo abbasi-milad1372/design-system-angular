@@ -7,9 +7,9 @@ export class chipsViewComponent {
     lastAction = '—';
     onRemove(): void { this.lastAction = 'removed'; }
     onAdd(): void { this.lastAction = 'added'; }
-    code = `<iho-chip label="برچسب" size="md" variant="neutral" type="action" [showAdd]="true" [showRemove]="true" (added)="onAdd()" (removed)="onRemove()"></iho-chip>
+    code = `<mytag-chip label="برچسب" size="md" variant="neutral" type="action" [showAdd]="true" [showRemove]="true" (added)="onAdd()" (removed)="onRemove()"></mytag-chip>
 
-<iho-chip label="فیلتر" size="sm" variant="primary" type="filter" [(selected)]="isSelected" [rounded]="true"></iho-chip>
+<mytag-chip label="فیلتر" size="sm" variant="primary" type="filter" [(selected)]="isSelected" [rounded]="true"></mytag-chip>
 
-<iho-chip label="غیرفعال" [disabled]="true"></iho-chip>`;
+<mytag-chip label="غیرفعال" [disabled]="true"></mytag-chip>`;
 }

@@ -3,7 +3,7 @@ import { isPlatformBrowser } from '@angular/common';
 import { WINDOW } from '../../window.module';
 import { Router } from '@angular/router';
 @Component({
-  selector: 'iho-button',
+  selector: 'mytag-button',
   templateUrl: './button.component.html',
   styleUrls: ['./button.component.scss'],
 })

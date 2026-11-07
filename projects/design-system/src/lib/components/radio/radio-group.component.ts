@@ -3,7 +3,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { RadioComponent } from './radio.component';
 
 @Component({
-    selector: 'iho-radio-group',
+    selector: 'mytag-radio-group',
     template: `<ng-content></ng-content>`,
     providers: [{
         provide: NG_VALUE_ACCESSOR,

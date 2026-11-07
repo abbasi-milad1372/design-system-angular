@@ -1,7 +1,7 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
-    selector: 'iho-chip',
+    selector: 'mytag-chip',
     templateUrl: './chip.component.html',
     styleUrls: ['./chip.component.scss']
 })

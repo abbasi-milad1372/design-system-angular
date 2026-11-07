@@ -4,26 +4,26 @@
   <section class="showcase-section">
     <h2>Variantها</h2>
     <div class="showcase-grid">
-      <div class="showcase-example" *ngFor="let variant of variants"><h3>{{ variant }}</h3><iho-badge label="برچسب نمونه" [variant]="variant"></iho-badge></div>
+      <div class="showcase-example" *ngFor="let variant of variants"><h3>{{ variant }}</h3><mytag-badge label="برچسب نمونه" [variant]="variant"></mytag-badge></div>
     </div>
   </section>
 
   <section class="showcase-section">
     <h2>اندازه‌ها</h2>
     <div class="showcase-grid">
-      <div class="showcase-example" *ngFor="let size of sizes"><h3>{{ size }}</h3><iho-badge label="اندازه {{ size }}" variant="primary" [size]="size"></iho-badge></div>
+      <div class="showcase-example" *ngFor="let size of sizes"><h3>{{ size }}</h3><mytag-badge label="اندازه {{ size }}" variant="primary" [size]="size"></mytag-badge></div>
     </div>
   </section>
 
   <section class="showcase-section">
     <h2>شکل و محتوا</h2>
     <div class="showcase-grid">
-      <div class="showcase-example"><h3>Border</h3><iho-badge label="لبه‌دار" [border]="true"></iho-badge></div>
-      <div class="showcase-example"><h3>Rounded</h3><iho-badge label="گرد" variant="success" [radius]="true"></iho-badge></div>
-      <div class="showcase-example"><h3>Icon + dot</h3><iho-badge label="هتل منتخب" variant="primary" [radius]="true"><span icon-right class="iho-icon-hotel"></span><span dot>•</span></iho-badge></div>
-      <div class="showcase-example"><h3>Image</h3><iho-badge label="پروفایل" variant="lite"><img img src="assets/img/logo-footer.png" width="16" height="16" alt="لوگو"></iho-badge></div>
-      <div class="showcase-example"><h3>Animated label</h3><iho-badge label="متن طولانی برای نمایش حرکت برچسب" [animatedLabel]="true"></iho-badge></div>
-      <div class="showcase-example"><h3>Custom content</h3><iho-badge [mainContent]="true"><span label>محتوای سفارشی</span></iho-badge></div>
+      <div class="showcase-example"><h3>Border</h3><mytag-badge label="لبه‌دار" [border]="true"></mytag-badge></div>
+      <div class="showcase-example"><h3>Rounded</h3><mytag-badge label="گرد" variant="success" [radius]="true"></mytag-badge></div>
+      <div class="showcase-example"><h3>Icon + dot</h3><mytag-badge label="مورد منتخب" variant="primary" [radius]="true"><span icon-right class="iho-icon-building-landmark"></span><span dot>•</span></mytag-badge></div>
+      <div class="showcase-example"><h3>Image</h3><mytag-badge label="پروفایل" variant="lite"><img img src="assets/img/demo-content.svg" width="16" height="16" alt="لوگو"></mytag-badge></div>
+      <div class="showcase-example"><h3>Animated label</h3><mytag-badge label="متن طولانی برای نمایش حرکت برچسب" [animatedLabel]="true"></mytag-badge></div>
+      <div class="showcase-example"><h3>Custom content</h3><mytag-badge [mainContent]="true"><span label>محتوای سفارشی</span></mytag-badge></div>
     </div>
   </section>
 

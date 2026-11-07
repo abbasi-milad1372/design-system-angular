@@ -1,14 +1,14 @@
 <div class="showcase-page">
   <header class="showcase-header"><h1>Select</h1><p>اندازه‌ها، جستجو، required، borderless، error، disabled و option غیرفعال.</p></header>
   <section class="showcase-section"><h2>اندازه و جستجو</h2><div class="showcase-grid">
-    <div class="showcase-example"><h3>md / required</h3><iho-select [(ngModel)]="cityMd" placeholder="شهر را انتخاب کنید" size="md" [required]="true"><iho-option *ngFor="let city of cities" [value]="city.value" [label]="city.label">{{ city.label }}</iho-option></iho-select></div>
-    <div class="showcase-example"><h3>lg / searchable</h3><iho-select [(ngModel)]="cityLg" placeholder="جستجوی شهر" size="lg" [searchable]="true"><iho-option *ngFor="let city of cities" [value]="city.value" [label]="city.label">{{ city.label }}</iho-option></iho-select></div>
+    <div class="showcase-example"><h3>md / required</h3><mytag-select [(ngModel)]="cityMd" placeholder="شهر را انتخاب کنید" size="md" [required]="true"><mytag-option *ngFor="let city of cities" [value]="city.value" [label]="city.label">{{ city.label }}</mytag-option></mytag-select></div>
+    <div class="showcase-example"><h3>lg / searchable</h3><mytag-select [(ngModel)]="cityLg" placeholder="جستجوی شهر" size="lg" [searchable]="true"><mytag-option *ngFor="let city of cities" [value]="city.value" [label]="city.label">{{ city.label }}</mytag-option></mytag-select></div>
   </div></section>
   <section class="showcase-section"><h2>حالت‌ها</h2><div class="showcase-grid">
-    <div class="showcase-example"><h3>Borderless</h3><iho-select [(ngModel)]="cityBorderless" placeholder="بدون حاشیه" [borderless]="true"><iho-option *ngFor="let city of cities" [value]="city.value" [label]="city.label">{{ city.label }}</iho-option></iho-select></div>
-    <div class="showcase-example"><h3>Error</h3><iho-select placeholder="انتخاب نامعتبر" error="انتخاب شهر الزامی است"><iho-option value="tehran" label="تهران">تهران</iho-option></iho-select></div>
-    <div class="showcase-example"><h3>Disabled select</h3><iho-select placeholder="غیرفعال" [disabled]="true"><iho-option value="tehran" label="تهران">تهران</iho-option></iho-select></div>
-    <div class="showcase-example"><h3>Disabled option</h3><iho-select placeholder="یک گزینه غیرفعال"><iho-option value="mashhad" label="مشهد">مشهد</iho-option><iho-option value="tehran" label="تهران" [disabled]="true">تهران</iho-option></iho-select></div>
+    <div class="showcase-example"><h3>Borderless</h3><mytag-select [(ngModel)]="cityBorderless" placeholder="بدون حاشیه" [borderless]="true"><mytag-option *ngFor="let city of cities" [value]="city.value" [label]="city.label">{{ city.label }}</mytag-option></mytag-select></div>
+    <div class="showcase-example"><h3>Error</h3><mytag-select placeholder="انتخاب نامعتبر" error="انتخاب شهر الزامی است"><mytag-option value="tehran" label="تهران">تهران</mytag-option></mytag-select></div>
+    <div class="showcase-example"><h3>Disabled select</h3><mytag-select placeholder="غیرفعال" [disabled]="true"><mytag-option value="tehran" label="تهران">تهران</mytag-option></mytag-select></div>
+    <div class="showcase-example"><h3>Disabled option</h3><mytag-select placeholder="یک گزینه غیرفعال"><mytag-option value="mashhad" label="مشهد">مشهد</mytag-option><mytag-option value="tehran" label="تهران" [disabled]="true">تهران</mytag-option></mytag-select></div>
   </div></section>
   <section class="showcase-section"><h2>کد نمونه</h2><pre class="showcase-code"><code>{{ code }}</code></pre></section>
 </div>

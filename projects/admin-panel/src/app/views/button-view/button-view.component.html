@@ -9,7 +9,7 @@
     <div class="showcase-grid">
       <div class="showcase-example" *ngFor="let variant of variants">
         <h3>{{ variant }}</h3>
-        <iho-button [variant]="variant" size="md"><span label>دکمه نمونه</span></iho-button>
+        <mytag-button [variant]="variant" size="md"><span label>دکمه نمونه</span></mytag-button>
       </div>
     </div>
   </section>
@@ -19,7 +19,7 @@
     <div class="showcase-grid">
       <div class="showcase-example" *ngFor="let size of sizes">
         <h3>{{ size }}</h3>
-        <iho-button variant="primary" [size]="size"><span label>دکمه {{ size }}</span></iho-button>
+        <mytag-button variant="primary" [size]="size"><span label>دکمه {{ size }}</span></mytag-button>
       </div>
     </div>
   </section>
@@ -27,10 +27,10 @@
   <section class="showcase-section">
     <h2>حالت‌ها و محتوا</h2>
     <div class="showcase-grid">
-      <div class="showcase-example"><h3>Disabled</h3><iho-button [disabled]="true"><span label>غیرفعال</span></iho-button></div>
-      <div class="showcase-example"><h3>Loading</h3><iho-button [showLoading]="true"><span label>در حال ثبت</span></iho-button></div>
-      <div class="showcase-example"><h3>Icons</h3><iho-button><span icon-right class="iho-icon-user"></span><span label>حساب کاربری</span><span icon-left class="iho-icon-arrow-left-01-sharp"></span></iho-button></div>
-      <div class="showcase-example"><h3>Link + full width</h3><iho-button type="link" href="/hotels" [widthPercent]="100"><span label>مشاهده هتل‌ها</span></iho-button></div>
+      <div class="showcase-example"><h3>Disabled</h3><mytag-button [disabled]="true"><span label>غیرفعال</span></mytag-button></div>
+      <div class="showcase-example"><h3>Loading</h3><mytag-button [showLoading]="true"><span label>در حال ثبت</span></mytag-button></div>
+      <div class="showcase-example"><h3>Icons</h3><mytag-button><span icon-right class="iho-icon-user"></span><span label>حساب کاربری</span><span icon-left class="iho-icon-arrow-left-01-sharp"></span></mytag-button></div>
+      <div class="showcase-example"><h3>Link + full width</h3><mytag-button type="link" href="/cards" [widthPercent]="100"><span label>مشاهده موارد</span></mytag-button></div>
     </div>
   </section>
 

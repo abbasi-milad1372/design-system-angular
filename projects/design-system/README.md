@@ -1,6 +1,41 @@
-# DesignSystem
+# MyTag Design System
 
-This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.0.
+An Angular 16.2 component library with RTL layouts, Persian default labels,
+Ravi FaNum typography, and shared design tokens.
+
+## Package and component names
+
+The package import is `@iho/design-system`. All 20 public component tags use the
+`mytag-` prefix, including `mytag-button`, `mytag-input`, `mytag-card`,
+`mytag-select`, `mytag-option`, `mytag-footer-ds`, and `mytag-notifications`.
+TypeScript module/class exports keep their existing spelling.
+
+```typescript
+import { IHOButtonModule, IHOCardModule } from '@iho/design-system';
+```
+
+Add the modules to your consuming NgModule, then use their tags:
+
+```html
+<mytag-button><span label>ثبت درخواست</span></mytag-button>
+<mytag-card type="standard" title="مجموعه ابزارهای طراحی"
+  [price]="5400000" priceUnit="بسته" [withPrice]="true"></mytag-card>
+```
+
+Cards use `standard`, `category`, and `horizontal` layouts. General-purpose
+inputs include `priceUnit`, `actionLink`, `actionLabel`, `unavailable`,
+`unavailableLabel`, `featured`, `featuredLabel`, `badgeLabel`, and `fallbackImage`.
+Navbar and footer receive branding, navigation lists, and contact content from
+the consuming application. Exported content types are `NavigationLink`,
+`FooterFeature`, `FooterSection`, and `FooterContact`; card layouts use `CardType`.
+
+The renamed building glyph classes are `iho-icon-building-landmark` and
+`iho-icon-building-front`. Icon CSS classes retain the `iho-icon-` prefix.
+
+These are breaking source changes after v0.2.1. The complete component-tag/import
+table, projection slots, CSS names, and examples are in the
+[repository README](../../README.md). Read the
+[migration guide](../../docs/generic-components-migration.md) before upgrading.
 
 ## Code scaffolding
 

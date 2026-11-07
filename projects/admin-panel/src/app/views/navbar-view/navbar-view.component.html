@@ -1,4 +1,14 @@
-<iho-navbar></iho-navbar>
-
-
-
+<div class="showcase-page">
+  <header class="showcase-header"><h1>ناوبری</h1><p>نام برند، نشان، پیوندها و رویدادهای حساب کاربری و فهرست کناری قابل تنظیم هستند.</p></header>
+  <section class="showcase-section">
+    <h2>ناوبری قابل تنظیم</h2>
+    <mytag-navbar brandName="پروژه نمونه" homeUrl="/" menuLabel="بخش‌ها"
+      [menuItems]="menuItems" [links]="links" [utilityLinks]="utilityLinks"
+      (onToggleSideNav)="lastAction = 'فهرست کناری'"
+      (openDialogModal)="lastAction = 'حساب کاربری'"></mytag-navbar>
+    <p aria-live="polite">{{ lastAction }}</p>
+    <p>فهرست با Enter یا Space باز می‌شود؛ با Tab بین پیوندها حرکت کنید و با Escape آن را ببندید.</p>
+  </section>
+  <section class="showcase-section"><h2>حالت ساده</h2><mytag-navbar brandName="کتابخانه رابط کاربری" accountLabel=""></mytag-navbar></section>
+  <section class="showcase-section"><h2>کد نمونه</h2><pre class="showcase-code"><code>{{ code }}</code></pre></section>
+</div>

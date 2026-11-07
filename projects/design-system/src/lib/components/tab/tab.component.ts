@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-    selector: 'iho-tab',
+    selector: 'mytag-tab',
     templateUrl: './tab.component.html',
     styleUrls: ['./tab.component.scss']
 })

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'lib-design-system',
+  selector: 'mytag-design-system',
   template: `
     <p>
       design-system works!

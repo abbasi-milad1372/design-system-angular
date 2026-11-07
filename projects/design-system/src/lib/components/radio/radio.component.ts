@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { IhoRadioGroupComponent } from './radio-group.component';
 
 @Component({
-    selector: 'iho-radio',
+    selector: 'mytag-radio',
     templateUrl: './radio.component.html',
     styleUrls: ['./radio.component.scss'],
 })

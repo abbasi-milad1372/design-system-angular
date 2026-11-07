@@ -17,24 +17,24 @@ export class ButtonViewComponent {
     ];
     sizes: ButtonSize[] = ['sm', 'md', 'lg', 'xl'];
 
-    code = `<iho-button variant="primary" size="md">
+    code = `<mytag-button variant="primary" size="md">
   <span label>ساخت حساب</span>
-</iho-button>
+</mytag-button>
 
-<iho-button variant="ghost-primary" size="lg">
+<mytag-button variant="ghost-primary" size="lg">
   <span icon-right class="iho-icon-user"></span>
   <span label>ورود به حساب</span>
-</iho-button>
+</mytag-button>
 
-<iho-button variant="error" [disabled]="true">
+<mytag-button variant="error" [disabled]="true">
   <span label>حذف</span>
-</iho-button>
+</mytag-button>
 
-<iho-button variant="primary" [showLoading]="true">
+<mytag-button variant="primary" [showLoading]="true">
   <span label>در حال ثبت</span>
-</iho-button>
+</mytag-button>
 
-<iho-button type="link" href="/hotels" [widthPercent]="100">
-  <span label>مشاهده هتل‌ها</span>
-</iho-button>`;
+<mytag-button type="link" href="/cards" [widthPercent]="100">
+  <span label>مشاهده موارد</span>
+</mytag-button>`;
 }

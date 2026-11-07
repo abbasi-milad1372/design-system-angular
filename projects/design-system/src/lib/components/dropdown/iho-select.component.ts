@@ -18,7 +18,7 @@ import { IhoOptionComponent } from './iho-option.component';
 import { debounceTime, Subject, Subscription, takeUntil } from 'rxjs';
 
 @Component({
-    selector: 'iho-select',
+    selector: 'mytag-select',
     templateUrl: './select.component.html',
     providers: [{
         provide: NG_VALUE_ACCESSOR,

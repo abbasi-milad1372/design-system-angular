@@ -9,18 +9,18 @@ export class CheckBoxComponent {
     withSupporting = true;
     requiredValue = false;
 
-    code = `<iho-checkbox size="xs" label="Checkbox 16px"></iho-checkbox>
-<iho-checkbox size="sm" label="Checkbox 20px"></iho-checkbox>
-<iho-checkbox size="md" label="Checkbox 24px"></iho-checkbox>
+    code = `<mytag-checkbox size="xs" label="Checkbox 16px"></mytag-checkbox>
+<mytag-checkbox size="sm" label="Checkbox 20px"></mytag-checkbox>
+<mytag-checkbox size="md" label="Checkbox 24px"></mytag-checkbox>
 
-<iho-checkbox
+<mytag-checkbox
   [(ngModel)]="selected"
   size="md"
   color="black"
   label="منو انتخاب کن"
   supportingText="من بهترین انتخاب برای شما هستم در این بخش">
-</iho-checkbox>
+</mytag-checkbox>
 
-<iho-checkbox label="انتخاب ناقص" [indeterminate]="true"></iho-checkbox>
-<iho-checkbox label="غیرفعال" [disabled]="true"></iho-checkbox>`;
+<mytag-checkbox label="انتخاب ناقص" [indeterminate]="true"></mytag-checkbox>
+<mytag-checkbox label="غیرفعال" [disabled]="true"></mytag-checkbox>`;
 }

@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-    selector: 'iho-badge',
+    selector: 'mytag-badge',
     templateUrl: './badge.component.html',
     styleUrls: ['./badge.component.scss'],
 })

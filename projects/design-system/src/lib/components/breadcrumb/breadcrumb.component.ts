@@ -4,7 +4,7 @@ export interface BreadcrumbItem {
     url?: string; // اگر نبود، به عنوان متن ساده نمایش داده می‌شود
 }
 @Component({
-    selector: 'iho-breadcrumb',
+    selector: 'mytag-breadcrumb',
     templateUrl: './breadcrumb.component.html',
     styleUrls: ['./breadcrumb.component.scss'],
 })

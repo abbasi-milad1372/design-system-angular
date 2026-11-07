@@ -1,15 +1,14 @@
-<iho-footer-ds>
-<ng-container  links>
-        <a href="#">
-            <iho-badge [label]="'از 2 میلیون تومان'" [size]="'md'" [variant]="'default'" [radius]="true"
-                [border]="true">
-            </iho-badge>
-        </a>
-        <a href="#">
-            <iho-badge [label]="'از 2 میلیون تومان'" [size]="'md'" [variant]="'default'" [radius]="true" 
-                [border]="true">
-            </iho-badge>
-        </a>
-    </ng-container>
-
-</iho-footer-ds>
+<div class="showcase-page">
+  <header class="showcase-header"><h1>پایین صفحه</h1><p>محتوا، پیوندها، راه‌های تماس و نام برند از طریق ورودی‌ها تعیین می‌شوند.</p></header>
+  <section class="showcase-section">
+    <h2>محتوای قابل تنظیم</h2>
+    <mytag-footer-ds brandName="پروژه نمونه"
+      [features]="features" [sections]="sections" [contacts]="contacts"
+      [socialLinks]="socialLinks" copyright="تمام حقوق پروژه نمونه محفوظ است."
+      [showLinks]="true">
+      <div links><a href="/cards">مشاهده کامپوننت‌ها</a></div>
+    </mytag-footer-ds>
+    <p>در نمایش موبایل، عنوان هر بخش با صفحه‌کلید یا لمس باز و بسته می‌شود.</p>
+  </section>
+  <section class="showcase-section"><h2>کد نمونه</h2><pre class="showcase-code"><code>{{ code }}</code></pre></section>
+</div>

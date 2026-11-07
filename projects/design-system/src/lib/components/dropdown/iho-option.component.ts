@@ -1,7 +1,7 @@
 import { Component, ElementRef, EventEmitter, HostBinding, HostListener, Input, Output } from '@angular/core';
 
 @Component({
-  selector: 'iho-option',
+  selector: 'mytag-option',
   template: `
   <ng-container *ngIf="visible">
   <div class="iho-option__inner" role="option" [attr.id]="id" (click)="select()">
