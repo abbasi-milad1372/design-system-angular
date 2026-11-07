@@ -30,11 +30,13 @@ import { CustomContentComponent } from './views/bottomsheet/custom-content.compo
 import { accordianViewComponent } from './views/accordian/accordian-view.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { chipsViewComponent } from './views/chips/chips-view.component';
+import { HomeViewComponent } from './views/home-view/home-view.component';
 const routes: Routes = [
   {
     path: '',
     component: AdminLayoutComponent,
     children: [
+      { path: '', pathMatch: 'full', component: HomeViewComponent, title: 'MyTag | معرفی و شروع' },
       { path: 'button', component: ButtonViewComponent },
       { path: 'input', component: InputViewComponent },
       { path: 'badge', component: BadgeViewComponent },
@@ -58,6 +60,7 @@ const routes: Routes = [
 @NgModule({
   declarations: [AppComponent,
     AdminLayoutComponent,
+    HomeViewComponent,
     ButtonViewComponent,
     BadgeViewComponent,
     cardViewComponent,

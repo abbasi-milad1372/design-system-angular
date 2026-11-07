@@ -1,20 +1,112 @@
-<div class="flex h-screen overflow-hidden">
-    <!-- Sidebar -->
-    <aside class="w-64 bg-gray-800 text-gray-100 p-4 space-y-4  hidden lg:block">
-        <h2 class="text-lg font-bold mb-4">Components</h2>
-        <nav class="flex flex-col space-y-2">
-            <a *ngFor="let item of componentsDesignSys"  [routerLink]="item.path" routerLinkActive="bg-gray-700"
-                class="p-2 rounded hover:bg-gray-700 transition text-white-0">
-                {{ item.name }}
-            </a>
-        </nav>
-    </aside>
-
-    <!-- Main view -->
-    <main class="flex-1 bg-gray-50 p-4 overflow-auto">
-<!-- <img src="/assets/img/IHO_Design_System_With_Angular.webp" class="w-[50%] h-[30%] object-contain mx-auto" /> -->
-
-        <mytag-notifications />
-        <router-outlet></router-outlet>
+<div
+  class="catalog-shell flex overflow-hidden [background:var(--color-white-500)] [color:var(--color-gray-900)]"
+>
+  <a
+    class="skip-link [position:fixed] [top:var(--space-lg)] [inset-inline-start:var(--space-lg)] [z-index:100] [background:var(--color-white-DEFAULT)] p-lg rounded-md"
+    href="#catalog-content"
+    >رفتن به محتوای اصلی</a
+  >
+  <aside
+    class="catalog-sidebar hidden [flex:0_0_240px] overflow-y-auto [padding:var(--space-4xl)_var(--space-xl)_var(--space-2xl)] [background:var(--color-primary-900)] [color:var(--color-white-DEFAULT)] min-[1024px]:block"
+  >
+    <a
+      routerLink="/"
+      class="catalog-brand flex gap-lg items-center mb-5xl px-md"
+      aria-label="MyTag، صفحه معرفی"
+    >
+      <span
+        class="brand-mark flex items-center justify-center w-6xl h-6xl rounded-lg [background:var(--color-primary-500)] [font-size:var(--font-size-h4)] font-bold"
+        aria-hidden="true"
+        dir="ltr"
+        >m<span class="[color:var(--color-secondary-400)]">.</span></span
+      >
+      <span
+        ><strong
+          class="block [font-size:var(--font-size-h4)] font-extrabold [letter-spacing:-0.06em]"
+          dir="ltr"
+          >mytag</strong
+        ><small
+          class="[color:var(--color-primary-200)] [font-size:var(--font-size-text)]"
+          >سیستم طراحی انگولار</small
+        ></span
+      >
+    </a>
+    <p
+      class="nav-caption px-lg mb-xl [color:var(--color-primary-300)] [font-size:var(--font-size-text)]"
+    >
+      مستندات و کامپوننت‌ها
+    </p>
+    <nav class="grid gap-xs" aria-label="فهرست اصلی">
+      <a
+        class="flex items-center justify-between min-h-5xl [padding:var(--space-md)_var(--space-lg)] rounded-md [color:var(--color-primary-200)] [font-size:var(--font-size-small)]"
+        *ngFor="let item of componentsDesignSys"
+        [routerLink]="item.path"
+        routerLinkActive="is-active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        ariaCurrentWhenActive="page"
+      >
+        <span>{{ item.name }}</span
+        ><span class="nav-arrow [opacity:0]" aria-hidden="true">←</span>
+      </a>
+    </nav>
+    <div
+      class="sidebar-note flex items-center gap-md mt-4xl px-lg [color:var(--color-primary-200)] [font-size:var(--font-size-text)]"
+    >
+      <span
+        class="status-dot w-sm h-sm [border-radius:50%] [background:var(--color-success-500)]"
+        aria-hidden="true"
+      ></span
+      >طراحی یکپارچه، توسعه سریع‌تر
+    </div>
+  </aside>
+  <div class="catalog-body flex-1 min-w-0 flex flex-col">
+    <header
+      class="mobile-header flex items-center justify-between gap-xl [padding:var(--space-lg)_var(--space-2xl)] [background:var(--color-white-DEFAULT)] [border-bottom:1px_solid_var(--color-gray-DEFAULT)] min-[1024px]:hidden"
+    >
+      <a
+        routerLink="/"
+        class="mobile-brand [font-size:var(--font-size-h4)] font-extrabold [letter-spacing:-0.06em]"
+        (click)="closeNavigation()"
+        aria-label="MyTag، صفحه معرفی"
+        dir="ltr"
+        >mytag<span class="[color:var(--color-primary-500)]">.</span></a
+      >
+      <button
+        class="flex items-center gap-md [font-size:var(--font-size-small)] p-md"
+        #navigationToggle
+        type="button"
+        (click)="mobileNavOpen = !mobileNavOpen"
+        [attr.aria-expanded]="mobileNavOpen"
+        aria-controls="mobile-navigation"
+      >
+        {{ mobileNavOpen ? "بستن فهرست" : "فهرست کامپوننت‌ها"
+        }}<span aria-hidden="true">☰</span>
+      </button>
+    </header>
+    <nav
+      *ngIf="mobileNavOpen"
+      id="mobile-navigation"
+      class="mobile-navigation [flex-shrink:0] [max-height:45vh] overflow-y-auto grid [grid-template-columns:repeat(2,_minmax(0,_1fr))] gap-xs p-lg [background:var(--color-white-DEFAULT)] [border-bottom:1px_solid_var(--color-gray-DEFAULT)] min-[1024px]:hidden"
+      aria-label="فهرست موبایل"
+    >
+      <a
+        class="p-lg [font-size:var(--font-size-small)] rounded-md"
+        *ngFor="let item of componentsDesignSys"
+        [routerLink]="item.path"
+        routerLinkActive="is-active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        ariaCurrentWhenActive="page"
+        (click)="closeNavigation()"
+        >{{ item.name }}</a
+      >
+    </nav>
+    <main
+      id="catalog-content"
+      class="catalog-content flex-1 min-h-0 [overflow:auto] p-xl min-[1024px]:p-4xl"
+      tabindex="-1"
+    >
+      <mytag-notifications />
+      <router-outlet></router-outlet>
     </main>
+  </div>
 </div>

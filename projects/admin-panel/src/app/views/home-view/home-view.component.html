@@ -1,0 +1,540 @@
+<div
+  class="home-page [max-width:1200px] [margin-inline:auto] [padding:var(--space-md)_var(--space-md)_0] max-[480px]:[padding-inline:0]"
+>
+  <header
+    class="home-header flex justify-between items-center gap-xl pb-5xl max-[480px]:pb-3xl"
+  >
+    <span
+      class="home-eyebrow inline-flex items-center gap-md [font-size:var(--font-size-small)] [color:var(--color-gray-400)] max-[480px]:[font-size:var(--font-size-text)]"
+      ><span
+        class="eyebrow-dot w-sm h-sm [border-radius:50%] [background:var(--color-primary-500)] shrink-0"
+        aria-hidden="true"
+      ></span
+      >از یک زبان طراحی مشترک شروع کنید</span
+    >
+    <a
+      [href]="repositoryUrl"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="source-link inline-flex items-center gap-md [font-size:var(--font-size-small)] [color:var(--color-gray-400)] [color:var(--color-gray-700)] font-semibold"
+      aria-label="مشاهده کد منبع در GitHub، زبانه جدید"
+      ><span dir="ltr">GitHub</span><span aria-hidden="true">↗</span></a
+    >
+  </header>
+
+  <section
+    class="hero grid [grid-template-columns:minmax(0,_1fr)] gap-6xl items-center [padding:var(--space-lg)_0_var(--space-7xl)] min-[1200px]:[grid-template-columns:minmax(0,_1fr)_minmax(0,_1fr)] min-[1200px]:gap-4xl max-[480px]:gap-3xl"
+    aria-labelledby="hero-title"
+  >
+    <div class="hero-copy">
+      <div
+        class="release-label inline-flex items-center flex-wrap gap-md [padding:var(--space-sm)_var(--space-lg)] [border:1px_solid_var(--color-primary-200)] rounded-full [background:var(--color-primary-DEFAULT)] [font-size:var(--font-size-text)] [color:var(--color-primary-700)]"
+      >
+        <span
+          class="release-dot w-sm h-sm [border-radius:50%] [background:var(--color-primary-500)] shrink-0"
+          aria-hidden="true"
+        ></span
+        ><span dir="ltr">MyTag v{{ version }}</span
+        ><span
+          class="release-divider h-lg [border-inline-start:1px_solid_var(--color-primary-200)]"
+          aria-hidden="true"
+        ></span
+        >آماده برای Angular 16
+      </div>
+      <h1
+        class="[margin:var(--space-2xl)_0_var(--space-xl)] font-extrabold [line-height:1.65] [letter-spacing:-0.045em]"
+        id="hero-title"
+      >
+        یک زبان مشترک،<br />برای
+        <span class="[color:var(--color-primary-500)]">هر رابط کاربری.</span>
+      </h1>
+      <p
+        class="hero-description [max-width:440px] [color:var(--color-gray-400)] [font-size:var(--font-size-p)] [line-height:var(--line-height-p)]"
+      >
+        از اولین دکمه تا یک محصول کامل؛ مجموعه‌ای از کامپوننت‌های هماهنگ و قابل
+        تنظیم که به ایده‌های شما شکل می‌دهند.
+      </p>
+      <div
+        class="hero-actions flex flex-wrap items-center gap-lg [margin-block:var(--space-4xl)_var(--space-2xl)]"
+      >
+        <a
+          href="#getting-started"
+          class="primary-link min-h-6xl [padding:var(--space-lg)_var(--space-2xl)] inline-flex items-center justify-center gap-2xl rounded-md font-semibold [font-size:var(--font-size-small)] [color:var(--color-white-DEFAULT)] [background:var(--color-primary-500)]"
+          >شروع استفاده<span aria-hidden="true">←</span></a
+        >
+        <a
+          routerLink="/button"
+          class="secondary-link min-h-6xl [padding:var(--space-lg)_var(--space-2xl)] inline-flex items-center justify-center gap-2xl rounded-md font-semibold [font-size:var(--font-size-small)] [color:var(--color-gray-600)] [border:1px_solid_var(--color-gray-DEFAULT)] [background:var(--color-white-DEFAULT)]"
+          >مشاهده کامپوننت‌ها<span aria-hidden="true">↗</span></a
+        >
+      </div>
+      <div
+        class="hero-meta flex flex-wrap gap-md [color:var(--color-gray-400)] [font-size:var(--font-size-text)] [line-height:var(--line-height-text)] max-[480px]:gap-sm"
+      >
+        <span>راست‌به‌چپ از ابتدا</span><span aria-hidden="true">·</span
+        ><span>فونت فارسی Ravi</span><span aria-hidden="true">·</span
+        ><span>بدون وابستگی به یک کسب‌وکار</span>
+      </div>
+    </div>
+
+    <div
+      class="preview-stage relative min-w-0 [padding:var(--space-3xl)_var(--space-xl)_var(--space-4xl)] max-[480px]:[padding:var(--space-xl)_var(--space-md)_var(--space-2xl)]"
+    >
+      <div
+        class="stage-decoration absolute [inset:0] rounded-3xl [background-color:var(--color-primary-100)]"
+        aria-hidden="true"
+      ></div>
+      <div
+        class="preview-window relative [background:var(--color-white-DEFAULT)] [border:1px_solid_var(--color-primary-200)] rounded-xl overflow-hidden"
+      >
+        <div
+          class="window-bar flex items-center justify-between gap-md [padding:var(--space-lg)_var(--space-xl)] [background:var(--color-white-500)] [border-bottom:1px_solid_var(--color-gray-DEFAULT)] [color:var(--color-gray-400)] [font-size:var(--font-size-text)] [direction:ltr] max-[480px]:px-lg"
+        >
+          <span class="window-dots flex gap-xs" aria-hidden="true"
+            ><i
+              class="block w-sm h-sm [border-radius:50%] [background:var(--color-gray-100)]"
+            ></i
+            ><i
+              class="block w-sm h-sm [border-radius:50%] [background:var(--color-gray-100)]"
+            ></i
+            ><i
+              class="block w-sm h-sm [border-radius:50%] [background:var(--color-gray-100)]"
+            ></i></span
+          ><span dir="ltr">your-next-project</span
+          ><span
+            class="window-label [direction:rtl] [color:var(--color-primary-600)] max-[480px]:hidden"
+            >پیش‌نمایش زنده</span
+          >
+        </div>
+        <div class="preview-content p-3xl max-[480px]:p-xl">
+          <div class="preview-heading flex items-center justify-between mb-xl">
+            <span
+              class="preview-symbol grid [place-content:center] w-5xl h-5xl [background:var(--color-primary-100)] [color:var(--color-primary-500)] rounded-lg font-extrabold [font-size:var(--font-size-h5)] [direction:ltr]"
+              aria-hidden="true"
+              >m.</span
+            ><mytag-badge
+              label="آماده طراحی"
+              variant="success"
+              [radius]="true"
+            ></mytag-badge>
+          </div>
+          <h2
+            class="[font-size:var(--font-size-h6)] font-bold max-[480px]:[font-size:var(--font-size-p)]"
+          >
+            اینجا، پروژه بعدی شماست.
+          </h2>
+          <p
+            class="mt-xs [color:var(--color-gray-400)] [font-size:var(--font-size-small)]"
+          >
+            چند جزء ساده. یک تجربهٔ یکپارچه.
+          </p>
+          <div class="preview-input my-2xl">
+            <mytag-input
+              class="block w-full"
+              label="نام پروژه"
+              value="پروژه جدید من"
+              size="md"
+              template="inline"
+            ></mytag-input>
+          </div>
+          <div class="preview-button-row flex items-center gap-xl">
+            <mytag-button
+              [variant]="previewVariant"
+              [disabled]="previewDisabled"
+              size="md"
+              (clickBtn)="previewClicks = previewClicks + 1"
+              ><span label>شروع طراحی</span
+              ><span icon-left aria-hidden="true">←</span></mytag-button
+            ><span
+              class="preview-hint [color:var(--color-gray-400)] [font-size:var(--font-size-text)]"
+              aria-live="polite"
+              >{{
+                previewClicks
+                  ? previewClicks + " بار انتخاب شد"
+                  : "امتحانش کنید"
+              }}</span
+            >
+          </div>
+        </div>
+        <div
+          class="preview-controls flex flex-wrap items-center justify-between gap-lg [padding:var(--space-lg)_var(--space-xl)] [border-top:1px_solid_var(--color-gray-DEFAULT)]"
+        >
+          <div
+            class="variant-controls flex p-2xs gap-2xs [border:1px_solid_var(--color-gray-DEFAULT)] rounded-md [background:var(--color-white-500)]"
+            role="group"
+            aria-label="سبک دکمه"
+          >
+            <button
+              class="[padding:var(--space-xs)_var(--space-md)] rounded-sm [font-size:var(--font-size-text)] [color:var(--color-gray-400)]"
+              *ngFor="let option of previewOptions"
+              type="button"
+              [class.is-selected]="previewVariant === option.value"
+              [attr.aria-pressed]="previewVariant === option.value"
+              (click)="previewVariant = option.value"
+            >
+              {{ option.label }}
+            </button>
+          </div>
+          <mytag-switch
+            label="غیرفعال"
+            [(ngModel)]="previewDisabled"
+          ></mytag-switch>
+        </div>
+        <pre
+          class="preview-code [margin:0] p-xl [background:var(--color-primary-900)] [color:var(--color-primary-200)] text-left overflow-x-auto whitespace-pre max-[480px]:[font-size:10px]"
+          dir="ltr"
+        ><code>{{ previewCode }}</code></pre>
+      </div>
+      <div
+        class="floating-note relative flex items-center gap-md w-fit [margin:calc(-1_*_var(--space-md))_auto_0] [padding:var(--space-lg)_var(--space-xl)] [background:var(--color-white-DEFAULT)] [border:1px_solid_var(--color-gray-DEFAULT)] rounded-lg [font-size:var(--font-size-text)]"
+      >
+        <span
+          class="note-check grid [place-content:center] w-2xl h-2xl [border-radius:50%] [color:var(--color-success-800)] [background:var(--color-success-DEFAULT)]"
+          aria-hidden="true"
+          >✓</span
+        ><span>طراحی و کد، هم‌زبان.</span
+        ><span
+          class="note-tag [color:var(--color-primary-600)] [margin-inline-start:var(--space-md)] font-mono"
+          dir="ltr"
+          >&lt;mytag /&gt;</span
+        >
+      </div>
+    </div>
+  </section>
+
+  <section
+    class="foundation-strip grid [grid-template-columns:repeat(2,_minmax(0,_1fr))] [border-block:1px_solid_var(--color-gray-DEFAULT)] py-3xl gap-y-3xl min-[680px]:[grid-template-columns:repeat(4,_minmax(0,_1fr))]"
+    aria-label="ویژگی‌های سیستم طراحی"
+  >
+    <div class="flex flex-col gap-sm items-center text-center px-md">
+      <strong class="[font-size:var(--font-size-h5)] font-bold">۲۰</strong
+      ><span
+        class="[color:var(--color-gray-400)] [font-size:var(--font-size-text)]"
+        >تگ آماده برای ساختن</span
+      >
+    </div>
+    <div class="flex flex-col gap-sm items-center text-center px-md">
+      <strong class="[font-size:var(--font-size-h5)] font-bold" dir="ltr"
+        >RTL</strong
+      ><span
+        class="[color:var(--color-gray-400)] [font-size:var(--font-size-text)]"
+        >هماهنگ با زبان فارسی</span
+      >
+    </div>
+    <div class="flex flex-col gap-sm items-center text-center px-md">
+      <strong class="[font-size:var(--font-size-h5)] font-bold" dir="ltr"
+        >Angular 16</strong
+      ><span
+        class="[color:var(--color-gray-400)] [font-size:var(--font-size-text)]"
+        >سازگار با ساختار پروژه شما</span
+      >
+    </div>
+    <div class="flex flex-col gap-sm items-center text-center px-md">
+      <strong class="[font-size:var(--font-size-h5)] font-bold">یکپارچه</strong
+      ><span
+        class="[color:var(--color-gray-400)] [font-size:var(--font-size-text)]"
+        >رنگ، فاصله و تایپوگرافی مشترک</span
+      >
+    </div>
+  </section>
+
+  <section
+    class="component-section pt-8xl max-[480px]:pt-6xl"
+    aria-labelledby="components-title"
+  >
+    <div
+      class="section-heading flex flex-wrap items-end justify-between gap-xl mb-3xl"
+    >
+      <div>
+        <span
+          class="section-kicker block mb-md [color:var(--color-primary-600)] [font-size:var(--font-size-text)] font-semibold"
+          >قطعه‌های کوچک، ایده‌های بزرگ</span
+        >
+        <h2
+          class="font-bold [line-height:1.8] [letter-spacing:-0.025em]"
+          id="components-title"
+        >
+          هر چیزی که برای شروع نیاز دارید.
+        </h2>
+      </div>
+      <a
+        routerLink="/icons"
+        class="text-link inline-flex items-center gap-lg [color:var(--color-primary-600)] [font-size:var(--font-size-small)] font-semibold"
+        >کاوش آیکن‌ها<span aria-hidden="true">←</span></a
+      >
+    </div>
+    <div
+      class="category-grid grid [grid-template-columns:repeat(2,_minmax(0,_1fr))] gap-xl min-[1200px]:[grid-template-columns:repeat(4,_minmax(0,_1fr))] max-[480px]:[grid-template-columns:minmax(0,_1fr)]"
+    >
+      <a
+        *ngFor="let category of categories"
+        [routerLink]="category.path"
+        class="category-card flex flex-col items-start p-2xl [border:1px_solid_var(--color-gray-DEFAULT)] rounded-lg [background:var(--color-white-DEFAULT)]"
+        ><div
+          class="category-top w-full flex justify-between items-center mb-2xl max-[480px]:mb-lg"
+        >
+          <span
+            class="category-number grid [place-content:center] w-5xl h-5xl rounded-md [background:var(--color-primary-100)] [color:var(--color-primary-600)] [font-size:var(--font-size-small)] font-semibold"
+            >{{ category.number }}</span
+          ><span
+            class="category-arrow [color:var(--color-gray-300)]"
+            aria-hidden="true"
+            >↗</span
+          >
+        </div>
+        <h3 class="[font-size:var(--font-size-p)] font-bold mb-md">
+          {{ category.title }}
+        </h3>
+        <p
+          class="[color:var(--color-gray-400)] [font-size:var(--font-size-small)] [line-height:var(--line-height-small)] mb-2xl"
+        >
+          {{ category.description }}
+        </p>
+        <span
+          class="category-tags [margin-top:auto] [color:var(--color-gray-400)] [font-size:var(--font-size-text)]"
+          dir="ltr"
+          >{{ category.tags }}</span
+        ></a
+      >
+    </div>
+  </section>
+
+  <section
+    id="getting-started"
+    class="getting-started pt-8xl max-[480px]:pt-6xl"
+    aria-labelledby="getting-started-title"
+  >
+    <div
+      class="section-heading flex flex-wrap items-end justify-between gap-xl mb-3xl"
+    >
+      <div>
+        <span
+          class="section-kicker block mb-md [color:var(--color-primary-600)] [font-size:var(--font-size-text)] font-semibold"
+          >از اینجا شروع کنید</span
+        >
+        <h2
+          class="font-bold [line-height:1.8] [letter-spacing:-0.025em]"
+          id="getting-started-title"
+        >
+          سه قدم تا اولین کامپوننت.
+        </h2>
+      </div>
+      <span
+        class="setup-caption [color:var(--color-gray-400)] [font-size:var(--font-size-text)]"
+        >برای پروژه‌های Angular 16</span
+      >
+    </div>
+    <div
+      class="steps-layout grid gap-3xl min-[1200px]:[grid-template-columns:minmax(0,_0.8fr)_minmax(0,_1.5fr)] min-[1200px]:gap-4xl"
+    >
+      <div
+        class="steps-intro p-3xl rounded-xl [background:var(--color-primary-100)] [align-self:start] max-[480px]:p-xl"
+      >
+        <span
+          class="setup-symbol block mb-3xl [color:var(--color-primary-500)]"
+          aria-hidden="true"
+          dir="ltr"
+          >&lt; /&gt;</span
+        >
+        <h3 class="[font-size:var(--font-size-h6)] font-bold mb-lg">
+          کمتر از صفر شروع کنید.
+        </h3>
+        <p
+          class="[font-size:var(--font-size-small)] [line-height:var(--line-height-small)] [color:var(--color-gray-500)]"
+        >
+          بسته را نصب کنید، ماژول مورد نیاز را اضافه کنید و تگ کامپوننت را در
+          قالب قرار دهید.
+        </p>
+        <div
+          class="package-note grid [grid-template-columns:auto_1fr] items-center gap-lg my-3xl py-2xl [border-block:1px_solid_var(--color-primary-200)] [font-size:var(--font-size-text)]"
+        >
+          <span class="[color:var(--color-gray-400)]">نام بسته</span
+          ><code
+            class="[text-align:end] [color:var(--color-primary-700)] [font-size:var(--font-size-text)] [overflow-wrap:anywhere]"
+            dir="ltr"
+            >@iho/design-system</code
+          ><span class="[color:var(--color-gray-400)]">پیشوند تگ‌ها</span
+          ><code
+            class="[text-align:end] [color:var(--color-primary-700)] [font-size:var(--font-size-text)] [overflow-wrap:anywhere]"
+            dir="ltr"
+            >mytag-</code
+          >
+        </div>
+        <a
+          [href]="repositoryUrl + '/blob/v' + version + '/README.md'"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-link inline-flex items-center gap-lg [color:var(--color-primary-600)] [font-size:var(--font-size-small)] font-semibold"
+          >راهنمای کامل در GitHub<span aria-hidden="true">↗</span></a
+        >
+      </div>
+      <div class="setup-steps grid gap-xl min-w-0">
+        <article
+          class="setup-step p-2xl [border:1px_solid_var(--color-gray-DEFAULT)] rounded-lg [background:var(--color-white-DEFAULT)] min-w-0 max-[480px]:p-xl"
+        >
+          <div class="step-heading flex items-center gap-lg justify-between">
+            <div class="flex items-center gap-lg">
+              <span
+                class="step-number grid [place-content:center] w-3xl h-3xl [background:var(--color-primary-100)] [color:var(--color-primary-600)] [border-radius:50%] [font-size:var(--font-size-text)]"
+                >۱</span
+              >
+              <h3 class="[font-size:var(--font-size-small)] font-bold">
+                نصب بسته
+              </h3>
+            </div>
+            <button
+              type="button"
+              class="copy-button shrink-0 [padding:var(--space-xs)_var(--space-md)] [border:1px_solid_var(--color-gray-DEFAULT)] rounded-sm [color:var(--color-gray-500)] [font-size:var(--font-size-text)]"
+              (click)="copyCode('install', installCommand)"
+              aria-label="کپی دستور نصب"
+            >
+              {{ copiedSnippet === "install" ? "کپی شد ✓" : "کپی دستور" }}
+            </button>
+          </div>
+          <p
+            class="[color:var(--color-gray-400)] [font-size:var(--font-size-small)] [line-height:var(--line-height-small)] [margin:var(--space-lg)_0_var(--space-xl)]"
+          >
+            نسخهٔ منتشرشده را مستقیم از GitHub نصب کنید.
+          </p>
+          <pre
+            class="install-code p-xl rounded-md text-left overflow-x-auto whitespace-pre [background:var(--color-primary-900)] [color:var(--color-primary-200)] whitespace-pre-wrap [overflow-wrap:anywhere]"
+            dir="ltr"
+          ><code>{{ installCommand }}</code></pre>
+        </article>
+        <article
+          class="setup-step p-2xl [border:1px_solid_var(--color-gray-DEFAULT)] rounded-lg [background:var(--color-white-DEFAULT)] min-w-0 max-[480px]:p-xl"
+        >
+          <div class="step-heading flex items-center gap-lg justify-between">
+            <div class="flex items-center gap-lg">
+              <span
+                class="step-number grid [place-content:center] w-3xl h-3xl [background:var(--color-primary-100)] [color:var(--color-primary-600)] [border-radius:50%] [font-size:var(--font-size-text)]"
+                >۲</span
+              >
+              <h3 class="[font-size:var(--font-size-small)] font-bold">
+                اضافه کردن ماژول
+              </h3>
+            </div>
+            <button
+              type="button"
+              class="copy-button shrink-0 [padding:var(--space-xs)_var(--space-md)] [border:1px_solid_var(--color-gray-DEFAULT)] rounded-sm [color:var(--color-gray-500)] [font-size:var(--font-size-text)]"
+              (click)="copyCode('module', moduleCode)"
+              aria-label="کپی نمونه ماژول"
+            >
+              {{ copiedSnippet === "module" ? "کپی شد ✓" : "کپی کد" }}
+            </button>
+          </div>
+          <p
+            class="[color:var(--color-gray-400)] [font-size:var(--font-size-small)] [line-height:var(--line-height-small)] [margin:var(--space-lg)_0_var(--space-xl)]"
+          >
+            ماژول کامپوننت را به فهرست imports ماژول خود اضافه کنید.
+          </p>
+          <pre
+            class="setup-code p-xl rounded-md text-left overflow-x-auto whitespace-pre [background:var(--color-white-600)] [color:var(--color-gray-600)]"
+            dir="ltr"
+          ><code>{{ moduleCode }}</code></pre>
+        </article>
+        <article
+          class="setup-step p-2xl [border:1px_solid_var(--color-gray-DEFAULT)] rounded-lg [background:var(--color-white-DEFAULT)] min-w-0 max-[480px]:p-xl"
+        >
+          <div class="step-heading flex items-center gap-lg justify-between">
+            <div class="flex items-center gap-lg">
+              <span
+                class="step-number grid [place-content:center] w-3xl h-3xl [background:var(--color-primary-100)] [color:var(--color-primary-600)] [border-radius:50%] [font-size:var(--font-size-text)]"
+                >۳</span
+              >
+              <h3 class="[font-size:var(--font-size-small)] font-bold">
+                استفاده در قالب
+              </h3>
+            </div>
+            <button
+              type="button"
+              class="copy-button shrink-0 [padding:var(--space-xs)_var(--space-md)] [border:1px_solid_var(--color-gray-DEFAULT)] rounded-sm [color:var(--color-gray-500)] [font-size:var(--font-size-text)]"
+              (click)="copyCode('template', templateCode)"
+              aria-label="کپی نمونه قالب"
+            >
+              {{ copiedSnippet === "template" ? "کپی شد ✓" : "کپی کد" }}
+            </button>
+          </div>
+          <p
+            class="[color:var(--color-gray-400)] [font-size:var(--font-size-small)] [line-height:var(--line-height-small)] [margin:var(--space-lg)_0_var(--space-xl)]"
+          >
+            با تگ‌های mytag و متن دلخواه، ساختن را شروع کنید.
+          </p>
+          <pre
+            class="setup-code p-xl rounded-md text-left overflow-x-auto whitespace-pre [background:var(--color-white-600)] [color:var(--color-gray-600)]"
+            dir="ltr"
+          ><code>{{ templateCode }}</code></pre>
+        </article>
+      </div>
+    </div>
+    <p
+      class="copy-feedback min-h-3xl mt-lg [color:var(--color-primary-600)] [font-size:var(--font-size-small)]"
+      role="status"
+      [class.copy-feedback--error]="copyFailed"
+    >
+      {{ copyFeedback }}
+    </p>
+    <details
+      class="asset-setup mt-lg [border-block:1px_solid_var(--color-gray-DEFAULT)]"
+    >
+      <summary
+        class="flex justify-between items-center gap-lg py-2xl [font-size:var(--font-size-small)] font-semibold cursor-pointer list-none max-[480px]:[font-size:var(--font-size-text)]"
+      >
+        تنظیم فونت، آیکن و استایل‌های مشترک<span
+          class="[color:var(--color-primary-500)] [font-size:var(--font-size-h5)]"
+          aria-hidden="true"
+          >+</span
+        >
+      </summary>
+      <div class="grid gap-xl pb-2xl min-w-0">
+        <p
+          class="[color:var(--color-gray-400)] [font-size:var(--font-size-small)] [line-height:var(--line-height-small)]"
+        >
+          مسیرهای زیر را به بخش styles و assets در angular.json اضافه کنید. برای
+          هماهنگی utilityها،
+          <a
+            class="[color:var(--color-primary-600)] underline"
+            [href]="repositoryUrl + '/blob/v' + version + '/tailwind.config.js'"
+            target="_blank"
+            rel="noopener noreferrer"
+            >تنظیمات Tailwind مخزن</a
+          >
+          را هم در پروژهٔ مصرف‌کننده اعمال کنید.
+        </p>
+        <pre
+          class="setup-code p-xl rounded-md text-left overflow-x-auto whitespace-pre [background:var(--color-white-600)] [color:var(--color-gray-600)]"
+          dir="ltr"
+        ><code>{{ assetsCode }}</code></pre>
+        <p
+          class="[color:var(--color-gray-400)] [font-size:var(--font-size-small)] [line-height:var(--line-height-small)]"
+        >
+          در استایل عمومی برنامه، فونت را روی
+          <code dir="ltr">"Ravi FaNum"</code> و جهت را روی
+          <code dir="ltr">rtl</code> قرار دهید.
+        </p>
+      </div>
+    </details>
+  </section>
+
+  <footer
+    class="home-footer flex justify-between items-center flex-wrap gap-xl [padding-block:var(--space-6xl)_var(--space-2xl)]"
+  >
+    <div>
+      <strong
+        class="[display:inline-block] [font-size:var(--font-size-h4)] font-extrabold [letter-spacing:-0.06em]"
+        dir="ltr"
+        >mytag<span class="[color:var(--color-primary-500)]">.</span></strong
+      >
+      <p
+        class="[color:var(--color-gray-400)] [font-size:var(--font-size-text)] mt-xs"
+      >
+        یک شروع هماهنگ برای ایدهٔ بعدی شما.
+      </p>
+    </div>
+    <a
+      routerLink="/cards"
+      class="text-link inline-flex items-center gap-lg [color:var(--color-primary-600)] [font-size:var(--font-size-small)] font-semibold"
+      >وقت ساختن است<span aria-hidden="true">←</span></a
+    >
+  </footer>
+</div>

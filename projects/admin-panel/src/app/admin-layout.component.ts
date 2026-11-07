@@ -1,17 +1,27 @@
-import { Component, inject } from '@angular/core';
-import { NotificationService } from '@iho/design-system';
+import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 
 @Component({
     selector: 'app-admin-layout',
     templateUrl: './admin-layout.component.html',
+    styleUrls: ['./admin-layout.component.scss'],
 })
 export class AdminLayoutComponent {
-    notify = inject(NotificationService);
-    constructor() {
-        this.notify.success('', 'درخواست با موفقیت ثبت شد.', { duration: 50000,position:'bottom-right' });
+    @ViewChild('navigationToggle') navigationToggle?: ElementRef<HTMLButtonElement>;
+    mobileNavOpen = false;
 
+    closeNavigation(): void {
+        this.mobileNavOpen = false;
+    }
+
+    @HostListener('document:keydown.escape')
+    closeWithEscape(): void {
+        if (this.mobileNavOpen) {
+            this.closeNavigation();
+            this.navigationToggle?.nativeElement.focus();
+        }
     }
     componentsDesignSys = [
+        { name: 'معرفی و شروع', path: '/' },
         { name: 'Button', path: 'button' },
         { name: 'Input', path: 'input' },
         { name: 'badge', path: 'badge' },

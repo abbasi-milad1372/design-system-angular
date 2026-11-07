@@ -302,6 +302,10 @@ npx ng serve admin-panel
 
 Then open `http://localhost:4200/`.
 
+The home page introduces MyTag with an interactive component preview, catalogue
+links, and a three-step installation guide with copyable code examples. The
+catalogue navigation is available on desktop and mobile.
+
 Generate new library components with the configured `mytag-` selector prefix:
 
 ```bash

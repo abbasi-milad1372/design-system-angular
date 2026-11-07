@@ -1,0 +1,46 @@
+:host {
+  display: block;
+}
+
+.catalog-shell {
+  height: 100vh;
+  height: 100dvh;
+}
+.catalog-sidebar nav a {
+  transition: background 0.15s, color 0.15s;
+}
+.catalog-sidebar nav a:hover,
+.catalog-sidebar nav a.is-active {
+  background: var(--color-primary-800);
+  color: var(--color-white-DEFAULT);
+}
+.catalog-sidebar nav a.is-active {
+  box-shadow: inset -3px 0 var(--color-primary-400);
+}
+.catalog-sidebar nav a.is-active .nav-arrow {
+  opacity: 1;
+}
+
+.mobile-navigation .is-active {
+  background: var(--color-primary-100);
+  color: var(--color-primary-600);
+}
+
+.skip-link {
+  transform: translateY(-200%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--color-primary-400);
+  outline-offset: 3px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .catalog-sidebar nav a {
+    transition: none;
+  }
+}
