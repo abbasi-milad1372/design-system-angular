@@ -1,7 +1,7 @@
 <div class="icon-page mx-auto max-w-[1200px] p-md">
   <header class="flex flex-wrap items-center justify-between gap-3xl pb-4xl">
     <div class="max-w-[640px]">
-      <span class="text-text font-semibold text-primary-600"
+      <span class="text-text font-semibold [color:var(--site-primary-600)]"
         >جزئیات کوچک، تجربه‌های بزرگ</span
       >
       <h1
@@ -14,17 +14,17 @@
       </p>
     </div>
     <div
-      class="flex items-center gap-xl rounded-xl border border-primary-200 bg-primary-100 px-2xl py-xl"
+      class="flex items-center gap-xl rounded-xl border [border-color:var(--site-primary-200)] [background-color:var(--site-primary-100)] px-2xl py-xl"
     >
       <span
-        class="iho-icon-stars text-[32px] text-primary-500"
+        class="iho-icon-stars text-[32px] [color:var(--site-primary-500)]"
         aria-hidden="true"
       ></span>
       <div>
-        <strong class="block text-h5 font-bold text-primary-700">{{
+        <strong class="block text-h5 font-bold [color:var(--site-primary-700)]">{{
           icons.length
         }}</strong
-        ><span class="text-text text-primary-700">آیکن آمادهٔ استفاده</span>
+        ><span class="text-text [color:var(--site-primary-700)]">آیکن آمادهٔ استفاده</span>
       </div>
     </div>
   </header>
@@ -171,7 +171,7 @@
           class="empty-results flex flex-col items-center gap-xl rounded-xl border border-dashed border-gray bg-white px-2xl py-7xl text-center"
         >
           <span
-            class="iho-icon-information-circle text-[36px] text-primary-400"
+            class="iho-icon-information-circle text-[36px] [color:var(--site-primary-400)]"
             aria-hidden="true"
           ></span>
           <h2 class="text-h6 font-bold text-gray-700">آیکنی پیدا نشد.</h2>
@@ -180,7 +180,7 @@
           </p>
           <button
             type="button"
-            class="rounded-md bg-primary-500 px-2xl py-lg text-small text-white"
+            class="rounded-md [background-color:var(--site-primary-500)] px-2xl py-lg text-small text-white"
             (click)="clearFilters()"
           >
             نمایش همه آیکن‌ها
@@ -200,14 +200,14 @@
         <h2 id="icon-preview-title" class="text-small font-semibold">
           پیش‌نمایش و کد
         </h2>
-        <span class="text-text text-primary-600">HTML</span>
+        <span class="text-text [color:var(--site-primary-600)]">HTML</span>
       </div>
       <div
         class="selected-preview flex items-center justify-center px-xl py-4xl"
       >
         <span
           [class]="selectedIcon.className"
-          class="text-[56px] text-primary-500"
+          class="text-[56px] [color:var(--site-primary-500)]"
           aria-hidden="true"
           ><span *ngFor="let path of selectedIcon.paths" [class]="path"></span
         ></span>
@@ -221,14 +221,14 @@
         </p>
         <pre
           #iconCode
-          class="icon-code mt-xl overflow-x-auto rounded-lg bg-primary-900 p-xl text-left text-text text-primary-200 whitespace-pre font-mono [line-height:1.9]"
+          class="icon-code mt-xl overflow-x-auto rounded-lg [background-color:var(--site-code-background)] p-xl text-left text-text [color:var(--site-code-foreground)] whitespace-pre font-mono [line-height:1.9]"
           dir="ltr"
           tabindex="0"
           aria-label="کد HTML آیکن انتخاب‌شده"
         ><code>{{ selectedCode }}</code></pre>
         <button
           type="button"
-          class="panel-copy mt-xl flex w-full items-center justify-center gap-lg rounded-md bg-primary-500 px-xl py-lg text-small font-semibold text-white"
+          class="panel-copy mt-xl flex w-full items-center justify-center gap-lg rounded-md [background-color:var(--site-primary-500)] px-xl py-lg text-small font-semibold text-white"
           (click)="copyIcon(selectedIcon)"
         >
           <span class="iho-icon-copy-01" aria-hidden="true"></span
@@ -241,7 +241,7 @@
           اضافه کنید.
         </p>
         <a
-          class="mt-md inline-flex items-center gap-md text-text font-semibold text-primary-600"
+          class="mt-md inline-flex items-center gap-md text-text font-semibold [color:var(--site-primary-600)]"
           routerLink="/"
           >راهنمای شروع<span aria-hidden="true">←</span></a
         >

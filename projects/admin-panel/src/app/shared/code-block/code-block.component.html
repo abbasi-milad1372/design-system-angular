@@ -1,14 +1,14 @@
-<div class="overflow-hidden rounded-lg border border-gray bg-primary-900">
+<div class="overflow-hidden rounded-lg border border-gray [background-color:var(--site-code-background)]">
   <div
-    class="flex flex-wrap items-center justify-between gap-lg border-b border-primary-800 px-xl py-lg"
+    class="flex flex-wrap items-center justify-between gap-lg border-b [border-color:var(--site-code-border)] px-xl py-lg"
   >
-    <div class="flex items-center gap-lg text-text text-primary-200">
+    <div class="flex items-center gap-lg text-text [color:var(--site-code-muted)]">
       <span class="font-mono" dir="ltr">{{ language }}</span
       ><span class="text-white">{{ label }}</span>
     </div>
     <button
       type="button"
-      class="copy-code flex items-center gap-md rounded-md border border-primary-700 px-lg py-xs text-text text-white"
+      class="copy-code flex items-center gap-md rounded-md border [border-color:var(--site-code-border)] px-lg py-xs text-text text-white"
       (click)="copy()"
       [attr.aria-label]="'کپی ' + label + '، ' + language"
     >
@@ -18,7 +18,7 @@
   </div>
   <pre
     #codeElement
-    class="m-0 max-h-[560px] overflow-auto whitespace-pre p-xl text-left font-mono text-[12px] leading-[1.9] text-primary-100"
+    class="m-0 max-h-[560px] overflow-auto whitespace-pre p-xl text-left font-mono text-[12px] leading-[1.9] [color:var(--site-code-foreground)]"
     dir="ltr"
     tabindex="0"
     [attr.aria-label]="label + '، ' + language"
@@ -33,7 +33,7 @@
   <span>{{ feedback }}</span>
   <button
     *ngIf="failed"
-    class="manual-copy rounded-sm px-md py-xs font-semibold text-primary-600"
+    class="manual-copy rounded-sm px-md py-xs font-semibold [color:var(--site-primary-600)]"
     type="button"
     (click)="
       codeElement.focus(); codeElement.scrollIntoView({ block: 'nearest' })

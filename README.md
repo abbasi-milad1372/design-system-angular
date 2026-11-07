@@ -27,7 +27,7 @@ updated examples for the supported component states and variants.
 
 - Modular Angular components and per-component NgModules
 - Shared CSS custom-property design tokens
-- Angular-inspired red and violet theme with gradient showcase branding
+- Angular-inspired showcase branding, separate from the library's component tokens
 - SCSS styling and packaged Ravi FaNum typography
 - RTL-first layouts
 - Responsive component behavior
@@ -312,6 +312,10 @@ catalogue navigation is available on desktop and mobile.
 Each component page includes copyable HTML and TypeScript examples covering its
 public inputs, supported variants, and outputs, plus a complete API reference.
 The `/notifications` page demonstrates the notification service options.
+The `/colors` page reads the library's actual CSS color variables at runtime,
+with solid/transparency palettes, search and family filters, copyable variable
+names/values, and CSS/Angular usage examples. Showcase branding is kept separate
+from these library tokens.
 
 Validate sample coverage and compile all 58 examples with Angular's strict
 template/type checker after building the library:

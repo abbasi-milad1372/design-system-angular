@@ -4,13 +4,13 @@
   gap: var(--space-xs);
 }
 .copy-code:hover {
-  background: var(--color-primary-800);
+  background: var(--site-code-hover);
 }
 .copy-error {
   color: var(--color-error-800);
 }
 button:focus-visible,
 pre:focus-visible {
-  outline: 2px solid var(--color-primary-400);
+  outline: 2px solid var(--site-code-muted);
   outline-offset: 3px;
 }

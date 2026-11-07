@@ -1,45 +1,71 @@
-// Angular-inspired branding for the MyTag showcase.
-// Shared component palettes are defined in the library tokens and Tailwind theme.
-:root {
-    --angular-brand-gradient: linear-gradient(110deg, #f0060b 0%, #cc26d5 53%, #7702ff 100%);
+// Presentation colors belong to the showcase shell, never to library tokens.
+.catalog-shell {
+  --site-primary-DEFAULT: #fff6f8;
+  --site-primary-100: #ffe8ef;
+  --site-primary-200: #ffc7d6;
+  --site-primary-300: #ff98b4;
+  --site-primary-400: #d93662;
+  --site-primary-500: #dd0031;
+  --site-primary-600: #b80029;
+  --site-primary-700: #930024;
+  --site-primary-800: #640020;
+  --site-black-900: #300015;
+  --site-code-background: #000000;
+  --site-code-foreground: #f4f4f5;
+  --site-code-muted: #a1a1aa;
+  --site-code-border: #27272a;
+  --site-code-hover: #18181b;
+  --site-secondary-100: #f1e8ff;
+  --site-secondary-400: #8d3df1;
+  --site-secondary-900: #200044;
+  --angular-brand-gradient: linear-gradient(
+    110deg,
+    #f0060b 0%,
+    #cc26d5 53%,
+    #7702ff 100%
+  );
 }
 
 .catalog-sidebar {
-    background: linear-gradient(165deg, var(--color-primary-900), var(--color-secondary-900));
+  background: linear-gradient(
+    165deg,
+    var(--site-black-900),
+    var(--site-secondary-900)
+  );
 }
 
 .catalog-brand .brand-mark {
-    background: var(--angular-brand-gradient);
+  background: var(--angular-brand-gradient);
 }
 
 .catalog-brand .brand-mark span {
-    color: var(--color-white-DEFAULT);
+  color: var(--color-white-DEFAULT);
 }
 
 .hero-copy h1 span,
 .mobile-brand,
 .home-footer strong {
-    color: var(--color-primary-500);
-    background: var(--angular-brand-gradient);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  color: var(--site-primary-500);
+  background: var(--angular-brand-gradient);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .preview-stage .stage-decoration {
-    background-color: var(--color-secondary-100);
+  background-color: var(--site-secondary-100);
 }
 
 .catalog-content {
-    scrollbar-color: var(--color-primary-200) var(--color-white-500);
+  scrollbar-color: var(--site-primary-200) var(--color-white-500);
 }
 
 @media (forced-colors: active) {
-    .hero-copy h1 span,
-    .mobile-brand,
-    .home-footer strong {
-        background: none;
-        -webkit-text-fill-color: CanvasText;
-        color: CanvasText;
-    }
+  .hero-copy h1 span,
+  .mobile-brand,
+  .home-footer strong {
+    background: none;
+    -webkit-text-fill-color: CanvasText;
+    color: CanvasText;
+  }
 }

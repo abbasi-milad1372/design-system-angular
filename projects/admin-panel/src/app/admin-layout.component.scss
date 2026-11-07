@@ -11,19 +11,19 @@
 }
 .catalog-sidebar nav a:hover,
 .catalog-sidebar nav a.is-active {
-  background: var(--color-primary-800);
+  background: var(--site-primary-800);
   color: var(--color-white-DEFAULT);
 }
 .catalog-sidebar nav a.is-active {
-  box-shadow: inset -3px 0 var(--color-primary-400);
+  box-shadow: inset -3px 0 var(--site-primary-400);
 }
 .catalog-sidebar nav a.is-active .nav-arrow {
   opacity: 1;
 }
 
 .mobile-navigation .is-active {
-  background: var(--color-primary-100);
-  color: var(--color-primary-600);
+  background: var(--site-primary-100);
+  color: var(--site-primary-600);
 }
 
 .skip-link {
@@ -36,7 +36,7 @@
 
 a:focus-visible,
 button:focus-visible {
-  outline: 2px solid var(--color-primary-400);
+  outline: 2px solid var(--site-primary-400);
   outline-offset: 3px;
 }
 @media (prefers-reduced-motion: reduce) {

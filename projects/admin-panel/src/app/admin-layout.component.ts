@@ -22,6 +22,7 @@ export class AdminLayoutComponent {
     }
     componentsDesignSys = [
         { name: 'معرفی و شروع', path: '/' },
+        { name: 'توکن‌های رنگ', path: 'colors' },
         { name: 'Button', path: 'button' },
         { name: 'Input', path: 'input' },
         { name: 'badge', path: 'badge' },

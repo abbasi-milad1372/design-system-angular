@@ -7,18 +7,17 @@
     >رفتن به محتوای اصلی</a
   >
   <aside
-    class="catalog-sidebar hidden [flex:0_0_240px] overflow-y-auto [padding:var(--space-4xl)_var(--space-xl)_var(--space-2xl)] [background:var(--color-primary-900)] [color:var(--color-white-DEFAULT)] min-[1024px]:block"
+    class="catalog-sidebar hidden [flex:0_0_240px] overflow-y-auto [padding:var(--space-4xl)_var(--space-xl)_var(--space-2xl)] [background:var(--site-black-900)] [color:var(--color-white-DEFAULT)] min-[1024px]:block"
   >
-    <a
+    <a 
       routerLink="/"
       class="catalog-brand flex gap-lg items-center mb-5xl px-md"
       aria-label="MyTag، صفحه معرفی"
     >
       <span
-        class="brand-mark flex items-center justify-center w-6xl h-6xl rounded-lg [background:var(--color-primary-500)] [font-size:var(--font-size-h4)] font-bold"
-        aria-hidden="true"
+        class="brand-mark flex items-center justify-center w-6xl h-6xl rounded-lg [background:var(--site-primary-500)] [font-size:var(--font-size-h4)] font-bold"
         dir="ltr"
-        >m<span class="[color:var(--color-secondary-400)]">.</span></span
+        >m<span class="[color:var(--site-secondary-400)]">.</span></span
       >
       <span
         ><strong
@@ -26,19 +25,19 @@
           dir="ltr"
           >mytag</strong
         ><small
-          class="[color:var(--color-primary-200)] [font-size:var(--font-size-text)]"
+          class="[color:var(--site-primary-200)] [font-size:var(--font-size-text)]"
           >سیستم طراحی انگولار</small
         ></span
       >
     </a>
     <p
-      class="nav-caption px-lg mb-xl [color:var(--color-primary-300)] [font-size:var(--font-size-text)]"
+      class="nav-caption px-lg mb-xl [color:var(--site-primary-300)] [font-size:var(--font-size-text)]"
     >
       مستندات و کامپوننت‌ها
     </p>
     <nav class="grid gap-xs" aria-label="فهرست اصلی">
       <a
-        class="flex items-center justify-between min-h-5xl [padding:var(--space-md)_var(--space-lg)] rounded-md [color:var(--color-primary-200)] [font-size:var(--font-size-small)]"
+        class="flex items-center justify-between min-h-5xl [padding:var(--space-md)_var(--space-lg)] rounded-md [color:var(--site-primary-200)] [font-size:var(--font-size-small)]"
         *ngFor="let item of componentsDesignSys"
         [routerLink]="item.path"
         routerLinkActive="is-active"
@@ -50,7 +49,7 @@
       </a>
     </nav>
     <div
-      class="sidebar-note flex items-center gap-md mt-4xl px-lg [color:var(--color-primary-200)] [font-size:var(--font-size-text)]"
+      class="sidebar-note flex items-center gap-md mt-4xl px-lg [color:var(--site-primary-200)] [font-size:var(--font-size-text)]"
     >
       <span
         class="status-dot w-sm h-sm [border-radius:50%] [background:var(--color-success-500)]"
@@ -69,7 +68,7 @@
         (click)="closeNavigation()"
         aria-label="MyTag، صفحه معرفی"
         dir="ltr"
-        >mytag<span class="[color:var(--color-primary-500)]">.</span></a
+        >mytag<span class="[color:var(--site-primary-500)]">.</span></a
       >
       <button
         class="flex items-center gap-md [font-size:var(--font-size-small)] p-md"

@@ -34,6 +34,7 @@ import { HomeViewComponent } from './views/home-view/home-view.component';
 import { CodeBlockComponent } from './shared/code-block/code-block.component';
 import { ComponentDocumentationComponent } from './shared/component-documentation/component-documentation.component';
 import { NotificationsViewComponent } from './views/notifications-view/notifications-view.component';
+import { ColorsViewComponent } from './views/colors-view/colors-view.component';
 const routes: Routes = [
   {
     path: '',
@@ -46,6 +47,7 @@ const routes: Routes = [
       { path: 'tabs', component: TabsViewComponent },
       { path: 'cards', component: cardViewComponent },
       { path: 'icons', component: IconsViewComponent },
+      { path: 'colors', component: ColorsViewComponent, title: 'MyTag | توکن‌های رنگ' },
       { path: 'footer', component: FooterViewComponent },
       { path: 'breadcrumb', component: BreadcrumbViewComponent },
       { path: 'navbar', component: NavbarViewComponent }, 
@@ -68,6 +70,7 @@ const routes: Routes = [
     CodeBlockComponent,
     ComponentDocumentationComponent,
     NotificationsViewComponent,
+    ColorsViewComponent,
     ButtonViewComponent,
     BadgeViewComponent,
     cardViewComponent,

@@ -1,0 +1,325 @@
+<div class="color-page mx-auto max-w-[1200px] p-md">
+  <header class="flex flex-wrap items-center justify-between gap-3xl pb-4xl">
+    <div class="max-w-[660px]">
+      <span class="text-text font-semibold [color:var(--site-primary-600)]"
+        >پایه‌های یک رابط هماهنگ</span
+      >
+      <h1 class="color-title mt-md mb-lg font-extrabold text-gray-900">
+        رنگ‌ها، با یک زبان مشترک.
+      </h1>
+      <p class="text-small text-gray-400">
+        پالت واقعی کامپوننت‌ها را ببینید، توکن مناسب را پیدا کنید و مستقیم در
+        پروژهٔ خود استفاده کنید.
+      </p>
+    </div>
+    <div
+      class="flex gap-3xl rounded-xl border [border-color:var(--site-primary-200)] [background:var(--site-primary-100)] px-2xl py-xl"
+    >
+      <div>
+        <strong
+          class="block text-h5 font-bold [color:var(--site-primary-700)]"
+          >{{ tokens.length }}</strong
+        ><span class="text-text [color:var(--site-primary-700)]">توکن رنگ</span>
+      </div>
+      <div>
+        <strong
+          class="block text-h5 font-bold [color:var(--site-primary-700)]"
+          >{{ familyCount }}</strong
+        ><span class="text-text [color:var(--site-primary-700)]"
+          >خانواده رنگ</span
+        >
+      </div>
+    </div>
+  </header>
+
+  <section
+    class="grid gap-xl rounded-xl border border-gray bg-white p-xl sm:p-2xl"
+    aria-label="جستجو و فیلتر توکن‌های رنگ"
+  >
+    <div class="flex flex-wrap items-center gap-xl">
+      <label
+        class="flex min-w-0 flex-1 basis-[320px] items-center gap-lg rounded-lg border border-gray bg-white-500 px-xl focus-within:border-gray-300"
+        ><span
+          class="iho-icon-discount-tag-01 text-gray-300"
+          aria-hidden="true"
+        ></span
+        ><span class="sr-only">جستجو در توکن‌های رنگ</span
+        ><input
+          id="color-search"
+          class="min-w-0 flex-1 bg-transparent py-xl text-small outline-none"
+          type="search"
+          autocomplete="off"
+          spellcheck="false"
+          placeholder="نام، مقدار یا کاربرد؛ مثلاً primary، خطا یا #0055ff"
+          [(ngModel)]="query"
+          (ngModelChange)="applyFilters()"
+      /></label>
+      <label class="flex items-center gap-lg text-text text-gray-400"
+        >خانواده<select
+          id="color-family"
+          class="rounded-lg border border-gray bg-white px-lg py-lg text-small text-gray-700"
+          [(ngModel)]="family"
+          (ngModelChange)="applyFilters()"
+        >
+          <option value="all">همه خانواده‌ها</option>
+          <option *ngFor="let item of families" [value]="item.id">
+            {{ item.label }}
+          </option>
+        </select></label
+      >
+    </div>
+    <div class="flex flex-wrap items-center justify-between gap-lg">
+      <div
+        class="token-modes flex flex-wrap gap-md"
+        role="group"
+        aria-label="نوع توکن"
+      >
+        <button
+          *ngFor="let item of modes"
+          type="button"
+          class="rounded-md px-lg py-md text-text text-gray-400"
+          [class.is-active]="mode === item.id"
+          [attr.aria-pressed]="mode === item.id"
+          (click)="setMode(item.id)"
+        >
+          {{ item.label }}
+          <span class="opacity-75">{{
+            item.id === "solid"
+              ? solidCount
+              : item.id === "transparency"
+              ? transparencyCount
+              : tokens.length
+          }}</span>
+        </button>
+      </div>
+      <button
+        type="button"
+        class="text-text font-semibold [color:var(--site-primary-600)]"
+        (click)="showUsage()"
+      >
+        نحوهٔ استفاده <span aria-hidden="true">↓</span>
+      </button>
+    </div>
+  </section>
+
+  <div class="flex flex-wrap items-center justify-between gap-lg py-2xl">
+    <p class="text-text text-gray-400" role="status">
+      {{ visibleCount }} توکن از {{ tokens.length }} توکن
+    </p>
+    <p class="text-text text-gray-400">
+      کلیک روی رنگ، متغیر CSS آن را کپی می‌کند.
+    </p>
+  </div>
+
+  <div
+    *ngIf="tokens.length; else notLoaded"
+    class="color-layout grid items-start gap-3xl"
+  >
+    <div class="grid min-w-0 gap-4xl">
+      <section
+        *ngFor="let group of groups"
+        class="palette-group min-w-0"
+        [attr.aria-label]="group.label"
+      >
+        <header class="mb-xl flex flex-wrap items-end justify-between gap-md">
+          <div>
+            <h2 class="text-h6 font-bold">
+              {{ group.label }}
+              <span class="text-text font-normal text-gray-400" dir="ltr">{{
+                group.id
+              }}</span>
+            </h2>
+            <p class="text-text text-gray-400">{{ group.description }}</p>
+          </div>
+          <span class="text-text text-gray-400"
+            >{{ group.tokens.length }} توکن</span
+          >
+        </header>
+        <div class="token-grid grid gap-lg">
+          <button
+            *ngFor="let token of group.tokens; trackBy: trackToken"
+            type="button"
+            class="token-card min-w-0 overflow-hidden rounded-lg border border-gray bg-white text-right"
+            [class.is-selected]="selectedToken?.name === token.name"
+            [class.is-copied]="copiedToken === token.name"
+            [attr.aria-label]="'کپی متغیر ' + token.name"
+            [title]="token.name + ': ' + token.value"
+            (click)="copyToken(token)"
+          >
+            <span class="checkerboard relative block h-10xl"
+              ><span
+                class="swatch-fill absolute inset-0"
+                [style.background-color]="'var(' + token.name + ')'"
+                [style.color]="token.foreground"
+                ><span
+                  class="absolute top-lg right-lg text-small font-semibold"
+                  >{{ token.shade }}</span
+                ><span
+                  *ngIf="token.transparent && token.opacity !== null"
+                  class="absolute bottom-lg right-lg text-text"
+                  >پوشانندگی {{ token.opacity }}٪</span
+                ></span
+              ></span
+            >
+            <span class="grid gap-sm p-lg"
+              ><code class="token-name text-[10px] text-gray-600" dir="ltr">{{
+                token.name
+              }}</code
+              ><span class="flex flex-wrap items-center justify-between gap-xs"
+                ><code
+                  class="token-value text-[11px] text-gray-400"
+                  dir="ltr"
+                  >{{ token.value }}</code
+                ><span
+                  *ngIf="copiedToken === token.name"
+                  class="text-text text-success-800"
+                  >کپی شد ✓</span
+                ></span
+              ></span
+            >
+          </button>
+        </div>
+      </section>
+      <section
+        *ngIf="!groups.length"
+        class="empty-palette flex flex-col items-center gap-xl rounded-xl border border-dashed border-gray bg-white px-xl py-7xl text-center"
+      >
+        <h2 class="text-h6 font-bold">توکنی پیدا نشد.</h2>
+        <p class="text-small text-gray-400">جستجو یا فیلترها را تغییر دهید.</p>
+        <button
+          type="button"
+          class="rounded-md [background:var(--site-primary-500)] px-xl py-lg text-small text-white"
+          (click)="clearFilters()"
+        >
+          بازنشانی فیلترها
+        </button>
+      </section>
+    </div>
+
+    <aside
+      *ngIf="selectedToken as token"
+      #usagePanel
+      id="color-token-usage"
+      class="usage-panel grid min-w-0 gap-xl rounded-xl border border-gray bg-white p-xl sm:p-2xl"
+      aria-labelledby="color-usage-title"
+      tabindex="-1"
+    >
+      <h2 id="color-usage-title" class="text-small font-semibold">
+        از پالت به پروژهٔ شما
+      </h2>
+      <div
+        class="checkerboard relative h-12xl overflow-hidden rounded-lg border border-gray"
+      >
+        <div
+          class="absolute inset-0 flex items-center justify-center text-h5 font-bold"
+          [style.background-color]="'var(' + token.name + ')'"
+          [style.color]="token.foreground"
+        >
+          Aa <span class="mr-lg">آ</span>
+        </div>
+      </div>
+      <div class="grid gap-md">
+        <label class="text-text text-gray-400" for="selected-color-name"
+          >نام متغیر</label
+        ><input
+          id="selected-color-name"
+          class="w-full min-w-0 rounded-md border border-gray bg-white-500 p-lg font-mono text-[11px]"
+          [value]="token.name"
+          readonly
+          dir="ltr"
+        /><label class="text-text text-gray-400" for="selected-color-value"
+          >مقدار واقعی</label
+        ><input
+          id="selected-color-value"
+          class="w-full min-w-0 rounded-md border border-gray bg-white-500 p-lg font-mono text-[11px]"
+          [value]="token.value"
+          readonly
+          dir="ltr"
+        />
+      </div>
+      <div class="flex flex-wrap gap-md">
+        <button
+          type="button"
+          class="copy-variable flex-1 rounded-md [background:var(--site-primary-500)] px-lg py-lg text-text font-semibold text-white"
+          (click)="copyToken(token)"
+        >
+          کپی متغیر CSS</button
+        ><button
+          type="button"
+          class="copy-value rounded-md border border-gray px-lg py-lg text-text text-gray-600"
+          (click)="copyToken(token, 'value')"
+        >
+          کپی مقدار</button
+        ><button
+          type="button"
+          class="copy-name rounded-md border border-gray px-lg py-lg text-text text-gray-600"
+          (click)="copyToken(token, 'name')"
+        >
+          کپی نام
+        </button>
+      </div>
+      <app-code-block
+        [code]="cssExample"
+        language="CSS"
+        label="استفاده در استایل"
+      ></app-code-block
+      ><app-code-block
+        [code]="templateExample"
+        language="HTML"
+        label="استفاده در Angular"
+      ></app-code-block>
+      <p class="text-text text-gray-400">
+        این رنگ‌ها از CSS کتابخانه خوانده می‌شوند. رنگ پوستهٔ مستندات مستقل است
+        و مقدار توکن‌های کامپوننت‌ها را تغییر نمی‌دهد.
+      </p>
+      <p *ngIf="token.transparent" class="text-text text-gray-400">
+        پس‌زمینهٔ شطرنجی برای تشخیص شفافیت است. درصد پوشانندگی از مقدار واقعی
+        رنگ محاسبه شده، نه از شمارهٔ توکن.
+      </p>
+      <a
+        routerLink="/"
+        class="text-text font-semibold [color:var(--site-primary-600)]"
+        >راهنمای نصب و افزودن استایل‌ها <span aria-hidden="true">←</span></a
+      >
+    </aside>
+  </div>
+  <ng-template #notLoaded
+    ><section class="grid gap-xl rounded-xl border border-gray bg-white p-3xl">
+      <h2 class="text-h6 font-bold">توکن‌های رنگ هنوز بارگذاری نشده‌اند.</h2>
+      <p class="text-small text-gray-400">
+        فایل styles.scss کتابخانه باید در استایل‌های برنامه بارگذاری شود.
+      </p>
+      <button
+        type="button"
+        class="w-fit rounded-md border border-gray px-xl py-lg text-small"
+        (click)="refreshTokens()"
+      >
+        بازخوانی رنگ‌ها
+      </button>
+    </section></ng-template
+  >
+  <div
+    *ngIf="feedback"
+    class="token-feedback sticky bottom-lg z-10 mt-2xl flex flex-wrap items-center justify-between gap-lg rounded-lg border px-xl py-lg text-small"
+    [class.token-feedback--error]="copyFailed"
+    role="status"
+    aria-live="polite"
+  >
+    <span class="feedback-text">{{ feedback }}</span
+    ><button
+      type="button"
+      *ngIf="copyFailed"
+      class="shrink-0 font-semibold underline"
+      (click)="showUsage()"
+    >
+      مشاهدهٔ نام و کد برای کپی دستی</button
+    ><button
+      type="button"
+      class="rounded-sm p-xs"
+      aria-label="بستن پیام"
+      (click)="feedback = ''"
+    >
+      <span aria-hidden="true">×</span>
+    </button>
+  </div>
+</div>
