@@ -11,8 +11,8 @@ The package import is `@mytag/design-system`. All 20 public component tags use t
 Branded TypeScript modules, components, and form-control types use the `Mytag`
 prefix, including `MytagButtonModule`, `MytagCheckboxComponent`, and
 `MytagCheckboxSize`. Update imports and type references to these names.
-This source update is pending release; the previously published v0.5.0 archive
-does not include the TypeScript export renames.
+Version v0.6.0 includes these 24 TypeScript export renames. Update named imports
+and type references when upgrading; previous branded names are not aliases.
 
 Version v0.5.0 moves the package to the `@mytag` scope. Update dependencies,
 imports, and configured `node_modules` asset paths to `@mytag/design-system`.
@@ -42,8 +42,8 @@ The renamed building glyph classes are `iho-icon-building-landmark` and
 
 Version v0.3.0 includes breaking changes from v0.2.1. The complete component-tag/import
 table, projection slots, CSS names, and examples are in the
-[repository README](https://github.com/abbasi-milad1372/design-system-angular/blob/v0.5.0/README.md). Read the
-[migration guide](https://github.com/abbasi-milad1372/design-system-angular/blob/v0.5.0/docs/generic-components-migration.md) before upgrading.
+[repository README](https://github.com/abbasi-milad1372/design-system-angular/blob/v0.6.0/README.md). Read the
+[migration guide](https://github.com/abbasi-milad1372/design-system-angular/blob/v0.6.0/docs/generic-components-migration.md) before upgrading.
 
 Version v0.5.0 retains that component API and adds the redesigned showcase,
 complete copyable examples, searchable icon catalogue, and color-token explorer.

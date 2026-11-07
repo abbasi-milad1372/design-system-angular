@@ -9,7 +9,7 @@ type PreviewVariant = 'primary' | 'secondary' | 'ghost-primary';
   styleUrls: ['./home-view.component.scss'],
 })
 export class HomeViewComponent {
-  readonly version = '0.5.0';
+  readonly version = '0.6.0';
   readonly repositoryUrl =
     'https://github.com/abbasi-milad1372/design-system-angular';
   readonly installCommand = `npm install ${this.repositoryUrl}/releases/download/v${this.version}/mytag-design-system-${this.version}.tgz`;

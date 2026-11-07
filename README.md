@@ -48,7 +48,8 @@ npm install @mytag/design-system
 ```
 
 The package name is `@mytag/design-system`; `mytag-` is the component tag prefix.
-Version v0.5.0 moves the package to the `@mytag` scope. Update package dependencies,
+Version v0.6.0 renames 24 branded TypeScript exports to the `Mytag` prefix.
+Version v0.5.0 moved the package to the `@mytag` scope. Update package dependencies,
 all TypeScript imports, and any `node_modules` asset paths to the new package name.
 Component selectors and design tokens are unchanged by the package rename.
 This release includes the redesigned showcase, complete component examples, icon
@@ -57,7 +58,7 @@ migration described below. The
 built library is also available as an installable GitHub Release asset:
 
 ```bash
-npm install https://github.com/abbasi-milad1372/design-system-angular/releases/download/v0.5.0/mytag-design-system-0.5.0.tgz
+npm install https://github.com/abbasi-milad1372/design-system-angular/releases/download/v0.6.0/mytag-design-system-0.6.0.tgz
 ```
 
 ## Usage
@@ -100,9 +101,9 @@ selectors and domain-specific card names are not retained as aliases.
 
 Import the matching module or standalone component from `@mytag/design-system`.
 Branded TypeScript exports use the `Mytag` prefix, for example `MytagButtonModule`
-and `MytagCheckboxComponent`. This source update also renames the corresponding
-form-control types. These export renames require the next package release;
-the already published v0.5.0 archive contains the previous TypeScript names.
+and `MytagCheckboxComponent`. Version v0.6.0 also renames the corresponding
+form-control types. Update named imports and type references when upgrading
+from v0.5.0 or earlier; previous branded export names are not retained as aliases.
 See the migration guide before upgrading.
 
 | Component | Current tag | Angular import |

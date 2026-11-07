@@ -5,7 +5,7 @@ custom CSS before upgrading. No deprecated aliases are retained for the previous
 domain-specific names. Unrelated inputs, outputs, and Sass tokens
 retain their existing names.
 
-## TypeScript export names (unreleased)
+## TypeScript export names in v0.6.0
 
 Branded Angular modules, components, and types now use the `Mytag` prefix.
 Replace the previous brand prefix in named imports, NgModule declarations and
@@ -18,7 +18,7 @@ Exports without a brand prefix, such as `ButtonComponent`, `CardType`,
 `NotificationService`, and `DesignSystemModule`, keep their current names.
 Component tags, inputs/outputs, and design tokens are unchanged by this rename.
 The already published v0.5.0 archive predates these TypeScript export changes;
-use a package release that includes this migration.
+upgrade to v0.6.0 or later to use the new names.
 
 ```typescript
 import { MytagButtonModule, MytagCheckboxModule } from '@mytag/design-system';
