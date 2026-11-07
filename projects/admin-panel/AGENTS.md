@@ -3,18 +3,17 @@
 ## Purpose
 
 This application is the RTL catalogue and integration consumer for
-`design-system`. It should demonstrate public package usage and component states;
+`@iho/design-system`. It should demonstrate public package usage and component states;
 reusable UI logic belongs in the library.
 
 ## Imports and dependency flow
 
-- Import library APIs from `design-system`. Existing direct imports from
+- Import library APIs from `@iho/design-system`. Existing direct imports from
   `projects/design-system/src/...` are legacy debt; do not add more. If a symbol
   is missing, export it through the library public API.
 - Build `design-system` before building or serving this project because the
   workspace path points to `dist/design-system`.
-- Never fix a consumer error by editing `dist/design-system` or
-  `node_modules/design-system`.
+- Never fix a consumer error by editing generated `dist/design-system` output.
 
 ## Application structure
 

@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
-import { IHOBottomsheetModule } from 'design-system';
+import { IHOBottomsheetModule } from '@iho/design-system';
 
 @Component({
     selector: 'app-custom-content',

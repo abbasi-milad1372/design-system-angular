@@ -16,7 +16,7 @@
 
 ## Workspace boundaries
 
-- `projects/design-system` is the distributable `design-system` package. Treat
+- `projects/design-system` is the distributable `@iho/design-system` package. Treat
   its public inputs, outputs, selectors, exported types, Sass assets, and icon
   names as consumer-facing API.
 - `projects/admin-panel` is the RTL showcase and manual integration application.
@@ -51,7 +51,7 @@ npx ng build admin-panel --configuration development
 npx ng test design-system --watch=false --browsers=ChromeHeadless
 ```
 
-The admin panel resolves `design-system` through `dist/design-system`, so build
+The admin panel resolves `@iho/design-system` through `dist/design-system`, so build
 the library before building the application. The root `prestart` currently
 references the absent `tools/generate-env.ts`; do not rely on `npm start` until
 that separate repository issue is fixed. Report any pre-existing validation

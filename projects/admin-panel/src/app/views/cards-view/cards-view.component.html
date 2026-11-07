@@ -5,8 +5,16 @@
     <div class="showcase-example"><h3>Hotel / price divider</h3><iho-card type="hotel" title="هتل پارسیان" location="تهران" rating="۴.۴" reviewCount="۱۲۰" [price]="7800000" [BoardPrice]="8500000" discount="۸" [withPriceDevider]="true" [image]="image"><span count-shab>/ شب</span></iho-card></div>
     <div class="showcase-example"><h3>City</h3><iho-card type="city" title="اقامتگاه‌های شیراز" location="فارس" [image]="image"><ng-container resident>۲۶ اقامتگاه در این شهر</ng-container></iho-card></div>
   </div></section>
+  <section class="showcase-section">
+    <h2>قیمت در کارت باریک تبلت</h2>
+    <p>مبلغ، واحد پول و تعداد شب باید در یک ردیف و داخل کارت باقی بمانند.</p>
+    <div class="w-full max-w-[216px]">
+      <iho-card type="hotel" title="هتل اسپیناس پالاس تهران" location="تهران، سعادت‌آباد" star="۵" rating="۴.۹" reviewCount="۴۲" [price]="17473000" nights="۱ شب" [withPrice]="true" [image]="image"></iho-card>
+    </div>
+  </section>
   <section class="showcase-section"><h2>Distance و state رزرو</h2><div class="flex flex-col gap-4">
-    <div><h3>Available</h3><iho-card type="distance" title="هتل نزدیک حرم" location="مشهد" star="۴" rating="۴.۶" reviewCount="۳۲۰" [price]="5400000" [BoardPrice]="6000000" discount="۱۰" nights="شب" [withPrice]="true" labelBadge="۵ دقیقه" [isIhoPluse]="true" (clickBtnCard)="handleCard($event)" [image]="image"><span distance-badges><iho-badge label="نوساز" size="sm" [radius]="true"></iho-badge></span></iho-card></div>
+    <div><h3>Available</h3><iho-card type="distance"
+       title="هتل نزدیک حرم هتل نزدیک حرم هتل نزدیک حرم" location="مشهد هتل نزدیک حرم هتل نزدیک حرم هتل نزدیک حرم هتل نزدیک حرم" star="۴" rating="۴.۶" reviewCount="۳۲۰" [price]="5400000" [BoardPrice]="6000000" discount="۱۰" nights="شب" [withPrice]="true" labelBadge="۵ دقیقه" [isIhoPluse]="true" (clickBtnCard)="handleCard($event)" [image]="image"><span distance-badges><iho-badge label="نوساز" size="sm" [radius]="true"></iho-badge></span></iho-card></div>
     <div><h3>Capacity completed</h3><iho-card type="distance" title="هتل تکمیل ظرفیت" location="کیش" star="۵" rating="۴.۹" reviewCount="۴۸۰" [capacityCompletion]="true" [image]="image"></iho-card></div>
     <small>آخرین رویداد: {{ lastCardEvent }}</small>
   </div></section>

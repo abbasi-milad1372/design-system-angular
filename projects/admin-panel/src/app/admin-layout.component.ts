@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { NotificationService } from 'projects/design-system/src/lib/components/notification/notification.service';
+import { NotificationService } from '@iho/design-system';
 
 @Component({
     selector: 'app-admin-layout',

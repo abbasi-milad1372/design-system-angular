@@ -37,7 +37,7 @@ Exceptions exist and must be preserved intentionally. Notification uses a
 standalone component and service; radio and dropdown each contain cooperating
 child components; bottomsheet also exposes a service.
 
-Public consumers import from `design-system`. Every supported component, module,
+Public consumers import from `@iho/design-system`. Every supported component, module,
 service, model, or type must be reachable from `src/public-api.ts`. The root
 `DesignSystemModule` is not currently an umbrella export for every component, so
 do not assume importing it makes all component modules available.
@@ -56,10 +56,9 @@ do not assume importing it makes all component modules available.
 
 ## Build and dependency flow
 
-The root TypeScript path maps `design-system` to `dist/design-system`. The admin
-build also references package assets under `node_modules/design-system`, while
-`build.sh` builds the library and copies its output there before serving the
-app. Therefore:
+The root TypeScript path maps `@iho/design-system` to `dist/design-system`. The admin
+build reads packaged styles and assets from that same output. `build.sh` builds
+the library before serving the app. Therefore:
 
 1. build the library first;
 2. use the built package boundary when validating consumer behavior;

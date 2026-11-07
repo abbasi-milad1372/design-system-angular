@@ -203,7 +203,13 @@
 
     .card__price-row {
         justify-content: start;
-        padding: 0px var(--space-md);
+        padding: 0;
+        gap: var(--space-2xs);
+        white-space: nowrap;
+    }
+
+    .card__currency {
+        margin: 0;
     }
 
     .rating_review {
@@ -625,6 +631,26 @@
         align-items: start;
         padding: var(--space-xl);
 
+        .card__body {
+            // Let the text column shrink between the fixed image and price columns.
+            flex-basis: 0;
+            min-width: 0;
+            grid-template-columns: minmax(0, 1fr);
+        }
+
+        .card__meta {
+            min-width: 0;
+        }
+
+        .card__title {
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            overflow: hidden;
+            white-space: normal;
+            overflow-wrap: anywhere;
+        }
+
         .card__discount_price {
             display: flex;
             justify-content: center;
@@ -666,7 +692,7 @@
     }
 
     .left_body {
-        min-width: 230px;
+        min-width: 200px;
         position: relative;
         height: 100%;
         border-inline-start: var(--border-width-inside) solid var(--color-gray-DEFAULT);

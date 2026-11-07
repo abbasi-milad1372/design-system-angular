@@ -61,12 +61,12 @@
             "assets": [
           {
             "glob": "**/*",
-            "input": "node_modules/design-system/assets/fonts",
+            "input": "dist/design-system/src/lib/assets/fonts",
             "output": "assets/fonts"
           },
           {
             "glob": "**/*",
-            "input": "node_modules/design-system/assets/styles",
+            "input": "dist/design-system/src/lib/assets/styles",
             "output": "assets/design-system"
           },
               "projects/admin-panel/src/favicon.ico",
@@ -74,8 +74,8 @@
             ],
             "styles": [
               "projects/admin-panel/src/styles.scss",
-              "node_modules/design-system/src/lib/assets/styles/styles.scss",
-              "node_modules/design-system/src/lib/assets/styles/icons.scss"
+              "dist/design-system/src/lib/assets/styles/styles.scss",
+              "dist/design-system/src/lib/assets/styles/icons.scss"
             ],
             "scripts": []
             

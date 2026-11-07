@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 
 import { IHOBadgeModule, IHOBreadcrumbModule, IHOBottomsheetModule,IHOButtonModule, IHOCardModule, IHOFooterModule, IHOInputModule, IHONavbarModule, IHOTabModule, IhoCheckboxModule, IHORadioModule, IhoSwitchModule, IhoSelectModule, IHOTooltipModule, IHOAccordionModule, IHOChipModule } 
-from 'design-system';
+from '@iho/design-system';
 import { AdminLayoutComponent } from './admin-layout.component';
 import { ButtonViewComponent } from './views/button-view/button-view.component';
 import { RouterModule, Routes } from '@angular/router';
@@ -21,8 +21,8 @@ import { CommonModule } from '@angular/common';
 import { CheckBoxComponent } from './views/checkbox-view/checkbox-view.component';
 import {RadioViewComponent } from './views/radio-view/radio-view.component';
 import { switchComponent } from './views/switch-view/switch-view.component';
-import { NOTIFY_DEFAULTS } from 'projects/design-system/src/lib/components/notification/notification.service';
-import { NotificationComponent } from 'projects/design-system/src/lib/components/notification/notification.component';
+import { NOTIFY_DEFAULTS } from '@iho/design-system';
+import { NotificationComponent } from '@iho/design-system';
 import { dropdownViewComponent } from './views/dropdown-view/dropdown-view.component';
 import { tooltipsViewComponent } from './views/tooltips/tooltips-view.component';
 import { bottomheetViewComponent } from './views/bottomsheet/bottomsheet-view.component';
