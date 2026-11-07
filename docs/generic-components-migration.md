@@ -1,6 +1,6 @@
 # General-purpose component migration
 
-This is a breaking API update after v0.2.1. Update application templates and
+Version v0.3.0 is a breaking API update from v0.2.1. Update application templates and
 custom CSS before upgrading. No deprecated aliases are retained for the previous
 domain-specific names. Unrelated inputs, outputs, and Sass tokens
 retain their existing names.

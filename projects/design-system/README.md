@@ -32,10 +32,10 @@ the consuming application. Exported content types are `NavigationLink`,
 The renamed building glyph classes are `iho-icon-building-landmark` and
 `iho-icon-building-front`. Icon CSS classes retain the `iho-icon-` prefix.
 
-These are breaking source changes after v0.2.1. The complete component-tag/import
+Version v0.3.0 includes breaking changes from v0.2.1. The complete component-tag/import
 table, projection slots, CSS names, and examples are in the
-[repository README](../../README.md). Read the
-[migration guide](../../docs/generic-components-migration.md) before upgrading.
+[repository README](https://github.com/abbasi-milad1372/design-system-angular/blob/v0.3.0/README.md). Read the
+[migration guide](https://github.com/abbasi-milad1372/design-system-angular/blob/v0.3.0/docs/generic-components-migration.md) before upgrading.
 
 ## Code scaffolding
 
