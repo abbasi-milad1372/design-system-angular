@@ -9,11 +9,10 @@ type PreviewVariant = 'primary' | 'secondary' | 'ghost-primary';
   styleUrls: ['./home-view.component.scss'],
 })
 export class HomeViewComponent {
-  readonly version = '0.3.0';
+  readonly version = '0.4.0';
   readonly repositoryUrl =
     'https://github.com/abbasi-milad1372/design-system-angular';
-  readonly installCommand =
-    'npm install https://github.com/abbasi-milad1372/design-system-angular/releases/download/v0.3.0/iho-design-system-0.3.0.tgz';
+  readonly installCommand = `npm install ${this.repositoryUrl}/releases/download/v${this.version}/iho-design-system-${this.version}.tgz`;
   readonly moduleCode = `import { NgModule } from '@angular/core';
 import { IHOButtonModule } from '@iho/design-system';
 

@@ -48,11 +48,13 @@ npm install @iho/design-system
 ```
 
 The package name is `@iho/design-system`; `mytag-` is the component tag prefix.
-Version v0.3.0 includes the breaking changes from v0.2.1 described below. The
+Version v0.4.0 adds the redesigned showcase, complete component examples, icon
+catalogue, and color-token explorer. It retains the v0.3.0 API; upgrading from
+v0.2.1 still requires the migration described below. The
 built library is also available as an installable GitHub Release asset:
 
 ```bash
-npm install https://github.com/abbasi-milad1372/design-system-angular/releases/download/v0.3.0/iho-design-system-0.3.0.tgz
+npm install https://github.com/abbasi-milad1372/design-system-angular/releases/download/v0.4.0/iho-design-system-0.4.0.tgz
 ```
 
 ## Usage
