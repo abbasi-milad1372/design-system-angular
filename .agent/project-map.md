@@ -37,7 +37,7 @@ Exceptions exist and must be preserved intentionally. Notification uses a
 standalone component and service; radio and dropdown each contain cooperating
 child components; bottomsheet also exposes a service.
 
-Public consumers import from `@iho/design-system`. Every supported component, module,
+Public consumers import from `@mytag/design-system`. Every supported component, module,
 service, model, or type must be reachable from `src/public-api.ts`. The root
 `DesignSystemModule` is not currently an umbrella export for every component, so
 do not assume importing it makes all component modules available.
@@ -59,7 +59,7 @@ is `mytag`; keep templates, examples, and custom CSS type selectors synchronized
 
 ## Build and dependency flow
 
-The root TypeScript path maps `@iho/design-system` to `dist/design-system`. The admin
+The root TypeScript path maps `@mytag/design-system` to `dist/design-system`. The admin
 build reads packaged styles and assets from that same output. `build.sh` builds
 the library before serving the app. Therefore:
 

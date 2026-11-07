@@ -9,12 +9,12 @@ type PreviewVariant = 'primary' | 'secondary' | 'ghost-primary';
   styleUrls: ['./home-view.component.scss'],
 })
 export class HomeViewComponent {
-  readonly version = '0.4.0';
+  readonly version = '0.5.0';
   readonly repositoryUrl =
     'https://github.com/abbasi-milad1372/design-system-angular';
-  readonly installCommand = `npm install ${this.repositoryUrl}/releases/download/v${this.version}/iho-design-system-${this.version}.tgz`;
+  readonly installCommand = `npm install ${this.repositoryUrl}/releases/download/v${this.version}/mytag-design-system-${this.version}.tgz`;
   readonly moduleCode = `import { NgModule } from '@angular/core';
-import { IHOButtonModule } from '@iho/design-system';
+import { IHOButtonModule } from '@mytag/design-system';
 
 @NgModule({
   imports: [IHOButtonModule],
@@ -25,13 +25,13 @@ export class AppModule {}`;
 </mytag-button>`;
   readonly assetsCode = `"styles": [
   "src/styles.scss",
-  "node_modules/@iho/design-system/src/lib/assets/styles/styles.scss",
-  "node_modules/@iho/design-system/src/lib/assets/styles/icons.scss"
+  "node_modules/@mytag/design-system/src/lib/assets/styles/styles.scss",
+  "node_modules/@mytag/design-system/src/lib/assets/styles/icons.scss"
 ],
 "assets": [
   {
     "glob": "**/*",
-    "input": "node_modules/@iho/design-system/src/lib/assets/fonts",
+    "input": "node_modules/@mytag/design-system/src/lib/assets/fonts",
     "output": "assets/fonts"
   }
 ]`;

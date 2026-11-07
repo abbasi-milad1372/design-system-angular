@@ -5,13 +5,17 @@ Ravi FaNum typography, and shared design tokens.
 
 ## Package and component names
 
-The package import is `@iho/design-system`. All 20 public component tags use the
+The package import is `@mytag/design-system`. All 20 public component tags use the
 `mytag-` prefix, including `mytag-button`, `mytag-input`, `mytag-card`,
 `mytag-select`, `mytag-option`, `mytag-footer-ds`, and `mytag-notifications`.
 TypeScript module/class exports keep their existing spelling.
 
+Version v0.5.0 moves the package to the `@mytag` scope. Update dependencies,
+imports, and configured `node_modules` asset paths to `@mytag/design-system`.
+Component selectors and design tokens are unchanged by this package rename.
+
 ```typescript
-import { IHOButtonModule, IHOCardModule } from '@iho/design-system';
+import { IHOButtonModule, IHOCardModule } from '@mytag/design-system';
 ```
 
 Add the modules to your consuming NgModule, then use their tags:
@@ -34,10 +38,10 @@ The renamed building glyph classes are `iho-icon-building-landmark` and
 
 Version v0.3.0 includes breaking changes from v0.2.1. The complete component-tag/import
 table, projection slots, CSS names, and examples are in the
-[repository README](https://github.com/abbasi-milad1372/design-system-angular/blob/v0.4.0/README.md). Read the
-[migration guide](https://github.com/abbasi-milad1372/design-system-angular/blob/v0.4.0/docs/generic-components-migration.md) before upgrading.
+[repository README](https://github.com/abbasi-milad1372/design-system-angular/blob/v0.5.0/README.md). Read the
+[migration guide](https://github.com/abbasi-milad1372/design-system-angular/blob/v0.5.0/docs/generic-components-migration.md) before upgrading.
 
-Version v0.4.0 retains that component API and adds the redesigned showcase,
+Version v0.5.0 retains that component API and adds the redesigned showcase,
 complete copyable examples, searchable icon catalogue, and color-token explorer.
 
 ## Code scaffolding

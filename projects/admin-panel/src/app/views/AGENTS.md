@@ -1,7 +1,7 @@
 # Showcase view guide
 
 - Keep each view focused on one design-system component family.
-- Import examples from the package entry point (`@iho/design-system`), not library
+- Import examples from the package entry point (`@mytag/design-system`), not library
   source files.
 - Show enough states to reveal the public contract without turning the demo into
   production business logic.

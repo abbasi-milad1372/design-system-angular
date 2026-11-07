@@ -1,5 +1,5 @@
 import { Component, OnDestroy } from '@angular/core';
-import { NotificationService, NotifyOptions } from '@iho/design-system';
+import { NotificationService, NotifyOptions } from '@mytag/design-system';
 
 @Component({
   selector: 'app-notifications-view',

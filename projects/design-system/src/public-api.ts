@@ -1,5 +1,5 @@
 /*
- * Public API Surface of design-system
+ * Public API Surface of @mytag/design-system
  */
 
 export * from './lib/design-system.service';

@@ -26,7 +26,7 @@ export const COMPONENT_DOCUMENTATION: Readonly<
     title: 'دکمه',
     apiNames: ['ButtonComponent', 'DesignSystemComponent'],
     module:
-      "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { RouterModule } from '@angular/router';\nimport { IHOButtonModule } from '@iho/design-system';\nimport { ExampleComponent } from './example.component';\n\n@NgModule({\n  declarations: [ExampleComponent],\n  imports: [CommonModule, RouterModule, IHOButtonModule],\n})\nexport class ExampleModule {}",
+      "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { RouterModule } from '@angular/router';\nimport { IHOButtonModule } from '@mytag/design-system';\nimport { ExampleComponent } from './example.component';\n\n@NgModule({\n  declarations: [ExampleComponent],\n  imports: [CommonModule, RouterModule, IHOButtonModule],\n})\nexport class ExampleModule {}",
     notes: [
       'RouterModule باید در ریشهٔ برنامه پیکربندی شده باشد. importهای نمونه را به ماژول پروژهٔ خود اضافه کنید.',
       'widthPx و widthPercent را هم‌زمان تنظیم نکنید؛ عرض پیکسلی اولویت دارد.',
@@ -75,7 +75,7 @@ export const COMPONENT_DOCUMENTATION: Readonly<
         description:
           'این تگ پوستهٔ اولیهٔ کتابخانه است. DesignSystemModule فقط تگ ریشه را export می‌کند و جایگزین import ماژول کامپوننت‌های دیگر نیست.',
         module:
-          "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { RouterModule } from '@angular/router';\nimport { IHOButtonModule, DesignSystemModule } from '@iho/design-system';\nimport { ExampleComponent } from './example.component';\n\n@NgModule({\n  declarations: [ExampleComponent],\n  imports: [CommonModule, RouterModule, IHOButtonModule, DesignSystemModule],\n})\nexport class ExampleModule {}",
+          "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { RouterModule } from '@angular/router';\nimport { IHOButtonModule, DesignSystemModule } from '@mytag/design-system';\nimport { ExampleComponent } from './example.component';\n\n@NgModule({\n  declarations: [ExampleComponent],\n  imports: [CommonModule, RouterModule, IHOButtonModule, DesignSystemModule],\n})\nexport class ExampleModule {}",
       },
     ],
   },
@@ -83,7 +83,7 @@ export const COMPONENT_DOCUMENTATION: Readonly<
     title: 'ورودی',
     apiNames: ['InputComponent'],
     module:
-      "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { RouterModule } from '@angular/router';\nimport { FormsModule, ReactiveFormsModule } from '@angular/forms';\nimport { IHOInputModule } from '@iho/design-system';\nimport { ExampleComponent } from './example.component';\n\n@NgModule({\n  declarations: [ExampleComponent],\n  imports: [CommonModule, RouterModule, FormsModule, ReactiveFormsModule, IHOInputModule],\n})\nexport class ExampleModule {}",
+      "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { RouterModule } from '@angular/router';\nimport { FormsModule, ReactiveFormsModule } from '@angular/forms';\nimport { IHOInputModule } from '@mytag/design-system';\nimport { ExampleComponent } from './example.component';\n\n@NgModule({\n  declarations: [ExampleComponent],\n  imports: [CommonModule, RouterModule, FormsModule, ReactiveFormsModule, IHOInputModule],\n})\nexport class ExampleModule {}",
     notes: [
       'برای ngModel به FormsModule و برای Reactive Forms به ReactiveFormsModule نیاز دارید.',
       'در Reactive Forms حالت غیرفعال را با FormControl یا متد disable کنترل کنید. نام ورودی readonly با حروف کوچک نوشته می‌شود.',
@@ -138,7 +138,7 @@ export const COMPONENT_DOCUMENTATION: Readonly<
     title: 'نشان',
     apiNames: ['badgeComponent'],
     module:
-      "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { RouterModule } from '@angular/router';\nimport { IHOBadgeModule } from '@iho/design-system';\nimport { ExampleComponent } from './example.component';\n\n@NgModule({\n  declarations: [ExampleComponent],\n  imports: [CommonModule, RouterModule, IHOBadgeModule],\n})\nexport class ExampleModule {}",
+      "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { RouterModule } from '@angular/router';\nimport { IHOBadgeModule } from '@mytag/design-system';\nimport { ExampleComponent } from './example.component';\n\n@NgModule({\n  declarations: [ExampleComponent],\n  imports: [CommonModule, RouterModule, IHOBadgeModule],\n})\nexport class ExampleModule {}",
     examples: [
       {
         title: 'همهٔ سبک‌ها',
@@ -167,7 +167,7 @@ export const COMPONENT_DOCUMENTATION: Readonly<
     title: 'تب',
     apiNames: ['TabComponent'],
     module:
-      "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { RouterModule } from '@angular/router';\nimport { IHOTabModule, IHOBadgeModule } from '@iho/design-system';\nimport { ExampleComponent } from './example.component';\n\n@NgModule({\n  declarations: [ExampleComponent],\n  imports: [CommonModule, RouterModule, IHOTabModule, IHOBadgeModule],\n})\nexport class ExampleModule {}",
+      "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { RouterModule } from '@angular/router';\nimport { IHOTabModule, IHOBadgeModule } from '@mytag/design-system';\nimport { ExampleComponent } from './example.component';\n\n@NgModule({\n  declarations: [ExampleComponent],\n  imports: [CommonModule, RouterModule, IHOTabModule, IHOBadgeModule],\n})\nexport class ExampleModule {}",
     notes: [
       'Tab خروجی اختصاصی برای انتخاب ندارد؛ برای تغییر active از رویداد click روی تگ استفاده کنید.',
     ],
@@ -199,7 +199,7 @@ export const COMPONENT_DOCUMENTATION: Readonly<
     title: 'چک‌باکس',
     apiNames: ['IhoCheckboxComponent'],
     module:
-      "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { RouterModule } from '@angular/router';\nimport { FormsModule, ReactiveFormsModule } from '@angular/forms';\nimport { IhoCheckboxModule } from '@iho/design-system';\nimport { ExampleComponent } from './example.component';\n\n@NgModule({\n  declarations: [ExampleComponent],\n  imports: [CommonModule, RouterModule, FormsModule, ReactiveFormsModule, IhoCheckboxModule],\n})\nexport class ExampleModule {}",
+      "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { RouterModule } from '@angular/router';\nimport { FormsModule, ReactiveFormsModule } from '@angular/forms';\nimport { IhoCheckboxModule } from '@mytag/design-system';\nimport { ExampleComponent } from './example.component';\n\n@NgModule({\n  declarations: [ExampleComponent],\n  imports: [CommonModule, RouterModule, FormsModule, ReactiveFormsModule, IhoCheckboxModule],\n})\nexport class ExampleModule {}",
     examples: [
       {
         title: 'همهٔ اندازه‌ها و رنگ‌ها',
@@ -235,7 +235,7 @@ export const COMPONENT_DOCUMENTATION: Readonly<
     title: 'رادیو و گروه رادیو',
     apiNames: ['RadioComponent', 'IhoRadioGroupComponent'],
     module:
-      "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { RouterModule } from '@angular/router';\nimport { FormsModule, ReactiveFormsModule } from '@angular/forms';\nimport { IHORadioModule } from '@iho/design-system';\nimport { ExampleComponent } from './example.component';\n\n@NgModule({\n  declarations: [ExampleComponent],\n  imports: [CommonModule, RouterModule, FormsModule, ReactiveFormsModule, IHORadioModule],\n})\nexport class ExampleModule {}",
+      "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { RouterModule } from '@angular/router';\nimport { FormsModule, ReactiveFormsModule } from '@angular/forms';\nimport { IHORadioModule } from '@mytag/design-system';\nimport { ExampleComponent } from './example.component';\n\n@NgModule({\n  declarations: [ExampleComponent],\n  imports: [CommonModule, RouterModule, FormsModule, ReactiveFormsModule, IHORadioModule],\n})\nexport class ExampleModule {}",
     notes: [
       'مقدار انتخاب‌شدهٔ گروه را با ngModel یا FormControl کنترل کنید. checked برای مقدار اولیهٔ نمونه بدون مدل به کار می‌رود.',
     ],
@@ -267,7 +267,7 @@ export const COMPONENT_DOCUMENTATION: Readonly<
     title: 'سوئیچ',
     apiNames: ['IhoSwitchComponent'],
     module:
-      "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { RouterModule } from '@angular/router';\nimport { FormsModule, ReactiveFormsModule } from '@angular/forms';\nimport { IhoSwitchModule } from '@iho/design-system';\nimport { ExampleComponent } from './example.component';\n\n@NgModule({\n  declarations: [ExampleComponent],\n  imports: [CommonModule, RouterModule, FormsModule, ReactiveFormsModule, IhoSwitchModule],\n})\nexport class ExampleModule {}",
+      "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { RouterModule } from '@angular/router';\nimport { FormsModule, ReactiveFormsModule } from '@angular/forms';\nimport { IhoSwitchModule } from '@mytag/design-system';\nimport { ExampleComponent } from './example.component';\n\n@NgModule({\n  declarations: [ExampleComponent],\n  imports: [CommonModule, RouterModule, FormsModule, ReactiveFormsModule, IhoSwitchModule],\n})\nexport class ExampleModule {}",
     examples: [
       {
         title: 'روشن و خاموش، شناسه و رویداد',
@@ -289,7 +289,7 @@ export const COMPONENT_DOCUMENTATION: Readonly<
     title: 'انتخاب و گزینه‌ها',
     apiNames: ['IhoSelectComponent', 'IhoOptionComponent'],
     module:
-      "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { RouterModule } from '@angular/router';\nimport { FormsModule, ReactiveFormsModule } from '@angular/forms';\nimport { IhoSelectModule } from '@iho/design-system';\nimport { ExampleComponent } from './example.component';\n\n@NgModule({\n  declarations: [ExampleComponent],\n  imports: [CommonModule, RouterModule, FormsModule, ReactiveFormsModule, IhoSelectModule],\n})\nexport class ExampleModule {}",
+      "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { RouterModule } from '@angular/router';\nimport { FormsModule, ReactiveFormsModule } from '@angular/forms';\nimport { IhoSelectModule } from '@mytag/design-system';\nimport { ExampleComponent } from './example.component';\n\n@NgModule({\n  declarations: [ExampleComponent],\n  imports: [CommonModule, RouterModule, FormsModule, ReactiveFormsModule, IhoSelectModule],\n})\nexport class ExampleModule {}",
     notes: [
       'مقدار انتخاب‌شده را روی Select با ngModel یا FormControl نگه دارید؛ selected گزینه را برای کنترل مدل جایگزین نکنید.',
     ],
@@ -328,7 +328,7 @@ export const COMPONENT_DOCUMENTATION: Readonly<
     title: 'راهنمای شناور',
     apiNames: ['TooltipComponent'],
     module:
-      "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { RouterModule } from '@angular/router';\nimport { IHOTooltipModule } from '@iho/design-system';\nimport { ExampleComponent } from './example.component';\n\n@NgModule({\n  declarations: [ExampleComponent],\n  imports: [CommonModule, RouterModule, IHOTooltipModule],\n})\nexport class ExampleModule {}",
+      "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { RouterModule } from '@angular/router';\nimport { IHOTooltipModule } from '@mytag/design-system';\nimport { ExampleComponent } from './example.component';\n\n@NgModule({\n  declarations: [ExampleComponent],\n  imports: [CommonModule, RouterModule, IHOTooltipModule],\n})\nexport class ExampleModule {}",
     notes: [
       'isVisible ورودی وضعیت اولیه است و خروجی متناظر آن visibleChange نام دارد؛ از نحو دوطرفهٔ isVisible استفاده نکنید. برای نمایش با موقعیت تازه از متد show نمونه استفاده کنید.',
       'offset می‌تواند عدد یا شیئی از فاصله‌های top، bottom، left و right باشد.',
@@ -369,7 +369,7 @@ export const COMPONENT_DOCUMENTATION: Readonly<
     title: 'مسیر راهنما',
     apiNames: ['BreadcrumbComponent'],
     module:
-      "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { RouterModule } from '@angular/router';\nimport { IHOBreadcrumbModule } from '@iho/design-system';\nimport { ExampleComponent } from './example.component';\n\n@NgModule({\n  declarations: [ExampleComponent],\n  imports: [CommonModule, RouterModule, IHOBreadcrumbModule],\n})\nexport class ExampleModule {}",
+      "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { RouterModule } from '@angular/router';\nimport { IHOBreadcrumbModule } from '@mytag/design-system';\nimport { ExampleComponent } from './example.component';\n\n@NgModule({\n  declarations: [ExampleComponent],\n  imports: [CommonModule, RouterModule, IHOBreadcrumbModule],\n})\nexport class ExampleModule {}",
     examples: [
       {
         title: 'دادهٔ مسیر و جداکننده',
@@ -394,7 +394,7 @@ export const COMPONENT_DOCUMENTATION: Readonly<
     title: 'آکاردئون',
     apiNames: ['AccordionComponent'],
     module:
-      "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { RouterModule } from '@angular/router';\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\nimport { IHOAccordionModule } from '@iho/design-system';\nimport { ExampleComponent } from './example.component';\n\n@NgModule({\n  declarations: [ExampleComponent],\n  imports: [CommonModule, RouterModule, BrowserAnimationsModule, IHOAccordionModule],\n})\nexport class ExampleModule {}",
+      "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { RouterModule } from '@angular/router';\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\nimport { IHOAccordionModule } from '@mytag/design-system';\nimport { ExampleComponent } from './example.component';\n\n@NgModule({\n  declarations: [ExampleComponent],\n  imports: [CommonModule, RouterModule, BrowserAnimationsModule, IHOAccordionModule],\n})\nexport class ExampleModule {}",
     notes: [
       'BrowserAnimationsModule را در ماژول ریشهٔ برنامه اضافه کنید. rounded زمانی ظاهر می‌شود که border فعال باشد.',
     ],
@@ -419,7 +419,7 @@ export const COMPONENT_DOCUMENTATION: Readonly<
     title: 'چیپ',
     apiNames: ['ChipComponent'],
     module:
-      "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { RouterModule } from '@angular/router';\nimport { IHOChipModule } from '@iho/design-system';\nimport { ExampleComponent } from './example.component';\n\n@NgModule({\n  declarations: [ExampleComponent],\n  imports: [CommonModule, RouterModule, IHOChipModule],\n})\nexport class ExampleModule {}",
+      "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { RouterModule } from '@angular/router';\nimport { IHOChipModule } from '@mytag/design-system';\nimport { ExampleComponent } from './example.component';\n\n@NgModule({\n  declarations: [ExampleComponent],\n  imports: [CommonModule, RouterModule, IHOChipModule],\n})\nexport class ExampleModule {}",
     examples: [
       {
         title: 'همهٔ اندازه‌ها، رنگ‌ها و نوع‌ها',
@@ -448,7 +448,7 @@ export const COMPONENT_DOCUMENTATION: Readonly<
     title: 'کارت',
     apiNames: ['CardComponent'],
     module:
-      "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { RouterModule } from '@angular/router';\nimport { IHOCardModule, IHOBadgeModule } from '@iho/design-system';\nimport { ExampleComponent } from './example.component';\n\n@NgModule({\n  declarations: [ExampleComponent],\n  imports: [CommonModule, RouterModule, IHOCardModule, IHOBadgeModule],\n})\nexport class ExampleModule {}",
+      "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { RouterModule } from '@angular/router';\nimport { IHOCardModule, IHOBadgeModule } from '@mytag/design-system';\nimport { ExampleComponent } from './example.component';\n\n@NgModule({\n  declarations: [ExampleComponent],\n  imports: [CommonModule, RouterModule, IHOCardModule, IHOBadgeModule],\n})\nexport class ExampleModule {}",
     notes: [
       'نام‌های تاریخی مانند BoardPrice، withPriceDevider و isAddvertisement را با همین املای API استفاده کنید.',
       'letMeKnow و ورودی tagsAdd در خروجی فعلی کارت استفاده نمی‌شوند؛ برای محتوای تبلیغ از slotهای contentAdd و tagsAdd استفاده کنید.',
@@ -506,14 +506,14 @@ export const COMPONENT_DOCUMENTATION: Readonly<
     title: 'ناوبری',
     apiNames: ['NavbarComponent'],
     module:
-      "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { RouterModule } from '@angular/router';\nimport { IHONavbarModule } from '@iho/design-system';\nimport { ExampleComponent } from './example.component';\n\n@NgModule({\n  declarations: [ExampleComponent],\n  imports: [CommonModule, RouterModule, IHONavbarModule],\n})\nexport class ExampleModule {}",
+      "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { RouterModule } from '@angular/router';\nimport { IHONavbarModule } from '@mytag/design-system';\nimport { ExampleComponent } from './example.component';\n\n@NgModule({\n  declarations: [ExampleComponent],\n  imports: [CommonModule, RouterModule, IHONavbarModule],\n})\nexport class ExampleModule {}",
     examples: [
       {
         title: 'برند، لوگو، پیوندها و رویدادها',
         template:
           '<mytag-navbar brandName="پروژه من" [logoUrl]="image" homeUrl="/" menuLabel="بخش‌ها"\n  [menuItems]="menuItems" [links]="links" [utilityLinks]="utilityLinks" accountLabel="حساب کاربری"\n  (onToggleSideNav)="lastEvent = \'فهرست کناری\'" (openDialogModal)="lastEvent = \'حساب کاربری\'"></mytag-navbar>\n<p aria-live="polite">{{ lastEvent }}</p>',
         typescript:
-          "import { Component } from '@angular/core';\nimport { NavigationLink } from '@iho/design-system';\n\n@Component({\n  selector: 'app-example',\n  templateUrl: './example.component.html',\n})\nexport class ExampleComponent {\n  image = 'data:image/svg+xml,%3Csvg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 180\"%3E%3Crect width=\"320\" height=\"180\" fill=\"%23ebf0fa\"/%3E%3Ccircle cx=\"160\" cy=\"90\" r=\"44\" fill=\"%230055ff\"/%3E%3C/svg%3E';\n  menuItems: NavigationLink[] = [{ label: 'کامپوننت‌ها', href: '/cards' }];\n  links: NavigationLink[] = [{ label: 'راهنما', href: '/' }];\n  utilityLinks: NavigationLink[] = [{ label: 'اعلان‌ها', href: '/notifications', icon: 'iho-icon-notification-02' }];\n  lastEvent = '';\n}",
+          "import { Component } from '@angular/core';\nimport { NavigationLink } from '@mytag/design-system';\n\n@Component({\n  selector: 'app-example',\n  templateUrl: './example.component.html',\n})\nexport class ExampleComponent {\n  image = 'data:image/svg+xml,%3Csvg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 180\"%3E%3Crect width=\"320\" height=\"180\" fill=\"%23ebf0fa\"/%3E%3Ccircle cx=\"160\" cy=\"90\" r=\"44\" fill=\"%230055ff\"/%3E%3C/svg%3E';\n  menuItems: NavigationLink[] = [{ label: 'کامپوننت‌ها', href: '/cards' }];\n  links: NavigationLink[] = [{ label: 'راهنما', href: '/' }];\n  utilityLinks: NavigationLink[] = [{ label: 'اعلان‌ها', href: '/notifications', icon: 'iho-icon-notification-02' }];\n  lastEvent = '';\n}",
       },
       {
         title: 'حالت متنی و حذف حساب کاربری',
@@ -528,14 +528,14 @@ export const COMPONENT_DOCUMENTATION: Readonly<
     title: 'پایین صفحه',
     apiNames: ['FooterComponent'],
     module:
-      "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { RouterModule } from '@angular/router';\nimport { IHOFooterModule } from '@iho/design-system';\nimport { ExampleComponent } from './example.component';\n\n@NgModule({\n  declarations: [ExampleComponent],\n  imports: [CommonModule, RouterModule, IHOFooterModule],\n})\nexport class ExampleModule {}",
+      "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { RouterModule } from '@angular/router';\nimport { IHOFooterModule } from '@mytag/design-system';\nimport { ExampleComponent } from './example.component';\n\n@NgModule({\n  declarations: [ExampleComponent],\n  imports: [CommonModule, RouterModule, IHOFooterModule],\n})\nexport class ExampleModule {}",
     examples: [
       {
         title: 'همهٔ ورودی‌ها و محتوای اختصاصی',
         template:
           '<mytag-footer-ds brandName="پروژه من" homeUrl="/" [logoUrl]="image" phoneNumber="00000000000"\n  [features]="features" [sections]="sections" [contacts]="contacts" [socialLinks]="socialLinks"\n  copyright="تمام حقوق پروژه من محفوظ است." [showLinks]="true">\n  <div links><a href="/cards">مشاهده کامپوننت‌ها</a></div>\n  <span certificates>نشان اختصاصی پروژه</span>\n</mytag-footer-ds>',
         typescript:
-          "import { Component } from '@angular/core';\nimport { FooterFeature, FooterSection, FooterContact, NavigationLink } from '@iho/design-system';\n\n@Component({\n  selector: 'app-example',\n  templateUrl: './example.component.html',\n})\nexport class ExampleComponent {\n  image = 'data:image/svg+xml,%3Csvg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 180\"%3E%3Crect width=\"320\" height=\"180\" fill=\"%23ebf0fa\"/%3E%3Ccircle cx=\"160\" cy=\"90\" r=\"44\" fill=\"%230055ff\"/%3E%3C/svg%3E';\n  features: FooterFeature[] = [{ title: 'دسترسی آنلاین', description: 'همیشه در دسترس', imageUrl: this.image }];\n  sections: FooterSection[] = [{ title: 'راهنما', links: [{ label: 'کامپوننت‌ها', href: '/cards' }] }];\n  contacts: FooterContact[] = [{ label: 'ایمیل', value: 'support@example.com', href: 'mailto:support@example.com' }];\n  socialLinks: NavigationLink[] = [{ label: 'کد منبع', href: 'https://github.com/abbasi-milad1372/design-system-angular' }];\n}",
+          "import { Component } from '@angular/core';\nimport { FooterFeature, FooterSection, FooterContact, NavigationLink } from '@mytag/design-system';\n\n@Component({\n  selector: 'app-example',\n  templateUrl: './example.component.html',\n})\nexport class ExampleComponent {\n  image = 'data:image/svg+xml,%3Csvg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 320 180\"%3E%3Crect width=\"320\" height=\"180\" fill=\"%23ebf0fa\"/%3E%3Ccircle cx=\"160\" cy=\"90\" r=\"44\" fill=\"%230055ff\"/%3E%3C/svg%3E';\n  features: FooterFeature[] = [{ title: 'دسترسی آنلاین', description: 'همیشه در دسترس', imageUrl: this.image }];\n  sections: FooterSection[] = [{ title: 'راهنما', links: [{ label: 'کامپوننت‌ها', href: '/cards' }] }];\n  contacts: FooterContact[] = [{ label: 'ایمیل', value: 'support@example.com', href: 'mailto:support@example.com' }];\n  socialLinks: NavigationLink[] = [{ label: 'کد منبع', href: 'https://github.com/abbasi-milad1372/design-system-angular' }];\n}",
       },
       {
         title: 'بدون لوگو و محتوای اختیاری',
@@ -550,7 +550,7 @@ export const COMPONENT_DOCUMENTATION: Readonly<
     title: 'پنل کشویی',
     apiNames: ['IhoBottomsheetComponent'],
     module:
-      "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { RouterModule } from '@angular/router';\nimport { FormsModule, ReactiveFormsModule } from '@angular/forms';\nimport { IHOBottomsheetModule } from '@iho/design-system';\nimport { ExampleComponent } from './example.component';\n\n@NgModule({\n  declarations: [ExampleComponent],\n  imports: [CommonModule, RouterModule, FormsModule, ReactiveFormsModule, IHOBottomsheetModule],\n})\nexport class ExampleModule {}",
+      "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { RouterModule } from '@angular/router';\nimport { FormsModule, ReactiveFormsModule } from '@angular/forms';\nimport { IHOBottomsheetModule } from '@mytag/design-system';\nimport { ExampleComponent } from './example.component';\n\n@NgModule({\n  declarations: [ExampleComponent],\n  imports: [CommonModule, RouterModule, FormsModule, ReactiveFormsModule, IHOBottomsheetModule],\n})\nexport class ExampleModule {}",
     notes: [
       'محتوای پنل با ViewContainerRef و BottomsheetService تزریق می‌شود؛ محتوای معمولی داخل تگ پنل projection ندارد.',
       'ورودی data به‌تنهایی چیزی رندر نمی‌کند. نمونهٔ سرویس، داده را به کامپوننت محتوای سفارشی می‌رساند.',
@@ -575,9 +575,9 @@ export const COMPONENT_DOCUMENTATION: Readonly<
         template:
           '<ng-container #sheetHost></ng-container>\n<button type="button" (click)="open()">باز کردن محتوای سفارشی</button>\n<p aria-live="polite">{{ lastEvent }}</p>',
         typescript:
-          "import { Component, Input, Output, EventEmitter, ViewChild, ViewContainerRef } from '@angular/core';\nimport { BottomsheetService } from '@iho/design-system';\n\n@Component({\n  selector: 'app-sheet-content',\n  template: '<p>{{ data?.message }}</p><button type=\"button\" (click)=\"close.emit()\">بستن</button>',\n})\nexport class SheetContentComponent {\n  @Input() data?: { message: string };\n  @Output() close = new EventEmitter<void>();\n}\n\n@Component({ selector: 'app-example', templateUrl: './example.component.html' })\nexport class ExampleComponent {\n  @ViewChild('sheetHost', { read: ViewContainerRef }) host!: ViewContainerRef;\n  lastEvent = '';\n  constructor(private sheets: BottomsheetService) {}\n  open(): void {\n    this.host.clear();\n    const ref = this.sheets.open(this.host, {\n      component: SheetContentComponent,\n      data: { message: 'محتوای سفارشی پنل' },\n      position: 'bottom', dir: 'rtl', title: 'اطلاعات',\n      fullHeight: false, disabled: false, iconClass: 'iho-icon-information-circle',\n    });\n    ref.instance.closed.subscribe(() => this.lastEvent = 'بسته شد');\n  }\n}",
+          "import { Component, Input, Output, EventEmitter, ViewChild, ViewContainerRef } from '@angular/core';\nimport { BottomsheetService } from '@mytag/design-system';\n\n@Component({\n  selector: 'app-sheet-content',\n  template: '<p>{{ data?.message }}</p><button type=\"button\" (click)=\"close.emit()\">بستن</button>',\n})\nexport class SheetContentComponent {\n  @Input() data?: { message: string };\n  @Output() close = new EventEmitter<void>();\n}\n\n@Component({ selector: 'app-example', templateUrl: './example.component.html' })\nexport class ExampleComponent {\n  @ViewChild('sheetHost', { read: ViewContainerRef }) host!: ViewContainerRef;\n  lastEvent = '';\n  constructor(private sheets: BottomsheetService) {}\n  open(): void {\n    this.host.clear();\n    const ref = this.sheets.open(this.host, {\n      component: SheetContentComponent,\n      data: { message: 'محتوای سفارشی پنل' },\n      position: 'bottom', dir: 'rtl', title: 'اطلاعات',\n      fullHeight: false, disabled: false, iconClass: 'iho-icon-information-circle',\n    });\n    ref.instance.closed.subscribe(() => this.lastEvent = 'بسته شد');\n  }\n}",
         module:
-          "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { RouterModule } from '@angular/router';\nimport { FormsModule, ReactiveFormsModule } from '@angular/forms';\nimport { IHOBottomsheetModule } from '@iho/design-system';\nimport { ExampleComponent, SheetContentComponent } from './example.component';\n\n@NgModule({\n  declarations: [ExampleComponent, SheetContentComponent],\n  imports: [CommonModule, RouterModule, FormsModule, ReactiveFormsModule, IHOBottomsheetModule],\n})\nexport class ExampleModule {}",
+          "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { RouterModule } from '@angular/router';\nimport { FormsModule, ReactiveFormsModule } from '@angular/forms';\nimport { IHOBottomsheetModule } from '@mytag/design-system';\nimport { ExampleComponent, SheetContentComponent } from './example.component';\n\n@NgModule({\n  declarations: [ExampleComponent, SheetContentComponent],\n  imports: [CommonModule, RouterModule, FormsModule, ReactiveFormsModule, IHOBottomsheetModule],\n})\nexport class ExampleModule {}",
       },
     ],
   },
@@ -585,7 +585,7 @@ export const COMPONENT_DOCUMENTATION: Readonly<
     title: 'اعلان‌ها',
     apiNames: ['NotificationComponent'],
     module:
-      "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { RouterModule } from '@angular/router';\nimport { NotificationComponent } from '@iho/design-system';\nimport { ExampleComponent } from './example.component';\n\n@NgModule({\n  declarations: [ExampleComponent],\n  imports: [CommonModule, RouterModule, NotificationComponent],\n})\nexport class ExampleModule {}",
+      "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { RouterModule } from '@angular/router';\nimport { NotificationComponent } from '@mytag/design-system';\nimport { ExampleComponent } from './example.component';\n\n@NgModule({\n  declarations: [ExampleComponent],\n  imports: [CommonModule, RouterModule, NotificationComponent],\n})\nexport class ExampleModule {}",
     notes: [
       'در کل صفحه فقط یک mytag-notifications قرار دهید. این میزبان در showcase از قبل در پوستهٔ اصلی وجود دارد.',
       'گزینه‌های سرویس شامل duration، dismissible، position و action هستند؛ پیش‌فرض‌های NOTIFY_DEFAULTS شامل maxStack هم می‌شوند.',
@@ -597,14 +597,14 @@ export const COMPONENT_DOCUMENTATION: Readonly<
         template:
           '<mytag-notifications></mytag-notifications>\n<button type="button" (click)="show(\'success\')">موفقیت</button>\n<button type="button" (click)="show(\'info\')">اطلاعات</button>\n<button type="button" (click)="show(\'warning\')">هشدار</button>\n<button type="button" (click)="show(\'error\')">خطا</button>\n<button type="button" (click)="closeLast()">بستن آخرین اعلان</button>\n<button type="button" (click)="notify.clearAll()">بستن همه</button>',
         typescript:
-          "import { Component } from '@angular/core';\nimport { NotificationService } from '@iho/design-system';\n\n@Component({\n  selector: 'app-example',\n  templateUrl: './example.component.html',\n})\nexport class ExampleComponent {\n  lastId = '';\n  constructor(public notify: NotificationService) {}\n  show(type: 'success' | 'info' | 'warning' | 'error'): void {\n    this.lastId = this.notify[type]('عنوان اعلان', 'توضیحات اعلان');\n  }\n  closeLast(): void { if (this.lastId) this.notify.close(this.lastId); }\n}",
+          "import { Component } from '@angular/core';\nimport { NotificationService } from '@mytag/design-system';\n\n@Component({\n  selector: 'app-example',\n  templateUrl: './example.component.html',\n})\nexport class ExampleComponent {\n  lastId = '';\n  constructor(public notify: NotificationService) {}\n  show(type: 'success' | 'info' | 'warning' | 'error'): void {\n    this.lastId = this.notify[type]('عنوان اعلان', 'توضیحات اعلان');\n  }\n  closeLast(): void { if (this.lastId) this.notify.close(this.lastId); }\n}",
       },
       {
         title: 'همهٔ موقعیت‌ها، مدت نمایش، دکمه بستن و اکشن',
         template:
           '<mytag-notifications></mytag-notifications>\n<button *ngFor="let position of positions" type="button" (click)="show(position)">{{ position }}</button>\n<button type="button" (click)="persistent()">اعلان ماندگار</button>\n<p aria-live="polite">{{ lastAction }}</p>',
         typescript:
-          "import { Component } from '@angular/core';\nimport { NotificationService } from '@iho/design-system';\n\n@Component({\n  selector: 'app-example',\n  templateUrl: './example.component.html',\n})\nexport class ExampleComponent {\n  positions: Array<'bottom-right' | 'bottom-left' | 'top-right' | 'top-left'> = ['bottom-right', 'bottom-left', 'top-right', 'top-left'];\n  lastAction = '';\n  constructor(private notify: NotificationService) {}\n  show(position: 'bottom-right' | 'bottom-left' | 'top-right' | 'top-left'): void {\n    this.notify.info('اطلاعات', 'اعلان دارای اکشن', {\n      duration: 5000, dismissible: true, position,\n      action: { label: 'مشاهده', onClick: () => this.lastAction = 'اکشن انتخاب شد' },\n    });\n  }\n  persistent(): void { this.notify.warning('اعلان ماندگار', 'از سرویس برای بستن استفاده کنید.', { duration: 0, dismissible: false }); }\n}",
+          "import { Component } from '@angular/core';\nimport { NotificationService } from '@mytag/design-system';\n\n@Component({\n  selector: 'app-example',\n  templateUrl: './example.component.html',\n})\nexport class ExampleComponent {\n  positions: Array<'bottom-right' | 'bottom-left' | 'top-right' | 'top-left'> = ['bottom-right', 'bottom-left', 'top-right', 'top-left'];\n  lastAction = '';\n  constructor(private notify: NotificationService) {}\n  show(position: 'bottom-right' | 'bottom-left' | 'top-right' | 'top-left'): void {\n    this.notify.info('اطلاعات', 'اعلان دارای اکشن', {\n      duration: 5000, dismissible: true, position,\n      action: { label: 'مشاهده', onClick: () => this.lastAction = 'اکشن انتخاب شد' },\n    });\n  }\n  persistent(): void { this.notify.warning('اعلان ماندگار', 'از سرویس برای بستن استفاده کنید.', { duration: 0, dismissible: false }); }\n}",
       },
       {
         title: 'پیش‌فرض‌های تزریق‌شونده',
@@ -613,7 +613,7 @@ export const COMPONENT_DOCUMENTATION: Readonly<
         typescript:
           "import { Component } from '@angular/core';\n\n@Component({\n  selector: 'app-example',\n  templateUrl: './example.component.html',\n})\nexport class ExampleComponent {\n\n}",
         module:
-          "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { RouterModule } from '@angular/router';\nimport { NotificationComponent, NOTIFY_DEFAULTS } from '@iho/design-system';\nimport { ExampleComponent } from './example.component';\n\n@NgModule({\n  declarations: [ExampleComponent],\n  providers: [{ provide: NOTIFY_DEFAULTS, useValue: { duration: 4000, dismissible: true, maxStack: 5, position: 'bottom-right' } }],\n  imports: [CommonModule, RouterModule, NotificationComponent],\n})\nexport class ExampleModule {}",
+          "import { NgModule } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { RouterModule } from '@angular/router';\nimport { NotificationComponent, NOTIFY_DEFAULTS } from '@mytag/design-system';\nimport { ExampleComponent } from './example.component';\n\n@NgModule({\n  declarations: [ExampleComponent],\n  providers: [{ provide: NOTIFY_DEFAULTS, useValue: { duration: 4000, dismissible: true, maxStack: 5, position: 'bottom-right' } }],\n  imports: [CommonModule, RouterModule, NotificationComponent],\n})\nexport class ExampleModule {}",
       },
     ],
   },

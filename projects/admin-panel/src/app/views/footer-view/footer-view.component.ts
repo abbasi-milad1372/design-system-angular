@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FooterContact, FooterFeature, FooterSection, NavigationLink } from '@iho/design-system';
+import { FooterContact, FooterFeature, FooterSection, NavigationLink } from '@mytag/design-system';
 
 @Component({
     selector: 'app-footer-view',

@@ -3,12 +3,12 @@
 ## Purpose
 
 This application is the RTL catalogue and integration consumer for
-`@iho/design-system`. It should demonstrate public package usage and component states;
+`@mytag/design-system`. It should demonstrate public package usage and component states;
 reusable UI logic belongs in the library.
 
 ## Imports and dependency flow
 
-- Import library APIs from `@iho/design-system`. Existing direct imports from
+- Import library APIs from `@mytag/design-system`. Existing direct imports from
   `projects/design-system/src/...` are legacy debt; do not add more. If a symbol
   is missing, export it through the library public API.
 - Build `design-system` before building or serving this project because the

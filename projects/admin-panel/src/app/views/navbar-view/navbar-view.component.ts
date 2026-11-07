@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavigationLink } from '@iho/design-system';
+import { NavigationLink } from '@mytag/design-system';
 
 @Component({
     selector: 'app-navbar-view',

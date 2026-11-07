@@ -1,5 +1,5 @@
 import { Component, ViewChild, ViewContainerRef } from '@angular/core';
-import { BottomsheetService } from '@iho/design-system';
+import { BottomsheetService } from '@mytag/design-system';
 import { CustomContentComponent } from './custom-content.component';
 
 type BottomsheetPosition = 'bottom' | 'top' | 'left' | 'right';

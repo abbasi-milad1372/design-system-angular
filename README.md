@@ -44,17 +44,20 @@ updated examples for the supported component states and variants.
 ## Installation
 
 ```bash
-npm install @iho/design-system
+npm install @mytag/design-system
 ```
 
-The package name is `@iho/design-system`; `mytag-` is the component tag prefix.
-Version v0.4.0 adds the redesigned showcase, complete component examples, icon
-catalogue, and color-token explorer. It retains the v0.3.0 API; upgrading from
-v0.2.1 still requires the migration described below. The
+The package name is `@mytag/design-system`; `mytag-` is the component tag prefix.
+Version v0.5.0 moves the package to the `@mytag` scope. Update package dependencies,
+all TypeScript imports, and any `node_modules` asset paths to the new package name.
+Component selectors, exported TypeScript names, and design tokens are unchanged.
+This release includes the redesigned showcase, complete component examples, icon
+catalogue, and color-token explorer. Upgrading from v0.2.1 also requires the
+migration described below. The
 built library is also available as an installable GitHub Release asset:
 
 ```bash
-npm install https://github.com/abbasi-milad1372/design-system-angular/releases/download/v0.4.0/iho-design-system-0.4.0.tgz
+npm install https://github.com/abbasi-milad1372/design-system-angular/releases/download/v0.5.0/mytag-design-system-0.5.0.tgz
 ```
 
 ## Usage
@@ -63,7 +66,7 @@ Import only the modules required by your application:
 
 ```typescript
 import { NgModule } from '@angular/core';
-import { IHOButtonModule } from '@iho/design-system';
+import { IHOButtonModule } from '@mytag/design-system';
 
 @NgModule({
   imports: [IHOButtonModule],
@@ -95,7 +98,7 @@ selectors and domain-specific card names are not retained as aliases.
 
 ## Available components
 
-Import the matching module or standalone component from `@iho/design-system`.
+Import the matching module or standalone component from `@mytag/design-system`.
 TypeScript export names retain their existing spelling and capitalization.
 
 | Component | Current tag | Angular import |
@@ -186,7 +189,7 @@ the exported `FooterFeature` (`title`, `description`, optional `imageUrl`),
 `href`) types.
 
 ```typescript
-import { FooterSection, NavigationLink } from '@iho/design-system';
+import { FooterSection, NavigationLink } from '@mytag/design-system';
 
 export class ExampleComponent {
   menuItems: NavigationLink[] = [{ label: 'کامپوننت‌ها', href: '/cards' }];

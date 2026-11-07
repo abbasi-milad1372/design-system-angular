@@ -2,13 +2,13 @@
 
 ## Scope
 
-Everything under this directory ships as the `@iho/design-system` package. Favor
+Everything under this directory ships as the `@mytag/design-system` package. Favor
 consumer stability over local convenience.
 
 ## Public API and packaging
 
 - Add supported exports to `src/public-api.ts`; consumers should import from
-  `@iho/design-system`, never internal source paths.
+  `@mytag/design-system`, never internal source paths.
 - Keep Angular peer dependency compatibility with the workspace's Angular 16.2
   baseline.
 - If adding a packaged stylesheet, font, image, or other asset, ensure

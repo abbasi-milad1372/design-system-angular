@@ -5,6 +5,16 @@ custom CSS before upgrading. No deprecated aliases are retained for the previous
 domain-specific names. Unrelated inputs, outputs, and Sass tokens
 retain their existing names.
 
+## Package name in v0.5.0
+
+The package is now `@mytag/design-system`. Replace the previous package dependency
+with the new package, update all TypeScript imports, and update configured Sass,
+icon, and font paths under `node_modules/@mytag/design-system`.
+The previous package name is not provided as an alias. Existing TypeScript
+module/class exports, component selectors, CSS classes, and token values remain
+unchanged by this package rename. Installation from the GitHub Release archive is
+documented in the root README.
+
 ## Component tag prefix
 
 All library component selectors now use `mytag-`. Replace the previous `iho-`
@@ -19,13 +29,13 @@ CSS type selectors. The previously generated library root tag is now
 ```
 
 The Angular CLI library prefix is `mytag`, so new library components follow the
-same naming convention. TypeScript class/module exports, the package import
-`@iho/design-system`, icon classes, and component CSS classes retain their names;
-this migration changes component tags. Old component selectors are not aliases.
+same naming convention. The v0.3.0 tag migration preserves TypeScript class/module
+exports, icon classes, and component CSS classes. For v0.5.0 use the package name
+`@mytag/design-system`. Old component selectors are not aliases.
 
 ## Cards
 
-Import `CardType` and `IHOCardModule` from `@iho/design-system`.
+Import `CardType` and `IHOCardModule` from `@mytag/design-system`.
 
 | Purpose | New API |
 | --- | --- |
