@@ -1,5 +1,6 @@
 /*
  * Public API Surface of @mytag/design-system
+ * Branded modules, components, and types are exported with the Mytag prefix.
  */
 
 export * from './lib/design-system.service';

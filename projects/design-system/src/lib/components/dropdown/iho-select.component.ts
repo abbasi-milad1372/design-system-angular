@@ -14,7 +14,7 @@ import {
     ViewChild
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { IhoOptionComponent } from './iho-option.component';
+import { MytagOptionComponent } from './iho-option.component';
 import { debounceTime, Subject, Subscription, takeUntil } from 'rxjs';
 
 @Component({
@@ -22,13 +22,13 @@ import { debounceTime, Subject, Subscription, takeUntil } from 'rxjs';
     templateUrl: './select.component.html',
     providers: [{
         provide: NG_VALUE_ACCESSOR,
-        useExisting: forwardRef(() => IhoSelectComponent),
+        useExisting: forwardRef(() => MytagSelectComponent),
         multi: true
     }],
     styleUrls: ['./select.component.scss'],
 })
-export class IhoSelectComponent implements AfterContentInit, ControlValueAccessor, OnDestroy {
-    @ContentChildren(IhoOptionComponent) options!: QueryList<IhoOptionComponent>;
+export class MytagSelectComponent implements AfterContentInit, ControlValueAccessor, OnDestroy {
+    @ContentChildren(MytagOptionComponent) options!: QueryList<MytagOptionComponent>;
     @ViewChild('searchInput') searchInputRef!: ElementRef<HTMLInputElement>;
     open = false;
     filterTerm = '';
@@ -46,7 +46,7 @@ export class IhoSelectComponent implements AfterContentInit, ControlValueAccesso
 
     // injected host element ref
     constructor(private hostRef: ElementRef<HTMLElement>, public elementRef: ElementRef<HTMLElement>) { }
-    trackByFn(index: number, option: IhoOptionComponent): any {
+    trackByFn(index: number, option: MytagOptionComponent): any {
         return option.id || index;
     }
 
@@ -56,7 +56,7 @@ export class IhoSelectComponent implements AfterContentInit, ControlValueAccesso
     onChange = (_: any) => { };
     onTouched = () => { };
     subs: Subscription[] = [];
-    optionClickSubs = new Map<IhoOptionComponent, Subscription>();
+    optionClickSubs = new Map<MytagOptionComponent, Subscription>();
 
     activeIndex = -1;
     activeId: string | null = null;
@@ -70,7 +70,7 @@ export class IhoSelectComponent implements AfterContentInit, ControlValueAccesso
             this.applyFilterToOptions();
         });
         this.options.forEach(opt => this.bindOption(opt));
-        const s = this.options.changes.subscribe((ql: QueryList<IhoOptionComponent>) => {
+        const s = this.options.changes.subscribe((ql: QueryList<MytagOptionComponent>) => {
             this.cleanupOptionClickSubs();
             ql.forEach(opt => this.bindOption(opt)); // اینجا هم bindOption رو صدا بزن
             this.syncSelectionToValue();
@@ -93,7 +93,7 @@ export class IhoSelectComponent implements AfterContentInit, ControlValueAccesso
         });
     }
 
-    bindOption(opt: IhoOptionComponent) {
+    bindOption(opt: MytagOptionComponent) {
         (opt as any).id = (opt as any).id || `iho-opt-${Math.random().toString(36).slice(2, 9)}`;
         const sub = opt.optionClick.subscribe(o => {
             this.selectOption(o);

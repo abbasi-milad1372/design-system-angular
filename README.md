@@ -50,7 +50,7 @@ npm install @mytag/design-system
 The package name is `@mytag/design-system`; `mytag-` is the component tag prefix.
 Version v0.5.0 moves the package to the `@mytag` scope. Update package dependencies,
 all TypeScript imports, and any `node_modules` asset paths to the new package name.
-Component selectors, exported TypeScript names, and design tokens are unchanged.
+Component selectors and design tokens are unchanged by the package rename.
 This release includes the redesigned showcase, complete component examples, icon
 catalogue, and color-token explorer. Upgrading from v0.2.1 also requires the
 migration described below. The
@@ -66,10 +66,10 @@ Import only the modules required by your application:
 
 ```typescript
 import { NgModule } from '@angular/core';
-import { IHOButtonModule } from '@mytag/design-system';
+import { MytagButtonModule } from '@mytag/design-system';
 
 @NgModule({
-  imports: [IHOButtonModule],
+  imports: [MytagButtonModule],
 })
 export class AppModule {}
 ```
@@ -99,29 +99,33 @@ selectors and domain-specific card names are not retained as aliases.
 ## Available components
 
 Import the matching module or standalone component from `@mytag/design-system`.
-TypeScript export names retain their existing spelling and capitalization.
+Branded TypeScript exports use the `Mytag` prefix, for example `MytagButtonModule`
+and `MytagCheckboxComponent`. This source update also renames the corresponding
+form-control types. These export renames require the next package release;
+the already published v0.5.0 archive contains the previous TypeScript names.
+See the migration guide before upgrading.
 
 | Component | Current tag | Angular import |
 | --- | --- | --- |
-| Button | `mytag-button` | `IHOButtonModule` |
-| Input | `mytag-input` | `IHOInputModule` |
-| Checkbox | `mytag-checkbox` | `IhoCheckboxModule` |
-| Radio | `mytag-radio` | `IHORadioModule` |
-| Radio group | `mytag-radio-group` | `IHORadioModule` |
-| Switch | `mytag-switch` | `IhoSwitchModule` |
-| Select | `mytag-select` | `IhoSelectModule` |
-| Select option | `mytag-option` | `IhoSelectModule` |
-| Chip | `mytag-chip` | `IHOChipModule` |
-| Badge | `mytag-badge` | `IHOBadgeModule` |
-| Card | `mytag-card` | `IHOCardModule` |
-| Tooltip | `mytag-tooltip` | `IHOTooltipModule` |
-| Navbar | `mytag-navbar` | `IHONavbarModule` |
-| Breadcrumb | `mytag-breadcrumb` | `IHOBreadcrumbModule` |
-| Tab | `mytag-tab` | `IHOTabModule` |
+| Button | `mytag-button` | `MytagButtonModule` |
+| Input | `mytag-input` | `MytagInputModule` |
+| Checkbox | `mytag-checkbox` | `MytagCheckboxModule` |
+| Radio | `mytag-radio` | `MytagRadioModule` |
+| Radio group | `mytag-radio-group` | `MytagRadioModule` |
+| Switch | `mytag-switch` | `MytagSwitchModule` |
+| Select | `mytag-select` | `MytagSelectModule` |
+| Select option | `mytag-option` | `MytagSelectModule` |
+| Chip | `mytag-chip` | `MytagChipModule` |
+| Badge | `mytag-badge` | `MytagBadgeModule` |
+| Card | `mytag-card` | `MytagCardModule` |
+| Tooltip | `mytag-tooltip` | `MytagTooltipModule` |
+| Navbar | `mytag-navbar` | `MytagNavbarModule` |
+| Breadcrumb | `mytag-breadcrumb` | `MytagBreadcrumbModule` |
+| Tab | `mytag-tab` | `MytagTabModule` |
 | Notifications | `mytag-notifications` | `NotificationComponent` (standalone) |
-| Bottom sheet | `mytag-bottomsheet` | `IHOBottomsheetModule` |
-| Accordion | `mytag-accordion` | `IHOAccordionModule` |
-| Footer | `mytag-footer-ds` | `IHOFooterModule` |
+| Bottom sheet | `mytag-bottomsheet` | `MytagBottomsheetModule` |
+| Accordion | `mytag-accordion` | `MytagAccordionModule` |
+| Footer | `mytag-footer-ds` | `MytagFooterModule` |
 | Library root | `mytag-design-system` | `DesignSystemModule` |
 
 `DesignSystemModule` exports the library root component; import individual

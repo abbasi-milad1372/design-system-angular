@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 
-import { IHOBadgeModule, IHOBreadcrumbModule, IHOBottomsheetModule,IHOButtonModule, IHOCardModule, IHOFooterModule, IHOInputModule, IHONavbarModule, IHOTabModule, IhoCheckboxModule, IHORadioModule, IhoSwitchModule, IhoSelectModule, IHOTooltipModule, IHOAccordionModule, IHOChipModule } 
+import { MytagBadgeModule, MytagBreadcrumbModule, MytagBottomsheetModule,MytagButtonModule, MytagCardModule, MytagFooterModule, MytagInputModule, MytagNavbarModule, MytagTabModule, MytagCheckboxModule, MytagRadioModule, MytagSwitchModule, MytagSelectModule, MytagTooltipModule, MytagAccordionModule, MytagChipModule }
 from '@mytag/design-system';
 import { AdminLayoutComponent } from './admin-layout.component';
 import { ButtonViewComponent } from './views/button-view/button-view.component';
@@ -96,25 +96,25 @@ const routes: Routes = [
     ReactiveFormsModule,
     BrowserAnimationsModule,
     CommonModule,
-    IHOButtonModule,
-    IHOBadgeModule,
-    IHOTabModule,
-    IHOCardModule,
-    IHOFooterModule,
-    IHOInputModule,
-    IhoCheckboxModule,
-    IHORadioModule,
-    IhoSwitchModule,
+    MytagButtonModule,
+    MytagBadgeModule,
+    MytagTabModule,
+    MytagCardModule,
+    MytagFooterModule,
+    MytagInputModule,
+    MytagCheckboxModule,
+    MytagRadioModule,
+    MytagSwitchModule,
     NotificationComponent,
-    IHOBreadcrumbModule,
-    IHONavbarModule,
-    IhoSelectModule,
-    IHOTooltipModule,
-    IHOBottomsheetModule,
+    MytagBreadcrumbModule,
+    MytagNavbarModule,
+    MytagSelectModule,
+    MytagTooltipModule,
+    MytagBottomsheetModule,
     RouterModule.forRoot(routes),
     HttpClientModule,
-    IHOAccordionModule,
-    IHOChipModule
+    MytagAccordionModule,
+    MytagChipModule
   ],
   bootstrap: [AppComponent],
   providers:[

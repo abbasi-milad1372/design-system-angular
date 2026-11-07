@@ -8,4 +8,4 @@ import { FormsModule } from '@angular/forms';
     imports: [CommonModule, FormsModule, CommonModule],
     exports: [ButtonComponent]
 })
-export class IHOButtonModule { }
+export class MytagButtonModule { }

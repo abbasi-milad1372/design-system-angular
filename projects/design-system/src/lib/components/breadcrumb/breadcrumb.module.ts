@@ -7,4 +7,4 @@ import { BreadcrumbComponent } from './breadcrumb.component';
     imports: [CommonModule],
     exports: [BreadcrumbComponent]
 })
-export class IHOBreadcrumbModule { }
+export class MytagBreadcrumbModule { }

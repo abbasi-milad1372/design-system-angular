@@ -1,5 +1,5 @@
 import { Injectable, ComponentRef, ViewContainerRef, Injector, Type, PLATFORM_ID, Inject, EventEmitter } from '@angular/core';
-import { IhoBottomsheetComponent } from './bottomsheet.component';
+import { MytagBottomsheetComponent } from './bottomsheet.component';
 import { DOCUMENT, isPlatformBrowser } from '@angular/common';
 
 interface CustomComponent {
@@ -28,9 +28,9 @@ export class BottomsheetService {
             iconClass?: string;
             fullHeight?:boolean;
         } = {}
-    ): ComponentRef<IhoBottomsheetComponent> {
+    ): ComponentRef<MytagBottomsheetComponent> {
         // ایجاد دینامیک کامپوننت Bottomsheet
-        const bottomsheetRef = viewContainerRef.createComponent(IhoBottomsheetComponent, {
+        const bottomsheetRef = viewContainerRef.createComponent(MytagBottomsheetComponent, {
             injector: this.injector,
         });
 

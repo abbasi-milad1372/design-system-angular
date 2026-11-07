@@ -7,11 +7,11 @@ import { RadioComponent } from './radio.component';
     template: `<ng-content></ng-content>`,
     providers: [{
         provide: NG_VALUE_ACCESSOR,
-        useExisting: forwardRef(() => IhoRadioGroupComponent),
+        useExisting: forwardRef(() => MytagRadioGroupComponent),
         multi: true,
     }],
 })
-export class IhoRadioGroupComponent implements ControlValueAccessor, AfterContentInit {
+export class MytagRadioGroupComponent implements ControlValueAccessor, AfterContentInit {
     @Input() name = `iho-radio-group-${Math.random().toString(36).slice(2)}`;
     @Input() disabled = false;
 

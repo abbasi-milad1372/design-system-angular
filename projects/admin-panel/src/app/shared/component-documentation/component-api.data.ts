@@ -117,7 +117,7 @@ export const COMPONENT_APIS: readonly ComponentApi[] = [
     outputs: [],
   },
   {
-    name: 'IhoSwitchComponent',
+    name: 'MytagSwitchComponent',
     selector: 'mytag-switch',
     inputs: [
       {
@@ -186,7 +186,7 @@ export const COMPONENT_APIS: readonly ComponentApi[] = [
     outputs: [],
   },
   {
-    name: 'IhoRadioGroupComponent',
+    name: 'MytagRadioGroupComponent',
     selector: 'mytag-radio-group',
     inputs: [
       {
@@ -373,7 +373,7 @@ export const COMPONENT_APIS: readonly ComponentApi[] = [
     outputs: [],
   },
   {
-    name: 'IhoCheckboxComponent',
+    name: 'MytagCheckboxComponent',
     selector: 'mytag-checkbox',
     inputs: [
       {
@@ -492,7 +492,7 @@ export const COMPONENT_APIS: readonly ComponentApi[] = [
     outputs: [],
   },
   {
-    name: 'IhoSelectComponent',
+    name: 'MytagSelectComponent',
     selector: 'mytag-select',
     inputs: [
       {
@@ -539,7 +539,7 @@ export const COMPONENT_APIS: readonly ComponentApi[] = [
     ],
   },
   {
-    name: 'IhoOptionComponent',
+    name: 'MytagOptionComponent',
     selector: 'mytag-option',
     inputs: [
       {
@@ -577,7 +577,7 @@ export const COMPONENT_APIS: readonly ComponentApi[] = [
     outputs: [
       {
         name: 'optionClick',
-        type: 'IhoOptionComponent',
+        type: 'MytagOptionComponent',
       },
     ],
   },
@@ -965,7 +965,7 @@ export const COMPONENT_APIS: readonly ComponentApi[] = [
     outputs: [],
   },
   {
-    name: 'IhoBottomsheetComponent',
+    name: 'MytagBottomsheetComponent',
     selector: 'mytag-bottomsheet',
     inputs: [
       {

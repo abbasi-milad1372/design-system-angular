@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { IhoRadioGroupComponent } from './radio-group.component';
+import { MytagRadioGroupComponent } from './radio-group.component';
 
 @Component({
     selector: 'mytag-radio',
@@ -19,8 +19,8 @@ export class RadioComponent {
     id = 'iho-radio-' + Math.random().toString(36).slice(2);
 
     // مرجع گروه را گروه در ngAfterContentInit به ما می‌دهد
-    private group?: IhoRadioGroupComponent;
-    registerHost(group: IhoRadioGroupComponent) {
+    private group?: MytagRadioGroupComponent;
+    registerHost(group: MytagRadioGroupComponent) {
         this.group = group;
     }
 

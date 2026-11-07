@@ -77,8 +77,9 @@ commands documented in the root `AGENTS.md`.
 - Adding a demo requires both a child route and a navigation entry.
 - Form controls use `ControlValueAccessor`; verify value, touched, disabled, and
   change propagation behavior.
-- Public naming is historically inconsistent (`IHO`, `Iho`, and lower-case class
-  names). Preserve compatibility unless a breaking migration is requested.
+- Branded public TypeScript exports use the `Mytag` prefix. Keep examples and
+  imports synchronized; do not reintroduce the previous brand prefix or rename
+  unrelated generic exports.
 - Focused specs cover card actions/image fallback, navbar disclosure, and footer
   responsive sections alongside the generated component. The test runner still
   requires missing Karma/Jasmine dependencies; do not claim broad coverage.

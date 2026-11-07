@@ -6,4 +6,4 @@ import { AccordionComponent } from './accordion.component';
     imports: [CommonModule],
     exports: [AccordionComponent]
 })
-export class IHOAccordionModule { }
+export class MytagAccordionModule { }

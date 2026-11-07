@@ -1,12 +1,12 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { NavbarComponent } from './navbar.component';
-import { IHONavbarModule } from './navbar.module';
+import { MytagNavbarModule } from './navbar.module';
 
 describe('NavbarComponent disclosure', () => {
     let fixture: ComponentFixture<NavbarComponent>;
 
     beforeEach(() => {
-        TestBed.configureTestingModule({ imports: [IHONavbarModule] });
+        TestBed.configureTestingModule({ imports: [MytagNavbarModule] });
         fixture = TestBed.createComponent(NavbarComponent);
         fixture.componentInstance.menuItems = [{ label: 'نمونه', href: '/sample' }];
         fixture.detectChanges();

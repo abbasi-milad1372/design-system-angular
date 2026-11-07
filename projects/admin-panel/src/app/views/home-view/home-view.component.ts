@@ -14,10 +14,10 @@ export class HomeViewComponent {
     'https://github.com/abbasi-milad1372/design-system-angular';
   readonly installCommand = `npm install ${this.repositoryUrl}/releases/download/v${this.version}/mytag-design-system-${this.version}.tgz`;
   readonly moduleCode = `import { NgModule } from '@angular/core';
-import { IHOButtonModule } from '@mytag/design-system';
+import { MytagButtonModule } from '@mytag/design-system';
 
 @NgModule({
-  imports: [IHOButtonModule],
+  imports: [MytagButtonModule],
 })
 export class AppModule {}`;
   readonly templateCode = `<mytag-button variant="primary" size="md">

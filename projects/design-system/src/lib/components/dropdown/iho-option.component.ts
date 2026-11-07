@@ -52,7 +52,7 @@ import { Component, ElementRef, EventEmitter, HostBinding, HostListener, Input, 
     }
   `]
 })
-export class IhoOptionComponent {
+export class MytagOptionComponent {
   @Input() value: any;
   @Input() disabled = false;
   @Input() label?: string;
@@ -75,7 +75,7 @@ export class IhoOptionComponent {
   @Input() selected = false;
 
   // host will listen and call this
-  @Output() optionClick = new EventEmitter<IhoOptionComponent>();
+  @Output() optionClick = new EventEmitter<MytagOptionComponent>();
 
   @HostListener('click')
   onClick() {

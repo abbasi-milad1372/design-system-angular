@@ -7,4 +7,4 @@ import { TooltipComponent } from './tooltip.component';
     imports: [CommonModule],
     exports: [TooltipComponent],
 })
-export class IHOTooltipModule { }
+export class MytagTooltipModule { }

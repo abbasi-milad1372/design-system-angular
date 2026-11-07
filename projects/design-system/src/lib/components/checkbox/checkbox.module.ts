@@ -1,11 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { IhoCheckboxComponent } from './checkbox.component';
+import { MytagCheckboxComponent } from './checkbox.component';
 
 @NgModule({
-    declarations: [IhoCheckboxComponent],
+    declarations: [MytagCheckboxComponent],
     imports: [CommonModule, FormsModule, ReactiveFormsModule],
-    exports: [IhoCheckboxComponent]
+    exports: [MytagCheckboxComponent]
 })
-export class IhoCheckboxModule { }
+export class MytagCheckboxModule { }

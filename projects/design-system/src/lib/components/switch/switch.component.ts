@@ -16,11 +16,11 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
     changeDetection: ChangeDetectionStrategy.OnPush,
     providers: [{
         provide: NG_VALUE_ACCESSOR,
-        useExisting: forwardRef(() => IhoSwitchComponent),
+        useExisting: forwardRef(() => MytagSwitchComponent),
         multi: true
     }]
 })
-export class IhoSwitchComponent  {
+export class MytagSwitchComponent  {
     /** متن کنار سوئیچ (سمت چپ در RTL) */
     @Input() label = '';
     /** غیرفعال */

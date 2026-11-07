@@ -8,14 +8,18 @@ Ravi FaNum typography, and shared design tokens.
 The package import is `@mytag/design-system`. All 20 public component tags use the
 `mytag-` prefix, including `mytag-button`, `mytag-input`, `mytag-card`,
 `mytag-select`, `mytag-option`, `mytag-footer-ds`, and `mytag-notifications`.
-TypeScript module/class exports keep their existing spelling.
+Branded TypeScript modules, components, and form-control types use the `Mytag`
+prefix, including `MytagButtonModule`, `MytagCheckboxComponent`, and
+`MytagCheckboxSize`. Update imports and type references to these names.
+This source update is pending release; the previously published v0.5.0 archive
+does not include the TypeScript export renames.
 
 Version v0.5.0 moves the package to the `@mytag` scope. Update dependencies,
 imports, and configured `node_modules` asset paths to `@mytag/design-system`.
 Component selectors and design tokens are unchanged by this package rename.
 
 ```typescript
-import { IHOButtonModule, IHOCardModule } from '@mytag/design-system';
+import { MytagButtonModule, MytagCardModule } from '@mytag/design-system';
 ```
 
 Add the modules to your consuming NgModule, then use their tags:

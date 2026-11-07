@@ -1,11 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { IhoSwitchComponent } from './switch.component';
+import { MytagSwitchComponent } from './switch.component';
 
 @NgModule({
-    declarations: [IhoSwitchComponent],
+    declarations: [MytagSwitchComponent],
     imports: [CommonModule, FormsModule, ReactiveFormsModule],
-    exports: [IhoSwitchComponent]
+    exports: [MytagSwitchComponent]
 })
-export class IhoSwitchModule { }
+export class MytagSwitchModule { }

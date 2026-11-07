@@ -8,8 +8,8 @@ import {
 } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
-export type IhoCheckboxSize = 'xs' | 'sm' | 'md';
-export type IhoCheckboxColor = 'gray' | 'black';
+export type MytagCheckboxSize = 'xs' | 'sm' | 'md';
+export type MytagCheckboxColor = 'gray' | 'black';
 
 @Component({
     selector: 'mytag-checkbox',
@@ -17,13 +17,13 @@ export type IhoCheckboxColor = 'gray' | 'black';
     styleUrls: ['./checkbox.component.scss'],
     providers: [{
         provide: NG_VALUE_ACCESSOR,
-        useExisting: forwardRef(() => IhoCheckboxComponent),
+        useExisting: forwardRef(() => MytagCheckboxComponent),
         multi: true
     }]
 })
-export class IhoCheckboxComponent implements ControlValueAccessor {
-    @Input() size: IhoCheckboxSize = 'xs';
-    @Input() color: IhoCheckboxColor = 'gray';
+export class MytagCheckboxComponent implements ControlValueAccessor {
+    @Input() size: MytagCheckboxSize = 'xs';
+    @Input() color: MytagCheckboxColor = 'gray';
     @Input() label = '';
     @Input() supportingText = '';
     @Input() disabled = false;

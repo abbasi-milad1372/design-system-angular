@@ -5,6 +5,25 @@ custom CSS before upgrading. No deprecated aliases are retained for the previous
 domain-specific names. Unrelated inputs, outputs, and Sass tokens
 retain their existing names.
 
+## TypeScript export names (unreleased)
+
+Branded Angular modules, components, and types now use the `Mytag` prefix.
+Replace the previous brand prefix in named imports, NgModule declarations and
+imports, ViewChild/ContentChildren queries, dependency injection, and type
+annotations. For example, use `MytagButtonModule`, `MytagCheckboxComponent`,
+`MytagCheckboxSize`, `MytagCheckboxColor`, `MytagSelectComponent`,
+`MytagOptionComponent`, `MytagRadioGroupComponent`, and `MytagBottomsheetComponent`.
+The renamed exports do not retain aliases for their previous names.
+Exports without a brand prefix, such as `ButtonComponent`, `CardType`,
+`NotificationService`, and `DesignSystemModule`, keep their current names.
+Component tags, inputs/outputs, and design tokens are unchanged by this rename.
+The already published v0.5.0 archive predates these TypeScript export changes;
+use a package release that includes this migration.
+
+```typescript
+import { MytagButtonModule, MytagCheckboxModule } from '@mytag/design-system';
+```
+
 ## Package name in v0.5.0
 
 The package is now `@mytag/design-system`. Replace the previous package dependency
@@ -35,7 +54,7 @@ exports, icon classes, and component CSS classes. For v0.5.0 use the package nam
 
 ## Cards
 
-Import `CardType` and `IHOCardModule` from `@mytag/design-system`.
+Import `CardType` and `MytagCardModule` from `@mytag/design-system`.
 
 | Purpose | New API |
 | --- | --- |

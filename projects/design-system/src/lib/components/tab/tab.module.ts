@@ -7,4 +7,4 @@ import { TabComponent } from './tab.component';
     imports: [CommonModule],
     exports: [TabComponent]
 })
-export class IHOTabModule { }
+export class MytagTabModule { }

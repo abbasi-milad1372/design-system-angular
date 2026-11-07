@@ -7,4 +7,4 @@ import { badgeComponent } from './badge.component';
     imports: [CommonModule],
     exports: [badgeComponent]
 })
-export class IHOBadgeModule { }
+export class MytagBadgeModule { }

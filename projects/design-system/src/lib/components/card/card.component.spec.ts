@@ -1,13 +1,13 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 import { CardComponent } from './card.component';
-import { IHOCardModule } from './card.module';
+import { MytagCardModule } from './card.module';
 
 describe('CardComponent actions and image fallback', () => {
     let fixture: ComponentFixture<CardComponent>;
 
     beforeEach(() => {
-        TestBed.configureTestingModule({ imports: [IHOCardModule, RouterTestingModule] });
+        TestBed.configureTestingModule({ imports: [MytagCardModule, RouterTestingModule] });
         fixture = TestBed.createComponent(CardComponent);
         fixture.componentInstance.type = 'horizontal';
         fixture.detectChanges();

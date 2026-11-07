@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RadioComponent } from './radio.component';
-import { IhoRadioGroupComponent } from './radio-group.component';
+import { MytagRadioGroupComponent } from './radio-group.component';
 
 @NgModule({
-    declarations: [RadioComponent, IhoRadioGroupComponent],
+    declarations: [RadioComponent, MytagRadioGroupComponent],
     imports: [CommonModule],
-    exports: [RadioComponent, IhoRadioGroupComponent],
+    exports: [RadioComponent, MytagRadioGroupComponent],
 })
-export class IHORadioModule { }
+export class MytagRadioModule { }

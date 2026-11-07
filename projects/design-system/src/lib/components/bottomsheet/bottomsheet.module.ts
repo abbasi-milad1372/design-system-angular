@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IhoBottomsheetComponent } from './bottomsheet.component';
+import { MytagBottomsheetComponent } from './bottomsheet.component';
 
 @NgModule({
-    declarations: [IhoBottomsheetComponent],
+    declarations: [MytagBottomsheetComponent],
     imports: [CommonModule],
-    exports: [IhoBottomsheetComponent],
+    exports: [MytagBottomsheetComponent],
 })
-export class IHOBottomsheetModule { }
+export class MytagBottomsheetModule { }

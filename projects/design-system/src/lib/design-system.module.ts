@@ -2,20 +2,20 @@ import { NgModule } from '@angular/core';
 import { DesignSystemComponent } from './design-system.component';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { IHOBadgeModule } from './components/badge/badge.module';
-import { IHOCardModule } from './components/card/card.module';
-import { IHOFooterModule } from './components/footer/footer.module';
-import { IHOInputModule } from './components/input/input.module';
-import { IHOBreadcrumbModule } from './components/breadcrumb/breadcrumb.module';
-import { IHONavbarModule } from './components/navbar/navbar.module';
-import { IhoCheckboxModule } from './components/checkbox/checkbox.module';
-import { IHORadioModule } from './components/radio/radio.module';
-import { IhoSwitchModule } from './components/switch/switch.module';
-import { IhoSelectModule } from './components/dropdown/select.module';
-import { IHOTooltipModule } from './components/tooltip/tooltip.module';
-import { IHOBottomsheetModule } from './components/bottomsheet/bottomsheet.module';
-import { IHOAccordionModule } from './components/accordion/accordion.module';
-import { IHOChipModule } from './components/chips/chip.module';
+import { MytagBadgeModule } from './components/badge/badge.module';
+import { MytagCardModule } from './components/card/card.module';
+import { MytagFooterModule } from './components/footer/footer.module';
+import { MytagInputModule } from './components/input/input.module';
+import { MytagBreadcrumbModule } from './components/breadcrumb/breadcrumb.module';
+import { MytagNavbarModule } from './components/navbar/navbar.module';
+import { MytagCheckboxModule } from './components/checkbox/checkbox.module';
+import { MytagRadioModule } from './components/radio/radio.module';
+import { MytagSwitchModule } from './components/switch/switch.module';
+import { MytagSelectModule } from './components/dropdown/select.module';
+import { MytagTooltipModule } from './components/tooltip/tooltip.module';
+import { MytagBottomsheetModule } from './components/bottomsheet/bottomsheet.module';
+import { MytagAccordionModule } from './components/accordion/accordion.module';
+import { MytagChipModule } from './components/chips/chip.module';
 
 
 
@@ -27,20 +27,20 @@ import { IHOChipModule } from './components/chips/chip.module';
     CommonModule,
     NgOptimizedImage,
     FormsModule,
-    IHOBadgeModule,
-    IHOCardModule,
-    IHOFooterModule,
-    IHOInputModule,
-    IHOBreadcrumbModule,
-    IHONavbarModule,
-    IhoCheckboxModule,
-    IHORadioModule,
-    IhoSwitchModule,
-    IhoSelectModule,
-    IHOTooltipModule,
-    IHOBottomsheetModule,
-    IHOAccordionModule,
-    IHOChipModule
+    MytagBadgeModule,
+    MytagCardModule,
+    MytagFooterModule,
+    MytagInputModule,
+    MytagBreadcrumbModule,
+    MytagNavbarModule,
+    MytagCheckboxModule,
+    MytagRadioModule,
+    MytagSwitchModule,
+    MytagSelectModule,
+    MytagTooltipModule,
+    MytagBottomsheetModule,
+    MytagAccordionModule,
+    MytagChipModule
   ],
   exports: [
     DesignSystemComponent,

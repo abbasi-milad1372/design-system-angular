@@ -5,7 +5,7 @@ import { Component, Input, Output, EventEmitter, ViewChild, ViewContainerRef, Af
     templateUrl: './bottomsheet.component.html',
     styleUrls: ['./bottomsheet.component.scss'],
 })
-export class IhoBottomsheetComponent  {
+export class MytagBottomsheetComponent  {
     @Input() position: 'bottom' | 'top' | 'left' | 'right' = 'bottom';
     @Input() set isOpen(value: boolean) {
         this._isOpen = value;

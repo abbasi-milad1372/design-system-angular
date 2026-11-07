@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { WINDOW } from '../../window.module';
 import { FooterComponent } from './footer.component';
-import { IHOFooterModule } from './footer.module';
+import { MytagFooterModule } from './footer.module';
 
 describe('FooterComponent responsive sections', () => {
     let fixture: ComponentFixture<FooterComponent>;
@@ -10,7 +10,7 @@ describe('FooterComponent responsive sections', () => {
     beforeEach(() => {
         viewport = { innerWidth: 375 };
         TestBed.configureTestingModule({
-            imports: [IHOFooterModule],
+            imports: [MytagFooterModule],
             providers: [{ provide: WINDOW, useValue: viewport }]
         });
         fixture = TestBed.createComponent(FooterComponent);
